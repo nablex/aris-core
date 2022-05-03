@@ -1,0 +1,32 @@
+{
+	"name": "aris-core", 
+	"resources": {
+		"variables": {
+			"color.scss": {
+				"url": "variables/color.scss"
+			}, 
+			"basic.scss": {
+				"url": "variables/basic.scss"
+			},
+			"spacing.scss": {
+				"url": "variables/spacing.scss"
+			} 
+		}, 
+		"components": {
+			"button.scss": {
+				"url": "components/button.scss"
+			}, 
+			"form-component.scss": {
+				"url": "components/form-component.scss"
+			}, 
+			"form-text.scss": {
+				"url": "components/form-text.scss"
+			}
+		}, 
+		"mixins": {
+			"templates.scss": {
+				"url": "mixins/templates.scss"
+			}
+		}
+	}
+}

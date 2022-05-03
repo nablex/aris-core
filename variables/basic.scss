@@ -1,0 +1,47 @@
+// Some basic variables
+
+// Basic font information
+// @priority 1000
+$font-family: sans-serif !default;
+// @priority 500
+$font-family-alt: serif !default;
+$font-color: $color-neutral-darkest !default;
+$font-weight: initial !default;
+$font-size: 16px !default;
+
+$font-size-xsmall: 0.75rem !default;
+$font-size-small: 0.875rem !default;
+$font-size-medium: 1rem !default;
+$font-size-large: 1.25rem !default;
+$font-size-xlarge: 1.5rem !default;
+
+// Icon font information
+$font-icon-family: "Font Awesome 5 Pro" !default;
+$font-icon-size: 24px !default;
+$font-icon-weight: normal !default;
+$font-icon-content-invalid: "\e915" !default;
+$font-icon-content-valid: "\e90a" !default;
+$font-icon-content-error: "\e913" !default;
+$font-icon-content-success: "\e913" !default;
+
+// @description The default body color of the application
+// @priority 500
+$body-color: $color-neutral-lightest !default;
+// @description The default color used as a background in components where relevant
+$color-background: $color-neutral-lighter !default;
+
+// Apply the defaults to the application
+html:root, body {
+    background-color: $body-color;
+    color: $font-color;
+    font-size: $font-size;
+	font-family: $font-family;
+	font-weight: $font-weight;
+    margin: 0;
+    padding: 0;
+}
+
+// We enable box sizing by default
+*, *:before, *:after {
+    box-sizing: border-box;
+}

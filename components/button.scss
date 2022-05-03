@@ -1,0 +1,169 @@
+// a button is assumed to be one of these:
+// <button>some text</button>
+// <button><span class="is-icon"></span></button>
+// <button><span class="is-label"></span></button>
+// <button><span class="is-icon"></span><span class="is-label"></span></button>
+
+// Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
+
+// borders
+@mixin template-button-border {
+	border-radius: 0.25rem;
+	border-width: 1px;
+	border-color: $color-neutral-darkest;
+}
+@mixin button-border-default {
+	@include template-button-border;
+}
+@mixin button-border-primary {
+	border-radius: 0.25rem;
+	border-width: 1px;
+	border-color: $color-primary-darkest;
+}
+@mixin button-border-secondary {
+	border-radius: 0.25rem;
+	border-width: 1px;
+	border-color: $color-secondary-darkest;
+}
+@mixin button-border-none {
+	border-radius: 0.25rem;
+	border-width: 0px;
+	border-color: transparent;
+}
+
+// sizes
+@mixin template-button-size {
+	padding: $spacing-scale-small $spacing-scale-medium;
+	font-size: $font-size-medium;
+	column-gap: $spacing-scale-small;
+}
+@mixin button-size-xsmall {
+	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
+	font-size: $font-size-xsmall;
+	column-gap: $spacing-scale-xxsmall;
+}
+@mixin button-size-small {
+	padding: $spacing-scale-xsmall $spacing-scale-small;
+	font-size: $font-size-small;
+	column-gap: $spacing-scale-xsmall;
+}
+@mixin button-size-medium {
+	@include template-button-size;
+}
+@mixin button-size-large {
+	padding: $spacing-scale-medium $spacing-scale-large;
+	font-size: $font-size-large;
+	column-gap: $spacing-scale-medium;
+}
+@mixin button-size-xlarge {
+	padding: $spacing-scale-large $spacing-scale-xlarge;
+	font-size: $font-size-xlarge;
+	column-gap: $spacing-scale-large;
+}
+
+// colors
+@mixin template-button-color {
+	background-color: $color-neutral-lightest;
+	color: $color-neutral-darker;
+	&:hover {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+	}
+}
+@mixin button-color-neutral {
+	@include template-button-color;
+}
+@mixin button-color-primary-inverse {
+	background-color: $color-primary-lightest;
+	color: $color-neutral-darker;
+	&:hover {
+		background-color: $color-primary-lighter;
+		color: $color-neutral-darkest;
+	}
+}
+@mixin button-color-primary {
+	background-color: $color-primary-darker;
+	color: $color-neutral-lightest;
+	&:hover {
+		background-color: $color-primary-darkest;
+		color: $color-neutral-lighter;
+	}
+}
+@mixin button-color-secondary-inverse {
+	background-color: $color-secondary-lightest;
+	color: $color-neutral-darker;
+	&:hover {
+		background-color: $color-secondary-lighter;
+		color: $color-neutral-darkest;
+	}
+}
+@mixin button-color-secondary {
+	background-color: $color-secondary-darker;
+	color: $color-neutral-lightest;
+	&:hover {
+		background-color: $color-secondary-darkest;
+		color: $color-neutral-lighter;
+	}
+}
+@mixin button-color-transparent {
+	background-color: transparent;
+	color: $color-neutral-darker;
+	&:hover {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+	}
+}
+
+// reverse the order to have the icon after the label
+// there is no template because the idea is not that you make your own order at this point
+// you can however toggle it as a dimensional option
+@mixin button-order-reverse {
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
+@mixin button-order-normal {
+	display: inline-flex;
+	flex-direction: row;
+}
+
+// variants
+@mixin button-variant-default {
+	cursor: pointer;
+	@include button-border-default;
+	@include button-size-medium;
+	@include button-color-neutral;
+	@include button-order-normal;
+}
+@mixin button-variant-neutral {
+	@include button-variant-default;
+}
+@mixin button-variant-primary {
+	@include button-order-normal;
+	@include button-size-medium;
+	@include button-border-primary;
+	@include button-color-primary;
+}
+@mixin button-variant-secondary {
+	@include button-order-normal;
+	@include button-size-medium;
+	@include button-border-secondary;
+	@include button-color-secondary;
+}
+@mixin button-variant-primary-inverse {
+	@include button-order-normal;
+	@include button-size-medium;
+	@include button-border-primary;
+	@include button-color-primary-inverse;
+}
+@mixin button-variant-secondary-inverse {
+	@include button-order-normal;
+	@include button-size-medium;
+	@include button-border-secondary;
+	@include button-color-secondary-inverse;
+}
+@mixin button-variant-ghost {
+	@include button-order-normal;
+	@include button-border-none;
+	@include button-size-medium;
+	@include button-color-transparent;
+}
