@@ -312,3 +312,13 @@ $button-link-color: $color-primary-darker;
 @mixin button-variant-success-outline {
 	@include button-color-success-outline;
 }
+
+// some tiny corrections
+.is-button {
+	> .is-icon {
+		line-height: 100%;
+	}
+	> .is-text {
+		flex-grow: 1;
+	}
+}

@@ -137,3 +137,12 @@
 	}
 }
 
+// some tiny corrections
+.is-alert {
+	> .is-icon {
+		line-height: 100%;
+	}
+	> .is-text {
+		flex-grow: 1;
+	}
+}
