@@ -26,6 +26,9 @@
 			},
 			"alert.scss": {
 				"url": "components/alert.scss"
+			},
+			"line.scss": {
+				"url": "components/line.scss"
 			}, 
 			"form-component.scss": {
 				"url": "components/form-component.scss"

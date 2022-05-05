@@ -1,0 +1,48 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- LINE
+// ---------------------------------------------------------------------------------------------------------------------------
+// @component line
+// meant to target <hr>, probably does not work well with other elements atm
+
+// ----------------------------------------- COLOR
+@mixin template-line-color {
+	// Regular browsers
+	background-color: $color-neutral-darker;
+	// IE
+	color: $color-neutral-darker;
+}
+@mixin line-color-neutral {
+	@include template-line-color;
+}
+@mixin line-color-danger {
+	background-color: $color-danger-darker;
+	color: $color-danger-darker;
+}
+@mixin line-color-warning {
+	background-color: $color-warning-darker;
+	color: $color-warning-darker;
+}
+@mixin line-color-info {
+	background-color: $color-info-darker;
+	color: $color-info-darker;
+}
+@mixin line-color-success {
+	background-color: $color-success-darker;
+	color: $color-success-darker;
+}
+@mixin line-color-primary {
+	background-color: $color-primary-darker;
+	color: $color-primary-darker;
+}
+@mixin line-color-secondary {
+	background-color: $color-secondary-darker;
+	color: $color-secondary-darker;
+}
+
+// ----------------------------------------- VARIANT
+@mixin line-variant-default {
+	border: none;
+	height: 1px;
+	width: 100%;
+	@include line-color-neutral;
+}
