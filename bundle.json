@@ -10,11 +10,22 @@
 			},
 			"spacing.scss": {
 				"url": "variables/spacing.scss"
-			} 
+			}
 		}, 
+		"patterns": {
+			"menu.scss": {
+				"url": "patterns/menu.scss"
+			}
+		},
 		"components": {
 			"button.scss": {
 				"url": "components/button.scss"
+			}, 
+			"grid.scss": {
+				"url": "components/grid.scss"
+			},
+			"alert.scss": {
+				"url": "components/alert.scss"
 			}, 
 			"form-component.scss": {
 				"url": "components/form-component.scss"

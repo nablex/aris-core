@@ -1,0 +1,133 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- MENU
+// ---------------------------------------------------------------------------------------------------------------------------
+// @pattern menu
+// a special case of a grid, it is assumed that any is-menu also has is-grid-row
+// reset some defaults that a ul has if it acts as a grid row
+ul.is-grid-row, ul.is-menu {
+	padding: 0;
+	margin: 0;
+	> li {
+		list-style: none;
+	}
+}
+// ----------------------------------------- VARIANTS
+$menu-top-background-color: $color-body;
+
+// the top menu is mainly used at the top of a web application
+@mixin menu-variant-toolbar {
+	background-color: $menu-top-background-color;
+	// all columns must be relative to allow for absolute positioning
+	.is-grid-column {
+		position: relative;
+		// the content (usually a button) should take up the full available width
+		> * {
+			width: 100%;
+			// center content without specifically knowing whether it's flexed or not
+			text-align: center;
+			justify-content: center;
+		}
+		&:hover {
+			// revert to flex display when hovering
+			> .is-grid-row {
+				display: flex;
+			}
+		}
+	}
+	.is-grid-row {
+		display: none;
+		padding: 0;
+	}
+	> .is-grid-column {
+		> .is-grid-row {
+			// make sure we elevate it above most other things
+			z-index: 10;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			// the first level needs to be positioned at the bottom, all the other levels on the right
+			.is-grid-row {
+				top: 0;
+				left: 100%;
+				position: absolute;
+			}
+		}
+
+		// we assume the buttons (or whatever) in the visible row are right next to one another, we don't want a radius on that
+		// we are not sure at this point if you are using border radius at all
+		// but it you are, we only want a clean radius on the left most and right most buttons, the intermediate buttons should not have a radius
+		&:not(:first-child):not(:last-child) {
+			> .is-button {
+				border-radius: 0;
+			}
+		}
+		&:first-child {
+			> .is-button {
+				border-radius: $border-radius 0 0 $border-radius;
+			}
+		}
+		&:last-child {
+			> .is-button {
+				border-radius: 0 $border-radius $border-radius 0;
+			}
+		}
+		// for each intermediate child, we want to remove one border so they don't pile up (again, you might not be using borders at all)
+		&:not(:last-child) {
+			> .is-button {
+				border-right: none;
+			}
+		}
+
+		> .is-grid-row {
+			// the first layer is horizontal and permanently visible
+			// the second layer is a pop-down from the first one, so we want the border radiuses on the top entry to be invisible
+			> .is-grid-column {
+				&:not(:last-child) {
+					> .is-button {
+						border-radius: 0;
+					}
+				}
+				// from layer 3 onwards, we keep opening to the right
+				.is-grid-column {
+					&:not(:first-child):not(:last-child) {
+						> .is-button {
+							border-radius: 0;
+						}
+					}
+					// if we are first _and_ last
+					&:first-child:last-child {
+						> .is-button {
+							border-radius: 0 $border-radius $border-radius 0;
+						}
+					}
+					&:first-child:not(:last-child) {
+						> .is-button {
+							border-radius: 0 $border-radius 0 0;
+						}
+					}
+				}
+			}
+			// this is the same for level 2 onwards
+			.is-grid-column {
+				&:last-child {
+					> .is-button {
+						border-radius: 0 0 $border-radius $border-radius;
+					}
+				}
+				&:not(:last-child) {
+					> .is-button {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin menu-variant-sidebar {
+	// TODO: sidebar on the left
+}
+
+@mixin menu-variant-floating {
+	// TODO: a floating menu like in a wiki article
+}

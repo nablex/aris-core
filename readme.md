@@ -228,3 +228,14 @@ At this point the user can create a new directive border.
 .is-button.is-primary {
 	@include border-heavy;
 }
+
+# Themes
+
+Themes should be allowed to override mixins. For instance if a particular theme wants inverse buttons to have a different shading on hover, they should be able to target those effects.
+
+# Patterns vs components
+
+A component is meant to have dimensions and variants, allowing you to customize by adding new dimensions.
+In general a component has a pretty flat css structure, meaning it deals mostly with itself.
+
+A pattern usually only has variants as it generally has much more complex css, for example a top menu will require a lot of nested css to make it work well. This goes beyond the scope and goal of dimensions.

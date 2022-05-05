@@ -1,0 +1,255 @@
+
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- GRID-ROW
+// ---------------------------------------------------------------------------------------------------------------------------
+// @component grid-row
+// the row inside a grid
+// ----------------------------------------- LAYOUT
+@mixin template-grid-row-layout {
+	display: flex;
+	flex-direction: row;
+}
+@mixin grid-row-layout-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+@mixin grid-row-layout-vertical {
+	display: flex;
+	flex-direction: column;
+}
+@mixin grid-row-layout-vertical-reverse {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+// ----------------------------------------- WRAPPING
+@mixin template-grid-row-wrap {
+	flex-wrap: nowrap;
+}
+@mixin grid-row-wrap-active {
+	flex-wrap: wrap;
+}
+@mixin grid-row-wrap-reverse {
+	flex-wrap: wrap-reverse;
+}
+
+// ----------------------------------------- JUSTIFICATION
+@mixin template-grid-row-justify {
+	justify-content: flex-start;
+}
+@mixin grid-row-justify-end {
+	justify-content: flex-end;
+}
+@mixin grid-row-justify-center {
+	justify-content: center;
+}
+@mixin grid-row-justify-space-between {
+	justify-content: space-between;
+}
+@mixin grid-row-justify-space-around {
+	justify-content: space-around;
+}
+@mixin grid-row-justify-space-evenly {
+	justify-content: space-evenly;
+}
+
+// ----------------------------------------- ALIGNMENT
+@mixin template-grid-row-align {
+	align-items: stretch;
+}
+@mixin grid-row-align-start {
+	align-items: flex-start;
+}
+@mixin grid-row-align-end {
+	align-items: flex-end;
+}
+@mixin grid-row-align-center {
+	align-items: center;
+}
+@mixin grid-row-align-baseline {
+	align-items: baseline;
+}
+
+// ----------------------------------------- ROW-GAP SPACING
+@mixin template-grid-row-row-gap {
+	row-gap: 0;
+	// we assume multiple rows are after one another, however we don't want to enforce a margin-bottom on the last row, so instead we add a margin-top to the next row (if any)
+	+ .is-grid-row {
+		margin-top: 0;
+	}
+}
+@mixin grid-row-row-gap-none {
+	@include template-grid-row-row-gap;
+}
+@mixin grid-row-row-gap-xsmall {
+	row-gap: $spacing-scale-xsmall;
+	+ .is-grid-row {
+		margin-top: $spacing-scale-xsmall;
+	}
+}
+@mixin grid-row-row-gap-small {
+	row-gap: $spacing-scale-small;
+	+ .is-grid-row {
+		margin-top: $spacing-scale-small;
+	}
+}
+@mixin grid-row-row-gap-medium {
+	row-gap: $spacing-scale-medium;
+	+ .is-grid-row {
+		margin-top: $spacing-scale-medium;
+	}
+}
+@mixin grid-row-row-gap-large {
+	row-gap: $spacing-scale-large;
+	+ .is-grid-row {
+		margin-top: $spacing-scale-large;
+	}
+}
+@mixin grid-row-row-gap-xlarge {
+	row-gap: $spacing-scale-xlarge;
+	+ .is-grid-row {
+		margin-top: $spacing-scale-xlarge;
+	}
+}
+
+// ----------------------------------------- COLUMN-GAP SPACING
+@mixin template-grid-row-column-gap {
+	column-gap: 0;
+	padding: 0;
+}
+@mixin grid-row-column-gap-none {
+	@include template-grid-row-column-gap;
+}
+@mixin grid-row-column-gap-xsmall {
+	column-gap: $spacing-scale-xsmall;
+	padding: 0 $spacing-scale-xsmall;
+}
+@mixin grid-row-column-gap-small {
+	column-gap: $spacing-scale-small;
+	padding: 0 $spacing-scale-small;
+}
+@mixin grid-row-column-gap-medium {
+	column-gap: $spacing-scale-medium;
+	padding: 0 $spacing-scale-medium;
+}
+@mixin grid-row-column-gap-large {
+	column-gap: $spacing-scale-large;
+	padding: 0 $spacing-scale-large;
+}
+@mixin grid-row-column-gap-xlarge {
+	column-gap: $spacing-scale-xlarge;
+	padding: 0 $spacing-scale-xlarge;
+}
+
+// ----------------------------------------- VARIANTS
+// a relatively neutral grid
+@mixin grid-row-variant-default {
+	@include template-grid-row-layout;
+	@include template-grid-row-wrap;
+	@include template-grid-row-justify;
+	@include template-grid-row-align;
+}
+
+// a card approach where each cell is a card, this is often used in dashboards
+// sometimes you have a root grid (e.g. root page), but in one particular cell you want to route another grid (another page)
+// you don't want to have the margin applied at both levels, the root row should be a plain one then, the embedded can be a card container
+// at the page/grid level you probably want to configure a "default" variant for each row which is applied unless a specific variant is indicated for a given row
+// it should be possible to send along a particular default variant to a page when rendering it, in most cases the included page should itself be a card container (because it is likely just an embedded page for reuse)
+// in some cases however, you might want to render a page within the content of a cell (or e.g. a table with detail view) and at that point you don't want the card container styling
+@mixin grid-row-variant-cards {
+	@include grid-row-row-gap-medium;
+	@include grid-row-column-gap-medium;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- GRID-COLUMN
+// ---------------------------------------------------------------------------------------------------------------------------
+// @component grid-column
+// the column inside a grid
+// ----------------------------------------- ALIGN
+@mixin template-grid-column-align {
+	align-self: auto;
+}
+@mixin grid-column-align-start {
+	align-self: flex-start;
+}
+@mixin grid-column-align-end {
+	align-self: flex-end;
+}
+@mixin grid-column-align-center {
+	align-self: center;
+}
+@mixin grid-column-align-baseline {
+	align-self: baseline;
+}
+@mixin grid-column-align-stretch {
+	align-self: stretch;
+}
+
+// ----------------------------------------- COLOR
+@mixin template-grid-column-color {
+	background-color: $color-background;
+}
+@mixin grid-column-color-basic {
+	background-color: $color-background;
+}
+@mixin grid-column-color-none {
+	background-color: transparent;
+}
+@mixin grid-column-color-background {
+	background-color: $color-body;
+}
+
+// ----------------------------------------- BORDER
+@mixin template-grid-column-border {
+	border-radius: 0rem;
+	border-width: 0px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: none;
+}
+@mixin grid-column-border-basic {
+	border-radius: $border-radius;
+	border-width: 1px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: none;
+}
+@mixin grid-column-border-shadow {
+	border-radius: $border-radius;
+	border-width: 0px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: 0px 1px 3px $color-neutral-dark;
+}
+
+// ----------------------------------------- SPACING
+@mixin template-grid-column-spacing {
+	padding: 0;
+}
+@mixin grid-column-spacing-xsmall {
+	padding: $spacing-scale-xsmall;
+}
+@mixin grid-column-spacing-small {
+	padding: $spacing-scale-small;
+}
+@mixin grid-column-spacing-medium {
+	padding: $spacing-scale-medium;
+}
+@mixin grid-column-spacing-large {
+	padding: $spacing-scale-large;
+}
+@mixin grid-column-spacing-xlarge {
+	padding: $spacing-scale-xlarge;
+}
+
+// ----------------------------------------- VARIANTS
+@mixin grid-column-variant-default {
+	// nothing of note
+}
+@mixin grid-column-variant-card {
+	@include grid-column-border-shadow;
+	@include grid-column-spacing-medium;
+}
+
+

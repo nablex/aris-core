@@ -1,0 +1,138 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- ALERT
+// ---------------------------------------------------------------------------------------------------------------------------
+// @component alert
+// an alert is assumed to be one of these:
+// <div>some text</div>
+// <div><span class="is-icon"></span></div>
+// <div><span class="is-label"></span></div>
+// <div><span class="is-icon"></span><span class="is-label"></span></div>
+
+// ----------------------------------------- BORDER
+
+@mixin template-alert-border {
+	border-radius: $border-radius;
+	border-width: 1px;
+	border-style: solid;
+}
+@mixin alert-border-basic {
+	@include template-alert-border;
+}
+@mixin alert-border-underline {
+	border-radius: 0;
+	border-width: 2px;
+	border-style: none none solid none;
+}
+@mixin alert-border-none {
+	border-radius: $border-radius;
+	border-width: 0px;
+	border-style: solid;
+}
+
+// ----------------------------------------- COLOR
+@mixin template-alert-color {
+	background-color: $color-neutral-lighter;
+	border-color: $color-neutral-darker;
+	color: $color-neutral-darker;
+}
+@mixin alert-color-neutral {
+	@include template-alert-color;
+}
+@mixin alert-color-danger {
+	background-color: $color-danger-lightest;
+	border-color: $color-danger-darker;
+	color: $color-danger-darker;
+}
+@mixin alert-color-warning {
+	background-color: $color-warning-lightest;
+	border-color: $color-warning-darker;
+	color: $color-warning-darker;
+}
+@mixin alert-color-info {
+	background-color: $color-info-lightest;
+	border-color: $color-info-darker;
+	color: $color-info-darker;
+}
+@mixin alert-color-success {
+	background-color: $color-success-lightest;
+	border-color: $color-success-darker;
+	color: $color-success-darker;
+}
+@mixin alert-color-primary {
+	background-color: $color-primary-lightest;
+	border-color: $color-primary-darker;
+	color: $color-primary-darker;
+}
+@mixin alert-color-secondary {
+	background-color: $color-secondary-lightest;
+	border-color: $color-secondary-darker;
+	color: $color-secondary-darker;
+}
+
+// ----------------------------------------- SIZE
+@mixin template-alert-size {
+	padding: $spacing-scale-medium;
+	font-size: $font-size-medium;
+	column-gap: $spacing-scale-small;
+}
+// no padding etc
+@mixin alert-size-xsmall {
+	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
+	font-size: $font-size-xsmall;
+	column-gap: $spacing-scale-xxsmall;
+}
+@mixin alert-size-small {
+	padding: $spacing-scale-xsmall $spacing-scale-small;
+	font-size: $font-size-small;
+	column-gap: $spacing-scale-xsmall;
+}
+@mixin alert-size-medium {
+	@include template-alert-size;
+}
+@mixin alert-size-large {
+	padding: $spacing-scale-medium $spacing-scale-large;
+	font-size: $font-size-large;
+	column-gap: $spacing-scale-medium;
+}
+@mixin alert-size-xlarge {
+	padding: $spacing-scale-large $spacing-scale-xlarge;
+	font-size: $font-size-xlarge;
+	column-gap: $spacing-scale-large;
+}
+
+// ----------------------------------------- SPACING
+@mixin template-alert-spacing {
+	margin: $spacing-scale-medium;
+}
+@mixin alert-spacing-default {
+	@include template-alert-spacing;
+}
+@mixin alert-spacing-none {
+	margin: 0;
+}
+
+// ----------------------------------------- ORDER
+
+// reverse the order to have the icon after the label
+@mixin alert-order-reverse {
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
+@mixin alert-order-normal {
+	display: inline-flex;
+	flex-direction: row;
+}
+
+@mixin alert-variant-default {
+	width: 100%;
+	@include alert-spacing-default;
+	@include alert-order-normal;
+	@include alert-size-medium;
+	@include alert-border-basic;
+	@include alert-color-neutral;
+
+	// either way you space, you don't want to double up
+	+ .is-alert {
+		margin-top: 0;
+	}
+}
