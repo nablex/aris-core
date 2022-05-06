@@ -29,7 +29,10 @@
 			},
 			"line.scss": {
 				"url": "components/line.scss"
-			}, 
+			},
+			"badge.scss": {
+				"url": "components/badge.scss"
+			},
 			"form-component.scss": {
 				"url": "components/form-component.scss"
 			}, 

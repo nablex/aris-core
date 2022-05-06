@@ -1,0 +1,19 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- BADGE
+// ---------------------------------------------------------------------------------------------------------------------------
+// @extension badge button
+
+@mixin badge-variant-default {
+	@include button-fix-icon;
+	
+	@include button-font-normal;
+	@include button-order-normal;
+	@include button-size-xsmall;
+	@include button-border-basic;
+	@include button-color-neutral;
+}
+
+// if a parent has a badge, it might need positioning to position the badge
+.has-badge {
+	position: relative;
+}

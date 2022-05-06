@@ -28,12 +28,21 @@
 	border-width: 0px;
 	border-style: solid;
 }
+@mixin button-border-pill {
+	border-radius: $border-radius * 3;
+	border-width: 1px;
+	border-style: solid;
+}
 
 // ----------------------------------------- SIZES
 @mixin template-button-size {
 	padding: $spacing-scale-small $spacing-scale-medium;
 	font-size: $font-size-medium;
 	column-gap: $spacing-scale-small;
+	// pills need more padding
+	&.is-border-pill {
+		padding: $spacing-scale-small $spacing-scale-large;
+	}
 }
 // no padding etc
 @mixin button-size-plain {
@@ -45,11 +54,18 @@
 	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
 	font-size: $font-size-xsmall;
 	column-gap: $spacing-scale-xxsmall;
+	// pills need more padding
+	&.is-border-pill {
+		padding: $spacing-scale-xxsmall $spacing-scale-small;
+	}
 }
 @mixin button-size-small {
 	padding: $spacing-scale-xsmall $spacing-scale-small;
 	font-size: $font-size-small;
 	column-gap: $spacing-scale-xsmall;
+	&.is-border-pill {
+		padding: $spacing-scale-xsmall $spacing-scale-medium;
+	}
 }
 @mixin button-size-medium {
 	@include template-button-size;
@@ -58,11 +74,17 @@
 	padding: $spacing-scale-medium $spacing-scale-large;
 	font-size: $font-size-large;
 	column-gap: $spacing-scale-medium;
+	&.is-border-pill {
+		padding: $spacing-scale-medium $spacing-scale-xlarge;
+	}
 }
 @mixin button-size-xlarge {
 	padding: $spacing-scale-large $spacing-scale-xlarge;
 	font-size: $font-size-xlarge;
 	column-gap: $spacing-scale-large;
+	&.is-border-pill {
+		padding: $spacing-scale-large $spacing-scale-xxlarge;
+	}
 }
 
 // ----------------------------------------- COLORS
@@ -71,7 +93,8 @@
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-darker;
-	&:hover {
+	// we only want this to affect the buttons, not the extensions
+	&.is-button:hover {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-darkest;
@@ -84,7 +107,7 @@
 	background-color: $color-primary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-primary-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-primary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-primary-dark;
@@ -94,7 +117,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-primary-dark;
 	border-color: $color-primary-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-primary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-primary-base;
@@ -104,7 +127,7 @@
 	background-color: $color-secondary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-secondary-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-secondary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-secondary-dark;
@@ -114,7 +137,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-secondary-dark;
 	border-color: $color-secondary-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-secondary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-secondary-base;
@@ -124,7 +147,7 @@
 	background-color: transparent;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-dark;
@@ -134,7 +157,7 @@
 	background-color: $color-danger-base;
 	color: $color-neutral-lightest;
 	border-color: $color-danger-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-danger-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-danger-dark;
@@ -144,7 +167,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-danger-dark;
 	border-color: $color-danger-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-danger-base;
 		color: $color-neutral-lightest;
 		border-color: $color-neutral-base;
@@ -154,7 +177,7 @@
 	background-color: $color-warning-base;
 	color: $color-neutral-lightest;
 	border-color: $color-warning-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-warning-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-warning-dark;
@@ -164,7 +187,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-warning-dark;
 	border-color: $color-warning-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-warning-base;
 		color: $color-neutral-lightest;
 		border-color: $color-warning-base;
@@ -174,7 +197,7 @@
 	background-color: $color-info-base;
 	color: $color-neutral-lightest;
 	border-color: $color-info-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-info-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-info-dark;
@@ -184,7 +207,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-info-dark;
 	border-color: $color-info-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-info-base;
 		color: $color-neutral-lightest;
 		border-color: $color-info-base;
@@ -194,7 +217,7 @@
 	background-color: $color-success-base;
 	color: $color-neutral-lightest;
 	border-color: $color-success-base;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-success-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-success-dark;
@@ -204,7 +227,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-success-dark;
 	border-color: $color-success-dark;
-	&:hover {
+	&.is-button:hover {
 		background-color: $color-success-base;
 		color: $color-neutral-lightest;
 		border-color: $color-success-base;
@@ -216,11 +239,23 @@ $button-link-color: $color-primary-darker;
 	background-color: transparent;
 	color: $color-primary-darker;
 	border-color: transparent;
-	&:hover {
+	&.is-button:hover {
 		background-color: transparent;
 		color: darken($button-link-color, 10%);
 		border-color: transparent;
 	}
+}
+
+// ----------------------------------------- POSITIONING
+@mixin template-button-position {
+	position: static;
+	top: 0;
+	left: 0;
+}
+@mixin button-position-top-right {
+	position: absolute;
+	top: -0.5rem;
+	left: 90%;
 }
 
 // ----------------------------------------- FONTS
@@ -238,6 +273,11 @@ $button-link-color: $color-primary-darker;
 	text-decoration: underline;
 	font-style: normal;
 }
+@mixin button-font-emphasis {
+	font-weight: bold;
+	text-decoration: none;
+	font-style: normal;
+}
 
 // ----------------------------------------- ORDER
 
@@ -253,10 +293,22 @@ $button-link-color: $color-primary-darker;
 	flex-direction: row;
 }
 
+// some tiny corrections
+@mixin button-fix-icon {
+	> .is-icon {
+		line-height: 100%;
+	}
+	> .is-text {
+		flex-grow: 1;
+	}
+}
+
 // ----------------------------------------- VARIANTS
 
 @mixin button-variant-default {
 	cursor: pointer;
+	@include button-fix-icon;
+	
 	@include button-font-normal;
 	@include button-order-normal;
 	@include button-size-medium;
@@ -313,12 +365,6 @@ $button-link-color: $color-primary-darker;
 	@include button-color-success-outline;
 }
 
-// some tiny corrections
-.is-button {
-	> .is-icon {
-		line-height: 100%;
-	}
-	> .is-text {
-		flex-grow: 1;
-	}
+.has-button {
+	position: relative;
 }
