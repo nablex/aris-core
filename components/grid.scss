@@ -115,30 +115,24 @@
 // ----------------------------------------- COLUMN-GAP SPACING
 @mixin template-grid-row-column-gap {
 	column-gap: 0;
-	padding: 0;
 }
 @mixin grid-row-column-gap-none {
 	@include template-grid-row-column-gap;
 }
 @mixin grid-row-column-gap-xsmall {
 	column-gap: $spacing-scale-xsmall;
-	padding: 0 $spacing-scale-xsmall;
 }
 @mixin grid-row-column-gap-small {
 	column-gap: $spacing-scale-small;
-	padding: 0 $spacing-scale-small;
 }
 @mixin grid-row-column-gap-medium {
 	column-gap: $spacing-scale-medium;
-	padding: 0 $spacing-scale-medium;
 }
 @mixin grid-row-column-gap-large {
 	column-gap: $spacing-scale-large;
-	padding: 0 $spacing-scale-large;
 }
 @mixin grid-row-column-gap-xlarge {
 	column-gap: $spacing-scale-xlarge;
-	padding: 0 $spacing-scale-xlarge;
 }
 
 // ----------------------------------------- VARIANTS
