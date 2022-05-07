@@ -33,6 +33,9 @@
 			"badge.scss": {
 				"url": "components/badge.scss"
 			},
+			"tooltip.scss": {
+				"url": "components/tooltip.scss"
+			},
 			"form-component.scss": {
 				"url": "components/form-component.scss"
 			}, 

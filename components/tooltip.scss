@@ -1,0 +1,257 @@
+// ---------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------- TOOLTIP
+// ---------------------------------------------------------------------------------------------------------------------------
+// @extension tooltip button
+
+// make sure we can offset to the given element
+.has-tooltip {
+	position: relative;
+	&:hover {
+		> .is-tooltip {
+			transition: opacity 300ms, visibility 300ms;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+@mixin template-tooltip-width {
+	width: calc(#{$spacing-scale-medium} * 6);
+}
+
+@mixin tooltip-width-small {
+	@include template-tooltip-width;
+}
+@mixin tooltip-width-medium {
+	width: calc(#{$spacing-scale-medium} * 12);
+}
+@mixin tooltip-width-large {
+	width: calc(#{$spacing-scale-medium} * 18);
+}
+
+@mixin tooltip-position-top {
+	bottom: calc(100% + 5px);
+	left: 50%;
+	&:after {
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-color: $color-neutral-darkest transparent transparent transparent;
+	}
+	&.is-color-primary:after {
+		border-color: $color-primary-base transparent transparent transparent;
+	}
+	&.is-color-primary-outline:after {
+		border-color: $color-primary-dark transparent transparent transparent;
+	}
+	&.is-color-secondary:after {
+		border-color: $color-secondary-base transparent transparent transparent;
+	}
+	&.is-color-secondary-outline:after {
+		border-color: $color-secondary-dark transparent transparent transparent;
+	}
+	&.is-color-danger:after {
+		border-color: $color-danger-base transparent transparent transparent;
+	}
+	&.is-color-danger-outline:after {
+		border-color: $color-danger-dark transparent transparent transparent;
+	}
+	&.is-color-success:after {
+		border-color: $color-success-base transparent transparent transparent;
+	}
+	&.is-color-success-outline:after {
+		border-color: $color-success-dark transparent transparent transparent;
+	}
+	&.is-color-info:after {
+		border-color: $color-info-base transparent transparent transparent;
+	}
+	&.is-color-info-outline:after {
+		border-color: $color-info-dark transparent transparent transparent;
+	}
+	&.is-color-warning:after {
+		border-color: $color-warning-base transparent transparent transparent;
+	}
+	&.is-color-warning-outline:after {
+		border-color: $color-warning-dark transparent transparent transparent;
+	}
+	// based on default sizing
+	margin-left: calc(0px - (#{$spacing-scale-medium} * 3));
+	&.is-width-medium {
+		margin-left: calc(0px - (#{$spacing-scale-medium} * 6))
+	}
+	&.is-width-large {
+		margin-left: calc(0px - (#{$spacing-scale-medium} * 9))
+	}
+}
+
+@mixin tooltip-position-bottom {
+	top: calc(100% + 5px);
+	left: 50%;
+	&:after {
+		bottom: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-color: transparent transparent $color-neutral-darkest transparent;
+	}
+	&.is-color-primary:after {
+		border-color: transparent transparent $color-primary-base transparent;
+	}
+	&.is-color-primary-outline:after {
+		border-color: transparent transparent $color-primary-dark transparent;
+	}
+	&.is-color-secondary:after {
+		border-color: transparent transparent $color-secondary-base transparent;
+	}
+	&.is-color-secondary-outline:after {
+		border-color: transparent transparent $color-secondary-dark transparent;
+	}
+	&.is-color-danger:after {
+		border-color: transparent transparent $color-danger-base transparent;
+	}
+	&.is-color-danger-outline:after {
+		border-color: transparent transparent $color-danger-dark transparent;
+	}
+	&.is-color-success:after {
+		border-color: transparent transparent $color-success-base transparent;
+	}
+	&.is-color-success-outline:after {
+		border-color: transparent transparent $color-success-dark transparent;
+	}
+	&.is-color-info:after {
+		border-color: transparent transparent $color-info-base transparent;
+	}
+	&.is-color-info-outline:after {
+		border-color: transparent transparent $color-info-dark transparent;
+	}
+	&.is-color-warning:after {
+		border-color: transparent transparent $color-warning-base transparent;
+	}
+	&.is-color-warning-outline:after {
+		border-color: transparent transparent $color-warning-dark transparent;
+	}
+	// based on default sizing
+	margin-left: calc(0px - (#{$spacing-scale-medium} * 3));
+	&.is-width-medium {
+		margin-left: calc(0px - (#{$spacing-scale-medium} * 6))
+	}
+	&.is-width-large {
+		margin-left: calc(0px - (#{$spacing-scale-medium} * 9))
+	}
+}
+
+// Note: left and right positioning has a problem
+// You generally choose a width for your tooltip, which makes it predictable allowing us to position it at the center in the top and bottom case
+// however you don't generally choose the height, so we don't know how high the tooltip is
+// if say the tooltip is 50px high and you attach it to a 25px high button, if you centered the arrow on the 50px, it would actually point to the bottom of the button
+// currently the solution is simply not to center the arrow itself, but point it at the top, presuming at least _some_ height on the element it is attached to
+// so instead of the after being positioned at top 50%, we put it at top 11px for now
+@mixin tooltip-position-right {
+	top: 13%;
+	left: calc(100% + 5px);
+	&:after {
+		top: 11px;
+		right: 100%;
+		margin-top: -5px;
+		border-color: transparent $color-neutral-darkest transparent transparent;
+	}
+	&.is-color-primary:after {
+		border-color: transparent $color-primary-base transparent transparent;
+	}
+	&.is-color-primary-outline:after {
+		border-color: transparent $color-primary-dark transparent transparent;
+	}
+	&.is-color-secondary:after {
+		border-color: transparent $color-secondary-base transparent transparent;
+	}
+	&.is-color-secondary-outline:after {
+		border-color: transparent $color-secondary-dark transparent transparent;
+	}
+	&.is-color-danger:after {
+		border-color: transparent $color-danger-base transparent transparent;
+	}
+	&.is-color-danger-outline:after {
+		border-color: transparent $color-danger-dark transparent transparent;
+	}
+	&.is-color-success:after {
+		border-color: transparent $color-success-base transparent transparent;
+	}
+	&.is-color-success-outline:after {
+		border-color: transparent $color-success-dark transparent transparent;
+	}
+	&.is-color-info:after {
+		border-color: transparent $color-info-base transparent transparent;
+	}
+	&.is-color-info-outline:after {
+		border-color: transparent $color-info-dark transparent transparent;
+	}
+	&.is-color-warning:after {
+		border-color: transparent $color-warning-base transparent transparent;
+	}
+	&.is-color-warning-outline:after {
+		border-color: transparent $color-warning-dark transparent transparent;
+	}
+}
+@mixin tooltip-position-left {
+	top: 13%;
+	right: calc(100% + 5px);
+	&:after {
+		top: 11px;
+		left: 100%;
+		margin-top: -5px;
+		border-color: transparent transparent transparent $color-neutral-darkest;
+	}
+	&.is-color-primary:after {
+		border-color: transparent transparent transparent $color-primary-base;
+	}
+	&.is-color-primary-outline:after {
+		border-color: transparent transparent transparent $color-primary-dark;
+	}
+	&.is-color-secondary:after {
+		border-color: transparent transparent transparent $color-secondary-base;
+	}
+	&.is-color-secondary-outline:after {
+		border-color: transparent transparent transparent $color-secondary-dark;
+	}
+	&.is-color-danger:after {
+		border-color: transparent transparent transparent $color-danger-base;
+	}
+	&.is-color-danger-outline:after {
+		border-color: transparent transparent transparent $color-danger-dark;
+	}
+	&.is-color-success:after {
+		border-color: transparent transparent transparent $color-success-base;
+	}
+	&.is-color-success-outline:after {
+		border-color: transparent transparent transparent $color-success-dark;
+	}
+	&.is-color-info:after {
+		border-color: transparent transparent transparent $color-info-base;
+	}
+	&.is-color-info-outline:after {
+		border-color: transparent transparent transparent $color-info-dark;
+	}
+	&.is-color-warning:after {
+		border-color: transparent transparent transparent $color-warning-base;
+	}
+	&.is-color-warning-outline:after {
+		border-color: transparent transparent transparent $color-warning-dark;
+	}
+}
+
+// we don't include a default position, there is too much to override (like the margins etc)
+@mixin tooltip-variant-default {
+	visibility: hidden;
+	opacity: 0;
+	z-index: 15;
+	position: absolute;
+	@include template-button-border;
+	@include button-size-small;
+	@include button-color-dark;
+	@include tooltip-width-small;
+	&:after {
+		content: ' ';
+		position: absolute;
+		border-width: 5px;
+		border-style: solid;
+	}
+}
