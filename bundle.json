@@ -12,11 +12,6 @@
 				"url": "variables/spacing.scss"
 			}
 		}, 
-		"patterns": {
-			"menu.scss": {
-				"url": "patterns/menu.scss"
-			}
-		},
 		"components": {
 			"button.scss": {
 				"url": "components/button.scss"
@@ -36,16 +31,32 @@
 			"tooltip.scss": {
 				"url": "components/tooltip.scss"
 			},
+			"typography.scss": {
+				"url": "components/typography.scss"
+			},
 			"form-component.scss": {
 				"url": "components/form-component.scss"
 			}, 
 			"form-text.scss": {
 				"url": "components/form-text.scss"
 			}
-		}, 
-		"mixins": {
-			"templates.scss": {
-				"url": "mixins/templates.scss"
+		},
+		"patterns": {
+			"menu.scss": {
+				"url": "patterns/menu.scss"
+			},
+			"modal.scss": {
+				"url": "patterns/modal.scss"
+			}
+		},
+		"web-components": {
+			"sidebar.scss": {
+				"url": "web-components/sidebar.scss"
+			}
+		},
+		"page-builder": {
+			"pages-overview.scss": {
+				"url": "page-builder/pages-overview.scss"
 			}
 		}
 	}

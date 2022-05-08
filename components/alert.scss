@@ -102,13 +102,13 @@
 
 // ----------------------------------------- SPACING
 @mixin template-alert-spacing {
-	margin: $spacing-scale-medium;
-}
-@mixin alert-spacing-default {
-	@include template-alert-spacing;
+	margin: 0;
 }
 @mixin alert-spacing-none {
 	margin: 0;
+}
+@mixin alert-spacing-medium {
+	margin: $spacing-scale-medium 0;
 }
 
 // ----------------------------------------- ORDER
@@ -125,7 +125,6 @@
 
 @mixin alert-variant-default {
 	width: 100%;
-	@include alert-spacing-default;
 	@include alert-order-normal;
 	@include alert-size-medium;
 	@include alert-border-basic;

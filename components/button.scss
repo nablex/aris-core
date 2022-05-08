@@ -53,7 +53,7 @@
 @mixin button-size-xsmall {
 	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
 	font-size: $font-size-xsmall;
-	column-gap: $spacing-scale-xxsmall;
+	column-gap: $spacing-scale-small;
 	// pills need more padding
 	&.is-border-pill {
 		padding: $spacing-scale-xxsmall $spacing-scale-small;
@@ -62,7 +62,7 @@
 @mixin button-size-small {
 	padding: $spacing-scale-xsmall $spacing-scale-small;
 	font-size: $font-size-small;
-	column-gap: $spacing-scale-xsmall;
+	column-gap: $spacing-scale-small;
 	&.is-border-pill {
 		padding: $spacing-scale-xsmall $spacing-scale-medium;
 	}
@@ -94,7 +94,7 @@
 	color: $color-neutral-darker;
 	border-color: $color-neutral-darker;
 	// we only want this to affect the buttons, not the extensions
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-darkest;
@@ -107,17 +107,17 @@
 	background-color: $color-primary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-primary-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-primary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-primary-dark;
 	}
 }
 @mixin button-color-primary-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-primary-dark;
-	border-color: $color-primary-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-primary-base;
+	border-color: $color-primary-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-primary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-primary-base;
@@ -127,17 +127,17 @@
 	background-color: $color-secondary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-secondary-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-secondary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-secondary-dark;
 	}
 }
 @mixin button-color-secondary-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-secondary-dark;
-	border-color: $color-secondary-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-secondary-base;
+	border-color: $color-secondary-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-secondary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-secondary-base;
@@ -147,47 +147,57 @@
 	background-color: transparent;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-dark;
+	}
+}
+@mixin button-color-transparent-light {
+	background-color: transparent;
+	color: $color-neutral-lighter;
+	border-color: $color-neutral-base;
+	&.is-button:hover, &.is-active {
+		background-color: $color-neutral-darker;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-light;
 	}
 }
 @mixin button-color-danger {
 	background-color: $color-danger-base;
 	color: $color-neutral-lightest;
 	border-color: $color-danger-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-danger-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-danger-dark;
 	}
 }
 @mixin button-color-danger-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-danger-dark;
-	border-color: $color-danger-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-danger-base;
+	border-color: $color-danger-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-danger-base;
 		color: $color-neutral-lightest;
-		border-color: $color-neutral-base;
+		border-color: $color-danger-base;
 	}
 }
 @mixin button-color-warning {
 	background-color: $color-warning-base;
 	color: $color-neutral-lightest;
 	border-color: $color-warning-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-warning-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-warning-dark;
 	}
 }
 @mixin button-color-warning-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-warning-dark;
-	border-color: $color-warning-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-warning-base;
+	border-color: $color-warning-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-warning-base;
 		color: $color-neutral-lightest;
 		border-color: $color-warning-base;
@@ -197,17 +207,17 @@
 	background-color: $color-info-base;
 	color: $color-neutral-lightest;
 	border-color: $color-info-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-info-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-info-dark;
 	}
 }
 @mixin button-color-info-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-info-dark;
-	border-color: $color-info-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-info-base;
+	border-color: $color-info-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-info-base;
 		color: $color-neutral-lightest;
 		border-color: $color-info-base;
@@ -217,17 +227,17 @@
 	background-color: $color-success-base;
 	color: $color-neutral-lightest;
 	border-color: $color-success-base;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-success-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-success-dark;
 	}
 }
 @mixin button-color-success-outline {
-	background-color: $color-neutral-lightest;
-	color: $color-success-dark;
-	border-color: $color-success-dark;
-	&.is-button:hover {
+	background-color: transparent;
+	color: $color-success-base;
+	border-color: $color-success-base;
+	&.is-button:hover, &.is-active {
 		background-color: $color-success-base;
 		color: $color-neutral-lightest;
 		border-color: $color-success-base;
@@ -239,7 +249,7 @@ $button-link-color: $color-primary-darker;
 	background-color: transparent;
 	color: $color-primary-darker;
 	border-color: transparent;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: transparent;
 		color: darken($button-link-color, 10%);
 		border-color: transparent;
@@ -250,7 +260,7 @@ $button-link-color: $color-primary-darker;
 	background-color: $color-neutral-darkest;
 	color: $color-neutral-lighter;
 	border-color: $color-neutral-darkest;
-	&.is-button:hover {
+	&.is-button:hover, &.is-active {
 		background-color: $color-neutral-darker;
 		color: $color-neutral-lightest;
 		border-color: $color-neutral-darker;
@@ -273,8 +283,9 @@ $button-link-color: $color-primary-darker;
 
 @mixin template-button-font {
 	font-weight: normal;
-	text-decoration: none;
+	text-decoration: inherit;
 	font-style: normal;
+	text-transform: inherit;
 }
 @mixin button-font-normal {
 	@include template-button-font;
@@ -298,19 +309,26 @@ $button-link-color: $color-primary-darker;
 @mixin button-order-reverse {
 	display: inline-flex;
 	flex-direction: row-reverse;
+	align-items: center;
 }
 @mixin button-order-normal {
 	display: inline-flex;
 	flex-direction: row;
+	align-items: center;
 }
 
 // some tiny corrections
 @mixin button-fix-icon {
 	> .is-icon {
+		// make sure it fills the max space and no bigger
+		max-height: 100%;
 		line-height: 100%;
+		// otherwise images etc do not register correctly width-wise
+		min-width: 1rem;
 	}
 	> .is-text {
 		flex-grow: 1;
+		white-space: nowrap;
 	}
 }
 
@@ -319,7 +337,6 @@ $button-link-color: $color-primary-darker;
 @mixin button-variant-default {
 	cursor: pointer;
 	@include button-fix-icon;
-	
 	@include button-font-normal;
 	@include button-order-normal;
 	@include button-size-medium;
@@ -344,6 +361,10 @@ $button-link-color: $color-primary-darker;
 @mixin button-variant-ghost {
 	@include button-border-none;
 	@include button-color-transparent;
+}
+@mixin button-variant-ghost-light {
+	@include button-border-none;
+	@include button-color-transparent-light;
 }
 @mixin button-variant-link {
 	@include button-size-plain;

@@ -1,0 +1,56 @@
+// @component h1
+@mixin h1-variant-default {
+	font-size: calc(#{$font-size-xlarge} + 1vw);
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+// @component h2
+@mixin h2-variant-default {
+	font-size: calc(#{$font-size-xlarge} + 0.5vw);
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+// @component h3
+@mixin h3-variant-default {
+	font-size: calc(#{$font-size-large} + 0.4vw);
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+// @component h4
+@mixin h4-variant-default {
+	font-size: calc(#{$font-size-medium} + 0.4vw);
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+// @component h5
+@mixin h5-variant-default {
+	font-size: calc(#{$font-size-medium} + 0.1vw);
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+// @component h6
+@mixin h6-variant-default {
+	font-size: calc(#{$font-size-medium});
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+
+// @component p
+@mixin p-variant-default {
+	font-size: $font-size-medium;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}

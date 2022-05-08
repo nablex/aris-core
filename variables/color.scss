@@ -62,11 +62,11 @@ $color-secondary-darkest: darken($color-secondary-base, 30%) !default;
 // -------- Neutral
 
 // @description A lighter variant of the neutral color of your application
-$color-neutral-light: lighten($color-neutral-base, 15%) !default;
+$color-neutral-light: lighten($color-neutral-base, 10%) !default;
 // @description A lighter variant of the neutral color of your application
-$color-neutral-lighter: lighten($color-neutral-base, 30%) !default;
+$color-neutral-lighter: lighten($color-neutral-base, 20%) !default;
 // @description A lighter variant of the neutral color of your application
-$color-neutral-lightest: lighten($color-neutral-base, 40%) !default;
+$color-neutral-lightest: lighten($color-neutral-base, 30%) !default;
 
 // @description A darker variant of the neutral color of your application
 $color-neutral-dark: darken($color-neutral-base, 15%) !default;
@@ -138,3 +138,4 @@ $color-info-dark: darken($color-info-base, 14%) !default;
 $color-info-darker: darken($color-info-dark, 14%) !default;
 // @description A darker variant of the info color of your application
 $color-info-darkest: darken($color-info-darker, 14%) !default;
+

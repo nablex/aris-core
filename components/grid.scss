@@ -237,9 +237,27 @@
 	padding: $spacing-scale-xlarge;
 }
 
+// ----------------------------------------- LAYOUT
+@mixin template-grid-column-layout {
+	display: flex;
+	flex-direction: column;
+}
+@mixin grid-column-layout-reverse {
+	display: flex;
+	flex-direction: column-reverse;
+}
+@mixin grid-column-layout-horizontal {
+	display: flex;
+	flex-direction: row;
+}
+@mixin grid-column-layout-horizontal-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
 // ----------------------------------------- VARIANTS
 @mixin grid-column-variant-default {
-	// nothing of note
+	@include template-grid-column-layout;
 }
 @mixin grid-column-variant-card {
 	@include grid-column-border-shadow;
