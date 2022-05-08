@@ -28,9 +28,9 @@ $border-radius: 0.25rem;
 
 // @description The default body color of the application
 // @priority 500
-$color-body: $color-neutral-lightest !default;
+$color-body: $color-neutral-lighter !default;
 // @description The default color used as a background in components where relevant
-$color-background: $color-neutral-lighter !default;
+$color-background: $color-neutral-lightest !default;
 
 // Apply the defaults to the application
 html:root, body {

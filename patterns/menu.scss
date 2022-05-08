@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- MENU
 // ---------------------------------------------------------------------------------------------------------------------------
-// @pattern menu
+// @extension menu grid-row
 // a special case of a grid, it is assumed that any is-menu also has is-grid-row
 // reset some defaults that a ul has if it acts as a grid row
 ul.is-grid-row, ul.is-menu {
@@ -14,9 +14,15 @@ ul.is-grid-row, ul.is-menu {
 // ----------------------------------------- VARIANTS
 $menu-top-background-color: $color-body;
 
+// same as grid-row
+@mixin menu-variant-default {
+	@include grid-row-layout-horizontal;
+	@include grid-row-justify-start;
+	@include grid-row-align-stretch;
+}
+
 // the top menu is mainly used at the top of a web application
 @mixin menu-variant-toolbar {
-	background-color: $menu-top-background-color;
 	// all columns must be relative to allow for absolute positioning
 	.is-grid-column {
 		justify-content: center;
@@ -61,12 +67,12 @@ $menu-top-background-color: $color-body;
 				border-radius: 0;
 			}
 		}
-		&:first-child {
+		&:first-child:not(:last-child) {
 			> .is-button {
 				border-radius: $border-radius 0 0 $border-radius;
 			}
 		}
-		&:last-child {
+		&:last-child:not(:first-child) {
 			> .is-button {
 				border-radius: 0 $border-radius $border-radius 0;
 			}
@@ -130,6 +136,13 @@ $menu-top-background-color: $color-body;
 @mixin menu-toolbar-modifier-dark {
 	background-color: $color-neutral-darkest; 
 }
+@mixin menu-toolbar-modifier-light {
+	background-color: $color-body; 
+	border-bottom: solid 1px $color-neutral-darker;
+}
+@mixin menu-toolbar-modifier-transparent {
+	background-color: transparent; 
+}
 @mixin menu-toolbar-modifier-warning-highlight {
 	.is-button {
 		&.is-active {
@@ -138,7 +151,7 @@ $menu-top-background-color: $color-body;
 		}
 		&:hover:not(.is-active) {
 			// retain the background color
-			background-color: $color-neutral-darkest;
+			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-warning-base;
@@ -158,7 +171,7 @@ $menu-top-background-color: $color-body;
 		}
 		&:hover:not(.is-active) {
 			// retain the background color
-			background-color: $color-neutral-darkest;
+			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-success-base;
@@ -178,7 +191,7 @@ $menu-top-background-color: $color-body;
 		}
 		&:hover:not(.is-active) {
 			// retain the background color
-			background-color: $color-neutral-darkest;
+			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-primary-base;
@@ -220,4 +233,13 @@ $menu-top-background-color: $color-body;
 
 @mixin menu-variant-floating {
 	// TODO: a floating menu like in a wiki article
+}
+
+.has-toolbar {
+	position: relative;
+}
+@mixin menu-toolbar-modifier-embedded {
+	position: absolute;
+	right: 0;
+	top: 0;
 }

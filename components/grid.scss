@@ -9,7 +9,11 @@
 	display: flex;
 	flex-direction: row;
 }
-@mixin grid-row-layout-reverse {
+@mixin grid-row-layout-horizontal {
+	display: flex;
+	flex-direction: row;
+}
+@mixin grid-row-layout-horizontal-reverse {
 	display: flex;
 	flex-direction: row-reverse;
 }
@@ -20,6 +24,87 @@
 @mixin grid-row-layout-vertical-reverse {
 	display: flex;
 	flex-direction: column-reverse;
+}
+
+// ----------------------------------------- COLOR
+@mixin template-grid-row-color {
+	background-color: $color-background;
+}
+@mixin grid-row-color-basic {
+	background-color: $color-background;
+}
+@mixin grid-row-color-background {
+	background-color: $color-body;
+}
+
+// ----------------------------------------- BORDER
+@mixin template-grid-row-border {
+	border-radius: 0rem;
+	border-width: 0px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: none;
+}
+@mixin grid-row-border-basic {
+	border-radius: $border-radius;
+	border-width: 1px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: none;
+}
+@mixin grid-row-border-shadow {
+	border-radius: $border-radius;
+	border-width: 0px;
+	border-color: $color-neutral-darkest;
+	border-style: solid;
+	box-shadow: 0px 1px 3px $color-neutral-dark;
+}
+
+// ----------------------------------------- WIDTH
+@mixin template-grid-row-width {
+	width: unset;
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-width-small {
+	width: calc(#{$font-size-medium} * 64);
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-width-medium {
+	width: calc(#{$font-size-medium} * 96);
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-width-large {
+	width: calc(#{$font-size-medium} * 128);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// ----------------------------------------- CONTENT-WIDTH
+@mixin template-grid-row-content-width {
+	width: unset;
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-content-width-small {
+	padding-left: calc(50% - (#{$font-size-medium} * 32));
+	padding-right: calc(50% - (#{$font-size-medium} * 32));
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-content-width-medium {
+	padding-left: calc(50% - (#{$font-size-medium} * 48));
+	padding-right: calc(50% - (#{$font-size-medium} * 48));
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin grid-row-content-width-large {
+	padding-left: calc(50% - (#{$font-size-medium} * 64));
+	padding-right: calc(50% - (#{$font-size-medium} * 64));
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // ----------------------------------------- WRAPPING
@@ -35,6 +120,9 @@
 
 // ----------------------------------------- JUSTIFICATION
 @mixin template-grid-row-justify {
+	justify-content: flex-start;
+}
+@mixin grid-row-justify-start {
 	justify-content: flex-start;
 }
 @mixin grid-row-justify-end {
@@ -55,6 +143,9 @@
 
 // ----------------------------------------- ALIGNMENT
 @mixin template-grid-row-align {
+	align-items: stretch;
+}
+@mixin grid-row-align-stretch {
 	align-items: stretch;
 }
 @mixin grid-row-align-start {
@@ -135,13 +226,52 @@
 	column-gap: $spacing-scale-xlarge;
 }
 
+// ----------------------------------------- ALIGN SELF
+@mixin template-grid-row-align-self {
+	align-self: auto;
+}
+@mixin grid-row-align-self-start {
+	align-self: flex-start;
+}
+@mixin grid-row-align-self-end {
+	align-self: flex-end;
+}
+@mixin grid-row-align-self-center {
+	align-self: center;
+}
+@mixin grid-row-align-self-baseline {
+	align-self: baseline;
+}
+@mixin grid-row-align-self-stretch {
+	align-self: stretch;
+}
+
+// ----------------------------------------- SPACING
+@mixin template-grid-row-spacing {
+	padding: 0;
+}
+@mixin grid-row-spacing-xsmall {
+	padding: $spacing-scale-xsmall;
+}
+@mixin grid-row-spacing-small {
+	padding: $spacing-scale-small;
+}
+@mixin grid-row-spacing-medium {
+	padding: $spacing-scale-medium;
+}
+@mixin grid-row-spacing-large {
+	padding: $spacing-scale-large;
+}
+@mixin grid-row-spacing-xlarge {
+	padding: $spacing-scale-xlarge;
+}
+
 // ----------------------------------------- VARIANTS
 // a relatively neutral grid
 @mixin grid-row-variant-default {
-	@include template-grid-row-layout;
-	@include template-grid-row-wrap;
-	@include template-grid-row-justify;
-	@include template-grid-row-align;
+	@include grid-row-layout-horizontal;
+	@include grid-row-justify-start;
+	@include grid-row-align-stretch;
 }
 
 // a card approach where each cell is a card, this is often used in dashboards
@@ -158,110 +288,18 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- GRID-COLUMN
 // ---------------------------------------------------------------------------------------------------------------------------
-// @component grid-column
+// @extension grid-column grid-row
 // the column inside a grid
-// ----------------------------------------- ALIGN
-@mixin template-grid-column-align {
-	align-self: auto;
-}
-@mixin grid-column-align-start {
-	align-self: flex-start;
-}
-@mixin grid-column-align-end {
-	align-self: flex-end;
-}
-@mixin grid-column-align-center {
-	align-self: center;
-}
-@mixin grid-column-align-baseline {
-	align-self: baseline;
-}
-@mixin grid-column-align-stretch {
-	align-self: stretch;
-}
-
-// ----------------------------------------- COLOR
-@mixin template-grid-column-color {
-	background-color: $color-background;
-}
-@mixin grid-column-color-basic {
-	background-color: $color-background;
-}
-@mixin grid-column-color-none {
-	background-color: transparent;
-}
-@mixin grid-column-color-background {
-	background-color: $color-body;
-}
-
-// ----------------------------------------- BORDER
-@mixin template-grid-column-border {
-	border-radius: 0rem;
-	border-width: 0px;
-	border-color: $color-neutral-darkest;
-	border-style: solid;
-	box-shadow: none;
-}
-@mixin grid-column-border-basic {
-	border-radius: $border-radius;
-	border-width: 1px;
-	border-color: $color-neutral-darkest;
-	border-style: solid;
-	box-shadow: none;
-}
-@mixin grid-column-border-shadow {
-	border-radius: $border-radius;
-	border-width: 0px;
-	border-color: $color-neutral-darkest;
-	border-style: solid;
-	box-shadow: 0px 1px 3px $color-neutral-dark;
-}
-
-// ----------------------------------------- SPACING
-@mixin template-grid-column-spacing {
-	padding: 0;
-}
-@mixin grid-column-spacing-xsmall {
-	padding: $spacing-scale-xsmall;
-}
-@mixin grid-column-spacing-small {
-	padding: $spacing-scale-small;
-}
-@mixin grid-column-spacing-medium {
-	padding: $spacing-scale-medium;
-}
-@mixin grid-column-spacing-large {
-	padding: $spacing-scale-large;
-}
-@mixin grid-column-spacing-xlarge {
-	padding: $spacing-scale-xlarge;
-}
-
-// ----------------------------------------- LAYOUT
-@mixin template-grid-column-layout {
-	display: flex;
-	flex-direction: column;
-}
-@mixin grid-column-layout-reverse {
-	display: flex;
-	flex-direction: column-reverse;
-}
-@mixin grid-column-layout-horizontal {
-	display: flex;
-	flex-direction: row;
-}
-@mixin grid-column-layout-horizontal-reverse {
-	display: flex;
-	flex-direction: row-reverse;
-}
 
 // ----------------------------------------- VARIANTS
 @mixin grid-column-variant-default {
-	@include template-grid-column-layout;
+	@include grid-row-layout-vertical;
 }
 @mixin grid-column-variant-card {
-	@include grid-column-border-shadow;
-	@include grid-column-spacing-medium;
+	@include grid-row-border-shadow;
+	@include grid-row-spacing-large;
+	@include grid-row-color-basic;
+	@include grid-row-row-gap-medium;
 }
 
 
