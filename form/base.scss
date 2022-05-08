@@ -1,0 +1,64 @@
+// @component form-component
+
+// ----------------------------------------- SIZE
+
+@mixin template-form-component-size {
+	input {
+		line-height: $font-size-medium;
+		height: calc(#{$font-size-medium} * 2);
+		font-size: $font-size-medium;
+		padding: 0 $spacing-scale-medium;
+	}
+}
+
+@mixin form-component-size-medium {
+	input {
+		line-height: $font-size-medium;
+		height: calc(#{$font-size-medium} * 2);
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-medium;
+	}
+}
+@mixin form-component-size-large {
+	input {
+		line-height: $font-size-large;
+		height: calc(#{$font-size-large} * 2);
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-large;
+	}
+}
+
+// ----------------------------------------- COLORS
+@mixin form-component-color-default {
+	input {
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-light;
+		&::placeholder {
+			color: $color-neutral-base;
+		}
+	}
+}
+
+$form-component-border-radius: $border-radius;
+// ----------------------------------------- BORDERS
+@mixin form-component-border-default {
+	input {
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $form-component-border-radius;
+	}
+}
+
+@mixin form-component-border-underline {
+	input {
+		border-width: 1px;
+		border-style: none none solid none;
+		border-radius: $form-component-border-radius;
+	}
+}
+
+@mixin form-component-variant-default {
+	@include form-component-size-medium;
+	@include form-component-color-default;
+	@include form-component-border-default;
+}

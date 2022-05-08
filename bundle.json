@@ -47,6 +47,11 @@
 				"url": "components/form-text.scss"
 			}
 		},
+		"form": {
+			"base.scss": {
+				"url": "form/base.scss"
+			}
+		},
 		"patterns": {
 			"menu.scss": {
 				"url": "patterns/menu.scss"
