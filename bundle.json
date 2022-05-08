@@ -52,6 +52,9 @@
 		"web-components": {
 			"sidebar.scss": {
 				"url": "web-components/sidebar.scss"
+			},
+			"collapsible.scss": {
+				"url": "web-components/collapsible.scss"
 			}
 		},
 		"page-builder": {

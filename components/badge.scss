@@ -4,8 +4,8 @@
 // @extension badge button
 
 @mixin badge-variant-default {
+	display: inline-flex;
 	@include button-fix-icon;
-	
 	@include button-font-normal;
 	@include button-order-normal;
 	@include button-size-xsmall;

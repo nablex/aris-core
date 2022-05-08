@@ -205,7 +205,10 @@ $menu-top-background-color: $color-body;
 }
 // a toolbar that acts as a main top menu to a page
 @mixin menu-toolbar-modifier-main-top {
-	padding: 0 $spacing-scale-medium;
+	&:not(.is-content-width-medium):not(.is-content-width-small):not(.is-content-width-large) {
+		padding-left: $spacing-scale-medium;
+		padding-right: $spacing-scale-medium;
+	}
 	height: 3rem;
 	.is-button {
 		height: 100%;

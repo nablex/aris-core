@@ -1,0 +1,36 @@
+// @component collapsible
+@mixin collapsible-variant-default {
+	> .is-title {
+		cursor: pointer;
+		@include h6-variant-default;
+		@include button-color-light;
+		@include button-border-basic;
+		padding: $spacing-scale-small;
+		> .is-icon {
+			margin-right: $spacing-scale-small;
+			margin-left: $spacing-scale-small;
+			font-size: $font-size-xsmall;
+		}
+	}
+}
+
+// @component accordion
+@mixin accordion-variant-default {
+	.is-collapsible:not(:first-child) {
+		> .is-title {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+	}
+	.is-collapsible:not(.is-open) + .is-collapsible {
+		> .is-title {
+			border-top-color: transparent;
+		}
+	}
+	.is-collapsible:not(:last-child) {
+		> .is-title {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+}

@@ -266,6 +266,16 @@ $button-link-color: $color-primary-darker;
 		border-color: $color-neutral-darker;
 	}
 }
+@mixin button-color-light {
+	background-color: $color-neutral-lightest;
+	color: $color-neutral-darker;
+	border-color: $color-neutral-light;
+	&.is-button:hover, &.is-active {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-base;
+	}
+}
 
 // ----------------------------------------- POSITIONING
 @mixin template-button-position {
@@ -307,12 +317,10 @@ $button-link-color: $color-primary-darker;
 // there is no template because the idea is not that you make your own order at this point
 // you can however toggle it as a dimensional option
 @mixin button-order-reverse {
-	display: inline-flex;
 	flex-direction: row-reverse;
 	align-items: center;
 }
 @mixin button-order-normal {
-	display: inline-flex;
 	flex-direction: row;
 	align-items: center;
 }
@@ -336,6 +344,7 @@ $button-link-color: $color-primary-darker;
 
 @mixin button-variant-default {
 	cursor: pointer;
+	display: inline-flex;
 	@include button-fix-icon;
 	@include button-font-normal;
 	@include button-order-normal;

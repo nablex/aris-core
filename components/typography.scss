@@ -1,56 +1,67 @@
-// @component h1
+// @extension h1 button
 @mixin h1-variant-default {
 	font-size: calc(#{$font-size-xlarge} + 0.4vw);
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-// @component h2
+// @extension h2 button
 @mixin h2-variant-default {
 	font-size: calc(#{$font-size-xlarge} + 0.2vw);
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-// @component h3
+// @extension h3 button
 @mixin h3-variant-default {
 	font-size: calc(#{$font-size-large} + 0.2vw);
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-// @component h4
+// @extension h4 button
 @mixin h4-variant-default {
 	font-size: calc(#{$font-size-medium} + 0.2vw);
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-// @component h5
+// @extension h5 button
 @mixin h5-variant-default {
 	font-size: calc(#{$font-size-medium} + 0.1vw);
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-// @component h6
+// @extension h6 button
 @mixin h6-variant-default {
 	font-size: calc(#{$font-size-medium});
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	display: flex;
+	@include button-fix-icon;
+	@include button-font-normal;
+	@include button-order-normal;
 }
 
-
-// @component p
+// @extension p button
 @mixin p-variant-default {
 	font-size: $font-size-medium;
 	margin: 0;
-	padding: 0;
-	font-weight: normal;
+	@include button-fix-icon;
+	@include button-font-normal;
 }
