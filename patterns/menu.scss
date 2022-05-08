@@ -1,8 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- MENU
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension menu grid-row
-// a special case of a grid, it is assumed that any is-menu also has is-grid-row
+// @extension menu layout
 // reset some defaults that a ul has if it acts as a grid row
 ul.is-grid-row, ul.is-menu {
 	padding: 0;
@@ -16,9 +15,9 @@ $menu-top-background-color: $color-body;
 
 // same as grid-row
 @mixin menu-variant-default {
-	@include grid-row-layout-horizontal;
-	@include grid-row-justify-start;
-	@include grid-row-align-stretch;
+	@include layout-direction-horizontal;
+	@include layout-justify-start;
+	@include layout-align-stretch;
 }
 
 // the top menu is mainly used at the top of a web application

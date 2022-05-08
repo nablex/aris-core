@@ -1,4 +1,4 @@
-// Content is a generic type which is the basis of many other components
+// Content is a generic type that serves as the basis for any component that displays some content in one way or the other
 // It requires something like this though there are many variations possible
 // <div class='is-content'>some text</div>
 // <div class='is-content'><span class="is-icon"></span></div>
@@ -92,12 +92,6 @@
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-darker;
-	// we only want this to affect the buttons, not the extensions
-	&.is-button:hover, &.is-active {
-		background-color: $color-neutral-lighter;
-		color: $color-neutral-darkest;
-		border-color: $color-neutral-darkest;
-	}
 }
 @mixin content-color-neutral {
 	@include template-content-color;
@@ -106,174 +100,82 @@
 	background-color: $color-primary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-primary-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-primary-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-primary-dark;
-	}
 }
 @mixin content-color-primary-outline {
 	background-color: transparent;
 	color: $color-primary-base;
 	border-color: $color-primary-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-primary-base;
-		color: $color-neutral-lightest;
-		border-color: $color-primary-base;
-	}
 }
 @mixin content-color-secondary {
 	background-color: $color-secondary-base;
 	color: $color-neutral-lightest;
 	border-color: $color-secondary-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-secondary-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-secondary-dark;
-	}
 }
 @mixin content-color-secondary-outline {
 	background-color: transparent;
 	color: $color-secondary-base;
 	border-color: $color-secondary-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-secondary-base;
-		color: $color-neutral-lightest;
-		border-color: $color-secondary-base;
-	}
 }
 @mixin content-color-transparent {
 	background-color: transparent;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-neutral-lighter;
-		color: $color-neutral-darkest;
-		border-color: $color-neutral-dark;
-	}
 }
 @mixin content-color-transparent-light {
 	background-color: transparent;
 	color: $color-neutral-lighter;
 	border-color: $color-neutral-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-neutral-darker;
-		color: $color-neutral-lightest;
-		border-color: $color-neutral-light;
-	}
 }
 @mixin content-color-danger {
 	background-color: $color-danger-base;
 	color: $color-neutral-lightest;
 	border-color: $color-danger-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-danger-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-danger-dark;
-	}
 }
 @mixin content-color-danger-outline {
 	background-color: transparent;
 	color: $color-danger-base;
 	border-color: $color-danger-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-danger-base;
-		color: $color-neutral-lightest;
-		border-color: $color-danger-base;
-	}
 }
 @mixin content-color-warning {
 	background-color: $color-warning-base;
 	color: $color-neutral-lightest;
 	border-color: $color-warning-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-warning-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-warning-dark;
-	}
 }
 @mixin content-color-warning-outline {
 	background-color: transparent;
 	color: $color-warning-base;
 	border-color: $color-warning-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-warning-base;
-		color: $color-neutral-lightest;
-		border-color: $color-warning-base;
-	}
 }
 @mixin content-color-info {
 	background-color: $color-info-base;
 	color: $color-neutral-lightest;
 	border-color: $color-info-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-info-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-info-dark;
-	}
 }
 @mixin content-color-info-outline {
 	background-color: transparent;
 	color: $color-info-base;
 	border-color: $color-info-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-info-base;
-		color: $color-neutral-lightest;
-		border-color: $color-info-base;
-	}
 }
 @mixin content-color-success {
 	background-color: $color-success-base;
 	color: $color-neutral-lightest;
 	border-color: $color-success-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-success-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-success-dark;
-	}
 }
 @mixin content-color-success-outline {
 	background-color: transparent;
 	color: $color-success-base;
 	border-color: $color-success-base;
-	&.is-button:hover, &.is-active {
-		background-color: $color-success-base;
-		color: $color-neutral-lightest;
-		border-color: $color-success-base;
-	}
-}
-
-$button-link-color: $color-primary-darker;
-@mixin button-color-link {
-	background-color: transparent;
-	color: $color-primary-darker;
-	border-color: transparent;
-	&.is-button:hover, &.is-active {
-		background-color: transparent;
-		color: darken($button-link-color, 10%);
-		border-color: transparent;
-	}
 }
 
 @mixin content-color-dark {
 	background-color: $color-neutral-darkest;
 	color: $color-neutral-lighter;
 	border-color: $color-neutral-darkest;
-	&.is-button:hover, &.is-active {
-		background-color: $color-neutral-darker;
-		color: $color-neutral-lightest;
-		border-color: $color-neutral-darker;
-	}
 }
 @mixin content-color-light {
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-darker;
 	border-color: $color-neutral-light;
-	&.is-button:hover, &.is-active {
-		background-color: $color-neutral-lighter;
-		color: $color-neutral-darkest;
-		border-color: $color-neutral-base;
-	}
 }
 
 // ----------------------------------------- FONTS

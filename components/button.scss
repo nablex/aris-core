@@ -7,13 +7,135 @@
 // Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
 
 // @extension button content
+// ----------------------------------------- COLORS
+
+@mixin button-color-neutral {
+	&:hover, &.is-active {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-darkest;
+	}
+}
+@mixin button-color-primary {
+	&:hover, &.is-active {
+		background-color: $color-primary-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-primary-dark;
+	}
+}
+@mixin button-color-primary-outline {
+	&:hover, &.is-active {
+		background-color: $color-primary-base;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-base;
+	}
+}
+@mixin button-color-secondary {
+	&:hover, &.is-active {
+		background-color: $color-secondary-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-secondary-dark;
+	}
+}
+@mixin button-color-secondary-outline {
+	&:hover, &.is-active {
+		background-color: $color-secondary-base;
+		color: $color-neutral-lightest;
+		border-color: $color-secondary-base;
+	}
+}
+@mixin button-color-transparent {
+	&:hover, &.is-active {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-dark;
+	}
+}
+@mixin button-color-transparent-light {
+	&:hover, &.is-active {
+		background-color: $color-neutral-darker;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-light;
+	}
+}
+@mixin button-color-danger {
+	&:hover, &.is-active {
+		background-color: $color-danger-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-danger-dark;
+	}
+}
+@mixin button-color-danger-outline {
+	&:hover, &.is-active {
+		background-color: $color-danger-base;
+		color: $color-neutral-lightest;
+		border-color: $color-danger-base;
+	}
+}
+@mixin button-color-warning {
+	&:hover, &.is-active {
+		background-color: $color-warning-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-warning-dark;
+	}
+}
+@mixin button-color-warning-outline {
+	&:hover, &.is-active {
+		background-color: $color-warning-base;
+		color: $color-neutral-lightest;
+		border-color: $color-warning-base;
+	}
+}
+@mixin button-color-info {
+	&:hover, &.is-active {
+		background-color: $color-info-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-info-dark;
+	}
+}
+@mixin button-color-info-outline {
+	&:hover, &.is-active {
+		background-color: $color-info-base;
+		color: $color-neutral-lightest;
+		border-color: $color-info-base;
+	}
+}
+@mixin button-color-success {
+	&:hover, &.is-active {
+		background-color: $color-success-dark;
+		color: $color-neutral-lighter;
+		border-color: $color-success-dark;
+	}
+}
+@mixin button-color-success-outline {
+	&:hover, &.is-active {
+		background-color: $color-success-base;
+		color: $color-neutral-lightest;
+		border-color: $color-success-base;
+	}
+}
+
+@mixin button-color-dark {
+	&:hover, &.is-active {
+		background-color: $color-neutral-darker;
+		color: $color-neutral-lightest;
+		border-color: $color-neutral-darker;
+	}
+}
+@mixin button-color-light {
+	&:hover, &.is-active {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-base;
+	}
+}
 
 $button-link-color: $color-primary-darker;
 @mixin button-color-link {
 	background-color: transparent;
 	color: $color-primary-darker;
 	border-color: transparent;
-	&.is-button:hover, &.is-active {
+	&:hover, &.is-active {
 		background-color: transparent;
 		color: darken($button-link-color, 10%);
 		border-color: transparent;
@@ -40,6 +162,7 @@ $button-link-color: $color-primary-darker;
 	display: inline-flex;
 	@include content-variant-default;
 	@include button-fix-icon;
+	@include button-color-neutral;
 }
 @mixin button-variant-link {
 	@include content-size-plain;
@@ -66,4 +189,51 @@ $button-link-color: $color-primary-darker;
 	> .is-badge.is-size-xlarge {
 		margin-top: calc(0px - #{$spacing-scale-large});
 	}
+}
+
+
+@mixin button-variant-neutral {
+	@include button-color-neutral;
+}
+@mixin button-variant-primary {
+	@include button-color-primary;
+}
+@mixin button-variant-secondary {
+	@include button-color-secondary;
+}
+@mixin button-variant-primary-outline {
+	@include button-color-primary-outline;
+}
+@mixin button-variant-secondary-outline {
+	@include button-color-secondary-outline;
+}
+@mixin button-variant-ghost {
+	@include button-color-transparent;
+}
+@mixin button-variant-ghost-light {
+	@include button-color-transparent-light;
+}
+@mixin button-variant-info {
+	@include button-color-info;
+}
+@mixin button-variant-info-outline {
+	@include button-color-info-outline;
+}
+@mixin button-variant-warning {
+	@include button-color-warning;
+}
+@mixin button-variant-warning-outline {
+	@include button-color-warning-outline;
+}
+@mixin button-variant-danger {
+	@include button-color-danger;
+}
+@mixin button-variant-danger-outline {
+	@include button-color-danger-outline;
+}
+@mixin button-variant-success {
+	@include button-color-success;
+}
+@mixin button-variant-success-outline {
+	@include button-color-success-outline;
 }
