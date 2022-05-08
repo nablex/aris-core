@@ -1,18 +1,24 @@
 {
 	"name": "aris-core", 
 	"resources": {
-		"variables": {
+		"base": {
 			"color.scss": {
-				"url": "variables/color.scss"
+				"url": "base/color.scss"
 			}, 
 			"basic.scss": {
-				"url": "variables/basic.scss"
+				"url": "base/basic.scss"
 			},
 			"spacing.scss": {
-				"url": "variables/spacing.scss"
+				"url": "base/spacing.scss"
 			}
 		}, 
 		"components": {
+			"content.scss": {
+				"url": "components/content.scss"
+			},
+			"layout.scss": {
+				"url": "components/layout.scss"
+			},
 			"button.scss": {
 				"url": "components/button.scss"
 			}, 

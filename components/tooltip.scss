@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- TOOLTIP
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension tooltip button
+// @extension tooltip content
 
 // make sure we can offset to the given element
 .has-tooltip {
@@ -244,9 +244,9 @@
 	opacity: 0;
 	z-index: 15;
 	position: absolute;
-	@include template-button-border;
-	@include button-size-small;
-	@include button-color-dark;
+	@include content-border-basic;
+	@include content-size-small;
+	@include content-color-dark;
 	@include tooltip-width-small;
 	&:after {
 		content: ' ';

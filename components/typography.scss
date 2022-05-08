@@ -1,67 +1,67 @@
-// @extension h1 button
+// @extension h1 content
 @mixin h1-variant-default {
 	font-size: calc(#{$font-size-xlarge} + 0.4vw);
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension h2 button
+// @extension h2 content
 @mixin h2-variant-default {
 	font-size: calc(#{$font-size-xlarge} + 0.2vw);
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension h3 button
+// @extension h3 content
 @mixin h3-variant-default {
 	font-size: calc(#{$font-size-large} + 0.2vw);
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension h4 button
+// @extension h4 content
 @mixin h4-variant-default {
 	font-size: calc(#{$font-size-medium} + 0.2vw);
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension h5 button
+// @extension h5 content
 @mixin h5-variant-default {
 	font-size: calc(#{$font-size-medium} + 0.1vw);
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension h6 button
+// @extension h6 content
 @mixin h6-variant-default {
 	font-size: calc(#{$font-size-medium});
 	margin: 0;
 	display: flex;
-	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
 }
 
-// @extension p button
+// @extension p content
 @mixin p-variant-default {
 	font-size: $font-size-medium;
 	margin: 0;
-	@include button-fix-icon;
-	@include button-font-normal;
+	@include content-fix-icon;
+	@include content-font-normal;
 }

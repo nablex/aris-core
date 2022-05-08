@@ -1,16 +1,29 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- BADGE
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension badge button
 
+// ----------------------------------------- POSITIONING
+@mixin template-badge-position {
+	position: static;
+	top: 0;
+	left: 0;
+}
+@mixin badge-position-top-right {
+	position: absolute;
+	top: -0.5rem;
+	left: 90%;
+}
+
+// @extension badge content
 @mixin badge-variant-default {
 	display: inline-flex;
+	@include content-fix-icon;
 	@include button-fix-icon;
-	@include button-font-normal;
-	@include button-order-normal;
-	@include button-size-xsmall;
-	@include button-border-basic;
-	@include button-color-neutral;
+	@include content-font-normal;
+	@include content-order-normal;
+	@include content-size-xsmall;
+	@include content-border-basic;
+	@include content-color-neutral;
 }
 
 // if a parent has a badge, it might need positioning to position the badge

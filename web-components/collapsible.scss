@@ -3,8 +3,8 @@
 	> .is-title {
 		cursor: pointer;
 		@include h6-variant-default;
-		@include button-color-light;
-		@include button-border-basic;
+		@include content-color-light;
+		@include content-border-basic;
 		padding: $spacing-scale-small;
 		> .is-icon {
 			margin-right: $spacing-scale-small;
