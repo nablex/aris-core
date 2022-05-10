@@ -1,6 +1,9 @@
 // @extension checkbox form-component
 
-.is-checkbox {
+@mixin checkbox-variant-default {
+	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
+	// even if we order "normally", our label would have a large invisible hit target
+	align-self: flex-start;
 	display: inline-block;
 	input {
 		opacity: 0;
@@ -48,6 +51,21 @@
 		&:before {
 			background: $color-neutral-lightest;
 			border: solid 1px $color-neutral-darker;
+		}
+	}
+}
+
+@mixin checkbox-order-reverse {
+	input + label {
+		margin-left: 0;
+		margin-right: calc(#{$font-size-large} * 2);
+		&:before {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 2));
+		}
+		&:after {
+			left: unset;
+			right: calc(0px - (#{$font-size-large} * 1.9));
 		}
 	}
 }

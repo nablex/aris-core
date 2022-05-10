@@ -45,7 +45,7 @@
 @mixin layout-border-basic {
 	border-radius: $border-radius;
 	border-width: 1px;
-	border-color: $color-neutral-darkest;
+	border-color: $color-neutral-light;
 	border-style: solid;
 	box-shadow: none;
 }
