@@ -19,6 +19,7 @@
 	display: inline-flex;
 	@include content-fix-icon;
 	@include button-fix-icon;
+	@include content-spacing-xsmall;
 	@include content-font-normal;
 	@include content-order-normal;
 	@include content-size-xsmall;

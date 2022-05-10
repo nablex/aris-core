@@ -1,0 +1,29 @@
+// @extension form layout
+
+// label is positioned above the field
+@mixin form-variant-default {
+
+	.n-form-content {
+		display: flex;
+		@include layout-row-gap-medium;
+		@include layout-direction-vertical;
+
+		.is-form-component, .n-form-component {
+			display: flex;
+			@include layout-direction-vertical;
+			@include layout-row-gap-small;
+
+			.is-label, label {
+				@include content-font-emphasis;
+				@include content-size-small;
+			}
+		}
+	}
+}
+
+// horizontal labels
+@mixin form-variant-horizontal {
+	.is-form-component, .n-form-component {
+		display: flex;
+	}
+}

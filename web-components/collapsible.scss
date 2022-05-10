@@ -3,34 +3,39 @@
 	> .is-title {
 		cursor: pointer;
 		@include h6-variant-default;
-		@include content-color-light;
-		@include content-border-basic;
 		padding: $spacing-scale-small;
+		padding-right: 0;
 		> .is-icon {
 			margin-right: $spacing-scale-small;
 			margin-left: $spacing-scale-small;
-			font-size: $font-size-xsmall;
+			font-size: $font-size-xxsmall;
 		}
 	}
+	@include content-color-light;
+	@include content-border-underline;
+}
+
+// @component collapsible-content
+@mixin collapsible-content-variant-default {
+	@include layout-spacing-vertical-large;
+	@include layout-spacing-horizontal-large;
+	padding-right: 0;
 }
 
 // @component accordion
 @mixin accordion-variant-default {
+	// the first two rules are actually meant for when the collapsible has border-basic instead of border-underline
 	.is-collapsible:not(:first-child) {
-		> .is-title {
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-		}
-	}
-	.is-collapsible:not(.is-open) + .is-collapsible {
-		> .is-title {
-			border-top-color: transparent;
-		}
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-top-color: transparent;
 	}
 	.is-collapsible:not(:last-child) {
-		> .is-title {
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-		}
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	// this is meant for border-underline
+	.is-collapsible:last-child {
+		border-bottom: none;
 	}
 }

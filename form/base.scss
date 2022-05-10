@@ -5,16 +5,25 @@
 @mixin template-form-component-size {
 	input {
 		line-height: $font-size-medium;
-		height: calc(#{$font-size-medium} * 2);
+		height: calc(#{$font-size-medium} * 2.5);
 		font-size: $font-size-medium;
 		padding: 0 $spacing-scale-medium;
+	}
+}
+
+@mixin form-component-size-small {
+	input {
+		line-height: $font-size-small;
+		height: calc(#{$font-size-small} * 2);
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-small;
 	}
 }
 
 @mixin form-component-size-medium {
 	input {
 		line-height: $font-size-medium;
-		height: calc(#{$font-size-medium} * 2);
+		height: calc(#{$font-size-medium} * 2.5);
 		font-size: $font-size-small;
 		padding: 0 $spacing-scale-medium;
 	}
@@ -22,7 +31,7 @@
 @mixin form-component-size-large {
 	input {
 		line-height: $font-size-large;
-		height: calc(#{$font-size-large} * 2);
+		height: calc(#{$font-size-large} * 2.5);
 		font-size: $font-size-small;
 		padding: 0 $spacing-scale-large;
 	}
@@ -61,4 +70,10 @@ $form-component-border-radius: $border-radius;
 	@include form-component-size-medium;
 	@include form-component-color-default;
 	@include form-component-border-default;
+}
+
+@mixin form-component-variant-underline {
+	@include form-component-size-small;
+	@include form-component-color-default;
+	@include form-component-border-underline;
 }

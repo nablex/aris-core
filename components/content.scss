@@ -19,7 +19,7 @@
 }
 @mixin content-border-underline {
 	border-radius: 0;
-	border-width: 2px;
+	border-width: 1px;
 	border-style: none none solid none;
 }
 @mixin content-border-none {
@@ -33,57 +33,74 @@
 	border-style: solid;
 }
 
-// ----------------------------------------- SIZES
-@mixin template-content-size {
-	padding: $spacing-scale-small $spacing-scale-medium;
-	font-size: $font-size-medium;
-	column-gap: $spacing-scale-small;
-	// pills need more padding
-	&.is-border-pill {
-		padding: $spacing-scale-small $spacing-scale-large;
-	}
-}
-// no padding etc
-@mixin content-size-plain {
+// ----------------------------------------- SPACING
+@mixin template-content-spacing {
 	padding: 0;
-	font-size: $font-size-medium;
-	column-gap: $spacing-scale-small;
 }
-@mixin content-size-xsmall {
+@mixin content-spacing-plain {
+	@include template-content-spacing;
+}
+@mixin content-spacing-xsmall {
 	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
-	font-size: $font-size-xsmall;
-	column-gap: $spacing-scale-small;
 	// pills need more padding
 	&.is-border-pill {
 		padding: $spacing-scale-xxsmall $spacing-scale-small;
 	}
 }
-@mixin content-size-small {
+@mixin content-spacing-small {
 	padding: $spacing-scale-xsmall $spacing-scale-small;
-	font-size: $font-size-small;
-	column-gap: $spacing-scale-small;
 	&.is-border-pill {
 		padding: $spacing-scale-xsmall $spacing-scale-medium;
 	}
+}
+@mixin content-spacing-medium {
+	padding: $spacing-scale-small $spacing-scale-medium;
+	// pills need more padding
+	&.is-border-pill {
+		padding: $spacing-scale-small $spacing-scale-large;
+	}
+}
+@mixin content-spacing-large {
+	padding: $spacing-scale-medium $spacing-scale-large;
+	&.is-border-pill {
+		padding: $spacing-scale-medium $spacing-scale-xlarge;
+	}
+}
+@mixin content-spacing-xlarge {
+	padding: $spacing-scale-large $spacing-scale-xlarge;
+	&.is-border-pill {
+		padding: $spacing-scale-large $spacing-scale-xxlarge;
+	}
+}
+
+// ----------------------------------------- SIZES
+@mixin template-content-size {
+	font-size: $font-size-medium;
+	column-gap: $spacing-scale-small;
+}
+// no padding etc
+@mixin content-size-plain {
+	font-size: $font-size-medium;
+	column-gap: $spacing-scale-small;
+}
+@mixin content-size-xsmall {
+	font-size: $font-size-xsmall;
+	column-gap: $spacing-scale-small;
+}
+@mixin content-size-small {
+	font-size: $font-size-small;
+	column-gap: $spacing-scale-small;
 }
 @mixin content-size-medium {
 	@include template-content-size;
 }
 @mixin content-size-large {
-	padding: $spacing-scale-medium $spacing-scale-large;
 	font-size: $font-size-large;
 	column-gap: $spacing-scale-medium;
-	&.is-border-pill {
-		padding: $spacing-scale-medium $spacing-scale-xlarge;
-	}
 }
 @mixin content-size-xlarge {
-	padding: $spacing-scale-large $spacing-scale-xlarge;
 	font-size: $font-size-xlarge;
 	column-gap: $spacing-scale-large;
-	&.is-border-pill {
-		padding: $spacing-scale-large $spacing-scale-xxlarge;
-	}
 }
 
 // ----------------------------------------- COLORS

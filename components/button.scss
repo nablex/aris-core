@@ -142,6 +142,12 @@ $button-link-color: $color-primary-darker;
 	}
 }
 
+// overwrite the default border width of 1px, that way it matches visualize when combined with buttons that only have a single border of 1px at the top as well
+@mixin button-border-underline {
+	border-width: 2px;
+}
+
+
 // some tiny corrections
 @mixin button-fix-icon {
 	> .is-text {
@@ -163,12 +169,14 @@ $button-link-color: $color-primary-darker;
 	@include content-variant-default;
 	@include button-fix-icon;
 	@include button-color-neutral;
+	@include content-spacing-medium;
 }
 @mixin button-variant-link {
 	@include content-size-plain;
 	@include button-color-link;
 	@include button-font-link;
 }
+
 
 // if we put a badge in a button, we need to counter the padding we add at the top otherwise we slightly stretch the button making it a tiny bit bigger than other buttons
 // TODO: this is not full proof, for example if we absolutely position it etc

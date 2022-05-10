@@ -79,6 +79,16 @@
 	margin-right: auto;
 }
 
+// ----------------------------------------- SIZE
+@mixin template-layout-size {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+@mixin layout-size-grow {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
 // ----------------------------------------- CONTENT-WIDTH
 @mixin template-layout-content-width {
 	width: unset;
@@ -242,6 +252,58 @@
 }
 @mixin layout-spacing-xlarge {
 	padding: $spacing-scale-xlarge;
+}
+
+// ----------------------------------------- SPACING-VERTICAL
+@mixin template-layout-spacing-vertical {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+@mixin layout-spacing-vertical-xsmall {
+	padding-top: $spacing-scale-xsmall;
+	padding-bottom: $spacing-scale-xsmall;
+}
+@mixin layout-spacing-vertical-small {
+	padding-top: $spacing-scale-small;
+	padding-bottom: $spacing-scale-small;
+}
+@mixin layout-spacing-vertical-medium {
+	padding-top: $spacing-scale-medium;
+	padding-bottom: $spacing-scale-medium;
+}
+@mixin layout-spacing-vertical-large {
+	padding-top: $spacing-scale-large;
+	padding-bottom: $spacing-scale-large;
+}
+@mixin layout-spacing-vertical-xlarge {
+	padding-top: $spacing-scale-xlarge;
+	padding-bottom: $spacing-scale-xlarge;
+}
+
+// ----------------------------------------- SPACING-HORIZONTAL
+@mixin template-layout-spacing-horizontal {
+	padding-left: 0;
+	padding-right: 0;
+}
+@mixin layout-spacing-horizontal-xsmall {
+	padding-left: $spacing-scale-xsmall;
+	padding-right: $spacing-scale-xsmall;
+}
+@mixin layout-spacing-horizontal-small {
+	padding-left: $spacing-scale-small;
+	padding-right: $spacing-scale-small;
+}
+@mixin layout-spacing-horizontal-medium {
+	padding-left: $spacing-scale-medium;
+	padding-right: $spacing-scale-medium;
+}
+@mixin layout-spacing-horizontal-large {
+	padding-left: $spacing-scale-large;
+	padding-right: $spacing-scale-large;
+}
+@mixin layout-spacing-horizontal-xlarge {
+	padding-left: $spacing-scale-xlarge;
+	padding-right: $spacing-scale-xlarge;
 }
 
 // ----------------------------------------- VARIANTS

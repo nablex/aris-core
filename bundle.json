@@ -50,6 +50,9 @@
 		"form": {
 			"base.scss": {
 				"url": "form/base.scss"
+			},
+			"form.scss": {
+				"url": "form/form.scss"
 			}
 		},
 		"patterns": {
