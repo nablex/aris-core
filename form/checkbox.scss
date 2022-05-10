@@ -1,0 +1,53 @@
+// @extension checkbox form-component
+
+.is-checkbox {
+	display: inline-block;
+	input {
+		opacity: 0;
+		position: absolute;
+	}
+	label {
+		cursor: pointer;
+		display: flex;
+		// temporary
+		display: flex !important;
+	}
+	input + label {
+		cursor: pointer;
+		line-height: 1.5rem;
+		margin-left: calc(#{$font-size-large} * 2);
+		position: relative;
+		display: inline-block;
+		&:before {
+			border: solid 1px $color-neutral-darker;
+			display: inline-block;
+			content: "";
+			height: $font-size-large;
+			width: $font-size-large;
+			position: absolute;
+			left: calc(0px - (#{$font-size-large} * 2));
+			top: calc(#{$font-size-large} * 0.12);
+			background-color: $color-neutral-lighter;
+		}
+		&:after {
+			top: calc(#{$font-size-large} * 0.12);
+			content: "\2713";
+			font-size: $font-size-large;
+			opacity: 0;
+			position: absolute;
+			left: calc(0px - (#{$font-size-large} * 1.9));
+			text-align: center;
+			color: $color-primary-dark;
+			font-weight: bold;
+		}
+	}
+	input:checked + label {
+		&:after {
+			opacity: 1;
+		}
+		&:before {
+			background: $color-neutral-lightest;
+			border: solid 1px $color-neutral-darker;
+		}
+	}
+}

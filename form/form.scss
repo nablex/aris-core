@@ -5,7 +5,7 @@
 
 	.n-form-content {
 		display: flex;
-		@include layout-row-gap-medium;
+		@include layout-row-gap-large;
 		@include layout-direction-vertical;
 
 		.is-form-component, .n-form-component {
@@ -17,6 +17,9 @@
 				@include content-font-emphasis;
 				@include content-size-small;
 			}
+		}
+		.n-form-label-wrapper {
+			display: flex;
 		}
 	}
 }

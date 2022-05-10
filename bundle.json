@@ -53,6 +53,9 @@
 			},
 			"form.scss": {
 				"url": "form/form.scss"
+			},
+			"checkbox.scss": {
+				"url": "form/checkbox.scss"
 			}
 		},
 		"patterns": {
