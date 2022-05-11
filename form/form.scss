@@ -3,22 +3,22 @@
 // label is positioned above the field
 @mixin form-variant-default {
 
-	.n-form-content {
+	.is-form-content {
 		display: flex;
 		@include layout-row-gap-large;
 		@include layout-direction-vertical;
 
-		.is-form-component, .n-form-component {
+		.is-form-component {
 			display: flex;
 			@include layout-direction-vertical;
 			@include layout-row-gap-small;
 
-			.is-label, label {
+			.is-form-label {
 				@include content-font-emphasis;
 				@include content-size-small;
 			}
 		}
-		.n-form-label-wrapper {
+		.is-form-label-wrapper {
 			display: flex;
 		}
 	}
@@ -26,7 +26,7 @@
 
 // horizontal labels
 @mixin form-variant-horizontal {
-	.is-form-component, .n-form-component {
+	.is-form-component {
 		display: flex;
 	}
 }

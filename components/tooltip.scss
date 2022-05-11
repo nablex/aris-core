@@ -29,6 +29,30 @@
 	width: calc(#{$spacing-scale-medium} * 18);
 }
 
+// ----------------------------------------- SIZES -> include spacing
+@mixin template-tooltip-size {
+	padding: 0;
+}
+// no padding etc
+@mixin tooltip-size-plain {
+	padding: 0;
+}
+@mixin tooltip-size-xsmall {
+	@include content-spacing-xsmall;
+}
+@mixin tooltip-size-small {
+	@include content-spacing-small;
+}
+@mixin tooltip-size-medium {
+	@include content-spacing-medium;
+}
+@mixin tooltip-size-large {
+	@include content-spacing-large;
+}
+@mixin tooltip-size-xlarge {
+	@include content-spacing-xlarge;
+}
+
 @mixin tooltip-position-top {
 	bottom: calc(100% + 5px);
 	left: 50%;
@@ -246,6 +270,7 @@
 	position: absolute;
 	@include content-border-basic;
 	@include content-size-small;
+	@include tooltip-size-small;
 	@include content-color-dark;
 	@include tooltip-width-small;
 	&:after {

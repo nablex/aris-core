@@ -1,0 +1,5 @@
+// @extension form-text form-component
+
+@mixin form-text-variant-default {
+	@include form-component-variant-default;
+}

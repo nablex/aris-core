@@ -14,6 +14,31 @@
 	left: 90%;
 }
 
+// ----------------------------------------- SIZES -> include spacing
+@mixin template-badge-size {
+	padding: 0;
+}
+// no padding etc
+@mixin badge-size-plain {
+	padding: 0;
+}
+@mixin badge-size-xsmall {
+	@include content-spacing-xsmall;
+}
+@mixin badge-size-small {
+	@include content-spacing-small;
+}
+@mixin badge-size-medium {
+	@include content-spacing-medium;
+}
+@mixin badge-size-large {
+	@include content-spacing-large;
+}
+@mixin badge-size-xlarge {
+	@include content-spacing-xlarge;
+}
+
+
 // @extension badge content
 @mixin badge-variant-default {
 	display: inline-flex;
