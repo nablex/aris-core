@@ -183,10 +183,14 @@
 	color: $color-success-base;
 	border-color: $color-success-base;
 }
-
 @mixin content-color-dark {
 	background-color: $color-neutral-darkest;
 	color: $color-neutral-lighter;
+	border-color: $color-neutral-darkest;
+}
+@mixin content-color-dark-outline {
+	background-color: transparent;
+	color: $color-neutral-darkest;
 	border-color: $color-neutral-darkest;
 }
 @mixin content-color-light {
@@ -295,4 +299,30 @@
 }
 @mixin content-variant-success-outline {
 	@include content-color-success-outline;
+}
+
+
+// @extension padded-content content
+// ----------------------------------------- SIZES -> include spacing
+@mixin template-padded-content-size {
+	padding: 0;
+}
+// no padding etc
+@mixin padded-content-size-plain {
+	padding: 0;
+}
+@mixin padded-content-size-xsmall {
+	@include content-spacing-xsmall;
+}
+@mixin padded-content-size-small {
+	@include content-spacing-small;
+}
+@mixin padded-content-size-medium {
+	@include content-spacing-medium;
+}
+@mixin padded-content-size-large {
+	@include content-spacing-large;
+}
+@mixin padded-content-size-xlarge {
+	@include content-spacing-xlarge;
 }

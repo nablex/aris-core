@@ -1,32 +1,42 @@
 // @extension form layout
-
 // label is positioned above the field
 @mixin form-variant-default {
-
-	.is-form-content {
+	:is-form-component {
+		:is-label {
+			@include content-size-small;
+			@include content-color-dark-outline;
+		}
+		:is-info {
+			margin-left: $spacing-scale-small;
+		}
+	}
+	// we want the labels to float at the top
+	:is-form-component {
+		display: flex;
+		@include layout-direction-vertical;
+		@include layout-row-gap-small;
+	}
+	:is-form-section {
 		display: flex;
 		@include layout-row-gap-large;
 		@include layout-direction-vertical;
 
-		.is-form-component {
-			display: flex;
-			@include layout-direction-vertical;
-			@include layout-row-gap-small;
-
-			.is-form-label {
-				@include content-font-emphasis;
-				@include content-size-small;
-			}
-		}
-		.is-form-label-wrapper {
+		:is-label-wrapper {
 			display: flex;
 		}
+	}
+	.is-content-after {
+		font-size: $font-size-xsmall;
+		color: $color-neutral-base;
 	}
 }
 
 // horizontal labels
 @mixin form-variant-horizontal {
-	.is-form-component {
+	:is-form-component {
 		display: flex;
 	}
 }
+
+// @component form-label
+// @extension form-text-label form-label

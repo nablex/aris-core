@@ -1,4 +1,22 @@
 // @component form-component
+// form component is at the root of all form components, not all components have these parts, but they might
+// <div class="is-form-component">
+// 		<div class="is-label-wrapper">contains label, perhaps an info icon</div>
+//		<div class="is-content-before">contains content that should appear before the input, usually a description of the form element</div>
+//		<div class="is-content-wrapper">contains the actual input element, maybe spinners, is-suffix, is-prefix,..</div>
+//		<div class="messages">error messages here</div>
+//		<div class="is-content-after">contains content that should appear after the element</div>
+// </div>
+
+// @extension form-labelled-component form-component
+// a labelled component expects a label separate from the form input, for instance a text component, date component... we can float the label anywhere relative to the actual input
+// a counterexample to this is the checkbox, we can't really float the label away from the input because they should remain together
+
+// @extension form-flat-component form-component
+// an extension that groups all form compnents where the label is hard coupled to the input (radio, checkbox, switch...)
+// they should only have a is-content-wrapper
+
+// @extension form-text form-labelled-component
 
 // ----------------------------------------- SIZE
 

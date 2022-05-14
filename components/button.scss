@@ -6,7 +6,7 @@
 
 // Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
 
-// @extension button content
+// @extension button padded-content
 // ----------------------------------------- COLORS
 
 @mixin button-color-neutral {
@@ -162,29 +162,6 @@ $button-link-color: $color-primary-darker;
 }
 
 
-// ----------------------------------------- SIZES -> include spacing
-@mixin template-button-size {
-	padding: 0;
-}
-// no padding etc
-@mixin button-size-plain {
-	padding: 0;
-}
-@mixin button-size-xsmall {
-	@include content-spacing-xsmall;
-}
-@mixin button-size-small {
-	@include content-spacing-small;
-}
-@mixin button-size-medium {
-	@include content-spacing-medium;
-}
-@mixin button-size-large {
-	@include content-spacing-large;
-}
-@mixin button-size-xlarge {
-	@include content-spacing-xlarge;
-}
 
 // ----------------------------------------- VARIANTS
 
@@ -270,3 +247,4 @@ $button-link-color: $color-primary-darker;
 @mixin button-variant-success-outline {
 	@include button-color-success-outline;
 }
+

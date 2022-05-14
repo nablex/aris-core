@@ -39,6 +39,9 @@
 			},
 			"typography.scss": {
 				"url": "components/typography.scss"
+			}, 
+			"info.scss": {
+				"url": "components/info.scss"
 			},
 			"form-component.scss": {
 				"url": "components/form-component.scss"
@@ -56,6 +59,9 @@
 			},
 			"checkbox.scss": {
 				"url": "form/checkbox.scss"
+			},
+			"switch.scss": {
+				"url": "form/switch.scss"
 			},
 			"text.scss": {
 				"url": "form/text.scss"

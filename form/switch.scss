@@ -1,7 +1,6 @@
-// @extension form-checkbox form-flat-component
+// @extension form-switch form-flat-component
 
-$form-checkbox-check-character: "\2713";
-@mixin form-checkbox-variant-default {
+@mixin form-switch-variant-default {
 	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
 	// even if we order "normally", our label would have a large invisible hit target
 	align-self: flex-start;
@@ -16,7 +15,7 @@ $form-checkbox-check-character: "\2713";
 	input + label {
 		cursor: pointer;
 		line-height: 1.5rem;
-		margin-left: calc(#{$font-size-large} * 1.7);
+		margin-left: calc(#{$font-size-large} * 2.5);
 		position: relative;
 		display: inline-block;
 		&:before {
@@ -24,27 +23,29 @@ $form-checkbox-check-character: "\2713";
 			display: inline-block;
 			content: "";
 			height: $font-size-large;
-			width: $font-size-large;
+			width: calc(#{$font-size-large} * 2);
 			position: absolute;
-			left: calc(0px - (#{$font-size-large} * 1.7));
+			left: calc(0px - (#{$font-size-large} * 2.5));
 			top: calc(#{$font-size-large} * 0.12);
 			background-color: $color-neutral-lightest;
+			border-radius: calc(#{$border-radius} * 3);
 		}
 		&:after {
-			top: calc(#{$font-size-large} * 0.12);
-			content: $form-checkbox-check-character;
-			font-size: $font-size-large;
-			opacity: 0;
+			top: calc(#{$font-size-large} * 0.2);
+			content: "";
+			background-color: $color-neutral-base;
+			border-radius: calc(#{$border-radius} * 3);
 			position: absolute;
-			left: calc(0px - (#{$font-size-large} * 1.6));
-			text-align: center;
-			color: $color-primary-dark;
-			font-weight: bold;
+			left: calc(0px - (#{$font-size-large} * 2.4));
+			width: calc(#{$font-size-large} * 0.8);
+			height: calc(#{$font-size-large} * 0.8);
+			transition: all 0.3s ease-in 0s;
 		}
 	}
 	input:checked + label {
 		&:after {
-			opacity: 1;
+			background-color: $color-success-base;
+			left: calc(0px - (#{$font-size-large} * 1.4));
 		}
 		&:before {
 			background: $color-neutral-lightest;
@@ -53,17 +54,22 @@ $form-checkbox-check-character: "\2713";
 	}
 }
 
-@mixin form-checkbox-order-reverse {
+@mixin form-switch-order-reverse {
 	input + label {
 		margin-left: 0;
 		margin-right: calc(#{$font-size-large} * 2);
 		&:before {
 			left: unset;
-			right: calc(0px - (#{$font-size-large} * 2));
+			right: calc(0px - (#{$font-size-large} * 3));
 		}
 		&:after {
 			left: unset;
 			right: calc(0px - (#{$font-size-large} * 1.9));
+		}
+	}
+	input:checked + label {
+		&:after {
+			right: calc(0px - (#{$font-size-large} * 2.9));
 		}
 	}
 }
