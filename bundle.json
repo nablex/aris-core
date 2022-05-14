@@ -65,6 +65,9 @@
 			},
 			"text.scss": {
 				"url": "form/text.scss"
+			},
+			"combo.scss": {
+				"url": "form/combo.scss"
 			}
 		},
 		"patterns": {

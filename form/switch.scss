@@ -26,19 +26,19 @@
 			width: calc(#{$font-size-large} * 2);
 			position: absolute;
 			left: calc(0px - (#{$font-size-large} * 2.5));
-			top: calc(#{$font-size-large} * 0.12);
+			top: calc(#{$font-size-large} * 0.17);
 			background-color: $color-neutral-lightest;
 			border-radius: calc(#{$border-radius} * 3);
 		}
 		&:after {
-			top: calc(#{$font-size-large} * 0.2);
+			top: calc(#{$font-size-large} * 0.275);
 			content: "";
 			background-color: $color-neutral-base;
 			border-radius: calc(#{$border-radius} * 3);
 			position: absolute;
-			left: calc(0px - (#{$font-size-large} * 2.4));
-			width: calc(#{$font-size-large} * 0.8);
-			height: calc(#{$font-size-large} * 0.8);
+			left: calc(0px - (#{$font-size-large} * 2.3));
+			width: calc(#{$font-size-large} * 0.73);
+			height: calc(#{$font-size-large} * 0.73);
 			transition: all 0.3s ease-in 0s;
 		}
 	}
@@ -60,11 +60,11 @@
 		margin-right: calc(#{$font-size-large} * 2);
 		&:before {
 			left: unset;
-			right: calc(0px - (#{$font-size-large} * 3));
+			right: calc(0px - (#{$font-size-large} * 3.1));
 		}
 		&:after {
 			left: unset;
-			right: calc(0px - (#{$font-size-large} * 1.9));
+			right: calc(0px - (#{$font-size-large} * 2));
 		}
 	}
 	input:checked + label {

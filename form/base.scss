@@ -63,6 +63,10 @@
 		&::placeholder {
 			color: $color-neutral-base;
 		}
+		&:focus, &:focus-visible, &:active {
+			border-color: $color-neutral-base;
+			outline-width: 0;
+		}
 	}
 }
 

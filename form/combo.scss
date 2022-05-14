@@ -1,0 +1,52 @@
+// @extension form-combo form-labelled-component
+
+@mixin form-combo-variant-default {
+	@include form-component-variant-default;
+
+	.is-show-values {
+		input {
+			border-radius: $border-radius $border-radius 0 0;
+		}
+	}
+	.n-input-combo-input-container {
+		position: relative;
+		input {
+			// we want to keep some room on the right to show the dropdown icon
+			width: calc(100% - #{$font-size-large});
+		}
+		.is-icon {
+			width: $font-size-large;
+			font-size: $font-size-small;
+			text-align: right;
+		}
+		.n-input-combo-dropdown-values {
+			width: calc(100% - #{$font-size-large});
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 100%;
+			background-color: $color-neutral-lightest;
+			border-width: 1px;
+			border-style: none solid solid solid;
+			border-radius: 0 0 $border-radius $border-radius;
+			border-color: $color-neutral-light;
+			li {
+				cursor: pointer;
+				list-style: none;
+				padding: $spacing-scale-small $spacing-scale-medium;
+				font-size: $font-size-small;
+				&:hover {
+					background-color: $color-neutral-lighter;
+				}
+				&.is-active {
+					background-color: $color-primary-lightest;
+					color: $color-primary-dark;
+				}
+				&.is-pondering:not(.is-active) {
+					background-color: $color-secondary-lightest;
+					color: $color-secondary-dark;
+				}
+			}
+		}
+	}
+}
