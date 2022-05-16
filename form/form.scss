@@ -9,6 +9,15 @@
 		:is-info {
 			margin-left: $spacing-scale-small;
 		}
+		&.is-required {
+			:is-label {
+				&:after {
+					content: "*";
+					margin-left: $spacing-scale-small;
+					color: $color-danger-base;
+				}
+			}
+		}
 	}
 	// we want the labels to float at the top
 	:is-form-component {
@@ -28,6 +37,14 @@
 	.is-content-after {
 		font-size: $font-size-xsmall;
 		color: $color-neutral-base;
+	}
+	.is-row {
+		display: flex;
+		@include layout-direction-horizontal;
+		@include layout-column-gap-medium;
+		> :is-form-component {
+			flex-grow: 1;
+		}
 	}
 }
 

@@ -46,7 +46,7 @@
 }
 @mixin button-color-transparent {
 	&:hover, &.is-active {
-		background-color: $color-neutral-lighter;
+		background-color: transparent;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-dark;
 	}
@@ -177,6 +177,7 @@ $button-link-color: $color-primary-darker;
 	@include content-size-plain;
 	@include button-color-link;
 	@include button-font-link;
+	padding: 0;
 }
 
 
@@ -248,3 +249,16 @@ $button-link-color: $color-primary-darker;
 	@include button-color-success-outline;
 }
 
+@mixin button-variant-close {
+	content: "x";
+	@include content-color-transparent;
+	@include button-color-transparent;
+	@include content-border-none;
+	position: absolute;
+	top: $spacing-scale-small;
+	right: $spacing-scale-small;
+}
+
+.has-button-close {
+	position: relative;
+}

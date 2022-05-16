@@ -20,6 +20,9 @@
 			text-align: right;
 		}
 		.n-input-combo-dropdown-values {
+			max-height: calc(#{$font-size-large} * 15);
+			z-index: 15;
+			overflow-y: auto;
 			width: calc(100% - #{$font-size-large});
 			margin: 0;
 			padding: 0;

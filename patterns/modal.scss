@@ -11,5 +11,35 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: rgba($color-neutral-darker, 0.7);
+	background-color: rgba($color-neutral-darker, 0.7);
+	:is-modal-content {
+		min-width: 30%;
+		max-width: 90%;
+	}
+}
+
+@mixin modal-variant-confirm {
+	.is-modal-content {
+		@include layout-color-basic;
+		@include layout-spacing-large;
+		@include layout-border-shadow;
+		.is-confirm {
+			@include grid-column-variant-default;
+			@include layout-row-gap-large;
+		}
+		.is-confirm-buttons {
+			@include grid-row-variant-default;
+			@include layout-justify-space-between;
+			.is-confirm-button-cancel {
+				@include button-variant-default;
+				@include button-variant-link;
+			}
+			.is-confirm-button-ok {
+				@include content-variant-default;
+				@include button-variant-default;
+				@include content-variant-primary;
+				@include button-variant-primary;
+			}
+		}
+	}
 }
