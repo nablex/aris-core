@@ -168,10 +168,16 @@ $button-link-color: $color-primary-darker;
 @mixin button-variant-default {
 	cursor: pointer;
 	display: inline-flex;
-	@include content-variant-default;
+	@include content-fix-icon;
+	@include content-font-normal;
+	@include content-order-normal;
+	@include content-size-medium;
+	
 	@include button-fix-icon;
+	@include content-color-neutral;
 	@include button-color-neutral;
 	@include content-spacing-medium;
+	@include content-border-basic;
 }
 @mixin button-variant-link {
 	@include content-size-plain;

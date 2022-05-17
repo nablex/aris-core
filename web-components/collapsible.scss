@@ -15,8 +15,10 @@
 	@include content-border-underline;
 }
 
-// @component collapsible-content
+// @extension collapsible-content layout
 @mixin collapsible-content-variant-default {
+	display: flex;
+	flex-direction: column;
 	@include layout-spacing-vertical-large;
 	@include layout-spacing-horizontal-large;
 	padding-right: 0;
@@ -37,5 +39,12 @@
 	// this is meant for border-underline
 	.is-collapsible:last-child {
 		border-bottom: none;
+	}
+}
+
+@mixin accordion-highlight-left {
+	.is-collapsible-content {
+		border-left: solid 10px $color-primary-lightest;
+		border-radius: 0 $border-radius $border-radius 0;
 	}
 }

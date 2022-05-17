@@ -19,21 +19,6 @@
 			}
 		}
 	}
-	// we want the labels to float at the top
-	:is-form-component {
-		display: flex;
-		@include layout-direction-vertical;
-		@include layout-row-gap-small;
-	}
-	:is-form-section {
-		display: flex;
-		@include layout-row-gap-large;
-		@include layout-direction-vertical;
-
-		:is-label-wrapper {
-			display: flex;
-		}
-	}
 	.is-content-after {
 		font-size: $font-size-xsmall;
 		color: $color-neutral-base;
@@ -44,6 +29,43 @@
 		@include layout-column-gap-medium;
 		> :is-form-component {
 			flex-grow: 1;
+		}
+	}
+	:is-label-wrapper {
+		display: flex;
+	}
+}
+
+@mixin form-variant-vertical {
+	// we want the labels to float at the top
+	:is-form-component {
+		display: flex;
+		@include layout-direction-vertical;
+		@include layout-row-gap-small;
+	}
+	:is-form-section {
+		display: flex;
+		@include layout-row-gap-large;
+		@include layout-direction-vertical;
+	}
+}
+
+@mixin form-variant-floating-labels {
+	:is-form-component {
+		// offset the floating label
+		margin-top: $spacing-scale-medium;
+		position: relative;
+		.is-label-wrapper {
+			position: absolute;
+			top: calc(0px - (#{$font-size-small} * 1.3));
+			background-color: $color-primary-lightest;
+			border: solid 1px $color-primary-light;
+			padding: $spacing-scale-xxsmall $spacing-scale-small;
+			border-radius: $border-radius;
+			.is-label {
+				font-size: $font-size-xsmall;
+				color: $color-primary-dark;
+			}
 		}
 	}
 }

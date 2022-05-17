@@ -1,0 +1,13 @@
+.is-page-edit-menu {
+	position: absolute;
+	padding: $spacing-scale-small $spacing-scale-medium;
+	background-color: $color-neutral-lightest;
+	color: $color-neutral-darker;
+	border: dashed 1px $color-neutral-darker;
+	border-radius: $border-radius;
+	font-size: $font-size-small;
+	&.is-bookmarkable {
+		border-style: solid;
+		background-color: $color-neutral-lighter;
+	}
+}

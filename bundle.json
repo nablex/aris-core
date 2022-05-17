@@ -48,6 +48,9 @@
 			}, 
 			"form-text.scss": {
 				"url": "components/form-text.scss"
+			},
+			"icon.scss": {
+				"url": "components/icon.scss"
 			}
 		},
 		"form": {
@@ -89,6 +92,9 @@
 		"page-builder": {
 			"pages-overview.scss": {
 				"url": "page-builder/pages-overview.scss"
+			},
+			"page.scss": {
+				"url": "page-builder/page.scss"
 			}
 		}
 	}

@@ -20,6 +20,7 @@ $menu-top-background-color: $color-body;
 	@include layout-align-stretch;
 }
 
+// @extension menu-item layout
 // the top menu is mainly used at the top of a web application
 @mixin menu-variant-toolbar {
 	// all columns must be relative to allow for absolute positioning

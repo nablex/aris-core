@@ -33,6 +33,12 @@
 	border-style: solid;
 }
 
+
+// ----------------------------------------- GROW
+@mixin content-grow-fill {
+	flex-grow: 1;
+}
+
 // ----------------------------------------- SPACING
 @mixin template-content-spacing {
 	padding: 0;
@@ -43,32 +49,32 @@
 @mixin content-spacing-xsmall {
 	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
 	// pills need more padding
-	&.is-border-pill {
+	&:is-border-pill {
 		padding: $spacing-scale-xxsmall $spacing-scale-small;
 	}
 }
 @mixin content-spacing-small {
 	padding: $spacing-scale-xsmall $spacing-scale-small;
-	&.is-border-pill {
+	&:is-border-pill {
 		padding: $spacing-scale-xsmall $spacing-scale-medium;
 	}
 }
 @mixin content-spacing-medium {
 	padding: $spacing-scale-small $spacing-scale-medium;
 	// pills need more padding
-	&.is-border-pill {
+	&:is-border-pill {
 		padding: $spacing-scale-small $spacing-scale-large;
 	}
 }
 @mixin content-spacing-large {
 	padding: $spacing-scale-medium $spacing-scale-large;
-	&.is-border-pill {
+	&:is-border-pill {
 		padding: $spacing-scale-medium $spacing-scale-xlarge;
 	}
 }
 @mixin content-spacing-xlarge {
 	padding: $spacing-scale-large $spacing-scale-xlarge;
-	&.is-border-pill {
+	&:is-border-pill {
 		padding: $spacing-scale-large $spacing-scale-xxlarge;
 	}
 }
@@ -85,7 +91,7 @@
 }
 @mixin content-size-xsmall {
 	font-size: $font-size-xsmall;
-	column-gap: $spacing-scale-small;
+	column-gap: $spacing-scale-xsmall;
 }
 @mixin content-size-small {
 	font-size: $font-size-small;
@@ -100,7 +106,7 @@
 }
 @mixin content-size-xlarge {
 	font-size: $font-size-xlarge;
-	column-gap: $spacing-scale-large;
+	column-gap: $spacing-scale-medium;
 }
 
 // ----------------------------------------- COLORS
@@ -216,6 +222,26 @@
 	font-style: normal;
 }
 
+// ----------------------------------------- ALIGN SELF
+@mixin template-content-align-self {
+	align-self: auto;
+}
+@mixin content-align-self-start {
+	align-self: flex-start;
+}
+@mixin content-align-self-end {
+	align-self: flex-end;
+}
+@mixin content-align-self-center {
+	align-self: center;
+}
+@mixin content-align-self-baseline {
+	align-self: baseline;
+}
+@mixin content-align-self-stretch {
+	align-self: stretch;
+}
+
 // ----------------------------------------- ORDER
 
 // reverse the order to have the icon after the label
@@ -250,8 +276,8 @@
 	@include content-font-normal;
 	@include content-order-normal;
 	@include content-size-medium;
-	@include content-border-basic;
-	@include content-color-neutral;
+	@include content-border-none;
+	@include content-color-transparent;
 }
 @mixin content-variant-neutral {
 	@include content-variant-default;

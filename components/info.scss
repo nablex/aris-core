@@ -3,6 +3,7 @@
 	display: inline-block;
 	position: relative;
 	.is-content-wrapper {
+		z-index: 10;
 		position: absolute;
 		background-color: $color-neutral-darkest;
 		color: $color-neutral-light;

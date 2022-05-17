@@ -27,12 +27,22 @@
 		font-size: $font-size-medium;
 		padding: 0 $spacing-scale-medium;
 	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-medium;
+		font-size: $font-size-medium;
+		padding: 0 $spacing-scale-medium;
+	}
 }
 
 @mixin form-component-size-small {
 	input {
 		line-height: $font-size-small;
 		height: calc(#{$font-size-small} * 2);
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-small;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-small;
 		font-size: $font-size-small;
 		padding: 0 $spacing-scale-small;
 	}
@@ -45,11 +55,21 @@
 		font-size: $font-size-small;
 		padding: 0 $spacing-scale-medium;
 	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-medium;
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-medium;
+	}
 }
 @mixin form-component-size-large {
 	input {
 		line-height: $font-size-large;
 		height: calc(#{$font-size-large} * 2.5);
+		font-size: $font-size-small;
+		padding: 0 $spacing-scale-large;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-large;
 		font-size: $font-size-small;
 		padding: 0 $spacing-scale-large;
 	}
@@ -98,4 +118,31 @@ $form-component-border-radius: $border-radius;
 	@include form-component-size-small;
 	@include form-component-color-default;
 	@include form-component-border-underline;
+}
+
+:is-form-labelled-component {
+	&.has-prefix {
+		input {
+			padding-left: calc(4 * #{$font-size-medium});
+		}
+	}
+	.is-content-wrapper {
+		position: relative;
+		.is-suffix, .is-prefix {
+			position: absolute;
+			bottom: 2px;
+			height: calc(100% - 4px);
+			display: flex;
+			align-items: center;
+			color: $color-neutral-base;
+		}
+		.is-suffix {
+			border-left: solid 1px $color-neutral-light;
+			right: 2px;
+		}
+		.is-prefix {
+			left: 2px;
+			border-right: solid 1px $color-neutral-light;
+		}
+	}
 }
