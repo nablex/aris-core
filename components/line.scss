@@ -34,15 +34,41 @@
 	background-color: $color-primary-darker;
 	color: $color-primary-darker;
 }
+@mixin line-color-primary-light {
+	background-color: $color-primary-lightest;
+	color: $color-primary-lightest;
+}
 @mixin line-color-secondary {
 	background-color: $color-secondary-darker;
 	color: $color-secondary-darker;
 }
 
+@mixin template-line-size {
+	height: 1px;
+}
+@mixin line-size-default {
+	@include template-line-size;
+}
+@mixin line-size-xsmall {
+	height: $spacing-scale-xsmall;
+}
+@mixin line-size-small {
+	height: $spacing-scale-small;
+}
+@mixin line-size-medium {
+	height: $spacing-scale-medium;
+}
+@mixin line-size-large {
+	height: $spacing-scale-large;
+}
+@mixin line-size-xlarge {
+	height: $spacing-scale-xlarge;
+}
+
 // ----------------------------------------- VARIANT
 @mixin line-variant-default {
 	border: none;
-	height: 1px;
 	width: 100%;
+	@include line-size-default;
 	@include line-color-neutral;
 }

@@ -1,4 +1,4 @@
-// @component form-component
+// @extension form-component layout
 // form component is at the root of all form components, not all components have these parts, but they might
 // <div class="is-form-component">
 // 		<div class="is-label-wrapper">contains label, perhaps an info icon</div>
@@ -36,15 +36,15 @@
 
 @mixin form-component-size-small {
 	input {
-		line-height: $font-size-small;
+		line-height: $font-size-xsmall;
 		height: calc(#{$font-size-small} * 2);
-		font-size: $font-size-small;
-		padding: 0 $spacing-scale-small;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-scale-medium;
 	}
 	.is-prefix, .is-suffix {
-		line-height: $font-size-small;
-		font-size: $font-size-small;
-		padding: 0 $spacing-scale-small;
+		line-height: $font-size-xsmall;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-scale-medium;
 	}
 }
 

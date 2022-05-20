@@ -35,9 +35,11 @@
 	background-color: $color-neutral-lightest;
 	@include sidebar-position-left;
 	header {
-		min-height: calc(2.5 * #{$font-size-large});
+		height: calc(5 * #{$font-size-large});
 	}
-	body {
+	main {
 		@include layout-row-gap-medium;
+		height: calc(100vh - (5 * #{$font-size-large}));
+		overflow: auto;
 	}
 }

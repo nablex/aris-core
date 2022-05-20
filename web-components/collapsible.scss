@@ -15,10 +15,39 @@
 	@include content-border-underline;
 }
 
+@mixin collapsible-color-primary {
+	> .is-title {
+		background-color: $color-primary-darkest;
+		color: $color-primary-lightest;
+	}
+}
+
+@mixin collapsible-color-neutral-dark {
+	> .is-title {
+		background-color: $color-neutral-darkest;
+		color: $color-neutral-lightest;
+	}
+}
+@mixin collapsible-color-neutral {
+	> .is-title {
+		background-color: $color-neutral-light;
+		color: $color-neutral-darkest;
+	}
+}
+@mixin collapsible-color-neutral-light {
+	> .is-title {
+		background-color: $color-neutral-lighter;
+		color: $color-neutral-darkest;
+	}
+}
+
 // @extension collapsible-content layout
 @mixin collapsible-content-variant-default {
 	display: flex;
 	flex-direction: column;
+}
+
+@mixin collapsible-content-spacing-default {
 	@include layout-spacing-vertical-large;
 	@include layout-spacing-horizontal-large;
 	padding-right: 0;

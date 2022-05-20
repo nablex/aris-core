@@ -1,5 +1,6 @@
 // @extension form layout
 // label is positioned above the field
+
 @mixin form-variant-default {
 	:is-form-component {
 		:is-label {
@@ -52,6 +53,10 @@
 
 @mixin form-variant-floating-labels {
 	:is-form-component {
+		display: flex;
+		@include layout-direction-vertical;
+		@include layout-row-gap-small;
+		
 		// offset the floating label
 		margin-top: $spacing-scale-medium;
 		position: relative;
