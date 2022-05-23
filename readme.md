@@ -21,8 +21,10 @@ The SCSS generation is done in a specific order to maintain css override guarant
 The naming strategy for the mixins consists of:
 
 ```
-[component]-[dimension]-[option]
+[component]_[dimension]_[option]
 ```
+
+The component, dimension and must +not+ contain a _. The option can have a "_" if necessary.
 
 Each dimension encapsulates one or more CSS rules that are grouped together. Each option within a dimension has specific values for these rules.
 An option must _not_ have css that does not belong to its dimension as this would break predictable overriding.
@@ -30,7 +32,7 @@ An option must _not_ have css that does not belong to its dimension as this woul
 For example
 
 ```css
-@mixin button-color-primary {
+@mixin button_color_primary {
 	color: $color-primary-dark;
 }
 ```
@@ -59,6 +61,13 @@ What you can do however is:
 
 A single option from multiple dimensions.
 
+### Reserved Dimensions
+
+Some dimensions are reserved for special behavior in aris:
+
+- variant
+- modifier
+
 ## Class names
 
 As you saw in the above example, aris heavily relies on the "is-" naming convention. An element +is+ something.
@@ -80,7 +89,7 @@ Component variants are a reserved dimension which acts differently from other di
 If we change our mind, we want to change the styling of said OK button for the whole application. A variant is a good solution for this:
 
 ```css
-@mixin button-variant-form-ok {
+@mixin button_variant_form-ok {
 	@include button-color-primary;
 	@include button-size-small;
 }
@@ -114,6 +123,28 @@ This means a component typically has a lot of dimensions and options to play wit
 A pattern is a much more complex component which forces much more complex styling and layouting on its children. This means it has fewer degrees of freedom and will generally only come with a select amount of variations. An example of this is a top menu bar which may need to make sure children appear in dropdowns etc.
 For components, dimensions and predictable overriding is very important, for patterns this is not always feasible.
 
+### Modifiers
+
+Apart from dimensions which encapsulate a specific set of rules and generally have multiple options, we also have modifiers.
+A modifier is a configuration tweak available on a variant of a component.
+
+For example we could have a component menu, a variant called "toolbar" which assumes some basic layouting and the toolbar has a modifier called "sticky" which means it will float at the top of a page.
+
+```css
+// @component menu layout
+@mixin menu_variant_toolbar {
+	...
+}
+@mixin menu-toolbar_modifier_sticky {
+	...
+}
+```
+
+This is basically a reserved dimension, much like "variant".
+You can check and uncheck multiple configuration options, it is unclear how they will interact when checked together. Some might be mutually exclusive, some might partially work, some might be well designed to interact.
+
+Note that the component name for a modifier must always include the variant. If it applies to the default variant, you have to explicitly write that as well, e.g. ``menu-default_modifier_sticky``.
+
 # Templating
 
 The end user of the styling (so the one making the application, +not+ the one making the theme) should rarely (and preferably never) have to write custom css.
@@ -128,7 +159,7 @@ At this point it is important to reiterate how crucial it is that dimensions onl
 This is the point of templates. Each dimension can (but is not required to) have a template.
 
 ```css
-@mixin template-button-color {
+@mixin template_button_color {
 	color: $color-primary-dark;
 	background-color: $color-primary-lightest;
 }
@@ -192,27 +223,27 @@ From the scss perspective we could do this:
 
 ```css
 // @component form-component
-@mixin form-component-default {
+@mixin form-component_variant_default {
 	...
 }
 // @component form-labelled-component form-component
-@mixin form-labelled-component-default {
+@mixin form-labelled-component_variant_default {
 
 }
 // @component form-text-component form-labelled-component
-@mixin form-text-default {
+@mixin form-text_variant_default {
 
 }
 // @component form-combo-component form-labelled-component
-@mixin form-text-default {
+@mixin form-text_variant_default {
 
 }
 // @component form-checkbox-component form-component
-@mixin form-text-default {
+@mixin form-text_variant_default {
 
 }
 // @component form-switch-component form-component
-@mixin form-text-default {
+@mixin form-text_variant_default {
 
 }
 ```
@@ -262,10 +293,10 @@ To show you what this does, let's take this test component:
 
 ```css
 // @component test
-@mixin test-variant-default {
+@mixin test_variant_default {
 	color: yellow;
 }
-@mixin test-color-red {
+@mixin test_color_red {
 	color: red;
 }
 :is-test:is-color-red {
@@ -329,13 +360,13 @@ Once a dimension is embedded in a variant, it will +not+ appear in the html clas
 
 ```css
 // @component test
-@mixin test-variant-default {
+@mixin test_variant_default {
 	color: yellow;
 }
-@mixin test-color-red {
+@mixin test_color_red {
 	color: red;
 }
-@mixin test-variant-special {
+@mixin test_variant_special {
 	@include test-color-red;
 }
 :is-test:is-color-red {
@@ -472,3 +503,46 @@ If variants are not guaranteed to be unique but dimensions are, we can still do 
 ```
 
 This strategy is currently not implemented.
+
+# Hierarchy
+
+The basic hierarchy of components is currently:
+
+- component: the base of everything, we define common dimensions at this level
+	- layout: the base of items that are primarily dealing with positioning of elements
+		- row
+		- column
+		...
+	- content: the base of items that are primarily dealing with visualization of content
+		- button
+		- badge
+		...
+
+## Component
+
+Some of the global dimensions:
+
+- 
+
+
+# TODO
+
+Currently when mixins are overridden, they actually appear multiple times because the system does not yet check for uniqueness.
+The ordering of the css is relevant and the mixin definition order should be maintained, so the first mixin wins.
+Because we generate scss after all your mixins, the scss compiler will automatically take the last mixin for all generation.
+
+More specific dimensions can finetune a larger dimension:
+
+spacing: all around padding and column/row gaps!
+spacing-gap: set only the gaps
+spacing-horizontal: set only horizontal padding and column gap
+spacing-horizontal-left
+spacing-horizontal-right
+spacing-horizontal-gap: set only column gap
+spacing-vertical
+spacing-vertical-top
+spacing-vertical-bottom
+spacing-vertical-gap
+
+we can offer the user a "spacing" dimension
+within it, he has main settings but also sub-dimensions

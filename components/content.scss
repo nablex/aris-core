@@ -6,220 +6,12 @@
 // <div class='is-content'><span class="is-icon"></span><span class="is-text"></span></div>
 // Note that we assume the icon is on the _left_ side of the text if both are present though we try to hard to not be aware of this fact
 
-// @component content
-// ----------------------------------------- BORDERS
-
-@mixin template-content-border {
-	border-radius: $border-radius;
-	border-width: 1px;
-	border-style: solid;
-}
-@mixin content-border-basic {
-	@include template-content-border;
-}
-@mixin content-border-underline {
-	border-radius: 0;
-	border-width: 1px;
-	border-style: none none solid none;
-}
-@mixin content-border-none {
-	border-radius: $border-radius;
-	border-width: 0px;
-	border-style: solid;
-}
-@mixin content-border-pill {
-	border-radius: $border-radius * 3;
-	border-width: 1px;
-	border-style: solid;
-}
+// @component content component
 
 
 // ----------------------------------------- GROW
 @mixin content-grow-fill {
 	flex-grow: 1;
-}
-
-// ----------------------------------------- SPACING
-@mixin template-content-spacing {
-	padding: 0;
-}
-@mixin content-spacing-plain {
-	@include template-content-spacing;
-}
-@mixin content-spacing-xsmall {
-	padding: $spacing-scale-xxsmall $spacing-scale-xsmall;
-	// pills need more padding
-	&:is-border-pill {
-		padding: $spacing-scale-xxsmall $spacing-scale-small;
-	}
-}
-@mixin content-spacing-small {
-	padding: $spacing-scale-xsmall $spacing-scale-small;
-	&:is-border-pill {
-		padding: $spacing-scale-xsmall $spacing-scale-medium;
-	}
-}
-@mixin content-spacing-medium {
-	padding: $spacing-scale-small $spacing-scale-medium;
-	// pills need more padding
-	&:is-border-pill {
-		padding: $spacing-scale-small $spacing-scale-large;
-	}
-}
-@mixin content-spacing-large {
-	padding: $spacing-scale-medium $spacing-scale-large;
-	&:is-border-pill {
-		padding: $spacing-scale-medium $spacing-scale-xlarge;
-	}
-}
-@mixin content-spacing-xlarge {
-	padding: $spacing-scale-large $spacing-scale-xlarge;
-	&:is-border-pill {
-		padding: $spacing-scale-large $spacing-scale-xxlarge;
-	}
-}
-
-// ----------------------------------------- SIZES
-@mixin template-content-size {
-	font-size: $font-size-medium;
-	column-gap: $spacing-scale-small;
-}
-// no padding etc
-@mixin content-size-plain {
-	font-size: $font-size-medium;
-	column-gap: $spacing-scale-small;
-}
-@mixin content-size-xsmall {
-	font-size: $font-size-xsmall;
-	column-gap: $spacing-scale-xsmall;
-}
-@mixin content-size-small {
-	font-size: $font-size-small;
-	column-gap: $spacing-scale-small;
-}
-@mixin content-size-medium {
-	@include template-content-size;
-}
-@mixin content-size-large {
-	font-size: $font-size-large;
-	column-gap: $spacing-scale-medium;
-}
-@mixin content-size-xlarge {
-	font-size: $font-size-xlarge;
-	column-gap: $spacing-scale-medium;
-}
-
-// ----------------------------------------- COLORS
-
-@mixin template-content-color {
-	background-color: $color-neutral-lightest;
-	color: $color-neutral-darker;
-	border-color: $color-neutral-darker;
-}
-@mixin content-color-neutral {
-	@include template-content-color;
-}
-@mixin content-color-primary {
-	background-color: $color-primary-base;
-	color: $color-neutral-lightest;
-	border-color: $color-primary-base;
-}
-@mixin content-color-primary-outline {
-	background-color: transparent;
-	color: $color-primary-base;
-	border-color: $color-primary-base;
-}
-@mixin content-color-secondary {
-	background-color: $color-secondary-base;
-	color: $color-neutral-lightest;
-	border-color: $color-secondary-base;
-}
-@mixin content-color-secondary-outline {
-	background-color: transparent;
-	color: $color-secondary-base;
-	border-color: $color-secondary-base;
-}
-@mixin content-color-transparent {
-	background-color: transparent;
-	color: $color-neutral-darker;
-	border-color: $color-neutral-base;
-}
-@mixin content-color-transparent-light {
-	background-color: transparent;
-	color: $color-neutral-lighter;
-	border-color: $color-neutral-base;
-}
-@mixin content-color-danger {
-	background-color: $color-danger-base;
-	color: $color-neutral-lightest;
-	border-color: $color-danger-base;
-}
-@mixin content-color-danger-outline {
-	background-color: transparent;
-	color: $color-danger-base;
-	border-color: $color-danger-base;
-}
-@mixin content-color-warning {
-	background-color: $color-warning-base;
-	color: $color-neutral-lightest;
-	border-color: $color-warning-base;
-}
-@mixin content-color-warning-outline {
-	background-color: transparent;
-	color: $color-warning-base;
-	border-color: $color-warning-base;
-}
-@mixin content-color-info {
-	background-color: $color-info-base;
-	color: $color-neutral-lightest;
-	border-color: $color-info-base;
-}
-@mixin content-color-info-outline {
-	background-color: transparent;
-	color: $color-info-base;
-	border-color: $color-info-base;
-}
-@mixin content-color-success {
-	background-color: $color-success-base;
-	color: $color-neutral-lightest;
-	border-color: $color-success-base;
-}
-@mixin content-color-success-outline {
-	background-color: transparent;
-	color: $color-success-base;
-	border-color: $color-success-base;
-}
-@mixin content-color-dark {
-	background-color: $color-neutral-darkest;
-	color: $color-neutral-lighter;
-	border-color: $color-neutral-darkest;
-}
-@mixin content-color-dark-outline {
-	background-color: transparent;
-	color: $color-neutral-darkest;
-	border-color: $color-neutral-darkest;
-}
-@mixin content-color-light {
-	background-color: $color-neutral-lightest;
-	color: $color-neutral-darker;
-	border-color: $color-neutral-light;
-}
-
-// ----------------------------------------- FONTS
-
-@mixin template-content-font {
-	font-weight: normal;
-	text-decoration: inherit;
-	font-style: normal;
-	text-transform: inherit;
-}
-@mixin content-font-normal {
-	@include template-content-font;
-}
-@mixin content-font-emphasis {
-	font-weight: bold;
-	text-decoration: none;
-	font-style: normal;
 }
 
 // ----------------------------------------- ALIGN SELF
@@ -329,15 +121,15 @@
 
 // @extension padded-content content
 // ----------------------------------------- SIZES -> include spacing
-@mixin template-padded-content-size {
+@mixin template-padded-content_size {
 	padding: 0;
 }
 // no padding etc
-@mixin padded-content-size-plain {
+@mixin padded-content_size_plain {
 	padding: 0;
 }
-@mixin padded-content-size-xsmall {
-	@include content-spacing-xsmall;
+@mixin padded-content_size_xsmall {
+	@include content_spacing_xsmall;
 }
 @mixin padded-content-size-small {
 	@include content-spacing-small;

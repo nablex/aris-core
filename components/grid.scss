@@ -1,26 +1,26 @@
 
 // ---------------------------------------------------------------------------------------------------------------------------
-// ----------------------------------------- GRID-ROW
+// ----------------------------------------- ROW
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension grid-row layout
+// @extension row layout
 // the row inside a grid
 
 // ----------------------------------------- VARIANTS
 // a relatively neutral grid
-@mixin grid-row-variant-default {
+@mixin row-variant-default {
 	@include layout-direction-horizontal;
 	@include layout-justify-start;
 	@include layout-align-stretch;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------
-// ----------------------------------------- GRID-COLUMN
+// ----------------------------------------- COLUMN
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension grid-column layout
+// @extension column layout
 // the column inside a grid
 
 // ----------------------------------------- VARIANTS
-@mixin grid-column-variant-default {
+@mixin column-variant-default {
 	@include layout-direction-vertical;
 }
 

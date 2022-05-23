@@ -1,0 +1,37 @@
+@mixin component_position_right {
+	margin-left: auto;
+}
+@mixin component_position_top {
+	margin-top: auto;
+}
+// only works in grids, not sure if we should have this here cause we flex
+//@mixin component_position_main-center {
+//	justify-self: center;
+//}
+//@mixin component_position_main-start {
+//	justify-self: flex-start;
+//}
+//@mixin component_position_main-end {
+//	justify-self: flex-end;
+//}
+@mixin component_position_cross-center {
+	align-self: center;
+}
+@mixin component_position_cross-start {
+	align-self: flex-start;
+}
+@mixin component_position_cross-end {
+	align-self: flex-end;
+}
+@mixin component_position_center {
+	//@include component_position_main-center;
+	@include component_position_cross-center;
+}
+@mixin component_position_start {
+	//@include component_position_main-start;
+	@include component_position_cross-start;
+}
+@mixin component_position_end {
+	//@include component_position_main-start;
+	@include component_position_cross-end;
+}

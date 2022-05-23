@@ -1,0 +1,259 @@
+// Spacing deals with whitespace between components, specifically it manipulates padding and row/cell gaps
+// The following dimensions exist:
+// horizontal-left: padding on the left
+// horizontal-right: padding on the right
+// horizontal-gap: the column gap
+// horizontal: combines the above
+// vertical-top: padding on the left
+// vertical-bottom: padding on the right
+// vertical-gap: the row gap
+// vertical: combines the above
+// spacing itself combines the same options from horizontal and vertical
+// spacing-flat combines options where the vertical is 1 smaller than the horizontal
+
+@mixin component_spacing-horizontal-left_xxsmall {
+	padding-left: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-horizontal-left_xsmall {
+	padding-left: $spacing-scale-xsmall;
+}
+@mixin component_spacing-horizontal-left_small {
+	padding-left: $spacing-scale-small;
+}
+@mixin component_spacing-horizontal-left_medium {
+	padding-left: $spacing-scale-medium;
+}
+@mixin component_spacing-horizontal-left_large {
+	padding-left: $spacing-scale-large;
+}
+@mixin component_spacing-horizontal-left_xlarge {
+	padding-left: $spacing-scale-xlarge;
+}
+@mixin component_spacing-horizontal-left_xxlarge {
+	padding-left: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-horizontal-right_xxsmall {
+	padding-right: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-horizontal-right_xsmall {
+	padding-right: $spacing-scale-xsmall;
+}
+@mixin component_spacing-horizontal-right_small {
+	padding-right: $spacing-scale-small;
+}
+@mixin component_spacing-horizontal-right_medium {
+	padding-right: $spacing-scale-medium;
+}
+@mixin component_spacing-horizontal-right_large {
+	padding-right: $spacing-scale-large;
+}
+@mixin component_spacing-horizontal-right_xlarge {
+	padding-right: $spacing-scale-xlarge;
+}
+@mixin component_spacing-horizontal-right_xxlarge {
+	padding-right: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-horizontal-gap_xxsmall {
+	column-gap: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-horizontal-gap_xsmall {
+	column-gap: $spacing-scale-xsmall;
+}
+@mixin component_spacing-horizontal-gap_small {
+	column-gap: $spacing-scale-small;
+}
+@mixin component_spacing-horizontal-gap_medium {
+	column-gap: $spacing-scale-medium;
+}
+@mixin component_spacing-horizontal-gap_large {
+	column-gap: $spacing-scale-large;
+}
+@mixin component_spacing-horizontal-gap_xlarge {
+	column-gap: $spacing-scale-xlarge;
+}
+@mixin component_spacing-horizontal-gap_xxlarge {
+	column-gap: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-horizontal_xxsmall {
+	@include component_spacing-horizontal-left_xxsmall;
+	@include component_spacing-horizontal-right_xxsmall;
+	@include component_spacing-horizontal-gap_xxsmall;
+}
+@mixin component_spacing-horizontal_xsmall {
+	@include component_spacing-horizontal-left_xsmall;
+	@include component_spacing-horizontal-right_xsmall;
+	@include component_spacing-horizontal-gap_xsmall;
+}
+@mixin component_spacing-horizontal_small {
+	@include component_spacing-horizontal-left_small;
+	@include component_spacing-horizontal-right_small;
+	@include component_spacing-horizontal-gap_small;
+}
+@mixin component_spacing-horizontal_medium {
+	@include component_spacing-horizontal-left_medium;
+	@include component_spacing-horizontal-right_medium;
+	@include component_spacing-horizontal-gap_medium;
+}
+@mixin component_spacing-horizontal_large {
+	@include component_spacing-horizontal-left_large;
+	@include component_spacing-horizontal-right_large;
+	@include component_spacing-horizontal-gap_large;
+}
+@mixin component_spacing-horizontal_xlarge {
+	@include component_spacing-horizontal-left_xlarge;
+	@include component_spacing-horizontal-right_xlarge;
+	@include component_spacing-horizontal-gap_xlarge;
+}
+@mixin component_spacing-horizontal_xxlarge {
+	@include component_spacing-horizontal-left_xxlarge;
+	@include component_spacing-horizontal-right_xxlarge;
+	@include component_spacing-horizontal-gap_xxlarge;
+}
+
+
+@mixin component_spacing-vertical-top_xxsmall {
+	padding-top: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-vertical-top_xsmall {
+	padding-top: $spacing-scale-xsmall;
+}
+@mixin component_spacing-vertical-top_small {
+	padding-top: $spacing-scale-small;
+}
+@mixin component_spacing-vertical-top_medium {
+	padding-top: $spacing-scale-medium;
+}
+@mixin component_spacing-vertical-top_large {
+	padding-top: $spacing-scale-large;
+}
+@mixin component_spacing-vertical-top_xlarge {
+	padding-top: $spacing-scale-xlarge;
+}
+@mixin component_spacing-vertical-top_xxlarge {
+	padding-top: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-vertical-bottom_xxsmall {
+	padding-bottom: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-vertical-bottom_xsmall {
+	padding-bottom: $spacing-scale-xsmall;
+}
+@mixin component_spacing-vertical-bottom_small {
+	padding-bottom: $spacing-scale-small;
+}
+@mixin component_spacing-vertical-bottom_medium {
+	padding-bottom: $spacing-scale-medium;
+}
+@mixin component_spacing-vertical-bottom_large {
+	padding-bottom: $spacing-scale-large;
+}
+@mixin component_spacing-vertical-bottom_xlarge {
+	padding-bottom: $spacing-scale-xlarge;
+}
+@mixin component_spacing-vertical-bottom_xxlarge {
+	padding-bottom: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-vertical-gap_xxsmall {
+	row-gap: $spacing-scale-xxsmall;
+}
+@mixin component_spacing-vertical-gap_xsmall {
+	row-gap: $spacing-scale-xsmall;
+}
+@mixin component_spacing-vertical-gap_small {
+	row-gap: $spacing-scale-small;
+}
+@mixin component_spacing-vertical-gap_medium {
+	row-gap: $spacing-scale-medium;
+}
+@mixin component_spacing-vertical-gap_large {
+	row-gap: $spacing-scale-large;
+}
+@mixin component_spacing-vertical-gap_xlarge {
+	row-gap: $spacing-scale-xlarge;
+}
+@mixin component_spacing-vertical-gap_xxlarge {
+	row-gap: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing-vertical_xxsmall {
+	@include component_spacing-vertical-top_xxsmall;
+	@include component_spacing-vertical-bottom_xxsmall;
+	@include component_spacing-vertical-gap_xxsmall;
+}
+@mixin component_spacing-vertical_xsmall {
+	@include component_spacing-vertical-top_xsmall;
+	@include component_spacing-vertical-bottom_xsmall;
+	@include component_spacing-vertical-gap_xsmall;
+}
+@mixin component_spacing-vertical_small {
+	@include component_spacing-vertical-top_small;
+	@include component_spacing-vertical-bottom_small;
+	@include component_spacing-vertical-gap_small;
+}
+@mixin component_spacing-vertical_medium {
+	@include component_spacing-vertical-top_medium;
+	@include component_spacing-vertical-bottom_medium;
+	@include component_spacing-vertical-gap_medium;
+}
+@mixin component_spacing-vertical_large {
+	@include component_spacing-vertical-top_large;
+	@include component_spacing-vertical-bottom_large;
+	@include component_spacing-vertical-gap_large;
+}
+@mixin component_spacing-vertical_xlarge {
+	@include component_spacing-vertical-top_xlarge;
+	@include component_spacing-vertical-bottom_xlarge;
+	@include component_spacing-vertical-gap_xlarge;
+}
+@mixin component_spacing-vertical_xxlarge {
+	@include component_spacing-vertical-top_xxlarge;
+	@include component_spacing-vertical-bottom_xxlarge;
+	@include component_spacing-vertical-gap_xxlarge;
+}
+
+@mixin component_spacing-gap_xsmall {
+	@include component_spacing-horizontal-gap_xsmall;
+	@include component_spacing-vertical-gap_xsmall;
+}
+@mixin component_spacing-gap_small {
+	@include component_spacing-horizontal-gap_small;
+	@include component_spacing-vertical-gap_small;
+}
+@mixin component_spacing-gap_medium {
+	@include component_spacing-horizontal-gap_medium;
+	@include component_spacing-vertical-gap_medium;
+}
+@mixin component_spacing-gap_large {
+	@include component_spacing-horizontal-gap_large;
+	@include component_spacing-vertical-gap_large;
+}
+@mixin component_spacing-gap_xlarge {
+	@include component_spacing-horizontal-gap_xlarge;
+	@include component_spacing-vertical-gap_xlarge;
+}
+
+@mixin component_spacing_xsmall {
+	@include component_spacing-horizontal_xsmall;
+	@include component_spacing-vertical_xsmall;
+}
+@mixin component_spacing_small {
+	@include component_spacing-horizontal_small;
+	@include component_spacing-vertical_small;
+}
+@mixin component_spacing_medium {
+	@include component_spacing-horizontal_medium;
+	@include component_spacing-vertical_medium;
+}
+@mixin component_spacing_large {
+	@include component_spacing-horizontal_large;
+	@include component_spacing-vertical_large;
+}
+@mixin component_spacing_xlarge {
+	@include component_spacing-horizontal_xlarge;
+	@include component_spacing-vertical_xlarge;
+}

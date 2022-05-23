@@ -1,9 +1,9 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- MENU
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension menu layout
+// @component menu layout
 // reset some defaults that a ul has if it acts as a grid row
-ul.is-grid-row, ul.is-menu {
+ul.is-row, ul.is-menu {
 	padding: 0;
 	margin: 0;
 	> li {
@@ -13,7 +13,7 @@ ul.is-grid-row, ul.is-menu {
 // ----------------------------------------- VARIANTS
 $menu-top-background-color: $color-body;
 
-// same as grid-row
+// same as row
 @mixin menu-variant-default {
 	@include layout-direction-horizontal;
 	@include layout-justify-start;
@@ -24,7 +24,7 @@ $menu-top-background-color: $color-body;
 // the top menu is mainly used at the top of a web application
 @mixin menu-variant-toolbar {
 	// all columns must be relative to allow for absolute positioning
-	.is-grid-column {
+	.is-column {
 		justify-content: center;
 		position: relative;
 		// the content (usually a button) should take up the full available width
@@ -35,24 +35,24 @@ $menu-top-background-color: $color-body;
 		}
 		&:hover {
 			// revert to flex display when hovering
-			> .is-grid-row {
+			> .is-row {
 				display: flex;
 			}
 		}
 	}
-	.is-grid-row {
+	.is-row {
 		display: none;
 		padding: 0;
 	}
-	> .is-grid-column {
-		> .is-grid-row {
+	> .is-column {
+		> .is-row {
 			// make sure we elevate it above most other things
 			z-index: 10;
 			position: absolute;
 			top: 100%;
 			left: 0;
 			// the first level needs to be positioned at the bottom, all the other levels on the right
-			.is-grid-row {
+			.is-row {
 				top: 0;
 				left: 100%;
 				position: absolute;
@@ -84,17 +84,17 @@ $menu-top-background-color: $color-body;
 			}
 		}
 
-		> .is-grid-row {
+		> .is-row {
 			// the first layer is horizontal and permanently visible
 			// the second layer is a pop-down from the first one, so we want the border radiuses on the top entry to be invisible
-			> .is-grid-column {
+			> .is-column {
 				&:not(:last-child) {
 					> .is-button {
 						border-radius: 0;
 					}
 				}
 				// from layer 3 onwards, we keep opening to the right
-				.is-grid-column {
+				.is-column {
 					&:not(:first-child):not(:last-child) {
 						> .is-button {
 							border-radius: 0;
@@ -114,7 +114,7 @@ $menu-top-background-color: $color-body;
 				}
 			}
 			// this is the same for level 2 onwards
-			.is-grid-column {
+			.is-column {
 				// from level 2 onwards, it layers over other content, some things (like outline buttons) don't have a standard background color, so we need to add one
 				background-color: $menu-top-background-color;
 				&:last-child {
@@ -133,17 +133,17 @@ $menu-top-background-color: $color-body;
 }
 
 // a dark toolbar
-@mixin menu-toolbar-modifier-dark {
+@mixin menu_toolbar-modifier-dark {
 	background-color: $color-neutral-darkest; 
 }
-@mixin menu-toolbar-modifier-light {
+@mixin menu_toolbar-modifier-light {
 	background-color: $color-body; 
 	border-bottom: solid 1px $color-neutral-darker;
 }
-@mixin menu-toolbar-modifier-transparent {
+@mixin menu_toolbar-modifier-transparent {
 	background-color: transparent; 
 }
-@mixin menu-toolbar-modifier-warning-highlight {
+@mixin menu_toolbar-modifier-warning-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-warning-base;
@@ -163,7 +163,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 }
-@mixin menu-toolbar-modifier-success-highlight {
+@mixin menu_toolbar-modifier-success-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-success-base;
@@ -183,7 +183,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 }
-@mixin menu-toolbar-modifier-primary-highlight {
+@mixin menu_toolbar-modifier-primary-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-primary-base;
@@ -204,7 +204,7 @@ $menu-top-background-color: $color-body;
 	}
 }
 // a toolbar that acts as a main top menu to a page
-@mixin menu-toolbar-modifier-main-top {
+@mixin menu_toolbar-modifier-main-top {
 	z-index: 100;
 	&:not(.is-content-width-medium):not(.is-content-width-small):not(.is-content-width-large) {
 		padding-left: $spacing-scale-medium;
@@ -224,7 +224,7 @@ $menu-top-background-color: $color-body;
 .has-menu-toolbar-sticky {
 	margin-top: 3rem;
 }
-@mixin menu-toolbar-modifier-sticky {
+@mixin menu_toolbar-modifier-sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -242,7 +242,7 @@ $menu-top-background-color: $color-body;
 .has-toolbar {
 	position: relative;
 }
-@mixin menu-toolbar-modifier-embedded {
+@mixin menu_toolbar-modifier-embedded {
 	position: absolute;
 	right: 0;
 	top: 0;

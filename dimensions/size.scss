@@ -1,0 +1,28 @@
+@mixin content_size_xxsmall {
+	font-size: $font-size-xxsmall;
+	line-height: $font-size-xsmall;
+}
+@mixin content_size_xsmall {
+	font-size: $font-size-xsmall;
+	line-height: $font-size-small;
+}
+@mixin content_size_small {
+	font-size: $font-size-small;
+	line-height: $font-size-medium;
+}
+@mixin content_size_medium {
+	font-size: $font-size-medium;
+	line-height: $font-size-large;
+}
+@mixin content_size_large {
+	font-size: $font-size-large;
+	line-height: $font-size-xlarge;
+}
+@mixin content_size_xlarge {
+	font-size: $font-size-xlarge;
+	line-height: $font-size-xxlarge;
+}
+@mixin content_size_xlarge {
+	font-size: $font-size-xxlarge;
+	line-height: calc(#{$font-size-xxlarge} * 1.15);
+}

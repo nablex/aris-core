@@ -1,0 +1,100 @@
+// color deals with text color, background color, border color etc
+
+// the main background color of the application
+@mixin component_color_background {
+	background-color: $color-background;
+	color: $font-color;
+	border-color: $font-color;
+}
+// same color as the body of the application
+@mixin component_color_body {
+	background-color: $color-body;
+	color: $font-color;
+	border-color: $font-color;
+}
+
+@mixin component_color_primary {
+	background-color: $color-primary-base;
+	color: $color-neutral-lightest;
+	border-color: $color-primary-base;
+}
+@mixin component_color_primary-outline {
+	background-color: transparent;
+	color: $color-primary-base;
+	border-color: $color-primary-base;
+}
+@mixin component_color_secondary {
+	background-color: $color-secondary-base;
+	color: $color-neutral-lightest;
+	border-color: $color-secondary-base;
+}
+@mixin component_color_secondary-outline {
+	background-color: transparent;
+	color: $color-secondary-base;
+	border-color: $color-secondary-base;
+}
+@mixin component_color_transparent {
+	background-color: transparent;
+	color: $color-neutral-darker;
+	border-color: $color-neutral-base;
+}
+@mixin component_color_transparent-light {
+	background-color: transparent;
+	color: $color-neutral-lighter;
+	border-color: $color-neutral-base;
+}
+@mixin component_color_danger {
+	background-color: $color-danger-base;
+	color: $color-neutral-lightest;
+	border-color: $color-danger-base;
+}
+@mixin component_color_danger-outline {
+	background-color: transparent;
+	color: $color-danger-base;
+	border-color: $color-danger-base;
+}
+@mixin component_color_warning {
+	background-color: $color-warning-base;
+	color: $color-neutral-lightest;
+	border-color: $color-warning-base;
+}
+@mixin component_color_warning-outline {
+	background-color: transparent;
+	color: $color-warning-base;
+	border-color: $color-warning-base;
+}
+@mixin component_color_info {
+	background-color: $color-info-base;
+	color: $color-neutral-lightest;
+	border-color: $color-info-base;
+}
+@mixin component_color_info-outline {
+	background-color: transparent;
+	color: $color-info-base;
+	border-color: $color-info-base;
+}
+@mixin component_color_success {
+	background-color: $color-success-base;
+	color: $color-neutral-lightest;
+	border-color: $color-success-base;
+}
+@mixin component_color_success-outline {
+	background-color: transparent;
+	color: $color-success-base;
+	border-color: $color-success-base;
+}
+@mixin component_color_dark {
+	background-color: $color-neutral-darkest;
+	color: $color-neutral-lighter;
+	border-color: $color-neutral-darkest;
+}
+@mixin component_color_dark-outline {
+	background-color: transparent;
+	color: $color-neutral-darkest;
+	border-color: $color-neutral-darkest;
+}
+@mixin component_color_light {
+	background-color: $color-neutral-lightest;
+	color: $color-neutral-darker;
+	border-color: $color-neutral-base;
+}

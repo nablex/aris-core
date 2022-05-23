@@ -6,7 +6,7 @@
 
 // Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
 
-// @extension button padded-content
+// @extension button padded_content
 // ----------------------------------------- COLORS
 
 @mixin button-color-neutral {
@@ -167,6 +167,8 @@ $button-link-color: $color-primary-darker;
 
 @mixin button-variant-default {
 	cursor: pointer;
+	// we use inline flex so we can easily position the icon and text with a gap without having to know which are present
+	// additionally it makes it easy to reverse the order
 	display: inline-flex;
 	@include content-fix-icon;
 	@include content-font-normal;

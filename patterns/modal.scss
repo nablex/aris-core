@@ -24,11 +24,11 @@
 		@include layout-spacing-large;
 		@include layout-border-shadow;
 		.is-confirm {
-			@include grid-column-variant-default;
+			@include column-variant-default;
 			@include layout-row-gap-large;
 		}
 		.is-confirm-buttons {
-			@include grid-row-variant-default;
+			@include row-variant-default;
 			@include layout-justify-space-between;
 			.is-confirm-button-cancel {
 				@include button-variant-default;

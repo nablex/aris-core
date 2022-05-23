@@ -1,0 +1,20 @@
+@mixin component_border_full {
+	border-radius: $border-radius;
+	border-width: 1px;
+	border-style: solid;
+}
+@mixin component_border_underline {
+	border-radius: 0;
+	border-width: 1px;
+	border-style: none none solid none;
+}
+@mixin component_border_none {
+	border-radius: $border-radius;
+	border-width: 0px;
+	border-style: solid;
+}
+@mixin component_border_pill {
+	border-radius: $border-radius * 3;
+	border-width: 1px;
+	border-style: solid;
+}
