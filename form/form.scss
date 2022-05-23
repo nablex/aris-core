@@ -1,11 +1,11 @@
-// @extension form layout
+// @component form layout
 // label is positioned above the field
 
-@mixin form-variant-default {
+@mixin form_variant_default {
 	:is-form-component {
 		:is-label {
-			@include content-size-small;
-			@include content-color-dark-outline;
+			@include content_size_small;
+			@include component_color_dark-outline;
 		}
 		:is-info {
 			margin-left: $spacing-scale-small;
@@ -26,8 +26,8 @@
 	}
 	.is-row {
 		display: flex;
-		@include layout-direction-horizontal;
-		@include layout-column-gap-medium;
+		@include component_direction_horizontal;
+		@include component_spacing_horizontal-gap-medium;
 		> :is-form-component {
 			flex-grow: 1;
 		}
@@ -37,25 +37,25 @@
 	}
 }
 
-@mixin form-variant-vertical {
+@mixin form_variant_vertical {
 	// we want the labels to float at the top
 	:is-form-component {
 		display: flex;
-		@include layout-direction-vertical;
-		@include layout-row-gap-small;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
 	}
 	:is-form-section {
 		display: flex;
-		@include layout-row-gap-large;
-		@include layout-direction-vertical;
+		@include component_spacing_vertical-gap-large;
+		@include component_direction_vertical;
 	}
 }
 
-@mixin form-variant-floating-labels {
+@mixin form_variant_floating-labels {
 	:is-form-component {
 		display: flex;
-		@include layout-direction-vertical;
-		@include layout-row-gap-small;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
 		
 		// offset the floating label
 		margin-top: $spacing-scale-medium;
@@ -76,7 +76,7 @@
 }
 
 // horizontal labels
-@mixin form-variant-horizontal {
+@mixin form_variant_horizontal {
 	:is-form-component {
 		display: flex;
 	}

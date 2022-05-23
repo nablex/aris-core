@@ -8,19 +8,19 @@
 //		<div class="is-content-after">contains content that should appear after the element</div>
 // </div>
 
-// @extension form-labelled-component form-component
+// @component form-labelled-component form-component
 // a labelled component expects a label separate from the form input, for instance a text component, date component... we can float the label anywhere relative to the actual input
 // a counterexample to this is the checkbox, we can't really float the label away from the input because they should remain together
 
-// @extension form-flat-component form-component
+// @component form-flat-component form-component
 // an extension that groups all form compnents where the label is hard coupled to the input (radio, checkbox, switch...)
 // they should only have a is-content-wrapper
 
-// @extension form-text form-labelled-component
+// @component form-text form-labelled-component
 
 // ----------------------------------------- SIZE
 
-@mixin template-form-component-size {
+@mixin template_form-component_size {
 	input {
 		line-height: $font-size-medium;
 		height: calc(#{$font-size-medium} * 2.5);
@@ -34,7 +34,7 @@
 	}
 }
 
-@mixin form-component-size-small {
+@mixin form-component_size_small {
 	input {
 		line-height: $font-size-xsmall;
 		height: calc(#{$font-size-small} * 2);
@@ -48,7 +48,7 @@
 	}
 }
 
-@mixin form-component-size-medium {
+@mixin form-component_size_medium {
 	input {
 		line-height: $font-size-medium;
 		height: calc(#{$font-size-medium} * 2.5);
@@ -61,7 +61,7 @@
 		padding: 0 $spacing-scale-medium;
 	}
 }
-@mixin form-component-size-large {
+@mixin form-component_size_large {
 	input {
 		line-height: $font-size-large;
 		height: calc(#{$font-size-large} * 2.5);
@@ -76,7 +76,7 @@
 }
 
 // ----------------------------------------- COLORS
-@mixin form-component-color-default {
+@mixin form-component_color_default {
 	input {
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-light;
@@ -92,7 +92,7 @@
 
 $form-component-border-radius: $border-radius;
 // ----------------------------------------- BORDERS
-@mixin form-component-border-default {
+@mixin form-component_border_default {
 	input {
 		border-width: 1px;
 		border-style: solid;
@@ -100,7 +100,7 @@ $form-component-border-radius: $border-radius;
 	}
 }
 
-@mixin form-component-border-underline {
+@mixin form-component_border_underline {
 	input {
 		border-width: 1px;
 		border-style: none none solid none;
@@ -108,16 +108,16 @@ $form-component-border-radius: $border-radius;
 	}
 }
 
-@mixin form-component-variant-default {
-	@include form-component-size-medium;
-	@include form-component-color-default;
-	@include form-component-border-default;
+@mixin form-component_variant_default {
+	@include form-component_size_medium;
+	@include form-component_color_default;
+	@include form-component_border_default;
 }
 
-@mixin form-component-variant-underline {
-	@include form-component-size-small;
-	@include form-component-color-default;
-	@include form-component-border-underline;
+@mixin form-component_variant_underline {
+	@include form-component_size_small;
+	@include form-component_color_default;
+	@include form-component_border_underline;
 }
 
 :is-form-labelled-component {

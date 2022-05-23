@@ -1,7 +1,7 @@
-// @extension form-combo form-labelled-component
+// @component form-combo form-labelled-component
 
-@mixin form-combo-variant-default {
-	@include form-component-variant-default;
+@mixin form-combo_variant_default {
+	@include form-component_variant_default;
 
 	.is-show-values {
 		input {

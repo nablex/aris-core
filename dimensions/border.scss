@@ -18,3 +18,7 @@
 	border-width: 1px;
 	border-style: solid;
 }
+@mixin component_border_shadow {
+	box-shadow: 0px 1px 3px $color-neutral-dark;
+	border-radius: $border-radius;
+}

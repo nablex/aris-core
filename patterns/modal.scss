@@ -1,5 +1,5 @@
 // @component modal
-@mixin modal-variant-default {
+@mixin modal_variant_default {
 	position: fixed;
     top: 0;
     left: 0;
@@ -15,30 +15,31 @@
 	:is-modal-content {
 		min-width: 30%;
 		max-width: 90%;
+		@include component_color_background;
 	}
 }
 
-@mixin modal-variant-confirm {
+@mixin modal_variant_confirm {
 	.is-modal-content {
-		@include layout-color-basic;
-		@include layout-spacing-large;
-		@include layout-border-shadow;
+		@include component_color_background;
+		@include component_spacing_large;
+		@include component_border_shadow;
 		.is-confirm {
-			@include column-variant-default;
-			@include layout-row-gap-large;
+			@include column_variant_default;
+			@include component_spacing_vertical-gap-large;
 		}
 		.is-confirm-buttons {
-			@include row-variant-default;
-			@include layout-justify-space-between;
+			@include row_variant_default;
+			@include layout_align_space-between;
 			.is-confirm-button-cancel {
-				@include button-variant-default;
-				@include button-variant-link;
+				@include button_variant_default;
+				@include button_variant_link;
 			}
 			.is-confirm-button-ok {
-				@include content-variant-default;
-				@include button-variant-default;
-				@include content-variant-primary;
-				@include button-variant-primary;
+				@include content_variant_default;
+				@include button_variant_default;
+				@include content_variant_primary;
+				@include button_variant_primary;
 			}
 		}
 	}

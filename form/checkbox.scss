@@ -1,7 +1,7 @@
 // @extension form-checkbox form-flat-component
 
 $form-checkbox-check-character: "\2713";
-@mixin form-checkbox-variant-default {
+@mixin form-checkbox_variant_default {
 	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
 	// even if we order "normally", our label would have a large invisible hit target
 	align-self: flex-start;
@@ -53,7 +53,7 @@ $form-checkbox-check-character: "\2713";
 	}
 }
 
-@mixin form-checkbox-order-reverse {
+@mixin form-checkbox_order_reverse {
 	input + label {
 		margin-left: 0;
 		margin-right: calc(#{$font-size-large} * 2);

@@ -8,44 +8,14 @@
 
 // @component content component
 
-
-// ----------------------------------------- GROW
-@mixin content-grow-fill {
-	flex-grow: 1;
+@mixin template_layout_wrap {
+	white-space: wrap;
 }
-
-// ----------------------------------------- ALIGN SELF
-@mixin template-content-align-self {
-	align-self: auto;
+@mixin layout_wrap_none {
+	white-space: nowrap;
 }
-@mixin content-align-self-start {
-	align-self: flex-start;
-}
-@mixin content-align-self-end {
-	align-self: flex-end;
-}
-@mixin content-align-self-center {
-	align-self: center;
-}
-@mixin content-align-self-baseline {
-	align-self: baseline;
-}
-@mixin content-align-self-stretch {
-	align-self: stretch;
-}
-
-// ----------------------------------------- ORDER
-
-// reverse the order to have the icon after the label
-// there is no template because the idea is not that you make your own order at this point
-// you can however toggle it as a dimensional option
-@mixin content-order-reverse {
-	flex-direction: row-reverse;
-	align-items: center;
-}
-@mixin content-order-normal {
-	flex-direction: row;
-	align-items: center;
+@mixin layout_wrap_wrap {
+	white-space: wrap;
 }
 
 // some tiny corrections
@@ -63,83 +33,56 @@
 	}
 }
 
-@mixin content-variant-default {
+@mixin content_variant_default {
 	@include content-fix-icon;
-	@include content-font-normal;
-	@include content-order-normal;
-	@include content-size-medium;
-	@include content-border-none;
-	@include content-color-transparent;
 }
-@mixin content-variant-neutral {
-	@include content-variant-default;
+@mixin content_variant_neutral {
+	@include content_variant_default;
 }
-@mixin content-variant-primary {
-	@include content-color-primary;
+@mixin content_variant_primary {
+	@include component_color_primary;
 }
-@mixin content-variant-secondary {
-	@include content-color-secondary;
+@mixin content_variant_secondary {
+	@include component_color_secondary;
 }
-@mixin content-variant-primary-outline {
-	@include content-color-primary-outline;
+@mixin content_variant_primary-outline {
+	@include component_color_primary-outline;
 }
-@mixin content-variant-secondary-outline {
-	@include content-color-secondary-outline;
+@mixin content_variant_secondary-outline {
+	@include component_color_secondary-outline;
 }
-@mixin content-variant-ghost {
-	@include content-border-none;
-	@include content-color-transparent;
+@mixin content_variant_ghost {
+	@include component_border_none;
+	@include component_color_transparent;
 }
-@mixin content-variant-ghost-light {
-	@include content-border-none;
-	@include content-color-transparent-light;
+@mixin content_variant_ghost-light {
+	@include component_border_none;
+	@include component_color_transparent-light;
 }
-@mixin content-variant-info {
-	@include content-color-info;
+@mixin content_variant_info {
+	@include component_color_info;
 }
-@mixin content-variant-info-outline {
-	@include content-color-info-outline;
+@mixin content_variant_info-outline {
+	@include component_color_info-outline;
 }
-@mixin content-variant-warning {
-	@include content-color-warning;
+@mixin content_variant_warning {
+	@include component_color_warning;
 }
-@mixin content-variant-warning-outline {
-	@include content-color-warning-outline;
+@mixin content_variant_warning-outline {
+	@include component_color_warning-outline;
 }
-@mixin content-variant-danger {
-	@include content-color-danger;
+@mixin content_variant_danger {
+	@include component_color_danger;
 }
-@mixin content-variant-danger-outline {
-	@include content-color-danger-outline;
+@mixin content_variant_danger-outline {
+	@include component_color_danger-outline;
 }
-@mixin content-variant-success {
-	@include content-color-success;
+@mixin content_variant_success {
+	@include component_color_success;
 }
-@mixin content-variant-success-outline {
-	@include content-color-success-outline;
+@mixin content_variant_success-outline {
+	@include component_color_success-outline;
 }
 
-// @extension padded-content content
-// ----------------------------------------- SIZES -> include spacing
-@mixin template-padded-content_size {
-	padding: 0;
-}
-// no padding etc
-@mixin padded-content_size_plain {
-	padding: 0;
-}
-@mixin padded-content_size_xsmall {
-	@include content_spacing_xsmall;
-}
-@mixin padded-content-size-small {
-	@include content-spacing-small;
-}
-@mixin padded-content-size-medium {
-	@include content-spacing-medium;
-}
-@mixin padded-content-size-large {
-	@include content-spacing-large;
-}
-@mixin padded-content-size-xlarge {
-	@include content-spacing-xlarge;
-}
+
+// @component padded-content content

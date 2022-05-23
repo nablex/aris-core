@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- TOOLTIP
 // ---------------------------------------------------------------------------------------------------------------------------
-// @extension tooltip content
+// @component tooltip padded-content
 
 // make sure we can offset to the given element
 .has-tooltip {
@@ -15,45 +15,45 @@
 	}
 }
 
-@mixin template-tooltip-width {
+@mixin template_tooltip_width {
 	width: calc(#{$spacing-scale-medium} * 6);
 }
 
-@mixin tooltip-width-small {
-	@include template-tooltip-width;
+@mixin tooltip_width_small {
+	@include template_tooltip_width;
 }
-@mixin tooltip-width-medium {
+@mixin tooltip_width_medium {
 	width: calc(#{$spacing-scale-medium} * 12);
 }
-@mixin tooltip-width-large {
+@mixin tooltip_width_large {
 	width: calc(#{$spacing-scale-medium} * 18);
 }
 
 // ----------------------------------------- SIZES -> include spacing
-@mixin template-tooltip-size {
+@mixin template_tooltip_size {
 	padding: 0;
 }
 // no padding etc
-@mixin tooltip-size-plain {
+@mixin tooltip_size_plain {
 	padding: 0;
 }
-@mixin tooltip-size-xsmall {
-	@include content-spacing-xsmall;
+@mixin tooltip_size_xsmall {
+	@include component_spacing_xsmall;
 }
-@mixin tooltip-size-small {
-	@include content-spacing-small;
+@mixin tooltip_size_small {
+	@include component_spacing_small;
 }
-@mixin tooltip-size-medium {
-	@include content-spacing-medium;
+@mixin tooltip_size_medium {
+	@include component_spacing_medium;
 }
-@mixin tooltip-size-large {
-	@include content-spacing-large;
+@mixin tooltip_size_large {
+	@include component_spacing_large;
 }
-@mixin tooltip-size-xlarge {
-	@include content-spacing-xlarge;
+@mixin tooltip_size_xlarge {
+	@include component_spacing_xlarge;
 }
 
-@mixin tooltip-position-top {
+@mixin tooltip_position_top {
 	bottom: calc(100% + 5px);
 	left: 50%;
 	&:after {
@@ -108,7 +108,7 @@
 	}
 }
 
-@mixin tooltip-position-bottom {
+@mixin tooltip_position_bottom {
 	top: calc(100% + 5px);
 	left: 50%;
 	&:after {
@@ -169,7 +169,7 @@
 // if say the tooltip is 50px high and you attach it to a 25px high button, if you centered the arrow on the 50px, it would actually point to the bottom of the button
 // currently the solution is simply not to center the arrow itself, but point it at the top, presuming at least _some_ height on the element it is attached to
 // so instead of the after being positioned at top 50%, we put it at top 11px for now
-@mixin tooltip-position-right {
+@mixin tooltip_position_right {
 	top: 13%;
 	left: calc(100% + 5px);
 	&:after {
@@ -215,7 +215,7 @@
 		border-color: transparent $color-warning-dark transparent transparent;
 	}
 }
-@mixin tooltip-position-left {
+@mixin tooltip_position_left {
 	top: 13%;
 	right: calc(100% + 5px);
 	&:after {
@@ -263,16 +263,17 @@
 }
 
 // we don't include a default position, there is too much to override (like the margins etc)
-@mixin tooltip-variant-default {
+@mixin tooltip_variant_default {
 	visibility: hidden;
 	opacity: 0;
 	z-index: 15;
 	position: absolute;
-	@include content-border-basic;
-	@include content-size-small;
-	@include tooltip-size-small;
-	@include content-color-dark;
-	@include tooltip-width-small;
+	@include component_border_full;
+	@include content_size-small;
+	@include padded-content_size-small;
+	@include tooltip_size_small;
+	@include component_color_dark;
+	@include tooltip_width_small;
 	&:after {
 		content: ' ';
 		position: absolute;

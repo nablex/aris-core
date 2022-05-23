@@ -22,7 +22,28 @@
 	font-size: $font-size-xlarge;
 	line-height: $font-size-xxlarge;
 }
-@mixin content_size_xlarge {
+@mixin content_size_xxlarge {
 	font-size: $font-size-xxlarge;
 	line-height: calc(#{$font-size-xxlarge} * 1.15);
+}
+
+@mixin padded-content_size_xsmall {
+	@include component_spacing_horizontal-xsmall;
+	@include component_spacing_vertical-xxsmall;
+}
+@mixin padded-content_size_small {
+	@include component_spacing_horizontal-small;
+	@include component_spacing_vertical-xsmall;
+}
+@mixin padded-content_size_medium {
+	@include component_spacing_horizontal-medium;
+	@include component_spacing_vertical-small;
+}
+@mixin padded-content_size_large {
+	@include component_spacing_horizontal-large;
+	@include component_spacing_vertical-medium;
+}
+@mixin padded-content_size_xlarge {
+	@include component_spacing_horizontal-xlarge;
+	@include component_spacing_vertical-large;
 }

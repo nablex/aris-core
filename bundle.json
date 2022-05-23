@@ -12,7 +12,33 @@
 				"url": "base/spacing.scss"
 			}
 		}, 
+		"dimensions": {
+			"spacing.scss": {
+				"url": "dimensions/spacing.scss"
+			},
+			"border.scss": {
+				"url": "dimensions/border.scss"
+			},
+			"color.scss": {
+				"url": "dimensions/color.scss"
+			},
+			"decoration.scss": {
+				"url": "dimensions/decoration.scss"
+			},
+			"direction.scss": {
+				"url": "dimensions/direction.scss"
+			},
+			"position.scss": {
+				"url": "dimensions/position.scss"
+			},
+			"size.scss": {
+				"url": "dimensions/size.scss"
+			}
+		},
 		"components": {
+			"component.scss": {
+				"url": "components/component.scss"
+			},
 			"content.scss": {
 				"url": "components/content.scss"
 			},

@@ -1,6 +1,6 @@
-// @extension form-switch form-flat-component
+// @component form-switch form-flat-component
 
-@mixin form-switch-variant-default {
+@mixin form-switch_variant_default {
 	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
 	// even if we order "normally", our label would have a large invisible hit target
 	align-self: flex-start;
@@ -54,7 +54,7 @@
 	}
 }
 
-@mixin form-switch-order-reverse {
+@mixin form-switch_order_reverse {
 	input + label {
 		margin-left: 0;
 		margin-right: calc(#{$font-size-large} * 2);

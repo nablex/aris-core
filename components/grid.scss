@@ -7,10 +7,10 @@
 
 // ----------------------------------------- VARIANTS
 // a relatively neutral grid
-@mixin row-variant-default {
-	@include layout-direction-horizontal;
-	@include layout-justify-start;
-	@include layout-align-stretch;
+@mixin row_variant_default {
+	display: flex;
+	@include component_direction_horizontal;
+	@include layout_align_start;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------
@@ -20,7 +20,8 @@
 // the column inside a grid
 
 // ----------------------------------------- VARIANTS
-@mixin column-variant-default {
-	@include layout-direction-vertical;
+@mixin column_variant_default {
+	display: flex;
+	@include component_direction_vertical;
 }
 

@@ -1,27 +1,27 @@
 // @extension sidebar layout
-@mixin sidebar-position-left {
+@mixin sidebar_position_left {
 	left: 0;
 	box-shadow: 0px 1px 3px $color-neutral-dark;
 }
-@mixin sidebar-position-right {
+@mixin sidebar_position_right {
 	right: 0;
 	left: unset;
 	box-shadow: 0px 0px 3px 0px $color-neutral-dark;
 }
 
-@mixin sidebar-size-xsmall {
+@mixin sidebar_size_xsmall {
 	width: calc(15 * #{$font-size-medium});
 }
-@mixin sidebar-size-small {
+@mixin sidebar_size_small {
 	width: calc(20 * #{$font-size-medium});
 }
-@mixin sidebar-size-medium {
+@mixin sidebar_size_medium {
 	width: calc(25 * #{$font-size-medium});
 }
-@mixin sidebar-size-large {
+@mixin sidebar_size_large {
 	width: calc(30 * #{$font-size-medium});
 }
-@mixin sidebar-size-xlarge {
+@mixin sidebar_size_xlarge {
 	width: calc(35 * #{$font-size-medium});
 }
 
@@ -33,12 +33,12 @@
 	min-width: calc(25 * #{$font-size-medium});
 	z-index: 50;
 	background-color: $color-neutral-lightest;
-	@include sidebar-position-left;
+	@include sidebar_position_left;
 	header {
 		height: calc(5 * #{$font-size-large});
 	}
 	main {
-		@include layout-row-gap-medium;
+		@include component_spacing_vertical-gap-medium;;
 		height: calc(100vh - (5 * #{$font-size-large}));
 		overflow: auto;
 	}

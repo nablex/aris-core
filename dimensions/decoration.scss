@@ -28,3 +28,9 @@
 	font-style: normal;
 	text-transform: inherit;
 }
+@mixin content_decoration_link {
+	font-weight: normal;
+	text-decoration: underline;
+	font-style: normal;
+	text-transform: inherit;
+}

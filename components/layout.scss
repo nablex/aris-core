@@ -1,39 +1,8 @@
 // A layout is any element that you can use to position content
-// @component layout
+// @component layout component
 
-// ----------------------------------------- DIRECTION
-@mixin template-layout-direction {
-	display: flex;
-	flex-direction: row;
-}
-@mixin layout-direction-horizontal {
-	display: flex;
-	flex-direction: row;
-}
-@mixin layout-direction-horizontal-reverse {
-	display: flex;
-	flex-direction: row-reverse;
-}
-@mixin layout-direction-vertical {
-	display: flex;
-	flex-direction: column;
-}
-@mixin layout-direction-vertical-reverse {
-	display: flex;
-	flex-direction: column-reverse;
-}
-
-// ----------------------------------------- COLOR
-@mixin template-layout-color {
-	background-color: $color-background;
-}
-@mixin layout-color-basic {
-	background-color: $color-background;
-}
-@mixin layout-color-background {
-	background-color: $color-body;
-}
-@mixin layout-color-basic-alternating {
+// ----------------------------------------- PATTERN
+@mixin layout_pattern_basic-alternating {
 	> :nth-child(even) {
 		background-color: $color-body;
 	}
@@ -45,80 +14,47 @@
 	}
 }
 
-// ----------------------------------------- BORDER
-@mixin template-layout-border {
-	border-radius: 0rem;
-	border-width: 0px;
-	border-color: $color-neutral-darkest;
-	border-style: solid;
-	box-shadow: none;
-}
-@mixin layout-border-basic {
-	border-radius: $border-radius;
-	border-width: 1px;
-	border-color: $color-neutral-light;
-	border-style: solid;
-	box-shadow: none;
-}
-@mixin layout-border-shadow {
-	border-radius: $border-radius;
-	border-width: 0px;
-	border-color: $color-neutral-darkest;
-	border-style: solid;
-	box-shadow: 0px 1px 3px $color-neutral-dark;
-}
-
-// ----------------------------------------- WIDTH
-@mixin template-layout-width {
+// ----------------------------------------- WIDTH of the layout itself
+@mixin template_layout_width {
 	width: unset;
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-width-small {
+@mixin layout_width_small {
 	width: calc(#{$font-size-medium} * 64);
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-width-medium {
+@mixin layout_width_medium {
 	width: calc(#{$font-size-medium} * 96);
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-width-large {
+@mixin layout_width_large {
 	width: calc(#{$font-size-medium} * 128);
 	margin-left: auto;
 	margin-right: auto;
 }
 
-// ----------------------------------------- SIZE
-@mixin template-layout-grow {
-	flex-grow: 1;
-	flex-basis: 0;
-}
-@mixin layout-grow-fill {
-	flex-grow: 1;
-	flex-basis: 0;
-}
-
 // ----------------------------------------- CONTENT-WIDTH
-@mixin template-layout-content-width {
+@mixin template_layout_content-width {
 	width: unset;
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-content-width-small {
+@mixin layout_content-width_small {
 	padding-left: calc(50% - (#{$font-size-medium} * 32));
 	padding-right: calc(50% - (#{$font-size-medium} * 32));
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-content-width-medium {
+@mixin layout_content-width_medium {
 	padding-left: calc(50% - (#{$font-size-medium} * 48));
 	padding-right: calc(50% - (#{$font-size-medium} * 48));
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout-content-width-large {
+@mixin layout_content-width_large {
 	padding-left: calc(50% - (#{$font-size-medium} * 64));
 	padding-right: calc(50% - (#{$font-size-medium} * 64));
 	margin-left: auto;
@@ -126,205 +62,80 @@
 }
 
 // ----------------------------------------- WRAPPING
-@mixin template-layout-wrap {
+@mixin template_layout_wrap {
 	flex-wrap: nowrap;
 }
-@mixin layout-wrap-active {
+@mixin layout_wrap_none {
+	flex-wrap: nowrap;
+}
+@mixin layout_wrap_wrap {
 	flex-wrap: wrap;
 }
-@mixin layout-wrap-reverse {
+@mixin layout_wrap_reverse {
 	flex-wrap: wrap-reverse;
 }
 
-// ----------------------------------------- JUSTIFICATION
-@mixin template-layout-justify {
+// ----------------------------------------- ALIGN
+@mixin layout_align_main-start {
 	justify-content: flex-start;
 }
-@mixin layout-justify-start {
-	justify-content: flex-start;
-}
-@mixin layout-justify-end {
-	justify-content: flex-end;
-}
-@mixin layout-justify-center {
+@mixin layout_align_main-center {
 	justify-content: center;
 }
-@mixin layout-justify-space-between {
-	justify-content: space-between;
+@mixin layout_align_main-end {
+	justify-content: flex-end;
 }
-@mixin layout-justify-space-around {
-	justify-content: space-around;
+@mixin layout_align_main-stretch {
+	justify-content: stretch;
 }
-@mixin layout-justify-space-evenly {
-	justify-content: space-evenly;
+@mixin layout_align_main-baseline {
+	justify-content: baseline;
 }
-
-// ----------------------------------------- JUSTIFY SELD
-@mixin layout-justify-self-right {
-	margin-left: auto;
-}
-
-// ----------------------------------------- ALIGNMENT
-@mixin template-layout-align {
-	align-items: stretch;
-}
-@mixin layout-align-stretch {
-	align-items: stretch;
-}
-@mixin layout-align-start {
+@mixin layout_align_cross-start {
 	align-items: flex-start;
 }
-@mixin layout-align-end {
-	align-items: flex-end;
-}
-@mixin layout-align-center {
+@mixin layout_align_cross-center {
 	align-items: center;
 }
-@mixin layout-align-baseline {
+@mixin layout_align_cross-end {
+	align-items: flex-end;
+}
+@mixin layout_align_cross-stretch {
+	align-items: stretch;
+}
+@mixin layout_align_cross-baseline {
 	align-items: baseline;
 }
-
-// ----------------------------------------- ROW-GAP SPACING
-@mixin template-layout-row-gap {
-	row-gap: 0;
+@mixin layout_align_space-between {
+	justify-content: space-between;
 }
-@mixin layout-row-gap-none {
-	@include template-layout-row-gap;
+@mixin layout_align_space-around {
+	justify-content: space-around;
 }
-@mixin layout-row-gap-xsmall {
-	row-gap: $spacing-scale-xsmall;
+@mixin layout_align_space-evenly {
+	justify-content: space-evenly;
 }
-@mixin layout-row-gap-small {
-	row-gap: $spacing-scale-small;
+@mixin layout_align_start {
+	@include layout_align_main-start;
+	@include layout_align_cross-start;
 }
-@mixin layout-row-gap-medium {
-	row-gap: $spacing-scale-medium;
+@mixin layout_align_center {
+	@include layout_align_main-center;
+	@include layout_align_cross-center;
 }
-@mixin layout-row-gap-large {
-	row-gap: $spacing-scale-large;
+@mixin layout_align_end {
+	@include layout_align_main-end;
+	@include layout_align_cross-end;
 }
-@mixin layout-row-gap-xlarge {
-	row-gap: $spacing-scale-xlarge;
+@mixin layout_align_stretch {
+	@include layout_align_main-stretch;
+	@include layout_align_cross-stretch;
 }
-
-// ----------------------------------------- COLUMN-GAP SPACING
-@mixin template-layout-column-gap {
-	column-gap: 0;
-}
-@mixin layout-column-gap-none {
-	@include template-layout-column-gap;
-}
-@mixin layout-column-gap-xsmall {
-	column-gap: $spacing-scale-xsmall;
-}
-@mixin layout-column-gap-small {
-	column-gap: $spacing-scale-small;
-}
-@mixin layout-column-gap-medium {
-	column-gap: $spacing-scale-medium;
-}
-@mixin layout-column-gap-large {
-	column-gap: $spacing-scale-large;
-}
-@mixin layout-column-gap-xlarge {
-	column-gap: $spacing-scale-xlarge;
+@mixin layout_align_baseline {
+	@include layout_align_main-baseline;
+	@include layout_align_cross-baseline;
 }
 
-// ----------------------------------------- ALIGN SELF
-@mixin template-layout-align-self {
-	align-self: auto;
-}
-@mixin layout-align-self-start {
-	align-self: flex-start;
-}
-@mixin layout-align-self-end {
-	align-self: flex-end;
-}
-@mixin layout-align-self-center {
-	align-self: center;
-}
-@mixin layout-align-self-baseline {
-	align-self: baseline;
-}
-@mixin layout-align-self-stretch {
-	align-self: stretch;
-}
-
-// ----------------------------------------- SPACING
-@mixin template-layout-spacing {
-	padding: 0;
-}
-@mixin layout-spacing-xsmall {
-	padding: $spacing-scale-xsmall;
-}
-@mixin layout-spacing-small {
-	padding: $spacing-scale-small;
-}
-@mixin layout-spacing-medium {
-	padding: $spacing-scale-medium;
-}
-@mixin layout-spacing-large {
-	padding: $spacing-scale-large;
-}
-@mixin layout-spacing-xlarge {
-	padding: $spacing-scale-xlarge;
-}
-
-@mixin layout-spacing-right-none {
-	padding-right: 0px;
-}
-
-// ----------------------------------------- SPACING-VERTICAL
-@mixin template-layout-spacing-vertical {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-@mixin layout-spacing-vertical-xsmall {
-	padding-top: $spacing-scale-xsmall;
-	padding-bottom: $spacing-scale-xsmall;
-}
-@mixin layout-spacing-vertical-small {
-	padding-top: $spacing-scale-small;
-	padding-bottom: $spacing-scale-small;
-}
-@mixin layout-spacing-vertical-medium {
-	padding-top: $spacing-scale-medium;
-	padding-bottom: $spacing-scale-medium;
-}
-@mixin layout-spacing-vertical-large {
-	padding-top: $spacing-scale-large;
-	padding-bottom: $spacing-scale-large;
-}
-@mixin layout-spacing-vertical-xlarge {
-	padding-top: $spacing-scale-xlarge;
-	padding-bottom: $spacing-scale-xlarge;
-}
-
-// ----------------------------------------- SPACING-HORIZONTAL
-@mixin template-layout-spacing-horizontal {
-	padding-left: 0;
-	padding-right: 0;
-}
-@mixin layout-spacing-horizontal-xsmall {
-	padding-left: $spacing-scale-xsmall;
-	padding-right: $spacing-scale-xsmall;
-}
-@mixin layout-spacing-horizontal-small {
-	padding-left: $spacing-scale-small;
-	padding-right: $spacing-scale-small;
-}
-@mixin layout-spacing-horizontal-medium {
-	padding-left: $spacing-scale-medium;
-	padding-right: $spacing-scale-medium;
-}
-@mixin layout-spacing-horizontal-large {
-	padding-left: $spacing-scale-large;
-	padding-right: $spacing-scale-large;
-}
-@mixin layout-spacing-horizontal-xlarge {
-	padding-left: $spacing-scale-xlarge;
-	padding-right: $spacing-scale-xlarge;
-}
 
 // ----------------------------------------- VARIANTS
 // a card approach where each cell is a card, this is often used in dashboards
@@ -333,16 +144,12 @@
 // at the page/grid level you probably want to configure a "default" variant for each row which is applied unless a specific variant is indicated for a given row
 // it should be possible to send along a particular default variant to a page when rendering it, in most cases the included page should itself be a card container (because it is likely just an embedded page for reuse)
 // in some cases however, you might want to render a page within the content of a cell (or e.g. a table with detail view) and at that point you don't want the card container styling
-@mixin layout-variant-cards {
-	@include layout-row-gap-medium;
-	@include layout-column-gap-medium;
+@mixin layout_variant_cards {
+	@include component_spacing_medium;
 }
 
-@mixin layout-variant-card {
-	@include layout-border-shadow;
-	@include layout-spacing-large;
-	@include layout-color-basic;
-	@include layout-row-gap-medium;
+@mixin layout_variant_card {
+	@include component_border_shadow;
+	@include component_spacing_large;
+	@include component_color_background;
 }
-
-

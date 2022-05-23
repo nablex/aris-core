@@ -5,63 +5,63 @@
 // meant to target <hr>, probably does not work well with other elements atm
 
 // ----------------------------------------- COLOR
-@mixin template-line-color {
+@mixin template_line_color {
 	// Regular browsers
 	background-color: $color-neutral-darker;
 	// IE
 	color: $color-neutral-darker;
 }
-@mixin line-color-neutral {
-	@include template-line-color;
+@mixin line_color_neutral {
+	@include template_line_color;
 }
-@mixin line-color-danger {
+@mixin line_color_danger {
 	background-color: $color-danger-darker;
 	color: $color-danger-darker;
 }
-@mixin line-color-warning {
+@mixin line_color_warning {
 	background-color: $color-warning-darker;
 	color: $color-warning-darker;
 }
-@mixin line-color-info {
+@mixin line_color_info {
 	background-color: $color-info-darker;
 	color: $color-info-darker;
 }
-@mixin line-color-success {
+@mixin line_color_success {
 	background-color: $color-success-darker;
 	color: $color-success-darker;
 }
-@mixin line-color-primary {
+@mixin line_color_primary {
 	background-color: $color-primary-darker;
 	color: $color-primary-darker;
 }
-@mixin line-color-primary-light {
+@mixin line_color_primary-light {
 	background-color: $color-primary-lightest;
 	color: $color-primary-lightest;
 }
-@mixin line-color-secondary {
+@mixin line_color_secondary {
 	background-color: $color-secondary-darker;
 	color: $color-secondary-darker;
 }
 
-@mixin template-line-size {
+@mixin template_line_size {
 	height: 1px;
 }
-@mixin line-size-default {
-	@include template-line-size;
+@mixin line_size_default {
+	@include template_line_size;
 }
-@mixin line-size-xsmall {
+@mixin line_size_xsmall {
 	height: $spacing-scale-xsmall;
 }
-@mixin line-size-small {
+@mixin line_size_small {
 	height: $spacing-scale-small;
 }
-@mixin line-size-medium {
+@mixin line_size_medium {
 	height: $spacing-scale-medium;
 }
-@mixin line-size-large {
+@mixin line_size_large {
 	height: $spacing-scale-large;
 }
-@mixin line-size-xlarge {
+@mixin line_size_xlarge {
 	height: $spacing-scale-xlarge;
 }
 
@@ -69,6 +69,6 @@
 @mixin line-variant-default {
 	border: none;
 	width: 100%;
-	@include line-size-default;
-	@include line-color-neutral;
+	@include line_size_default;
+	@include line_color_neutral;
 }

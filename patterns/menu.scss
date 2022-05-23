@@ -14,17 +14,19 @@ ul.is-row, ul.is-menu {
 $menu-top-background-color: $color-body;
 
 // same as row
-@mixin menu-variant-default {
-	@include layout-direction-horizontal;
-	@include layout-justify-start;
-	@include layout-align-stretch;
+@mixin menu_variant_default {
+	display: flex;
+	@include component_direction_horizontal;
+	@include layout_align_main-start;
+	@include layout_align_cross-stretch;
 }
 
 // @extension menu-item layout
 // the top menu is mainly used at the top of a web application
-@mixin menu-variant-toolbar {
+@mixin menu_variant_toolbar {
 	// all columns must be relative to allow for absolute positioning
 	.is-column {
+		align-self: stretch;
 		justify-content: center;
 		position: relative;
 		// the content (usually a button) should take up the full available width

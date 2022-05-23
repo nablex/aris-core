@@ -1,8 +1,8 @@
 // @component collapsible
-@mixin collapsible-variant-default {
+@mixin collapsible_variant_default {
 	> .is-title {
 		cursor: pointer;
-		@include h6-variant-default;
+		@include h6_variant_default;
 		padding: $spacing-scale-small;
 		padding-right: 0;
 		> .is-icon {
@@ -11,8 +11,8 @@
 			font-size: $font-size-xxsmall;
 		}
 	}
-	@include content-color-light;
-	@include content-border-underline;
+	@include component_color_light;
+	@include component_border_underline;
 }
 
 @mixin collapsible-color-primary {
@@ -42,19 +42,19 @@
 }
 
 // @extension collapsible-content layout
-@mixin collapsible-content-variant-default {
+@mixin collapsible-content_variant_default {
 	display: flex;
 	flex-direction: column;
 }
 
-@mixin collapsible-content-spacing-default {
-	@include layout-spacing-vertical-large;
-	@include layout-spacing-horizontal-large;
+@mixin collapsible-content_spacing_default {
+	@include component_spacing_vertical-large;
+	@include component_spacing_horizontal-large;
 	padding-right: 0;
 }
 
 // @component accordion
-@mixin accordion-variant-default {
+@mixin accordion_variant_default {
 	// the first two rules are actually meant for when the collapsible has border-basic instead of border-underline
 	.is-collapsible:not(:first-child) {
 		border-top-left-radius: 0;
@@ -71,7 +71,7 @@
 	}
 }
 
-@mixin accordion-highlight-left {
+@mixin accordion_highlight_left {
 	.is-collapsible-content {
 		border-left: solid 10px $color-primary-lightest;
 		border-radius: 0 $border-radius $border-radius 0;
