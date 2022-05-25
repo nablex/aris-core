@@ -54,9 +54,13 @@
 }
 
 @mixin tooltip_position_top {
+	top: unset;
+	right: unset;
 	bottom: calc(100% + 5px);
 	left: 50%;
 	&:after {
+		bottom: unset;
+		right: unset;
 		top: 100%;
 		left: 50%;
 		margin-left: -5px;
@@ -109,9 +113,13 @@
 }
 
 @mixin tooltip_position_bottom {
+	bottom: unset;
+	right: unset;
 	top: calc(100% + 5px);
 	left: 50%;
 	&:after {
+		right: unset;
+		top: unset;
 		bottom: 100%;
 		left: 50%;
 		margin-left: -5px;
@@ -170,12 +178,17 @@
 // currently the solution is simply not to center the arrow itself, but point it at the top, presuming at least _some_ height on the element it is attached to
 // so instead of the after being positioned at top 50%, we put it at top 11px for now
 @mixin tooltip_position_right {
+	bottom: unset;
+	right: unset;
 	top: 13%;
 	left: calc(100% + 5px);
 	&:after {
+		bottom: unset;
+		left: unset;
 		top: 11px;
 		right: 100%;
 		margin-top: -5px;
+		margin-left: unset;
 		border-color: transparent $color-neutral-darkest transparent transparent;
 	}
 	&.is-color-primary:after {
@@ -214,14 +227,26 @@
 	&.is-color-warning-outline:after {
 		border-color: transparent $color-warning-dark transparent transparent;
 	}
+	// must unset default
+	&.is-width-medium {
+		margin-left: unset;
+	}
+	&.is-width-large {
+		margin-left: unset;
+	}
 }
 @mixin tooltip_position_left {
+	bottom: unset;
+	left: unset;
 	top: 13%;
 	right: calc(100% + 5px);
 	&:after {
+		bottom: unset;
+		right: unset;
 		top: 11px;
 		left: 100%;
 		margin-top: -5px;
+		margin-left: unset;
 		border-color: transparent transparent transparent $color-neutral-darkest;
 	}
 	&.is-color-primary:after {
@@ -260,6 +285,13 @@
 	&.is-color-warning-outline:after {
 		border-color: transparent transparent transparent $color-warning-dark;
 	}
+	// must unset default
+	&.is-width-medium {
+		margin-left: unset;
+	}
+	&.is-width-large {
+		margin-left: unset;
+	}
 }
 
 // we don't include a default position, there is too much to override (like the margins etc)
@@ -280,4 +312,5 @@
 		border-width: 5px;
 		border-style: solid;
 	}
+	@include tooltip_position_top;
 }

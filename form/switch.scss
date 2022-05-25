@@ -5,12 +5,17 @@
 	// even if we order "normally", our label would have a large invisible hit target
 	align-self: flex-start;
 	display: inline-block;
+	.is-content-wrapper {
+		// check calculation for top on the label
+		height: calc(#{$font-size-large} * 1.34);
+	}
 	input {
 		opacity: 0;
 		position: absolute;
 	}
 	label {
 		cursor: pointer;
+		line-height: calc(1.25rem * 1.34);
 	}
 	input + label {
 		cursor: pointer;

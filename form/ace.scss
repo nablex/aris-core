@@ -1,0 +1,8 @@
+// @component form-ace form-labelled-component
+
+@mixin form-ace_variant_default {
+	@include form-component_variant_default;
+	.ace_editor {
+		min-height: calc(10 * #{$font-size-medium});
+	}
+}

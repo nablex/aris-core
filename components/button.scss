@@ -154,6 +154,8 @@ $button-link-color: $color-primary-darker;
 	// we use inline flex so we can easily position the icon and text with a gap without having to know which are present
 	// additionally it makes it easy to reverse the order
 	display: inline-flex;
+	align-items: center;
+	
 	@include content_size_medium;
 	@include padded-content_size_medium;
 	
@@ -243,10 +245,12 @@ $button-link-color: $color-primary-darker;
 }
 
 @mixin button_variant_close {
-	content: "x";
 	@include component_color_transparent;
 	@include button_color_transparent;
 	@include component_border_none;
+	// by default a small button
+	@include content_size_small;
+	@include padded-content_size_small;
 	position: absolute;
 	top: $spacing-scale-small;
 	right: $spacing-scale-small;

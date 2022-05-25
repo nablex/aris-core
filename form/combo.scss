@@ -53,3 +53,17 @@
 		}
 	}
 }
+@mixin form-combo_size_small {
+	.n-input-combo-input-container {
+		.is-icon {
+			font-size: $font-size-xsmall;
+		}
+	}
+}
+@mixin form-combo_size_xsmall {
+	.n-input-combo-input-container {
+		.is-icon {
+			font-size: $font-size-xxsmall;
+		}
+	}
+}

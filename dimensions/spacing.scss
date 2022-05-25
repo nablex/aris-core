@@ -61,6 +61,39 @@
 	padding-right: $spacing-scale-xxlarge;
 }
 
+@mixin component_spacing_horizontal-sides-none {
+	@include component_spacing_horizontal-left-none;
+	@include component_spacing_horizontal-right-none;
+}
+@mixin component_spacing_horizontal-sides-xxsmall {
+	@include component_spacing_horizontal-left-xxsmall;
+	@include component_spacing_horizontal-right-xxsmall;
+}
+@mixin component_spacing_horizontal-sides-xsmall {
+	@include component_spacing_horizontal-left-xsmall;
+	@include component_spacing_horizontal-right-xsmall;
+}
+@mixin component_spacing_horizontal-sides-small {
+	@include component_spacing_horizontal-left-small;
+	@include component_spacing_horizontal-right-small;
+}
+@mixin component_spacing_horizontal-sides-medium {
+	@include component_spacing_horizontal-left-medium;
+	@include component_spacing_horizontal-right-medium;
+}
+@mixin component_spacing_horizontal-sides-large {
+	@include component_spacing_horizontal-left-large;
+	@include component_spacing_horizontal-right-large;
+}
+@mixin component_spacing_horizontal-sides-xlarge {
+	@include component_spacing_horizontal-left-xlarge;
+	@include component_spacing_horizontal-right-xlarge;
+}
+@mixin component_spacing_horizontal-sides-xxlarge {
+	@include component_spacing_horizontal-left-xxlarge;
+	@include component_spacing_horizontal-right-xxlarge;
+}
+
 @mixin component_spacing_horizontal-gap-none {
 	column-gap: 0;
 }
@@ -175,6 +208,39 @@
 }
 @mixin component_spacing_vertical-bottom-xxlarge {
 	padding-bottom: $spacing-scale-xxlarge;
+}
+
+@mixin component_spacing_vertical-sides-none {
+	@include component_spacing_vertical-top-none;
+	@include component_spacing_vertical-bottom-none;
+}
+@mixin component_spacing_vertical-sides-xxsmall {
+	@include component_spacing_vertical-top-xxsmall;
+	@include component_spacing_vertical-bottom-xxsmall;
+}
+@mixin component_spacing_vertical-sides-xsmall {
+	@include component_spacing_vertical-top-xsmall;
+	@include component_spacing_vertical-bottom-xsmall;
+}
+@mixin component_spacing_vertical-sides-small {
+	@include component_spacing_vertical-top-small;
+	@include component_spacing_vertical-bottom-small;
+}
+@mixin component_spacing_vertical-sides-medium {
+	@include component_spacing_vertical-top-medium;
+	@include component_spacing_vertical-bottom-medium;
+}
+@mixin component_spacing_vertical-sides-large {
+	@include component_spacing_vertical-top-large;
+	@include component_spacing_vertical-bottom-large;
+}
+@mixin component_spacing_vertical-sides-xlarge {
+	@include component_spacing_vertical-top-xlarge;
+	@include component_spacing_vertical-bottom-xlarge;
+}
+@mixin component_spacing_vertical-sides-xxlarge {
+	@include component_spacing_vertical-top-xxlarge;
+	@include component_spacing_vertical-bottom-xxlarge;
 }
 
 @mixin component_spacing_vertical-gap-none {

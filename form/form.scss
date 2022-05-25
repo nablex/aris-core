@@ -4,7 +4,7 @@
 @mixin form_variant_default {
 	:is-form-component {
 		:is-label {
-			@include content_size_small;
+			font-size: $font-size-small;
 			@include component_color_dark-outline;
 		}
 		:is-info {

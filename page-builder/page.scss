@@ -1,3 +1,15 @@
+// make sure we can differentiate as needed
+// @component page-row row
+// @component page-column column
+
+@mixin page-column_variant_default {
+	@include column_variant_default;
+}
+@mixin page-row_variant_default {
+	@include row_variant_default;
+}
+
+// the edit menu that floats at the top...
 .is-page-edit-menu {
 	position: absolute;
 	padding: $spacing-scale-small $spacing-scale-medium;
@@ -6,8 +18,69 @@
 	border: dashed 1px $color-neutral-darker;
 	border-radius: $border-radius;
 	font-size: $font-size-small;
+	z-index: 100;
 	&.is-bookmarkable {
 		border-style: solid;
 		background-color: $color-neutral-lighter;
+	}
+}
+
+// empty rows
+.is-page-row.is-empty {
+	position: relative;
+	min-height: 15rem;
+	background-color: $color-primary-lightest;
+	border: dashed 1px $color-primary-lighter;
+	&:after {
+		content: 'ROW';
+		position: absolute;
+		left: 45%;
+		top: 45%;
+		color: $color-neutral-darker;
+		font-size: 20pt;
+		font-weight: bold;
+	}
+}
+.is-page-row .is-row-menu {
+	display: none;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.is-page-row.is-hovering {
+	position: relative;
+	border-style: solid;
+	border-width: 2px;
+	border-color: $color-primary-light;
+	> .is-row-menu {
+		display: flex;
+	}
+}
+.is-page-column .is-column-menu {
+	display: none;
+}
+.is-page-column.is-empty {
+	position: relative;
+	min-height: 15rem;
+	background-color: $color-secondary-lightest;
+	border: dashed 1px $color-secondary-lighter;
+	&:after {
+		content: 'CELL';
+		position: absolute;
+		left: 45%;
+		top: 45%;
+		color: $color-secondary-darker;
+		font-size: 20pt;
+		font-weight: bold;
+	}
+}
+.is-page-column.is-hovering {
+	border-style: solid;
+	border-width: 2px;
+	border-color: $color-secondary-light;
+	> .is-column-menu {
+		display: flex;
 	}
 }

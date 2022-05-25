@@ -9,6 +9,10 @@
 	box-shadow: 0px 0px 3px 0px $color-neutral-dark;
 }
 
+body[has-sidebar-left=true] {
+	padding-left: calc(30 * #{$font-size-medium});
+}
+
 @mixin sidebar_size_xsmall {
 	width: calc(15 * #{$font-size-medium});
 }
@@ -25,7 +29,48 @@
 	width: calc(35 * #{$font-size-medium});
 }
 
-@mixin sidebar-variant-default {
+@mixin sidebar_header-size_xsmall {
+	header {
+		height: calc(1.5 * #{$font-size-large});
+	}
+	main {
+		height: calc(100vh - (1.5 * #{$font-size-large}));
+	}
+}
+@mixin sidebar_header-size_small {
+	header {
+		height: calc(2.5 * #{$font-size-large});
+	}
+	main {
+		height: calc(100vh - (2.5 * #{$font-size-large}));
+	}
+}
+@mixin sidebar_header-size_medium {
+	header {
+		height: calc(4 * #{$font-size-large});
+	}
+	main {
+		height: calc(100vh - (4 * #{$font-size-large}));
+	}
+}
+@mixin sidebar_header-size_large {
+	header {
+		height: calc(6 * #{$font-size-large});
+	}
+	main {
+		height: calc(100vh - (6 * #{$font-size-large}));
+	}
+}
+@mixin sidebar_header-size_xlarge {
+	header {
+		height: calc(8 * #{$font-size-large});
+	}
+	main {
+		height: calc(100vh - (8 * #{$font-size-large}));
+	}
+}
+
+@mixin sidebar_variant_default {
 	position: fixed;
 	top: 0;
 	height: 100vh;
@@ -33,13 +78,10 @@
 	min-width: calc(25 * #{$font-size-medium});
 	z-index: 50;
 	background-color: $color-neutral-lightest;
+	@include sidebar_header-size_small;
 	@include sidebar_position_left;
-	header {
-		height: calc(5 * #{$font-size-large});
-	}
 	main {
 		@include component_spacing_vertical-gap-medium;;
-		height: calc(100vh - (5 * #{$font-size-large}));
 		overflow: auto;
 	}
 }

@@ -10,34 +10,64 @@
 			margin-left: $spacing-scale-small;
 			font-size: $font-size-xxsmall;
 		}
+		.is-text-after {
+			margin-left: $spacing-scale-small;
+			@include content_size_xsmall;
+		}
+		// we rarely want the buttons to be flat against the side?
+		.is-title-buttons {
+			padding-right: $spacing-scale-small;
+		}
 	}
 	@include component_color_light;
 	@include component_border_underline;
 }
 
-@mixin collapsible-color-primary {
+@mixin collapsible_color_primary {
 	> .is-title {
 		background-color: $color-primary-darkest;
 		color: $color-primary-lightest;
+		.is-text-after, .is-text-before {
+			color: $color-primary-light;
+		}
 	}
 }
 
-@mixin collapsible-color-neutral-dark {
+@mixin collapsible_color_neutral-dark {
 	> .is-title {
 		background-color: $color-neutral-darkest;
 		color: $color-neutral-lightest;
+		.is-text-after, .is-text-before {
+			color: $color-neutral-light;
+		}
 	}
 }
-@mixin collapsible-color-neutral {
+@mixin collapsible_color_neutral {
 	> .is-title {
 		background-color: $color-neutral-light;
 		color: $color-neutral-darkest;
+		.is-text-after, .is-text-before {
+			color: $color-neutral-dark;
+		}
 	}
 }
-@mixin collapsible-color-neutral-light {
+@mixin collapsible_color_neutral-light {
 	> .is-title {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
+		.is-text-after, .is-text-before {
+			color: $color-neutral-dark;
+		}
+	}
+}
+@mixin collapsible_color_primary-light {
+	border-color: $color-primary-lighter;
+	> .is-title {
+		background-color: $color-primary-lightest;
+		color: $color-primary-darker;
+		.is-text-after, .is-text-before {
+			color: $color-primary-base;
+		}
 	}
 }
 

@@ -145,6 +145,12 @@ You can check and uncheck multiple configuration options, it is unclear how they
 
 Note that the component name for a modifier must always include the variant. If it applies to the default variant, you have to explicitly write that as well, e.g. ``menu-default_modifier_sticky``.
 
+They will appear in the css without the keyword modifier, for example you could state:
+
+```html
+<div class="is-menu is-variant-toolbar is-sticky"></div>
+```
+
 # Templating
 
 The end user of the styling (so the one making the application, +not+ the one making the theme) should rarely (and preferably never) have to write custom css.

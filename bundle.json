@@ -95,6 +95,9 @@
 			"text.scss": {
 				"url": "form/text.scss"
 			},
+			"ace.scss": {
+				"url": "form/ace.scss"
+			},
 			"combo.scss": {
 				"url": "form/combo.scss"
 			}

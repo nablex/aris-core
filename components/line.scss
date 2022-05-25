@@ -66,7 +66,7 @@
 }
 
 // ----------------------------------------- VARIANT
-@mixin line-variant-default {
+@mixin line_variant_default {
 	border: none;
 	width: 100%;
 	@include line_size_default;

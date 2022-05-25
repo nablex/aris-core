@@ -34,6 +34,20 @@
 	}
 }
 
+@mixin form-component_size_xsmall {
+	input {
+		line-height: $font-size-xsmall;
+		height: $font-size-small;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-scale-xxsmall;
+	}
+	.is-prefix, .is-suffix {
+		line-height: $font-size-xsmall;
+		font-size: $font-size-xsmall;
+		padding: 0 $spacing-scale-xxsmall;
+	}
+}
+
 @mixin form-component_size_small {
 	input {
 		line-height: $font-size-xsmall;
@@ -89,9 +103,29 @@
 		}
 	}
 }
+@mixin form-component_color_transparent {
+	input {
+		color: $color-neutral-darkest;
+		border-color: transparent;
+		background-color: transparent;
+		&::placeholder {
+			color: $color-neutral-base;
+		}
+		&:focus, &:focus-visible, &:active {
+			border-color: transparent;
+			outline-width: 0;
+		}
+	}
+}
 
 $form-component-border-radius: $border-radius;
 // ----------------------------------------- BORDERS
+@mixin form-component_border_none {
+	input {
+		border-width: 0px;
+	}
+}
+
 @mixin form-component_border_default {
 	input {
 		border-width: 1px;
@@ -118,6 +152,13 @@ $form-component-border-radius: $border-radius;
 	@include form-component_size_small;
 	@include form-component_color_default;
 	@include form-component_border_underline;
+}
+
+@mixin form-component_variant_inline {
+	@include form-component_size_small;
+	@include form-component_color_default;
+	@include form-component_border_none;
+	@include form-component_color_transparent;
 }
 
 :is-form-labelled-component {

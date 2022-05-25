@@ -3,7 +3,8 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // @component menu layout
 // reset some defaults that a ul has if it acts as a grid row
-ul.is-row, ul.is-menu {
+// we want to make sure we generate with correct specificity so we can override this later
+:where(ul).is-menu {
 	padding: 0;
 	margin: 0;
 	> li {
@@ -41,6 +42,10 @@ $menu-top-background-color: $color-body;
 				display: flex;
 			}
 		}
+		// make sure it takes up all the space
+		> .is-button {
+			height: 100%;
+		}
 	}
 	.is-row {
 		display: none;
@@ -71,12 +76,16 @@ $menu-top-background-color: $color-body;
 		}
 		&:first-child:not(:last-child) {
 			> .is-button {
-				border-radius: $border-radius 0 0 $border-radius;
+				// we only _unset_ border radiuses, we don't set them
+				// because we don't actually know if there are _any_ border radiuses
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
 			}
 		}
 		&:last-child:not(:first-child) {
 			> .is-button {
-				border-radius: 0 $border-radius $border-radius 0;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
 			}
 		}
 		// for each intermediate child, we want to remove one border so they don't pile up (again, you might not be using borders at all)
@@ -105,12 +114,15 @@ $menu-top-background-color: $color-body;
 					// if we are first _and_ last
 					&:first-child:last-child {
 						> .is-button {
-							border-radius: 0 $border-radius $border-radius 0;
+							border-top-left-radius: 0;
+							border-bottom-left-radius: 0;
 						}
 					}
 					&:first-child:not(:last-child) {
 						> .is-button {
-							border-radius: 0 $border-radius 0 0;
+							border-top-left-radius: 0;
+							border-bottom-left-radius: 0;
+							border-bottom-right-radius: 0;
 						}
 					}
 				}
@@ -121,7 +133,8 @@ $menu-top-background-color: $color-body;
 				background-color: $menu-top-background-color;
 				&:last-child {
 					> .is-button {
-						border-radius: 0 0 $border-radius $border-radius;
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
 					}
 				}
 				&:not(:last-child) {
@@ -135,17 +148,17 @@ $menu-top-background-color: $color-body;
 }
 
 // a dark toolbar
-@mixin menu_toolbar-modifier-dark {
+@mixin menu-toolbar_modifier_dark {
 	background-color: $color-neutral-darkest; 
 }
-@mixin menu_toolbar-modifier-light {
+@mixin menu-toolbar_modifier_light {
 	background-color: $color-body; 
 	border-bottom: solid 1px $color-neutral-darker;
 }
-@mixin menu_toolbar-modifier-transparent {
+@mixin menu-toolbar_modifier_transparent {
 	background-color: transparent; 
 }
-@mixin menu_toolbar-modifier-warning-highlight {
+@mixin menu-toolbar_modifier_warning-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-warning-base;
@@ -165,7 +178,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 }
-@mixin menu_toolbar-modifier-success-highlight {
+@mixin menu-toolbar_modifier_success-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-success-base;
@@ -185,7 +198,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 }
-@mixin menu_toolbar-modifier-primary-highlight {
+@mixin menu-toolbar_modifier_primary-highlight {
 	.is-button {
 		&.is-active {
 			background-color: $color-primary-base;
@@ -206,7 +219,7 @@ $menu-top-background-color: $color-body;
 	}
 }
 // a toolbar that acts as a main top menu to a page
-@mixin menu_toolbar-modifier-main-top {
+@mixin menu-toolbar_modifier_main-top {
 	z-index: 100;
 	&:not(.is-content-width-medium):not(.is-content-width-small):not(.is-content-width-large) {
 		padding-left: $spacing-scale-medium;
@@ -226,7 +239,7 @@ $menu-top-background-color: $color-body;
 .has-menu-toolbar-sticky {
 	margin-top: 3rem;
 }
-@mixin menu_toolbar-modifier-sticky {
+@mixin menu-toolbar_modifier_sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -244,7 +257,7 @@ $menu-top-background-color: $color-body;
 .has-toolbar {
 	position: relative;
 }
-@mixin menu_toolbar-modifier-embedded {
+@mixin menu-toolbar_modifier_embedded {
 	position: absolute;
 	right: 0;
 	top: 0;
