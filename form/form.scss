@@ -1,5 +1,12 @@
 // @component form layout
+// @component form-section layout
+// @component form-group layout
 // label is positioned above the field
+
+@mixin form-section_variant_default {
+	display: flex;
+	flex-direction: column;
+}
 
 @mixin form_variant_default {
 	:is-form-component {
@@ -24,18 +31,19 @@
 		font-size: $font-size-xsmall;
 		color: $color-neutral-base;
 	}
-	// the equivalent of "row" in the previous version
-	// if we use is-row, it conflicts way too much
-	.is-form-row {
-		display: flex;
-		@include component_direction_horizontal;
-		@include component_spacing_horizontal-gap-medium;
-		> :is-form-component {
-			flex-grow: 1;
-		}
-	}
 	:is-label-wrapper {
 		display: flex;
+	}
+}
+
+// the equivalent of "row" in the previous version
+// if we use is-row, it conflicts way too much
+@mixin form-group_variant_row {
+	display: flex;
+	@include component_direction_horizontal;
+	@include component_spacing_horizontal-gap-medium;
+	> :is-form-component {
+		flex-grow: 1;
 	}
 }
 
