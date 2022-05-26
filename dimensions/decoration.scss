@@ -1,3 +1,9 @@
+@mixin template_content_decoration {
+	font-weight: normal;
+	text-decoration: inherit;
+	font-style: normal;
+	text-transform: inherit;
+}
 @mixin content_decoration_normal {
 	font-weight: normal;
 	text-decoration: inherit;
@@ -5,32 +11,17 @@
 	text-transform: inherit;
 }
 @mixin content_decoration_italic {
-	font-weight: normal;
 	text-decoration: italic;
-	font-style: normal;
-	text-transform: inherit;
 }
 @mixin content_decoration_upper {
-	font-weight: normal;
-	text-decoration: inherit;
-	font-style: normal;
 	text-transform: uppercase;
 }
 @mixin content_decoration_lower {
-	font-weight: normal;
-	text-decoration: inherit;
-	font-style: normal;
 	text-transform: lowercase;
 }
 @mixin content_decoration_emphasis {
 	font-weight: bold;
-	text-decoration: inherit;
-	font-style: normal;
-	text-transform: inherit;
 }
 @mixin content_decoration_link {
-	font-weight: normal;
 	text-decoration: underline;
-	font-style: normal;
-	text-transform: inherit;
 }

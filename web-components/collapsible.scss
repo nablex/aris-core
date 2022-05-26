@@ -74,6 +74,16 @@
 		}
 	}
 }
+@mixin collapsible_color_secondary-light {
+	border-color: $color-secondary-lighter;
+	> .is-title {
+		background-color: $color-secondary-lightest;
+		color: $color-secondary-darker;
+		.is-text-after, .is-text-before {
+			color: $color-secondary-base;
+		}
+	}
+}
 
 // @extension collapsible-content layout
 @mixin collapsible-content_variant_default {

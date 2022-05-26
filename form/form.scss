@@ -24,7 +24,9 @@
 		font-size: $font-size-xsmall;
 		color: $color-neutral-base;
 	}
-	.is-row {
+	// the equivalent of "row" in the previous version
+	// if we use is-row, it conflicts way too much
+	.is-form-row {
 		display: flex;
 		@include component_direction_horizontal;
 		@include component_spacing_horizontal-gap-medium;
