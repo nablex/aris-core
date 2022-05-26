@@ -15,8 +15,12 @@
 			@include content_size_xsmall;
 		}
 		// we rarely want the buttons to be flat against the side?
-		.is-title-buttons {
-			padding-right: $spacing-scale-small;
+		// actually, when combined with other elements, we might!
+		//.is-title-buttons {
+		//	padding-right: $spacing-scale-small;
+		//}
+		.is-text-after, .is-text-before {
+			color: $color-neutral-base;
 		}
 	}
 	@include component_color_light;
@@ -47,7 +51,7 @@
 		background-color: $color-neutral-light;
 		color: $color-neutral-darkest;
 		.is-text-after, .is-text-before {
-			color: $color-neutral-dark;
+			color: $color-neutral-base;
 		}
 	}
 }
@@ -56,7 +60,7 @@
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		.is-text-after, .is-text-before {
-			color: $color-neutral-dark;
+			color: $color-neutral-base;
 		}
 	}
 }
