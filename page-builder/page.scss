@@ -44,6 +44,7 @@
 .is-page-row .is-row-menu {
 	display: none;
 	position: absolute;
+	background-color: rgba($color-primary-base, 0.2);
 	width: 100%;
 	left: 0;
 	bottom: 0;
@@ -58,8 +59,17 @@
 		display: flex;
 	}
 }
+.is-page-column, .is-page-row {
+	position: relative;
+}
 .is-page-column .is-column-menu {
 	display: none;
+	position: absolute;
+	background-color: rgba($color-secondary-base, 0.2);
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 10;
 }
 .is-page-column.is-empty {
 	position: relative;
