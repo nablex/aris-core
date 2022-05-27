@@ -4,11 +4,6 @@
 @mixin component_position_bottom {
 	margin-top: auto;
 }
-// not sure if this belongs here...?
-@mixin component_position_grow {
-	flex-grow: 1;
-	flex-basis: 0;
-}
 // only works in grids, not sure if we should have this here cause we flex
 @mixin component_position_main-center {
 	justify-self: center;
@@ -19,7 +14,6 @@
 @mixin component_position_main-end {
 	justify-self: flex-end;
 }
-
 
 @mixin component_position_cross-center {
 	align-self: center;

@@ -72,6 +72,7 @@
 	z-index: 10;
 }
 .is-page-column.is-empty {
+	min-width: 20rem;
 	position: relative;
 	min-height: 15rem;
 	background-color: $color-secondary-lightest;
@@ -79,7 +80,7 @@
 	&:after {
 		content: 'CELL';
 		position: absolute;
-		left: 45%;
+		left: 40%;
 		top: 45%;
 		color: $color-secondary-darker;
 		font-size: 20pt;

@@ -1,0 +1,6 @@
+- device support
+	- depending on device rules you may want to apply different classes
+	- select a device rule at the top, anything that is already checked is greyed out, anything else can additionally be checked
+		- it is hard (or impossible?) to _uncheck_ something
+- cells -> the default variant should be different per alias routed within
+	- for instance you may want to define a default variant for all cells containing a form
