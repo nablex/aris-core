@@ -20,6 +20,7 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
 @mixin layout_width_small {
 	width: calc(#{$font-size-medium} * 64);
 	margin-left: auto;

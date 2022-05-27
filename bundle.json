@@ -36,6 +36,9 @@
 			},
 			"fill.scss": {
 				"url": "dimensions/fill.scss"
+			},
+			"width.scss": {
+				"url": "dimensions/width.scss"
 			}
 		},
 		"components": {

@@ -7,6 +7,8 @@
 }
 @mixin page-row_variant_default {
 	@include row_variant_default;
+	// default wrap
+	flex-wrap: wrap;
 }
 
 // the edit menu that floats at the top...
