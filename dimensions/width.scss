@@ -50,7 +50,7 @@
 @mixin column_width_11 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 86.66%;
+	min-width: 87%;
 	max-width: 91.66%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
 		min-width: 90%;
@@ -60,7 +60,7 @@
 @mixin column_width_10 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 78.33%;
+	min-width: 79%;
 	max-width: 83.33%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
 		min-width: 90%;
@@ -81,7 +81,7 @@
 @mixin column_width_8 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 61.66%;
+	min-width: 62%;
 	max-width: 66.66%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
 		min-width: 90%;
@@ -91,7 +91,7 @@
 @mixin column_width_7 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 53.33%;
+	min-width: 54%;
 	max-width: 58.33%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
 		min-width: 90%;
@@ -101,7 +101,7 @@
 @mixin column_width_6 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 55%;
+	min-width: 45%;
 	max-width: 50%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
 		min-width: 90%;
@@ -111,7 +111,7 @@
 @mixin column_width_5 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 36.66%;
+	min-width: 37%;
 	max-width: 41.66%;
 	// between tablet and desktop, this takes up 5/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
@@ -127,7 +127,7 @@
 @mixin column_width_4 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 28.33%;
+	min-width: 29%;
 	max-width: 33.33%;
 	// between tablet and desktop, this takes up 4/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
@@ -164,7 +164,7 @@
 @mixin column_width_2 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 11.66%;
+	min-width: 14%;
 	max-width: 16.66%;
 	// between tablet and desktop, this takes up 2/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
