@@ -8,13 +8,13 @@
 
 // @component content component
 
-@mixin template_layout_wrap {
+@mixin template_content_wrap {
 	white-space: wrap;
 }
-@mixin layout_wrap_none {
+@mixin content_wrap_none {
 	white-space: nowrap;
 }
-@mixin layout_wrap_wrap {
+@mixin content_wrap_wrap {
 	white-space: wrap;
 }
 
