@@ -7,8 +7,12 @@
 }
 @mixin page-row_variant_default {
 	@include row_variant_default;
-	// default wrap
+	// default wrap so we can easily do responsive
 	flex-wrap: wrap;
+	// when we have multiple rows, we want to cancel out any spacing you might have set so it doesn't double up
+	+ .is-page-row {
+		padding-top: 0;
+	}
 }
 
 // the edit menu that floats at the top...

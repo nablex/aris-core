@@ -1,8 +1,8 @@
 // we have a grid of 12 columns
 // we have 3 breakpoints: phone, tablet, desktop
 // desktop and above supports 12 columns
-// [tablet, desktop[ supports 8 columns
-// [phone, tablet[ supports 4 columns
+// [tablet, desktop[ supports 6 columns
+// [phone, tablet[ supports 3 columns
 // [.., phone[ supports 2 columns
 // each element can be assigned a number of columns it wants
 
@@ -14,7 +14,7 @@
 
 // even if we knew the column gap size, we wouldn't know how many cells are in a particular row
 // one approach (used here) is instead of setting the "width" to 50%
-// we set the min width to slightly above the next level and the max to the actual size
+// we set the min width to something sufficiently above the next level but below the max to accomodate for variable column gaps up to a certain size
 // we then set flex-grow to 1 with no basis
 // this means we can predictably state that it will fill the size we wanted
 
@@ -37,47 +37,43 @@
 // the only way to ensure this doesn't happen is to make sure you always have "full" rows using empty content as needed
 // in other words: the sum of all your configured columns _must_ be a multiple of 12
 
-// TODO: but... on tablets it must be a multiple of 8 and on phones of 4... this makes it hard, should perhaps reduce tablet to 6?
-// or put phones at 2 and tablets at 6?
-// anything below phone is than 1 max
-
 // width 12 is always 100%, regardless of screen size
 @mixin column_width_12 {
 	// always grow, otherwise our cell settings don't work
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 92%;
+	min-width: 95%;
 	max-width: 100%;
 }
-// any column between [8-11] is also 100% on anything smaller than a desktop
+// any column between [6-11] is also 100% on anything smaller than a desktop
 // note that the max-width is inclusive
 @mixin column_width_11 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 84%;
+	min-width: 86.66%;
 	max-width: 91.66%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_10 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 76%;
+	min-width: 78.33%;
 	max-width: 83.33%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_9 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 67%;
+	min-width: 69%;
 	max-width: 75%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
@@ -85,116 +81,104 @@
 @mixin column_width_8 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 59%;
+	min-width: 61.66%;
 	max-width: 66.66%;
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_7 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 51%;
+	min-width: 53.33%;
 	max-width: 58.33%;
-	// between tablet and desktop, this takes up 7/8
-	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 76%;
-		max-width: 87.5%;
-	}
-	// below tablet, it takes up 100%
-	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
-		min-width: 92%;
+	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_6 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 42%;
+	min-width: 55%;
 	max-width: 50%;
-	// between tablet and desktop, this takes up 6/8
-	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 63%;
-		max-width: 75%;
-	}
-	// below tablet, it takes up 100%
-	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
-		min-width: 92%;
+	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) {
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_5 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 34%;
+	min-width: 36.66%;
 	max-width: 41.66%;
-	// between tablet and desktop, this takes up 5/8
+	// between tablet and desktop, this takes up 5/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 51%;
-		max-width: 62.5%;
+		min-width: 67%;
+		max-width: 83.3%;
 	}
 	// below tablet, it takes up 100%
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_4 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 26%;
+	min-width: 28.33%;
 	max-width: 33.33%;
-	// between tablet and desktop, this takes up 4/8
+	// between tablet and desktop, this takes up 4/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 38%;
-		max-width: 50%;
+		min-width: 56.6%;
+		max-width: 66.6%;
 	}
 	// below tablet, it takes up 100%
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) {
-		min-width: 76%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_3 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 17%;
+	min-width: 20%;
 	max-width: 25%;
-	// between tablet and desktop, this takes up 4/8
+	// between tablet and desktop, this takes up 3/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 26%;
-		max-width: 37.5%;
+		min-width: 40%;
+		max-width: 50%;
 	}
-	// below tablet, it takes up 3/4
+	// below tablet, it takes up 3/3
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) and (min-width: map-get($breakpoints, "phone")) {
-		min-width: 51%;
-		max-width: 75%;
+		min-width: 90%;
+		max-width: 100%;
 	}
 	// below phone, it takes up 100%
 	@media only screen and (max-width: map-get($breakpoints, "below-phone")) {
-		min-width: 92%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
 @mixin column_width_2 {
 	flex-grow: 1;
 	flex-basis: 0;
-	min-width: 9%;
+	min-width: 11.66%;
 	max-width: 16.66%;
-	// between tablet and desktop, this takes up 4/8
+	// between tablet and desktop, this takes up 2/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		min-width: 13%;
-		max-width: 25%;
+		min-width: 23.3%;
+		max-width: 33.3%;
 	}
-	// below tablet, it takes up 2/4
+	// below tablet, it takes up 2/3
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) and (min-width: map-get($breakpoints, "phone")) {
-		min-width: 26%;
-		max-width: 50%;
+		min-width: 56.6%;
+		max-width: 66.6%;
 	}
 	// below phone, it takes up 100%
 	@media only screen and (max-width: map-get($breakpoints, "below-phone")) {
-		min-width: 51%;
+		min-width: 90%;
 		max-width: 100%;
 	}
 }
@@ -202,13 +186,13 @@
 	flex-grow: 1;
 	flex-basis: 0;
 	max-width: 8.33%;
-	// between tablet and desktop, this takes up 4/8
+	// between tablet and desktop, this takes up 1/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
-		max-width: 12.5%;
+		max-width: 16.6%;
 	}
 	// below tablet, it takes up 1/4
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) and (min-width: map-get($breakpoints, "phone")) {
-		max-width: 25%;
+		max-width: 33.3%;
 	}
 	// below phone, it takes up half
 	@media only screen and (max-width: map-get($breakpoints, "below-phone")) {
