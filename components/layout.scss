@@ -15,47 +15,47 @@
 }
 
 // ----------------------------------------- WIDTH of the layout itself
-@mixin template_layout_width {
+@mixin template_row_width {
 	width: unset;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-@mixin layout_width_small {
+@mixin row_width_small {
 	width: calc(#{$font-size-medium} * 64);
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout_width_medium {
+@mixin row_width_medium {
 	width: calc(#{$font-size-medium} * 96);
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout_width_large {
+@mixin row_width_large {
 	width: calc(#{$font-size-medium} * 128);
 	margin-left: auto;
 	margin-right: auto;
 }
 
 // ----------------------------------------- CONTENT-WIDTH
-@mixin template_layout_content-width {
+@mixin template_row_content-width {
 	width: unset;
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout_content-width_small {
+@mixin row_content-width_small {
 	padding-left: calc(50% - (#{$font-size-medium} * 32));
 	padding-right: calc(50% - (#{$font-size-medium} * 32));
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout_content-width_medium {
+@mixin row_content-width_medium {
 	padding-left: calc(50% - (#{$font-size-medium} * 48));
 	padding-right: calc(50% - (#{$font-size-medium} * 48));
 	margin-left: auto;
 	margin-right: auto;
 }
-@mixin layout_content-width_large {
+@mixin row_content-width_large {
 	padding-left: calc(50% - (#{$font-size-medium} * 64));
 	padding-right: calc(50% - (#{$font-size-medium} * 64));
 	margin-left: auto;
