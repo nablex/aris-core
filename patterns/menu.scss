@@ -22,7 +22,9 @@ $menu-top-background-color: $color-body;
 	@include layout_align_cross-stretch;
 }
 
-// @extension menu-item layout
+// the toolbar is used throughout page builder etc
+// it is a basic menu layout that has been added to the core for its vast applicability
+
 // the top menu is mainly used at the top of a web application
 @mixin menu_variant_toolbar {
 	// all columns must be relative to allow for absolute positioning
@@ -165,8 +167,6 @@ $menu-top-background-color: $color-body;
 			color: $color-warning-darkest;
 		}
 		&:hover:not(.is-active) {
-			// retain the background color
-			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-warning-base;
@@ -185,8 +185,6 @@ $menu-top-background-color: $color-body;
 			color: $color-success-lightest;
 		}
 		&:hover:not(.is-active) {
-			// retain the background color
-			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-success-base;
@@ -205,8 +203,6 @@ $menu-top-background-color: $color-body;
 			color: $color-primary-lightest;
 		}
 		&:hover:not(.is-active) {
-			// retain the background color
-			background-color: inherit;
 			&:after {
 				content: ' ';
 				background-color: $color-primary-base;
@@ -221,6 +217,7 @@ $menu-top-background-color: $color-body;
 // a toolbar that acts as a main top menu to a page
 @mixin menu-toolbar_modifier_main-top {
 	z-index: 100;
+	// if we don't set a specific content width, we add a padding
 	&:not(.is-content-width-medium):not(.is-content-width-small):not(.is-content-width-large) {
 		padding-left: $spacing-scale-medium;
 		padding-right: $spacing-scale-medium;
@@ -231,11 +228,7 @@ $menu-top-background-color: $color-body;
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
-	> .is-after-gap {
-		margin-left: auto;
-	}
 }
-
 .has-menu-toolbar-sticky {
 	margin-top: 3rem;
 }
@@ -246,17 +239,6 @@ $menu-top-background-color: $color-body;
 	transition: position 0.3s linear, top 0.3s linear;
 }
 
-@mixin menu-variant-sidebar {
-	// TODO: sidebar on the left
-}
-
-@mixin menu-variant-floating {
-	// TODO: a floating menu like in a wiki article
-}
-
-.has-toolbar {
-	position: relative;
-}
 @mixin menu-toolbar_modifier_embedded {
 	position: absolute;
 	right: 0;

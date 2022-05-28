@@ -46,7 +46,7 @@
 }
 @mixin button_color_transparent-light {
 	&:hover, &.is-active {
-		background-color: $color-neutral-darker;
+		background-color: transparent;
 		color: $color-neutral-lightest;
 		border-color: $color-neutral-light;
 	}

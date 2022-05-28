@@ -141,7 +141,8 @@ $form-component-border-radius: $border-radius;
 	input {
 		border-width: 1px;
 		border-style: none none solid none;
-		border-radius: $form-component-border-radius;
+		border-radius: 0;
+		padding: 0 $spacing-scale-xxsmall;
 	}
 }
 

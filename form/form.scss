@@ -90,6 +90,31 @@
 	}
 }
 
+@mixin form_variant_floating-labels-underline {
+	:is-form-component {
+		display: flex;
+		@include component_direction_vertical;
+		@include component_spacing_vertical-gap-small;
+		
+		// offset the floating label
+		margin-top: $spacing-scale-medium;
+		position: relative;
+		.is-label-wrapper {
+			position: absolute;
+			top: calc(0px - #{$font-size-small});
+			padding: $spacing-scale-xxsmall 0;
+			border-radius: $border-radius;
+			.is-label {
+				text-transform: uppercase;
+				font-size: $font-size-xxsmall;
+				color: $color-neutral-base;
+			}
+		}
+		@include form-component_color_default;
+		@include form-component_border_underline;
+	}
+}
+
 // horizontal labels
 @mixin form_variant_horizontal {
 	:is-form-component {
