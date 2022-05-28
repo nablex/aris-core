@@ -1,7 +1,8 @@
+- content-width is not yet responsive!
 V on operation drop -> the aris rules are not correctly applied live -> the watcher was not getting triggered which means the rerender toggle was not set
 	- we already do a slow synchronize so not sure what is holding it back
 	- switching out and in edit mode fixes it
-- device support
+V device support: properly added using column based approach
 	- depending on device rules you may want to apply different classes
 	- select a device rule at the top, anything that is already checked is greyed out, anything else can additionally be checked
 		- it is hard (or impossible?) to _uncheck_ something
