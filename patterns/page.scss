@@ -3,6 +3,8 @@
 // @component page-column column
 
 @mixin page-column_variant_default {
+	// without this, we can get some really weird sizing...
+	overflow: auto;
 	@include column_variant_default;
 }
 @mixin page-row_variant_default {
@@ -15,6 +17,9 @@
 	+ .is-page-row {
 		padding-top: 0;
 	}
+}
+@mixin page-column-default_modifier_fullscreen {
+	max-height: 100vh;
 }
 // the edit menu that floats at the top...
 .is-page-edit-menu {
