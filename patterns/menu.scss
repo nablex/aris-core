@@ -27,6 +27,9 @@ $menu-top-background-color: $color-body;
 
 // the top menu is mainly used at the top of a web application
 @mixin menu_variant_toolbar {
+	.has-children {
+		cursor: pointer;
+	}
 	.is-label {
 		@include component_spacing_medium;
 	}
@@ -172,6 +175,8 @@ $menu-top-background-color: $color-body;
 			background-color: $color-warning-base;
 			color: $color-warning-darkest;
 		}
+	}
+	> .is-column > .is-button {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -190,10 +195,32 @@ $menu-top-background-color: $color-body;
 			background-color: $color-success-base;
 			color: $color-success-lightest;
 		}
+	}
+	> .is-column > .is-button {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
 				background-color: $color-success-base;
+				position: absolute;
+				height: 5px;
+				width: 100%;
+				bottom: 0;
+			}
+		}
+	}
+}
+@mixin menu-toolbar_modifier_danger-highlight {
+	.is-button {
+		&.is-active {
+			background-color: $color-danger-base;
+			color: $color-danger-lightest;
+		}
+	}
+	> .is-column > .is-button {
+		&:hover:not(.is-active) {
+			&:after {
+				content: ' ';
+				background-color: $color-danger-base;
 				position: absolute;
 				height: 5px;
 				width: 100%;
@@ -208,6 +235,9 @@ $menu-top-background-color: $color-body;
 			background-color: $color-primary-base;
 			color: $color-primary-lightest;
 		}
+	}
+	// on the first row, we want to underline as well, on the nested rows we don't
+	> .is-column > .is-button {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -226,6 +256,8 @@ $menu-top-background-color: $color-body;
 			background-color: $color-secondary-base;
 			color: $color-secondary-lightest;
 		}
+	}
+	> .is-column > .is-button {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
