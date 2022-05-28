@@ -1,0 +1,51 @@
+// @component inline-tooltip padded-content
+
+@mixin inline-tooltip_variant_default {
+	position: relative;
+	&:before, &:after {
+		z-index: 100;
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&:before {
+		@include padded-content_size-small;
+		@include component_color_dark;
+		@include content_size-small;
+
+		width: max-content; 
+		max-width: 300px;
+
+		content: attr(tooltip);
+		
+		top: 50%;
+		transform: translateY(-50%);
+		
+		left: 100%;
+		margin-left: 5px;
+		
+		padding: $spacing-scale-small;
+		border-radius: $border-radius;
+		text-align: center;
+	}
+	&:after {
+		content: "";
+		
+		left: 100%;
+		margin-left: -5px;
+	   
+		top: 50%;
+		transform: translateY(-50%);
+	
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent $color-neutral-darkest transparent transparent;
+	}
+	&:hover {
+		&:before, &:after {
+			opacity: 1;
+			transition: opacity 300ms, visibility 300ms;
+			visibility: visible;
+		}
+	}
+}

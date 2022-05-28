@@ -8,7 +8,8 @@
 		background-color: $color-neutral-darkest;
 		color: $color-neutral-light;
 		padding: $spacing-scale-small $spacing-scale-medium;
-		min-width: calc(#{$font-size-medium} * 20);
+		width: max-content;
+		max-width: calc(#{$font-size-medium} * 20);
 		border-radius: $border-radius;
 		font-size: $font-size-xsmall;
 		line-height: $font-size-medium;

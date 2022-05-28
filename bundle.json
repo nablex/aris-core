@@ -69,6 +69,9 @@
 			"tooltip.scss": {
 				"url": "components/tooltip.scss"
 			},
+			"inline-tooltip.scss": {
+				"url": "components/inline-tooltip.scss"
+			},
 			"typography.scss": {
 				"url": "components/typography.scss"
 			}, 
@@ -114,22 +117,15 @@
 			},
 			"modal.scss": {
 				"url": "patterns/modal.scss"
-			}
-		},
-		"web-components": {
+			},
 			"sidebar.scss": {
-				"url": "web-components/sidebar.scss"
+				"url": "patterns/sidebar.scss"
 			},
 			"collapsible.scss": {
-				"url": "web-components/collapsible.scss"
-			}
-		},
-		"page-builder": {
-			"pages-overview.scss": {
-				"url": "page-builder/pages-overview.scss"
+				"url": "patterns/collapsible.scss"
 			},
 			"page.scss": {
-				"url": "page-builder/page.scss"
+				"url": "patterns/page.scss"
 			}
 		}
 	}
