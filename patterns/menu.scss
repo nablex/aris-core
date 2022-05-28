@@ -27,6 +27,9 @@ $menu-top-background-color: $color-body;
 
 // the top menu is mainly used at the top of a web application
 @mixin menu_variant_toolbar {
+	.is-label {
+		@include component_spacing_medium;
+	}
 	// all columns must be relative to allow for absolute positioning
 	.is-column {
 		align-self: stretch;
@@ -50,8 +53,10 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	.is-row {
+		width: 100%;
 		display: none;
 		padding: 0;
+		@include component_direction_vertical;
 	}
 	> .is-column {
 		> .is-row {
@@ -133,6 +138,7 @@ $menu-top-background-color: $color-body;
 			.is-column {
 				// from level 2 onwards, it layers over other content, some things (like outline buttons) don't have a standard background color, so we need to add one
 				background-color: $menu-top-background-color;
+				border-radius: $border-radius;
 				&:last-child {
 					> .is-button {
 						border-top-left-radius: 0;
@@ -206,6 +212,24 @@ $menu-top-background-color: $color-body;
 			&:after {
 				content: ' ';
 				background-color: $color-primary-base;
+				position: absolute;
+				height: 5px;
+				width: 100%;
+				bottom: 0;
+			}
+		}
+	}
+}
+@mixin menu-toolbar_modifier_secondary-highlight {
+	.is-button {
+		&.is-active {
+			background-color: $color-secondary-base;
+			color: $color-secondary-lightest;
+		}
+		&:hover:not(.is-active) {
+			&:after {
+				content: ' ';
+				background-color: $color-secondary-base;
 				position: absolute;
 				height: 5px;
 				width: 100%;
