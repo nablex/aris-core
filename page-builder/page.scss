@@ -9,6 +9,8 @@
 	@include row_variant_default;
 	// default wrap so we can easily do responsive
 	flex-wrap: wrap;
+	// to make sure the wrapping occurs rather than scrolling
+	max-width: 100%;
 	// when we have multiple rows, we want to cancel out any spacing you might have set so it doesn't double up
 	+ .is-page-row {
 		padding-top: 0;
