@@ -39,6 +39,12 @@
 			},
 			"width.scss": {
 				"url": "dimensions/width.scss"
+			},
+			"height.scss": {
+				"url": "dimensions/height.scss"
+			},
+			"overflow.scss": {
+				"url": "dimensions/overflow.scss"
 			}
 		},
 		"components": {

@@ -1,0 +1,50 @@
+// more complex layouts will need dedicated css, but we do want to support some basic layouting
+// for width, we use a column based system
+// for height, we assume you mostly want to target borders
+// for instance you might want a menu at the top with everything else below it with an autoscroll
+// or you might want a menu at the bottom
+// or both the top and the bottom
+// in the current approach, we support a "min" range which ranges from 1 to 6, each entry is a multiple of the default font size
+// we also support a max range from 1 to 6 which means 100vh minus the multiple of the font size
+// this means you can currently combine any combination of 6 min (e.g. 2 at the top, 4 at the bottom) with a max6
+@mixin layout_height_min1 {
+	height: $font-size-medium;
+}
+@mixin layout_height_min2 {
+	height: calc(2 * #{$font-size-medium});
+}
+@mixin layout_height_min3 {
+	height: calc(3 * #{$font-size-medium});
+}
+@mixin layout_height_min4 {
+	height: calc(5 * #{$font-size-medium});
+}
+@mixin layout_height_min5 {
+	height: calc(5 * #{$font-size-medium});
+}
+@mixin layout_height_min6 {
+	height: calc(6 * #{$font-size-medium});
+}
+
+@mixin layout_height_max {
+	height: 100vh;
+}
+@mixin layout_height_max1 {
+	height: calc(100vh - #{$font-size-medium});
+}
+@mixin layout_height_max2 {
+	height: calc(100vh - (2 * #{$font-size-medium}));
+}
+@mixin layout_height_max3 {
+	height: calc(100vh - (3 * #{$font-size-medium}));
+}
+@mixin layout_height_max4 {
+	height: calc(100vh - (4 * #{$font-size-medium}));
+}
+@mixin layout_height_max5 {
+	height: calc(100vh - (5 * #{$font-size-medium}));
+}
+@mixin layout_height_max6 {
+	height: calc(100vh - (6 * #{$font-size-medium}));
+}
+
