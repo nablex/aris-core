@@ -1,316 +1,150 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- TOOLTIP
 // ---------------------------------------------------------------------------------------------------------------------------
-// @component tooltip padded-content
 
-// make sure we can offset to the given element
+// for tooltips, we do sneaky stuff!
+// you can do tooltips with an attribute which works splendidly and is clean but does NOT allow for HTML content
+// you can do tooltips with a nested span which allows for HTML content
+// however, when using a nested span, if we want an arrow, it is hard to position correctly on that span unless we fix dimensions on the span so we know for example exactly how wide it is
+// so in short: we always want to position the arrow on the parent, that means that the parent has to know which side the tooltip is on
+// we want to allow pure attribute-driven tooltips _and_ for more complex usecases the nested span
+// when using the nested span, we can leave out the attribute, which floats the arrow and a box smaller than the actual tooltip which is rendered over it
+
+$tooltip-max-width: 300px;
+$tooltip-arrow-size: 5px;
+$tooltip-z-index: 15;
+
 .has-tooltip {
 	position: relative;
+
+	// for attr-based hovering
+	&:before, &:after {
+		z-index: $tooltip-z-index;
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&:after {
+		content: "";
+		border-width: $tooltip-arrow-size;
+		border-style: solid;
+		border-color: $color-neutral-darkest transparent transparent transparent;
+
+		// we assume default top
+		top: -$tooltip-arrow-size;
+		left: 50%;
+	}
 	&:hover {
-		> .is-tooltip {
+		&:before, &:after, > .is-tooltip {
+			opacity: 1;
 			transition: opacity 300ms, visibility 300ms;
 			visibility: visible;
-			opacity: 1;
 		}
 	}
 }
+// only show this if we have the attribute, otherwise because of the transitioning there is an effect where we can perceive the empty before before the actual tooltip pops in
+.has-tooltip[tooltip] {
+	&:before {
+		// we read the attribute, if it does not exist this is still rendered but as a small box with only padding
+		content: attr(tooltip);
 
-@mixin template_tooltip_width {
-	width: calc(#{$spacing-scale-medium} * 6);
-}
-
-@mixin tooltip_width_small {
-	@include template_tooltip_width;
-}
-@mixin tooltip_width_medium {
-	width: calc(#{$spacing-scale-medium} * 12);
-}
-@mixin tooltip_width_large {
-	width: calc(#{$spacing-scale-medium} * 18);
+		// we assume default is top
+		left: 0;
+		top: 0;
+	}
 }
 
-// ----------------------------------------- SIZES -> include spacing
-@mixin template_tooltip_size {
-	padding: 0;
-}
-// no padding etc
-@mixin tooltip_size_plain {
-	padding: 0;
-}
-@mixin tooltip_size_xsmall {
-	@include component_spacing_xsmall;
-}
-@mixin tooltip_size_small {
-	@include component_spacing_small;
-}
-@mixin tooltip_size_medium {
-	@include component_spacing_medium;
-}
-@mixin tooltip_size_large {
-	@include component_spacing_large;
-}
-@mixin tooltip_size_xlarge {
-	@include component_spacing_xlarge;
-}
+// applies to both the html tooltip and the inline one
+.has-tooltip:before, .is-tooltip {
+	@include padded-content_size-small;
+	@include component_color_dark;
+	@include content_size-small;
 
-@mixin tooltip_position_top {
+	// make sure it tries to maximize the width
+	width: max-content; 
+	max-width: $tooltip-max-width;
+
+	padding: $spacing-scale-small;
+	border-radius: $border-radius;
+	text-align: center;
+
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	
+	// defaults to top
 	top: unset;
 	right: unset;
-	bottom: calc(100% + 5px);
+	bottom: calc(100% + #{$tooltip-arrow-size});
 	left: 50%;
+	margin-left: -50%;
+}
+
+.tooltip-position-bottom {
+	&:before, &:after {
+		top: 100%;
+		transform: none;
+		left: calc(50% - (#{$tooltip-arrow-size} / 2));
+	}
+	&:before {
+		margin-top: $tooltip-arrow-size;
+	}
 	&:after {
+		margin-top: -$tooltip-arrow-size;
+		border-color: transparent transparent $color-neutral-darkest transparent;
+	}
+	.is-tooltip {
 		bottom: unset;
 		right: unset;
 		top: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-color: $color-neutral-darkest transparent transparent transparent;
-	}
-	&.is-color-primary:after {
-		border-color: $color-primary-base transparent transparent transparent;
-	}
-	&.is-color-primary-outline:after {
-		border-color: $color-primary-dark transparent transparent transparent;
-	}
-	&.is-color-secondary:after {
-		border-color: $color-secondary-base transparent transparent transparent;
-	}
-	&.is-color-secondary-outline:after {
-		border-color: $color-secondary-dark transparent transparent transparent;
-	}
-	&.is-color-danger:after {
-		border-color: $color-danger-base transparent transparent transparent;
-	}
-	&.is-color-danger-outline:after {
-		border-color: $color-danger-dark transparent transparent transparent;
-	}
-	&.is-color-success:after {
-		border-color: $color-success-base transparent transparent transparent;
-	}
-	&.is-color-success-outline:after {
-		border-color: $color-success-dark transparent transparent transparent;
-	}
-	&.is-color-info:after {
-		border-color: $color-info-base transparent transparent transparent;
-	}
-	&.is-color-info-outline:after {
-		border-color: $color-info-dark transparent transparent transparent;
-	}
-	&.is-color-warning:after {
-		border-color: $color-warning-base transparent transparent transparent;
-	}
-	&.is-color-warning-outline:after {
-		border-color: $color-warning-dark transparent transparent transparent;
-	}
-	// based on default sizing
-	margin-left: calc(0px - (#{$spacing-scale-medium} * 3));
-	&.is-width-medium {
-		margin-left: calc(0px - (#{$spacing-scale-medium} * 6))
-	}
-	&.is-width-large {
-		margin-left: calc(0px - (#{$spacing-scale-medium} * 9))
+		left: 0%;
+		margin-top: $tooltip-arrow-size;
 	}
 }
 
-@mixin tooltip_position_bottom {
-	bottom: unset;
-	right: unset;
-	top: calc(100% + 5px);
-	left: 50%;
+.tooltip-position-right {
+	&:before, &:after {
+		top: calc(50% - #{$tooltip-arrow-size});
+		left: 100%;
+	}
+	&:before {
+		margin-left: $tooltip-arrow-size;
+	}
 	&:after {
-		right: unset;
-		top: unset;
-		bottom: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-color: transparent transparent $color-neutral-darkest transparent;
-	}
-	&.is-color-primary:after {
-		border-color: transparent transparent $color-primary-base transparent;
-	}
-	&.is-color-primary-outline:after {
-		border-color: transparent transparent $color-primary-dark transparent;
-	}
-	&.is-color-secondary:after {
-		border-color: transparent transparent $color-secondary-base transparent;
-	}
-	&.is-color-secondary-outline:after {
-		border-color: transparent transparent $color-secondary-dark transparent;
-	}
-	&.is-color-danger:after {
-		border-color: transparent transparent $color-danger-base transparent;
-	}
-	&.is-color-danger-outline:after {
-		border-color: transparent transparent $color-danger-dark transparent;
-	}
-	&.is-color-success:after {
-		border-color: transparent transparent $color-success-base transparent;
-	}
-	&.is-color-success-outline:after {
-		border-color: transparent transparent $color-success-dark transparent;
-	}
-	&.is-color-info:after {
-		border-color: transparent transparent $color-info-base transparent;
-	}
-	&.is-color-info-outline:after {
-		border-color: transparent transparent $color-info-dark transparent;
-	}
-	&.is-color-warning:after {
-		border-color: transparent transparent $color-warning-base transparent;
-	}
-	&.is-color-warning-outline:after {
-		border-color: transparent transparent $color-warning-dark transparent;
-	}
-	// based on default sizing
-	margin-left: calc(0px - (#{$spacing-scale-medium} * 3));
-	&.is-width-medium {
-		margin-left: calc(0px - (#{$spacing-scale-medium} * 6))
-	}
-	&.is-width-large {
-		margin-left: calc(0px - (#{$spacing-scale-medium} * 9))
-	}
-}
-
-// Note: left and right positioning has a problem
-// You generally choose a width for your tooltip, which makes it predictable allowing us to position it at the center in the top and bottom case
-// however you don't generally choose the height, so we don't know how high the tooltip is
-// if say the tooltip is 50px high and you attach it to a 25px high button, if you centered the arrow on the 50px, it would actually point to the bottom of the button
-// currently the solution is simply not to center the arrow itself, but point it at the top, presuming at least _some_ height on the element it is attached to
-// so instead of the after being positioned at top 50%, we put it at top 11px for now
-@mixin tooltip_position_right {
-	bottom: unset;
-	right: unset;
-	top: 13%;
-	left: calc(100% + 5px);
-	&:after {
-		bottom: unset;
-		left: unset;
-		top: 11px;
-		right: 100%;
-		margin-top: -5px;
-		margin-left: unset;
+		margin-left: -$tooltip-arrow-size;
 		border-color: transparent $color-neutral-darkest transparent transparent;
 	}
-	&.is-color-primary:after {
-		border-color: transparent $color-primary-base transparent transparent;
-	}
-	&.is-color-primary-outline:after {
-		border-color: transparent $color-primary-dark transparent transparent;
-	}
-	&.is-color-secondary:after {
-		border-color: transparent $color-secondary-base transparent transparent;
-	}
-	&.is-color-secondary-outline:after {
-		border-color: transparent $color-secondary-dark transparent transparent;
-	}
-	&.is-color-danger:after {
-		border-color: transparent $color-danger-base transparent transparent;
-	}
-	&.is-color-danger-outline:after {
-		border-color: transparent $color-danger-dark transparent transparent;
-	}
-	&.is-color-success:after {
-		border-color: transparent $color-success-base transparent transparent;
-	}
-	&.is-color-success-outline:after {
-		border-color: transparent $color-success-dark transparent transparent;
-	}
-	&.is-color-info:after {
-		border-color: transparent $color-info-base transparent transparent;
-	}
-	&.is-color-info-outline:after {
-		border-color: transparent $color-info-dark transparent transparent;
-	}
-	&.is-color-warning:after {
-		border-color: transparent $color-warning-base transparent transparent;
-	}
-	&.is-color-warning-outline:after {
-		border-color: transparent $color-warning-dark transparent transparent;
-	}
-	// must unset default
-	&.is-width-medium {
-		margin-left: unset;
-	}
-	&.is-width-large {
-		margin-left: unset;
-	}
-}
-@mixin tooltip_position_left {
-	bottom: unset;
-	left: unset;
-	top: 13%;
-	right: calc(100% + 5px);
-	&:after {
+	.is-tooltip {
 		bottom: unset;
 		right: unset;
-		top: 11px;
+		// we want this to hover at the center as well because that's where the arrow will be
+		top: calc(50% - #{$font-size-medium});
 		left: 100%;
-		margin-top: -5px;
-		margin-left: unset;
+		margin-left: $tooltip-arrow-size;
+	}
+}
+
+.tooltip-position-left {
+	&:before, &:after {
+		top: calc(50% - #{$tooltip-arrow-size});
+		left: unset;
+		right: calc(100% - #{$tooltip-arrow-size});
+	}
+	&:before {
+		margin-left: $tooltip-arrow-size;
+	}
+	&:after {
 		border-color: transparent transparent transparent $color-neutral-darkest;
 	}
-	&.is-color-primary:after {
-		border-color: transparent transparent transparent $color-primary-base;
-	}
-	&.is-color-primary-outline:after {
-		border-color: transparent transparent transparent $color-primary-dark;
-	}
-	&.is-color-secondary:after {
-		border-color: transparent transparent transparent $color-secondary-base;
-	}
-	&.is-color-secondary-outline:after {
-		border-color: transparent transparent transparent $color-secondary-dark;
-	}
-	&.is-color-danger:after {
-		border-color: transparent transparent transparent $color-danger-base;
-	}
-	&.is-color-danger-outline:after {
-		border-color: transparent transparent transparent $color-danger-dark;
-	}
-	&.is-color-success:after {
-		border-color: transparent transparent transparent $color-success-base;
-	}
-	&.is-color-success-outline:after {
-		border-color: transparent transparent transparent $color-success-dark;
-	}
-	&.is-color-info:after {
-		border-color: transparent transparent transparent $color-info-base;
-	}
-	&.is-color-info-outline:after {
-		border-color: transparent transparent transparent $color-info-dark;
-	}
-	&.is-color-warning:after {
-		border-color: transparent transparent transparent $color-warning-base;
-	}
-	&.is-color-warning-outline:after {
-		border-color: transparent transparent transparent $color-warning-dark;
-	}
-	// must unset default
-	&.is-width-medium {
-		margin-left: unset;
-	}
-	&.is-width-large {
-		margin-left: unset;
+	.is-tooltip {
+		bottom: unset;
+		left: unset;
+		top: calc(50% - #{$font-size-medium});
+		right: calc(100% + #{$tooltip-arrow-size});
 	}
 }
 
 // we don't include a default position, there is too much to override (like the margins etc)
-@mixin tooltip_variant_default {
-	visibility: hidden;
-	opacity: 0;
-	z-index: 15;
-	position: absolute;
-	@include component_border_full;
-	@include content_size-small;
-	@include padded-content_size-small;
-	@include tooltip_size_small;
-	@include component_color_dark;
-	@include tooltip_width_small;
-	&:after {
-		content: ' ';
-		position: absolute;
-		border-width: 5px;
-		border-style: solid;
-	}
-	@include tooltip_position_top;
+.is-tooltip {
+	z-index: calc(#{$tooltip-z-index} + 1);
 }
