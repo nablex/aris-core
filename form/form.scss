@@ -9,14 +9,14 @@
 }
 
 @mixin form_variant_default {
+	:is-label {
+		font-size: $font-size-small;
+		@include component_color_dark-outline;
+	}
+	:is-info {
+		margin-left: $spacing-scale-small;
+	}
 	:is-form-component {
-		:is-label {
-			font-size: $font-size-small;
-			@include component_color_dark-outline;
-		}
-		:is-info {
-			margin-left: $spacing-scale-small;
-		}
 		&.is-required {
 			:is-label {
 				&:after {
@@ -34,6 +34,10 @@
 	:is-label-wrapper {
 		display: flex;
 	}
+}
+
+@mixin form-default_modifier_small {
+	@include form-component_size_small;	
 }
 
 // the equivalent of "row" in the previous version
@@ -90,6 +94,22 @@
 @mixin form_variant_horizontal {
 	:is-form-component {
 		display: flex;
+		.is-label-wrapper {
+			padding: 0 $spacing-scale-medium;
+			align-items: center;
+			border: solid 1px $color-neutral-light;
+			border-right: none;
+			background-color: $color-neutral-lighter;
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+		}
+		.is-content-wrapper {
+			flex-grow: 1;
+			input {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
 	}
 }
 
