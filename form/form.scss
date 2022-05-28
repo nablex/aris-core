@@ -42,7 +42,7 @@
 	display: flex;
 	@include component_direction_horizontal;
 	@include component_spacing_horizontal-gap-medium;
-	> :is-form-component {
+	> :is-form-section {
 		flex-grow: 1;
 	}
 }
@@ -54,7 +54,8 @@
 		@include component_direction_vertical;
 		@include component_spacing_vertical-gap-small;
 	}
-	:is-form-section {
+	// we exclude sections that are form groups
+	:is-form-section:not(.is-form-group) {
 		display: flex;
 		@include component_spacing_vertical-gap-large;
 		@include component_direction_vertical;
