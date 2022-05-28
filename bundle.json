@@ -69,9 +69,6 @@
 			"tooltip.scss": {
 				"url": "components/tooltip.scss"
 			},
-			"inline-tooltip.scss": {
-				"url": "components/inline-tooltip.scss"
-			},
 			"typography.scss": {
 				"url": "components/typography.scss"
 			}, 

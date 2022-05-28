@@ -2,16 +2,11 @@
 
 // @description The primary highlight color of your application
 // @priority 1000
-// #9CC923
-// bootstrap: 0d6efd
-$color-primary-base: #9CC923 !default;
+$color-primary-base: #0d6efd !default;
 
 // @description The secondary highlight color of your application
 // @priority 1000
-// #00B5E2
-// bootstrap: #6c757d
-// purple? 6200ea
-$color-secondary-base: #00B5E2 !default;
+$color-secondary-base: #6c757d !default;
 
 // @description The neutral color of your application
 // @priority 500
@@ -24,7 +19,6 @@ $color-success-base: #198754 !default;
 // @description The warning color of your application
 $color-warning-base: #E0A800 !default;
 // @description The informational color of your application
-// #7fa1a5
 $color-info-base: #0dcaf0 !default;
 
 
