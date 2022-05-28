@@ -10,7 +10,6 @@
 @mixin row_variant_default {
 	display: flex;
 	@include component_direction_horizontal;
-	@include layout_align_start;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------------
