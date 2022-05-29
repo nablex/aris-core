@@ -32,8 +32,6 @@
 	// the additional advantage of content-width (in combination with overflow) is that the scrollbar appears on the side of the page rather than the side of the element
 	overflow-x: hidden;
 	width: 1024px;
-	margin-left: auto;
-	margin-right: auto;
 	// once we go below this, just take up max width
 	// I rather not use vw unless absolutely necessary
 	@media only screen and (max-width: 1023px) {
@@ -43,8 +41,6 @@
 @mixin row_width_medium {
 	overflow-x: hidden;
 	width: 1280px;
-	margin-left: auto;
-	margin-right: auto;
 	@media only screen and (max-width: 1279px) {
 		width: 100%;
 	}
@@ -52,8 +48,6 @@
 @mixin row_width_large {
 	overflow-x: hidden;
 	width: 1536px;
-	margin-left: auto;
-	margin-right: auto;
 	@media only screen and (max-width: 1535px) {
 		width: 100%;
 	}

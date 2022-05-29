@@ -50,6 +50,12 @@ $menu-top-background-color: $color-body;
 				display: flex;
 			}
 		}
+		&.is-open {
+			// revert to flex display when hovering
+			> .is-row {
+				display: flex;
+			}
+		}
 		// make sure it takes up all the space
 		> .is-button {
 			height: 100%;
@@ -156,6 +162,62 @@ $menu-top-background-color: $color-body;
 			}
 		}
 	}
+
+	// a toolbar can have an embedded menu for mobile use
+	// combine with the mobile modifier to use this
+	.is-mobile-menu {
+		display: none;
+	}
+}
+
+@mixin menu-toolbar_modifier_mobile {
+	top: 100%;
+	flex-direction: column;
+	width: 100%;
+	z-index: 100;
+	position: absolute;
+	padding: 0;
+	.is-mobile-menu {
+		display: block;
+		position: absolute;
+		top: -100%;
+		height: 100%;
+		&.is-position-right {
+			right: 0;
+		}
+		.is-button {
+			// hide any highlighting
+			&:after {
+				display: none;
+			}
+		}
+	}
+	// any column that is not a mobile menu, hide it by default
+	> .is-column:not(.is-mobile-menu) {
+		display: none;
+	}
+}
+@mixin menu-toolbar_modifier_mobile-open {
+	.page-action-entry {
+		width: 100%;
+	}
+	// any column that is not a mobile menu, hide it by default
+	> .is-column:not(.is-mobile-menu) {
+		display: block;
+	}
+	.is-column {
+		.is-row {
+			flex-direction: column;
+			position: relative;
+			top: 0;
+		}
+		.is-button {
+			height: inherit;
+			border-radius: 0;
+			text-align: left;
+			justify-content: flex-start;
+		}
+	}
 }
 
 // a dark toolbar
@@ -176,7 +238,7 @@ $menu-top-background-color: $color-body;
 			color: $color-warning-darkest;
 		}
 	}
-	> .is-column > .is-button {
+	> .is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -196,7 +258,7 @@ $menu-top-background-color: $color-body;
 			color: $color-success-lightest;
 		}
 	}
-	> .is-column > .is-button {
+	> .is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -216,7 +278,7 @@ $menu-top-background-color: $color-body;
 			color: $color-danger-lightest;
 		}
 	}
-	> .is-column > .is-button {
+	> .is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -237,7 +299,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	// on the first row, we want to underline as well, on the nested rows we don't
-	> .is-column > .is-button {
+	> .is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -257,7 +319,7 @@ $menu-top-background-color: $color-body;
 			color: $color-secondary-lightest;
 		}
 	}
-	> .is-column > .is-button {
+	> .is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -269,30 +331,6 @@ $menu-top-background-color: $color-body;
 			}
 		}
 	}
-}
-// a toolbar that acts as a main top menu to a page
-@mixin menu-toolbar_modifier_main-top {
-	z-index: 100;
-	// if we don't set a specific content width, we add a padding
-	&:not(.is-content-width-medium):not(.is-content-width-small):not(.is-content-width-large) {
-		padding-left: $spacing-scale-medium;
-		padding-right: $spacing-scale-medium;
-	}
-	height: 3rem;
-	.is-button {
-		height: 100%;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
-}
-.has-menu-toolbar-sticky {
-	margin-top: 3rem;
-}
-@mixin menu-toolbar_modifier_sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	transition: position 0.3s linear, top 0.3s linear;
 }
 
 @mixin menu-toolbar_modifier_embedded {

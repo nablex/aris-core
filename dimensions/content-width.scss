@@ -11,15 +11,11 @@
 
 @mixin template_row_content-width {
 	width: unset;
-	margin-left: auto;
-	margin-right: auto;
 }
 @mixin row_content-width_small {
 	// 512 / 1024
 	padding-left: calc(50% - 512px);
 	padding-right: calc(50% - 512px);
-	margin-left: auto;
-	margin-right: auto;
 	@media only screen and (max-width: 1023px) {
 		padding-left: 0px;
 		padding-right: 0px;
@@ -29,8 +25,6 @@
 	// 640 / 1280
 	padding-left: calc(50% - 640px);
 	padding-right: calc(50% - 640px);
-	margin-left: auto;
-	margin-right: auto;
 	@media only screen and (max-width: 1279px) {
 		padding-left: 0px;
 		padding-right: 0px;
@@ -40,8 +34,6 @@
 	// 768 / 1536
 	padding-left: calc(50% - 768px);
 	padding-right: calc(50% - 768px);
-	margin-left: auto;
-	margin-right: auto;
 	@media only screen and (max-width: 1535px) {
 		padding-left: 0px;
 		padding-right: 0px;

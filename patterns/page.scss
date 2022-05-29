@@ -2,6 +2,10 @@
 // @component page-row row
 // @component page-column column
 
+// make sure anchors etc always grow to the full width, otherwise they may artificially limit the content
+.is-page, .is-anchor {
+	flex-grow: 1;
+}
 @mixin page-column_variant_default {
 	// without this, we can get some really weird sizing...
 	@include column_variant_default;
@@ -26,7 +30,7 @@
 	border: dashed 1px $color-neutral-darker;
 	border-radius: $border-radius;
 	font-size: $font-size-small;
-	z-index: 100;
+	z-index: 1000;
 	&.is-bookmarkable {
 		border-style: solid;
 		background-color: $color-neutral-lighter;

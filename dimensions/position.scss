@@ -1,8 +1,11 @@
 @mixin component_position_right {
 	margin-left: auto;
+	// just in case...
+	right: 0;
 }
 @mixin component_position_bottom {
 	margin-top: auto;
+	bottom: 0;
 }
 // only works in grids, not sure if we should have this here cause we flex
 @mixin component_position_main-center {
@@ -27,6 +30,7 @@
 @mixin component_position_center {
 	@include component_position_main-center;
 	@include component_position_cross-center;
+	margin: auto;
 }
 @mixin component_position_start {
 	@include component_position_main-start;
