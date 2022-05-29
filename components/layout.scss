@@ -21,45 +21,42 @@
 	margin-right: auto;
 }
 
+// this is in sync with content-width dimension
 @mixin row_width_small {
-	width: calc(#{$font-size-medium} * 64);
+	// TODO: when used in combination with overflow auto, a horizontal scrollbar will always appear!
+	// for now we hard disable overflow x
+	// I investiged the scrollbar, there were no hidden elements, _every_ element was pixel perfect the size of the container
+	// the only thing that made the scrollbar disappear was by setting an additional padding on the element, for some reason padding of 20 (on large) did the trick
+	// but if i then reduced the width by 1px, the scrollbar would reappear, reduced again by 1px and it would vanish (while maintaining the padding)
+	// the behavior was decidedly odd, in general it is advised to use content-width
+	// the additional advantage of content-width (in combination with overflow) is that the scrollbar appears on the side of the page rather than the side of the element
+	overflow-x: hidden;
+	width: 1024px;
 	margin-left: auto;
 	margin-right: auto;
+	// once we go below this, just take up max width
+	// I rather not use vw unless absolutely necessary
+	@media only screen and (max-width: 1023px) {
+		width: 100%;
+	}
 }
 @mixin row_width_medium {
-	width: calc(#{$font-size-medium} * 96);
+	overflow-x: hidden;
+	width: 1280px;
 	margin-left: auto;
 	margin-right: auto;
+	@media only screen and (max-width: 1279px) {
+		width: 100%;
+	}
 }
 @mixin row_width_large {
-	width: calc(#{$font-size-medium} * 128);
+	overflow-x: hidden;
+	width: 1536px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-// ----------------------------------------- CONTENT-WIDTH
-@mixin template_row_content-width {
-	width: unset;
-	margin-left: auto;
-	margin-right: auto;
-}
-@mixin row_content-width_small {
-	padding-left: calc(50% - (#{$font-size-medium} * 32));
-	padding-right: calc(50% - (#{$font-size-medium} * 32));
-	margin-left: auto;
-	margin-right: auto;
-}
-@mixin row_content-width_medium {
-	padding-left: calc(50% - (#{$font-size-medium} * 48));
-	padding-right: calc(50% - (#{$font-size-medium} * 48));
-	margin-left: auto;
-	margin-right: auto;
-}
-@mixin row_content-width_large {
-	padding-left: calc(50% - (#{$font-size-medium} * 64));
-	padding-right: calc(50% - (#{$font-size-medium} * 64));
-	margin-left: auto;
-	margin-right: auto;
+	@media only screen and (max-width: 1535px) {
+		width: 100%;
+	}
 }
 
 // ----------------------------------------- WRAPPING

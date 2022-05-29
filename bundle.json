@@ -40,6 +40,9 @@
 			"width.scss": {
 				"url": "dimensions/width.scss"
 			},
+			"content-width.scss": {
+				"url": "dimensions/content-width.scss"
+			},
 			"height.scss": {
 				"url": "dimensions/height.scss"
 			},
