@@ -168,6 +168,9 @@ $menu-top-background-color: $color-body;
 	.is-mobile-menu {
 		display: none;
 	}
+	> .is-title + .is-automatic {
+		margin-left: auto;
+	}
 }
 
 @mixin menu-toolbar_modifier_mobile {
@@ -177,6 +180,12 @@ $menu-top-background-color: $color-body;
 	z-index: 100;
 	position: absolute;
 	padding: 0;
+	> .is-title {
+		position: absolute;
+		top: -100%;
+		left: 0;
+		height: 100%;
+	}
 	.is-mobile-menu {
 		display: block;
 		position: absolute;
@@ -193,8 +202,11 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	// any column that is not a mobile menu, hide it by default
-	> .is-column:not(.is-mobile-menu) {
+	> .is-column:not(.is-mobile-menu):not(.is-title) {
 		display: none;
+	}
+	.is-column.is-automatic {
+		margin-left: 0;
 	}
 }
 @mixin menu-toolbar_modifier_mobile-open {
@@ -202,8 +214,8 @@ $menu-top-background-color: $color-body;
 		width: 100%;
 	}
 	// any column that is not a mobile menu, hide it by default
-	> .is-column:not(.is-mobile-menu) {
-		display: block;
+	> .is-column:not(.is-mobile-menu):not(.is-title) {
+		display: flex;
 	}
 	.is-column {
 		.is-row {
