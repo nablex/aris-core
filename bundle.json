@@ -48,6 +48,12 @@
 			},
 			"overflow.scss": {
 				"url": "dimensions/overflow.scss"
+			},
+			"layer.scss": {
+				"url": "dimensions/layer.scss"
+			},
+			"shadow.scss": {
+				"url": "dimensions/shadow.scss"
 			}
 		},
 		"components": {

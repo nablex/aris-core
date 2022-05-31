@@ -10,7 +10,10 @@
 }
 
 body[has-sidebar-left=true] {
-	padding-left: calc(30 * #{$font-size-medium});
+	// if we have at least a tablet-sized screen, move the content over to accomodate the sidebar
+	@media screen and (min-width: map-get($breakpoints, "tablet")) {
+		padding-left: calc(30 * #{$font-size-medium});
+	}
 }
 
 @mixin sidebar_size_xsmall {
@@ -74,14 +77,16 @@ body[has-sidebar-left=true] {
 	position: fixed;
 	top: 0;
 	height: 100vh;
-	max-width: 100%;
+	max-width: 100vw;
 	min-width: calc(25 * #{$font-size-medium});
-	z-index: 50;
+	z-index: 500;
 	background-color: $color-neutral-lightest;
 	@include sidebar_header-size_small;
 	@include sidebar_position_left;
 	main {
-		@include component_spacing_vertical-gap-medium;;
+		@include component_spacing_vertical-gap-medium;
 		overflow: auto;
+		overflow-x: hidden;
+		max-width: 100vw;
 	}
 }
