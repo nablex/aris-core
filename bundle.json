@@ -22,6 +22,9 @@
 			"color.scss": {
 				"url": "dimensions/color.scss"
 			},
+			"highlight.scss": {
+				"url": "dimensions/highlight.scss"
+			},
 			"decoration.scss": {
 				"url": "dimensions/decoration.scss"
 			},
@@ -33,6 +36,9 @@
 			},
 			"size.scss": {
 				"url": "dimensions/size.scss"
+			},
+			"fit.scss": {
+				"url": "dimensions/fit.scss"
 			},
 			"fill.scss": {
 				"url": "dimensions/fill.scss"
@@ -54,6 +60,9 @@
 			},
 			"shadow.scss": {
 				"url": "dimensions/shadow.scss"
+			},
+			"ratio.scss": {
+				"url": "dimensions/ratio.scss"
 			}
 		},
 		"components": {
@@ -62,6 +71,12 @@
 			},
 			"content.scss": {
 				"url": "components/content.scss"
+			},
+			"external-content.scss": {
+				"url": "components/external-content.scss"
+			},
+			"image.scss": {
+				"url": "components/image.scss"
 			},
 			"layout.scss": {
 				"url": "components/layout.scss"

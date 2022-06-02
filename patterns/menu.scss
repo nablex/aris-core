@@ -30,20 +30,14 @@ $menu-top-background-color: $color-body;
 	.has-children {
 		cursor: pointer;
 	}
-	.is-label {
-		@include component_spacing_medium;
+	.is-text {
+		text-align: left;
 	}
 	// all columns must be relative to allow for absolute positioning
 	.is-column {
 		align-self: stretch;
-		justify-content: center;
 		position: relative;
-		// the content (usually a button) should take up the full available width
-		> * {
-			// center content without specifically knowing whether it's flexed or not
-			text-align: center;
-			justify-content: center;
-		}
+		
 		&:hover {
 			// revert to flex display when hovering
 			> .is-row {
@@ -62,7 +56,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	.is-row {
-		width: 100%;
+		min-width: 100%;
 		display: none;
 		padding: 0;
 		@include component_direction_vertical;
@@ -261,6 +255,19 @@ $menu-top-background-color: $color-body;
 				bottom: 0;
 			}
 		}
+	}
+}
+@mixin menu-toolbar_modifier_center-text {
+	.is-column {
+		// the content (usually a button) should take up the full available width
+		> * {
+			// center content without specifically knowing whether it's flexed or not
+			text-align: center;
+			justify-content: center;
+		}
+	}
+	.is-text {
+		text-align: center;
 	}
 }
 @mixin menu-toolbar_modifier_success-highlight {

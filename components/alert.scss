@@ -60,6 +60,8 @@
 .is-alert {
 	> .is-icon {
 		line-height: 100%;
+		// scale back images...
+		max-width: 15%;
 	}
 	> .is-text {
 		flex-grow: 1;

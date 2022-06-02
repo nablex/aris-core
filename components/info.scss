@@ -2,7 +2,9 @@
 @mixin info_variant_default {
 	display: inline-block;
 	position: relative;
-	.is-content-wrapper {
+	.is-info-content-wrapper {
+		text-align: left;
+		top: 100%;
 		z-index: 10;
 		position: absolute;
 		background-color: $color-neutral-darkest;
@@ -13,5 +15,11 @@
 		border-radius: $border-radius;
 		font-size: $font-size-xsmall;
 		line-height: $font-size-medium;
+	}
+}
+
+@mixin info_position_left {
+	.is-info-content-wrapper {
+		right: 0;
 	}
 }

@@ -16,7 +16,7 @@
 @mixin component_color_primary {
 	background-color: $color-primary-base;
 	color: $color-neutral-lightest;
-	border-color: $color-primary-base;
+	border-color: $color-primary-base;	
 }
 @mixin component_color_primary-outline {
 	background-color: transparent;

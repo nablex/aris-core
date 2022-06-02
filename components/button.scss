@@ -10,117 +10,52 @@
 // ----------------------------------------- COLORS
 
 @mixin button_color_primary {
-	&:hover, &.is-active {
-		background-color: $color-primary-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-primary-dark;
-	}
+	@include component_highlight_primary;
 }
 @mixin button_color_primary-outline {
-	&:hover, &.is-active {
-		background-color: $color-primary-base;
-		color: $color-neutral-lightest;
-		border-color: $color-primary-base;
-	}
+	@include component_highlight_primary-outline;
 }
 @mixin button_color_secondary {
-	&:hover, &.is-active {
-		background-color: $color-secondary-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-secondary-dark;
-	}
+	@include component_highlight_secondary;
 }
 @mixin button_color_secondary-outline {
-	&:hover, &.is-active {
-		background-color: $color-secondary-base;
-		color: $color-neutral-lightest;
-		border-color: $color-secondary-base;
-	}
+	@include component_highlight_secondary-outline;
 }
 @mixin button_color_transparent {
-	&:hover, &.is-active {
-		background-color: transparent;
-		color: $color-neutral-darkest;
-		border-color: $color-neutral-dark;
-	}
+	@include component_highlight_transparent;
 }
 @mixin button_color_transparent-light {
-	&:hover, &.is-active {
-		background-color: transparent;
-		color: $color-neutral-lightest;
-		border-color: $color-neutral-light;
-	}
+	@include component_highlight_transparent-light;
 }
 @mixin button_color_danger {
-	&:hover, &.is-active {
-		background-color: $color-danger-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-danger-dark;
-	}
+	@include component_highlight_danger;
 }
 @mixin button_color_danger-outline {
-	&:hover, &.is-active {
-		background-color: $color-danger-base;
-		color: $color-neutral-lightest;
-		border-color: $color-danger-base;
-	}
+	@include component_highlight_danger-outline;
 }
 @mixin button_color_warning {
-	&:hover, &.is-active {
-		background-color: $color-warning-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-warning-dark;
-	}
+	@include component_highlight_warning;
 }
 @mixin button_color_warning-outline {
-	&:hover, &.is-active {
-		background-color: $color-warning-base;
-		color: $color-neutral-lightest;
-		border-color: $color-warning-base;
-	}
+	@include component_highlight_warning-outline;
 }
 @mixin button_color_info {
-	&:hover, &.is-active {
-		background-color: $color-info-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-info-dark;
-	}
+	@include component_highlight_info;
 }
 @mixin button_color_info-outline {
-	&:hover, &.is-active {
-		background-color: $color-info-base;
-		color: $color-neutral-lightest;
-		border-color: $color-info-base;
-	}
+	@include component_highlight_info-outline;
 }
 @mixin button_color_success {
-	&:hover, &.is-active {
-		background-color: $color-success-dark;
-		color: $color-neutral-lighter;
-		border-color: $color-success-dark;
-	}
+	@include component_highlight_success;
 }
 @mixin button_color_success-outline {
-	&:hover, &.is-active {
-		background-color: $color-success-base;
-		color: $color-neutral-lightest;
-		border-color: $color-success-base;
-	}
+	@include component_highlight_success-outline;
 }
-
 @mixin button_color_dark {
-	&:hover, &.is-active {
-		background-color: $color-neutral-darker;
-		color: $color-neutral-lightest;
-		border-color: $color-neutral-darker;
-	}
+	@include component_highlight_dark;
 }
 @mixin button_color_light {
-	&:hover, &.is-active {
-		background-color: $color-neutral-lighter;
-		color: $color-neutral-darkest;
-		border-color: $color-neutral-base;
-	}
+	@include component_highlight_light;
 }
 
 $button-link-color: $color-primary-darker;
@@ -142,15 +77,19 @@ $button-link-color: $color-primary-darker;
 
 // some tiny corrections
 @mixin button-fix-icon {
-	> .is-text {
-		white-space: nowrap;
-	}
+	// > .is-text {
+	// 	white-space: nowrap;
+	// }
 }
 
 // ----------------------------------------- VARIANTS
 
 @mixin button_variant_default {
 	cursor: pointer;
+	// everything inside the button is clickable...
+	* {
+		cursor: pointer;
+	}
 	// we use inline flex so we can easily position the icon and text with a gap without having to know which are present
 	// additionally it makes it easy to reverse the order
 	display: inline-flex;
@@ -166,6 +105,7 @@ $button-link-color: $color-primary-darker;
 	@include component_color_light;
 	@include button_color_light;
 	@include component_border_full;
+
 }
 
 @mixin button_variant_link {

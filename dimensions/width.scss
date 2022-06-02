@@ -41,7 +41,7 @@
 // in other words: the sum of all your configured columns _must_ be a multiple of 12
 
 // width 12 is always 100%, regardless of screen size
-@mixin column_width_12 {
+@mixin column_width_column-12 {
 	// always grow, otherwise our cell settings don't work
 	flex-grow: 1;
 	flex-basis: 0;
@@ -55,7 +55,7 @@
 }
 // any column between [6-11] is also 100% on anything smaller than a desktop
 // note that the max-width is inclusive
-@mixin column_width_11 {
+@mixin column_width_column-11 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 87%;
@@ -70,7 +70,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_10 {
+@mixin column_width_column-10 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 79%;
@@ -85,7 +85,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_9 {
+@mixin column_width_column-9 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 69%;
@@ -101,7 +101,7 @@
 	}
 }
 // on a tablet, 8 columns is 100%
-@mixin column_width_8 {
+@mixin column_width_column-8 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 62%;
@@ -116,7 +116,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_7 {
+@mixin column_width_column-7 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 54%;
@@ -131,7 +131,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_6 {
+@mixin column_width_column-6 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 45%;
@@ -146,7 +146,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_5 {
+@mixin column_width_column-5 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 37%;
@@ -167,7 +167,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_4 {
+@mixin column_width_column-4 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 29%;
@@ -188,7 +188,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_3 {
+@mixin column_width_column-3 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 20%;
@@ -214,7 +214,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_2 {
+@mixin column_width_column-2 {
 	flex-grow: 1;
 	flex-basis: 0;
 	min-width: 14%;
@@ -240,7 +240,7 @@
 		max-width: 100%;
 	}
 }
-@mixin column_width_1 {
+@mixin column_width_column-1 {
 	flex-grow: 1;
 	flex-basis: 0;
 	max-width: 8.33%;
@@ -260,4 +260,58 @@
 	@media only screen and (max-width: map-get($breakpoints, "below-phone")) {
 		max-width: 50%;
 	}
+}
+
+
+@mixin component_width_min-1 {
+	width: 1rem;
+}
+@mixin component_width_min-2 {
+	width: 2rem;
+}
+@mixin component_width_min-3 {
+	width: 3rem;
+}
+@mixin component_width_min-4 {
+	width: 4rem;
+}
+@mixin component_width_min-5 {
+	width: 5rem;
+}
+@mixin component_width_min-6 {
+	width: 6rem;
+}
+@mixin component_width_min-12 {
+	width: 12rem;
+}
+@mixin component_width_min-24 {
+	width: 24rem;
+}
+
+@mixin component_width_max {
+	width: 100%;
+}
+@mixin component_width_max-1 {
+	width: calc(100% - 1rem);
+}
+@mixin component_width_max-2 {
+	width: calc(100% - 2rem);
+}
+@mixin component_width_max-3 {
+	width: calc(100% - 3rem);
+}
+@mixin component_width_max-4 {
+	width: calc(100% - 4rem);
+}
+@mixin component_width_max-5 {
+	width: calc(100% - 5rem);
+}
+@mixin component_width_max-6 {
+	width: calc(100% - 6rem);
+}
+@mixin component_width_max-12 {
+	width: calc(100% - 12rem);
+}
+@mixin component_width_max-24 {
+	width: calc(100% - 24rem);
 }

@@ -8,6 +8,16 @@
 
 // @component content component
 
+@mixin content_align_left {
+	text-align: left;
+}
+@mixin content_align_center {
+	text-align: center;
+}
+@mixin content_align_right {
+	text-align: right;
+}
+
 @mixin template_content_wrap {
 	white-space: wrap;
 }
@@ -26,10 +36,11 @@
 		line-height: 100%;
 		// otherwise images etc do not register correctly width-wise
 		min-width: 1rem;
+		// otherwise images might blow up
+		max-width: 3rem;
 	}
 	> .is-text {
 		flex-grow: 1;
-		white-space: nowrap;
 	}
 }
 

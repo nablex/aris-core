@@ -48,6 +48,7 @@
 	@include component_spacing_horizontal-gap-medium;
 	> :is-form-section {
 		flex-grow: 1;
+		flex-basis: 0;
 	}
 }
 

@@ -1,10 +1,11 @@
-// @extension form-checkbox form-flat-component
+// @component form-checkbox form-flat-component
 
 $form-checkbox-check-character: "\2713";
 @mixin form-checkbox_variant_default {
 	// we don't want to size to the full width, otherwise our checkbox might be floating all the way on the right if we order reverse
 	// even if we order "normally", our label would have a large invisible hit target
 	align-self: flex-start;
+	position: relative;
 	display: inline-block;
 	input {
 		opacity: 0;
@@ -17,8 +18,11 @@ $form-checkbox-check-character: "\2713";
 		cursor: pointer;
 		line-height: 1.5rem;
 		margin-left: calc(#{$font-size-large} * 1.7);
-		position: relative;
 		display: inline-block;
+		// make sure the label is always high enough to stretch the surrounding content, the before is absolutely positioned so won't stretch
+		height: $font-size-large;
+		// the check itself is positioned "too low", but can't seem to make it move higher
+		// a solution is to also use the :after (which was done initially) but this conflicts with inserting a mandatory * which also uses the after
 		&:before {
 			border: solid 1px $color-neutral-darker;
 			display: inline-block;
@@ -26,29 +30,19 @@ $form-checkbox-check-character: "\2713";
 			height: $font-size-large;
 			width: $font-size-large;
 			position: absolute;
-			left: calc(0px - (#{$font-size-large} * 1.7));
+			left: 0;
 			top: calc(#{$font-size-large} * 0.12);
 			background-color: $color-neutral-lightest;
 		}
-		&:after {
-			top: calc(#{$font-size-large} * 0.12);
-			content: $form-checkbox-check-character;
-			font-size: $font-size-large;
-			opacity: 0;
-			position: absolute;
-			left: calc(0px - (#{$font-size-large} * 1.6));
-			text-align: center;
-			color: $color-primary-dark;
-			font-weight: bold;
-		}
+		
 	}
 	input:checked + label {
-		&:after {
-			opacity: 1;
-		}
 		&:before {
-			background: $color-neutral-lightest;
+			content: $form-checkbox-check-character;
+			font-size: $font-size-medium;
+			text-align: center;
 			border: solid 1px $color-neutral-darker;
+			background-color: $color-neutral-lightest;
 		}
 	}
 }

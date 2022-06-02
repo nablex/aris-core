@@ -8,16 +8,72 @@
 			border-radius: $border-radius $border-radius 0 0;
 		}
 	}
+	.n-input-combo {
+		display: flex;
+		.n-input-combo-label-container {
+			cursor: pointer;
+			padding: $spacing-scale-small $spacing-scale-medium;
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-darker;
+			position: relative;
+			font-size: $font-size-small;
+			border: solid 1px $color-neutral-light;
+			border-right: 0;
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+			.n-input-combo-dropdown-labels {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				z-index: 15;
+				top: 100%;
+				left: 0;
+				background-color: $color-neutral-lightest;
+				border-width: 1px;
+				border-style: solid solid solid solid;
+				border-radius: 0 0 $border-radius $border-radius;
+				border-color: $color-neutral-base;
+				white-space: nowrap;
+				.is-icon {
+					margin-left: $spacing-scale-small;
+				}
+				li {
+					cursor: pointer;
+					list-style: none;
+					padding: $spacing-scale-small $spacing-scale-medium;
+					font-size: $font-size-small;
+					&:hover {
+						background-color: $color-neutral-light;
+					}
+					&.is-active {
+						background-color: $color-primary-lightest;
+						color: $color-primary-darker;
+					}
+					&.is-pondering:not(.is-active) {
+						background-color: $color-secondary-lightest;
+						color: $color-secondary-darker;
+					}
+				}
+			}
+		}
+	}
+	.n-input-combo-label-container + .n-input-combo-input-container {
+		input {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+	.is-icon {
+		width: $font-size-large;
+		font-size: $font-size-small;
+		text-align: right;
+	}
 	.n-input-combo-input-container {
+		flex-grow: 1;
 		position: relative;
 		input {
 			// we want to keep some room on the right to show the dropdown icon
 			width: calc(100% - #{$font-size-large});
-		}
-		.is-icon {
-			width: $font-size-large;
-			font-size: $font-size-small;
-			text-align: right;
 		}
 		.n-input-combo-dropdown-values {
 			max-height: calc(#{$font-size-large} * 15);
@@ -43,25 +99,25 @@
 				}
 				&.is-active {
 					background-color: $color-primary-lightest;
-					color: $color-primary-dark;
+					color: $color-primary-darker;
 				}
 				&.is-pondering:not(.is-active) {
 					background-color: $color-secondary-lightest;
-					color: $color-secondary-dark;
+					color: $color-secondary-darker;
 				}
 			}
 		}
 	}
 }
 @mixin form-combo_size_small {
-	.n-input-combo-input-container {
+	.n-input-combo {
 		.is-icon {
 			font-size: $font-size-xsmall;
 		}
 	}
 }
 @mixin form-combo_size_xsmall {
-	.n-input-combo-input-container {
+	.n-input-combo {
 		.is-icon {
 			font-size: $font-size-xxsmall;
 		}

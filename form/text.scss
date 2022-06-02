@@ -2,4 +2,9 @@
 
 @mixin form-text_variant_default {
 	@include form-component_variant_default;
+
+	textarea {
+		width: 100%;
+		min-height: 10rem;
+	}
 }
