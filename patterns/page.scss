@@ -6,11 +6,23 @@
 .is-page, .is-anchor {
 	flex-grow: 1;
 }
+// in case we do absolutely positioned rows, we want it to be to the grid
+.is-grid {
+	position: relative;
+}
+.is-column-content {
+	// make sure it sizes
+	// no! this breaks positioning in aris cause it is always full width
+	//height: 100%;
+	//width: 100%;
+}
 @mixin page-column_variant_default {
+	position: relative;
 	// without this, we can get some really weird sizing...
 	@include column_variant_default;
 }
 @mixin page-row_variant_default {
+	position: relative;
 	@include row_variant_default;
 	// default wrap so we can easily do responsive
 	flex-wrap: wrap;
@@ -56,6 +68,9 @@
 .is-page-row .is-row-menu {
 	display: none;
 	position: absolute;
+	width: auto !important;
+	min-width: auto !important;
+	max-width: auto !important;
 	//background-color: rgba($color-primary-base, 0.2);
 	// don't annoy people that are hovering over it
 	//&:hover {
@@ -90,7 +105,9 @@
 	display: none;
 	position: absolute;
 	//background-color: rgba($color-secondary-base, 0.2);
-	width: auto;
+	width: auto !important;
+	min-width: auto !important;
+	max-width: auto !important;
 	left: 0;
 	top: calc(100% - 2px);
 	z-index: 10;
@@ -235,4 +252,9 @@
 	position: absolute;
 	bottom: 100%;
 	left: 0;
+}
+
+// make sure it is at the forefront
+.n-absolute {
+	@include component_layer_10;
 }

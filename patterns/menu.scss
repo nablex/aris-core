@@ -27,49 +27,66 @@ $menu-top-background-color: $color-body;
 
 // the top menu is mainly used at the top of a web application
 @mixin menu_variant_toolbar {
+	&:not(.is-click-to-open) {
+		:is-column {
+			&:hover {
+				// revert to flex display when hovering
+				> :is-row, > .is-grid > :is-row  {
+					display: flex;
+				}
+			}
+		}
+	}
 	.has-children {
 		cursor: pointer;
 	}
 	.is-text {
 		text-align: left;
 	}
+	.is-button {
+		min-width: 100%;
+	}
 	// all columns must be relative to allow for absolute positioning
-	.is-column {
+	:is-column {
 		align-self: stretch;
 		position: relative;
 		
-		&:hover {
-			// revert to flex display when hovering
-			> .is-row {
-				display: flex;
-			}
-		}
 		&.is-open {
 			// revert to flex display when hovering
-			> .is-row {
+			> :is-row, > .is-grid > :is-row  {
 				display: flex;
 			}
 		}
 		// make sure it takes up all the space
-		> .is-button {
+		> .is-column-content {
+			height: 100%;
+		}
+		> .is-button, > .is-column-content .is-button {
 			height: 100%;
 		}
 	}
-	.is-row {
+	&:not(.is-expanded) {
+		:is-row {
+			display: none;
+		}
+	}
+	:is-row {
 		min-width: 100%;
-		display: none;
 		padding: 0;
 		@include component_direction_vertical;
 	}
-	> .is-column {
-		> .is-row {
+	> :is-column {
+		> :is-row, > .is-grid > :is-row {
+			// at least as much as your parent
+			min-width: 100%;
+			
 			// make sure we elevate it above most other things
 			z-index: 10;
 			position: absolute;
 			top: 100%;
 			left: 0;
 			// the first level needs to be positioned at the bottom, all the other levels on the right
-			.is-row {
+			:is-row {
 				top: 0;
 				left: 100%;
 				position: absolute;
@@ -80,12 +97,12 @@ $menu-top-background-color: $color-body;
 		// we are not sure at this point if you are using border radius at all
 		// but it you are, we only want a clean radius on the left most and right most buttons, the intermediate buttons should not have a radius
 		&:not(:first-child):not(:last-child) {
-			> .is-button {
+			> .is-button, > .is-column-content .is-button {
 				border-radius: 0;
 			}
 		}
 		&:first-child:not(:last-child) {
-			> .is-button {
+			> .is-button, > .is-column-content .is-button {
 				// we only _unset_ border radiuses, we don't set them
 				// because we don't actually know if there are _any_ border radiuses
 				border-top-right-radius: 0;
@@ -93,43 +110,43 @@ $menu-top-background-color: $color-body;
 			}
 		}
 		&:last-child:not(:first-child) {
-			> .is-button {
+			> .is-button, > .is-column-content .is-button {
 				border-top-left-radius: 0;
 				border-bottom-left-radius: 0;
 			}
 		}
 		// for each intermediate child, we want to remove one border so they don't pile up (again, you might not be using borders at all)
 		&:not(:last-child) {
-			> .is-button {
+			> .is-button, > .is-column-content .is-button {
 				border-right: none;
 			}
 		}
 
-		> .is-row {
+		> :is-row, > .is-grid > :is-row {
 			// the first layer is horizontal and permanently visible
 			// the second layer is a pop-down from the first one, so we want the border radiuses on the top entry to be invisible
-			> .is-column {
+			> :is-column {
 				&:not(:last-child) {
-					> .is-button {
+					> .is-button, > .is-column-content .is-button {
 						border-radius: 0;
 					}
 				}
 				// from layer 3 onwards, we keep opening to the right
 				.is-column {
 					&:not(:first-child):not(:last-child) {
-						> .is-button {
+						> .is-button, > .is-column-content .is-button {
 							border-radius: 0;
 						}
 					}
 					// if we are first _and_ last
 					&:first-child:last-child {
-						> .is-button {
+						> .is-button, > .is-column-content .is-button {
 							border-top-left-radius: 0;
 							border-bottom-left-radius: 0;
 						}
 					}
 					&:first-child:not(:last-child) {
-						> .is-button {
+						> .is-button, > .is-column-content .is-button {
 							border-top-left-radius: 0;
 							border-bottom-left-radius: 0;
 							border-bottom-right-radius: 0;
@@ -138,18 +155,18 @@ $menu-top-background-color: $color-body;
 				}
 			}
 			// this is the same for level 2 onwards
-			.is-column {
+			:is-column {
 				// from level 2 onwards, it layers over other content, some things (like outline buttons) don't have a standard background color, so we need to add one
 				background-color: $menu-top-background-color;
 				border-radius: $border-radius;
 				&:last-child {
-					> .is-button {
+					> .is-button, > .is-column-content .is-button {
 						border-top-left-radius: 0;
 						border-top-right-radius: 0;
 					}
 				}
 				&:not(:last-child) {
-					> .is-button {
+					> .is-button, > .is-column-content .is-button {
 						border-bottom: none;
 					}
 				}
@@ -167,8 +184,15 @@ $menu-top-background-color: $color-body;
 	}
 }
 
+@mixin menu-toolbar_modifier_click-to-open {
+	// marker!
+}
+
 @mixin menu-toolbar_modifier_mobile {
-	top: 100%;
+	// we are now hovering
+	background-color: transparent;
+	// make sure if we get wrapping from somewhere that it is unset (e.g. page-row)
+	flex-wrap: nowrap;
 	flex-direction: column;
 	width: 100%;
 	z-index: 100;
@@ -196,26 +220,47 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	// any column that is not a mobile menu, hide it by default
-	> .is-column:not(.is-mobile-menu):not(.is-title) {
+	> :is-column:not(.is-mobile-menu):not(.is-title) {
 		display: none;
 	}
-	.is-column.is-automatic {
+	:is-column.is-automatic {
 		margin-left: 0;
 	}
+	top: 100%;
+	&.is-height-min-1 {
+		top: $font-size-medium;
+	}
+	&.is-height-min-2 {
+		top: calc(2 * #{$font-size-medium});
+	}
+	&.is-height-min-3 {
+		top: calc(3 * #{$font-size-medium});
+	}
+	&.is-height-min-4 {
+		top: calc(4 * #{$font-size-medium});
+	}
+	&.is-height-min-5 {
+		top: calc(5 * #{$font-size-medium});
+	}
+	&.is-height-min-6 {
+		top: calc(6 * #{$font-size-medium});
+	}
 }
+
 @mixin menu-toolbar_modifier_mobile-open {
-	.page-action-entry {
+	.is-button {
 		width: 100%;
 	}
-	// any column that is not a mobile menu, hide it by default
-	> .is-column:not(.is-mobile-menu):not(.is-title) {
+	// any column that is not a mobile menu, show it
+	> :is-column:not(.is-mobile-menu):not(.is-title) {
 		display: flex;
 	}
-	.is-column {
-		.is-row {
+	:is-column {
+		:is-row {
 			flex-direction: column;
-			position: relative;
-			top: 0;
+			// no longer absolutely positioned
+			position: relative !important;
+			top: 0 !important;
 		}
 		.is-button {
 			height: inherit;
@@ -244,7 +289,7 @@ $menu-top-background-color: $color-body;
 			color: $color-warning-darkest;
 		}
 	}
-	> .is-column > .is-button:not(.is-label) {
+	> :is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -258,7 +303,7 @@ $menu-top-background-color: $color-body;
 	}
 }
 @mixin menu-toolbar_modifier_center-text {
-	.is-column {
+	:is-column {
 		// the content (usually a button) should take up the full available width
 		> * {
 			// center content without specifically knowing whether it's flexed or not
@@ -277,7 +322,7 @@ $menu-top-background-color: $color-body;
 			color: $color-success-lightest;
 		}
 	}
-	> .is-column > .is-button:not(.is-label) {
+	> :is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -297,7 +342,7 @@ $menu-top-background-color: $color-body;
 			color: $color-danger-lightest;
 		}
 	}
-	> .is-column > .is-button:not(.is-label) {
+	> :is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -318,7 +363,7 @@ $menu-top-background-color: $color-body;
 		}
 	}
 	// on the first row, we want to underline as well, on the nested rows we don't
-	> .is-column > .is-button:not(.is-label) {
+	> :is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';
@@ -338,7 +383,7 @@ $menu-top-background-color: $color-body;
 			color: $color-secondary-lightest;
 		}
 	}
-	> .is-column > .is-button:not(.is-label) {
+	> :is-column > .is-button:not(.is-label) {
 		&:hover:not(.is-active) {
 			&:after {
 				content: ' ';

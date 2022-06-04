@@ -1,3 +1,17 @@
+!IMPORTANT
+breakpoints do not take into account fixed-width containers
+for instance if you have 1024px wide container, the content will still change at the breakpoints
+usually for smaller containers this is not too bad as you actually end up with less space anyway
+HOWEVER, for the widescreen this _is_ a problem. even if you go wide, if you cap it at 1024px, you will suddenly get more items on a row
+need something to prevent this!
+
+
+- COMPONENT STATE
+	currently only known to the page _after_ the component loads, depending on other components that have a dependency, this might be too late
+	on save (of a page), we should list all "named" components and add them to the page variables
+	so they can be initialized at startup
+	when anyone asks, return it from variables, not from the target component, it is up to the component to make sure everything is reactive
+
 - content-width is not yet responsive!
 V on operation drop -> the aris rules are not correctly applied live -> the watcher was not getting triggered which means the rerender toggle was not set
 	- we already do a slow synchronize so not sure what is holding it back
