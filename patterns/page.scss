@@ -7,9 +7,11 @@
 	flex-grow: 1;
 }
 // in case we do absolutely positioned rows, we want it to be to the grid
-.is-grid {
-	position: relative;
-}
+// if the row is the first in the grid, it is either at the top of a page, or relative to another row/cell which _is_ relative
+// the downside of making the grid relative is that it is hard to position nested rows/columns to one another!
+//.is-grid {
+	//position: relative;
+//}
 .is-column-content {
 	// make sure it sizes
 	// no! this breaks positioning in aris cause it is always full width
@@ -20,6 +22,11 @@
 	position: relative;
 	// without this, we can get some really weird sizing...
 	@include column_variant_default;
+
+	// if we have a nested row inside a column, we do not want the max-width requirement
+	> .is-grid > .is-page-row {
+		max-width: unset;
+	}
 }
 @mixin page-row_variant_default {
 	position: relative;
@@ -69,8 +76,8 @@
 	display: none;
 	position: absolute;
 	width: auto !important;
-	min-width: auto !important;
-	max-width: auto !important;
+	min-width: unset !important;
+	max-width: unset !important;
 	//background-color: rgba($color-primary-base, 0.2);
 	// don't annoy people that are hovering over it
 	//&:hover {

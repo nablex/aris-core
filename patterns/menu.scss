@@ -28,7 +28,7 @@ $menu-top-background-color: $color-body;
 // the top menu is mainly used at the top of a web application
 @mixin menu_variant_toolbar {
 	&:not(.is-click-to-open) {
-		:is-column {
+		:is-column:not(.is-closed) {
 			&:hover {
 				// revert to flex display when hovering
 				> :is-row, > .is-grid > :is-row  {
@@ -70,9 +70,13 @@ $menu-top-background-color: $color-body;
 			display: none;
 		}
 	}
+	// nested uls must be normalized as well
+	ul {
+		padding: 0;
+		margin: 0;
+	}
 	:is-row {
 		min-width: 100%;
-		padding: 0;
 		@include component_direction_vertical;
 	}
 	> :is-column {
@@ -157,7 +161,9 @@ $menu-top-background-color: $color-body;
 			// this is the same for level 2 onwards
 			:is-column {
 				// from level 2 onwards, it layers over other content, some things (like outline buttons) don't have a standard background color, so we need to add one
-				background-color: $menu-top-background-color;
+				// the problem is, this is a pretty heavy selector specificity-wise
+				// you should set a background on the container itself (in the case of a ghost button)
+				//background-color: $menu-top-background-color;
 				border-radius: $border-radius;
 				&:last-child {
 					> .is-button, > .is-column-content .is-button {

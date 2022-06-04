@@ -40,3 +40,12 @@
 	@include component_position_main-start;
 	@include component_position_cross-end;
 }
+
+@mixin component_position_vertical-center {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+@mixin component_position_horizontal-center {
+	margin-left: auto;
+	margin-right: auto;
+}
