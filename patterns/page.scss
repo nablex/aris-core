@@ -141,6 +141,7 @@
 .is-page-column .is-page-column-content {
 	min-height: 100%;
 }
+
 // empty effect for column
 .is-page-column.is-empty {
 	min-width: 20rem;
@@ -254,6 +255,16 @@
 		border: dashed 2px $color-secondary-light;
 		margin: 10px;
 	}
+
+	// any actually empty though configured cell should have a minimum height
+	.is-page-column[placeholder]:not(.is-empty):empty {
+		min-height: 1.2rem;
+		&:before {
+			content: attr(placeholder);
+			color: #555;
+			margin-left: 0.2rem;
+		}
+	}	
 }
 
 .is-empty-component {
