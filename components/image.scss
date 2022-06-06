@@ -1,1 +1,5 @@
 // @component image external-content
+
+@mixin image_variant_default {
+	max-width: 100%;
+}

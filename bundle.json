@@ -154,6 +154,14 @@
 			"page.scss": {
 				"url": "patterns/page.scss"
 			}
+		},
+		"templates": {
+			"two-cell-row.npt": {
+				"url": "templates/two-cell-row.npt"
+			},
+			"three-cell-row.npt": {
+				"url": "templates/three-cell-row.npt"
+			}
 		}
 	}
 }
