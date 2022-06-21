@@ -22,6 +22,9 @@
 		.is-text-after, .is-text-before {
 			color: $color-neutral-base;
 		}
+		> .is-title-buttons {
+			margin-left: auto;
+		}
 	}
 	@include component_color_light;
 	@include component_border_underline;

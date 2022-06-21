@@ -1,5 +1,47 @@
-@mixin component_border_full {
+@mixin component_border_top {
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+@mixin component_border_right {
+	border-right-style: solid;
+	border-right-width: 1px;
+}
+@mixin component_border_bottom {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+@mixin component_border_left {
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+
+@mixin component_border_radius-none {
+	border-radius: none;
+}
+@mixin component_border_radius-xxsmall {
+	border-radius: calc(#{$border-radius} / 6);
+}
+@mixin component_border_radius-xsmall {
+	border-radius: calc(#{$border-radius} / 4);
+}
+@mixin component_border_radius-small {
+	border-radius: calc(#{$border-radius} / 2);
+}
+@mixin component_border_radius-medium {
 	border-radius: $border-radius;
+}
+@mixin component_border_radius-large {
+	border-radius: calc(#{$border-radius} * 2);
+}
+@mixin component_border_radius-xlarge {
+	border-radius: calc(#{$border-radius} * 4);
+}
+@mixin component_border_radius-xxlarge {
+	border-radius: calc(#{$border-radius} * 6);
+}
+
+@mixin component_border_full {
+	@include component_border_radius-medium;
 	border-width: 1px;
 	border-style: solid;
 }
@@ -9,16 +51,33 @@
 	border-style: none none solid none;
 }
 @mixin component_border_none {
-	border-radius: $border-radius;
 	border-width: 0px;
 	border-style: solid;
 }
+
 @mixin component_border_pill {
-	border-radius: $border-radius * 3;
-	border-width: 1px;
-	border-style: solid;
+	@include component_border_full;
+	@include component_border_radius-xlarge;
 }
-@mixin component_border_shadow {
-	box-shadow: 0px 1px 3px $color-neutral-dark;
-	border-radius: $border-radius;
+
+@mixin component_border_width-xxsmall {
+	border-width: 1px;
+}
+@mixin component_border_width-xsmall {
+	border-width: 2px;
+}
+@mixin component_border_width-small {
+	border-width: 3px;
+}
+@mixin component_border_width-medium {
+	border-width: 4px;
+}
+@mixin component_border_width-large {
+	border-width: 6px;
+}
+@mixin component_border_width-xlarge {
+	border-width: 8px;
+}
+@mixin component_border_width-xxlarge {
+	border-width: 12px;
 }

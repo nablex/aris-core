@@ -9,42 +9,68 @@
 // this means you can currently combine any combination of 6 min (e.g. 2 at the top, 4 at the bottom) with a max6
 @mixin layout_height_min-1 {
 	height: $font-size-medium;
+	min-height: $font-size-medium;
+	max-height: $font-size-medium;
 }
 @mixin layout_height_min-2 {
 	height: calc(2 * #{$font-size-medium});
+	min-height: calc(2 * #{$font-size-medium});
+	max-height: calc(2 * #{$font-size-medium});
 }
 @mixin layout_height_min-3 {
 	height: calc(3 * #{$font-size-medium});
+	min-height: calc(3 * #{$font-size-medium});
+	max-height: calc(3 * #{$font-size-medium});
 }
 @mixin layout_height_min-4 {
 	height: calc(5 * #{$font-size-medium});
+	min-height: calc(5 * #{$font-size-medium});
+	max-height: calc(5 * #{$font-size-medium});
 }
 @mixin layout_height_min-5 {
 	height: calc(5 * #{$font-size-medium});
+	min-height: calc(5 * #{$font-size-medium});
+	max-height: calc(5 * #{$font-size-medium});
 }
 @mixin layout_height_min-6 {
 	height: calc(6 * #{$font-size-medium});
+	min-height: calc(6 * #{$font-size-medium});
+	max-height: calc(6 * #{$font-size-medium});
 }
 
 @mixin layout_height_max {
 	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
 }
 @mixin layout_height_max-1 {
 	height: calc(100vh - #{$font-size-medium});
+	min-height: calc(100vh - #{$font-size-medium});
+	max-height: calc(100vh - #{$font-size-medium});
 }
 @mixin layout_height_max-2 {
 	height: calc(100vh - (2 * #{$font-size-medium}));
+	min-height: calc(100vh - (2 * #{$font-size-medium}));
+	max-height: calc(100vh - (2 * #{$font-size-medium}));
 }
 @mixin layout_height_max-3 {
 	height: calc(100vh - (3 * #{$font-size-medium}));
+	min-height: calc(100vh - (3 * #{$font-size-medium}));
+	max-height: calc(100vh - (3 * #{$font-size-medium}));
 }
 @mixin layout_height_max-4 {
 	height: calc(100vh - (4 * #{$font-size-medium}));
+	min-height: calc(100vh - (4 * #{$font-size-medium}));
+	max-height: calc(100vh - (4 * #{$font-size-medium}));
 }
 @mixin layout_height_max-5 {
 	height: calc(100vh - (5 * #{$font-size-medium}));
+	min-height: calc(100vh - (5 * #{$font-size-medium}));
+	max-height: calc(100vh - (5 * #{$font-size-medium}));
 }
 @mixin layout_height_max-6 {
 	height: calc(100vh - (6 * #{$font-size-medium}));
+	min-height: calc(100vh - (6 * #{$font-size-medium}));
+	max-height: calc(100vh - (6 * #{$font-size-medium}));
 }
 

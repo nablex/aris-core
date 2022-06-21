@@ -4,13 +4,13 @@
 @mixin component_color_background {
 	background-color: $color-background;
 	color: $font-color;
-	border-color: $font-color;
+	border-color: $color-neutral-base;
 }
 // same color as the body of the application
 @mixin component_color_body {
 	background-color: $color-body;
 	color: $font-color;
-	border-color: $font-color;
+	border-color: $color-neutral-base;
 }
 
 @mixin component_color_primary {

@@ -1,6 +1,8 @@
 // make sure we can differentiate as needed
 // @component page-row row
 // @component page-column column
+// a grid is a series of rows, in a way that is a column
+// @component grid column
 
 // make sure anchors etc always grow to the full width, otherwise they may artificially limit the content
 .is-page, .is-anchor {
@@ -18,6 +20,11 @@
 	//height: 100%;
 	//width: 100%;
 }
+
+@mixin grid_variant_default {
+	@include column_variant_default;
+}
+
 @mixin page-column_variant_default {
 	position: relative;
 	// without this, we can get some really weird sizing...
@@ -36,9 +43,9 @@
 	// to make sure the wrapping occurs rather than scrolling
 	max-width: 100%;
 	// when we have multiple rows, we want to cancel out any spacing you might have set so it doesn't double up
-	+ .is-page-row {
-		padding-top: 0;
-	}
+//	+ .is-page-row {
+//		padding-top: 0;
+//	}
 }
 // the edit menu that floats at the top...
 .is-page-edit-menu {
@@ -56,7 +63,7 @@
 	}
 }
 // // empty effect for row
-.is-page-row.is-empty {
+:where(.is-page-row).is-empty {
 	position: relative;
 	min-height: 15rem;
 	background-color: $color-primary-lightest;
@@ -138,12 +145,12 @@
 		border-top-right-radius: 0;
 	}
 }
-.is-page-column .is-page-column-content {
-	min-height: 100%;
+.is-page-column .is-column-content {
+	display: flex;
 }
 
 // empty effect for column
-.is-page-column.is-empty {
+:where(.is-page-column).is-empty {
 	min-width: 20rem;
 	position: relative;
 	min-height: 15rem;

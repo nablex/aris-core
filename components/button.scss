@@ -6,7 +6,7 @@
 
 // Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
 
-// @extension button padded-content
+// @component button padded-content
 // ----------------------------------------- COLORS
 
 @mixin button_color_primary {
@@ -61,11 +61,11 @@
 $button-link-color: $color-primary-darker;
 @mixin button_color_link {
 	background-color: transparent;
-	color: $color-primary-darker;
+	color: $button-link-color;
 	border-color: transparent;
 	&:hover, &.is-active {
 		background-color: transparent;
-		color: darken($button-link-color, 10%);
+		color: darken($button-link-color, 30%);
 		border-color: transparent;
 	}
 }
@@ -86,7 +86,6 @@ $button-link-color: $color-primary-darker;
 
 @mixin button_variant_default {
 	cursor: pointer;
-	// everything inside the button is clickable...
 	* {
 		cursor: pointer;
 	}

@@ -15,7 +15,8 @@
 	:is-modal-content {
 		min-width: 30%;
 		max-width: 90%;
-		@include component_color_background;
+		// don't force this
+		//@include component_color_background;
 	}
 }
 
@@ -23,7 +24,7 @@
 	.is-modal-content {
 		@include component_color_background;
 		@include component_spacing_large;
-		@include component_border_shadow;
+		@include component_shadow_xsmall;
 		.is-confirm {
 			@include column_variant_default;
 			@include component_spacing_vertical-gap-large;

@@ -9,6 +9,8 @@
 }
 
 @mixin form_variant_default {
+	display: flex;
+	flex-direction: column;
 	:is-label {
 		font-size: $font-size-small;
 		@include component_color_dark-outline;
@@ -58,6 +60,9 @@
 		display: flex;
 		@include component_direction_vertical;
 		@include component_spacing_vertical-gap-small;
+		.is-label-wrapper {
+			font-weight: bold;
+		}
 	}
 	// we exclude sections that are form groups
 	:is-form-section:not(.is-form-group) {

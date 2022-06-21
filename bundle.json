@@ -153,6 +153,9 @@
 			},
 			"page.scss": {
 				"url": "patterns/page.scss"
+			},
+			"messages.scss": {
+				"url": "patterns/messages.scss"
 			}
 		},
 		"templates": {
