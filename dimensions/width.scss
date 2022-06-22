@@ -251,14 +251,17 @@
 	// between tablet and desktop, this takes up 1/6
 	@media only screen and (max-width: map-get($breakpoints, "below-desktop")) and (min-width: map-get($breakpoints, "tablet")) {
 		max-width: 16.6%;
+		min-width: 10%;
 	}
 	// below tablet, it takes up 1/4
 	@media only screen and (max-width: map-get($breakpoints, "below-tablet")) and (min-width: map-get($breakpoints, "phone")) {
 		max-width: 33.3%;
+		min-width: 25%;
 	}
 	// below phone, it takes up half
 	@media only screen and (max-width: map-get($breakpoints, "below-phone")) {
 		max-width: 50%;
+		min-width: 40%;
 	}
 }
 
