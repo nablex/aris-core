@@ -308,3 +308,17 @@
 .n-absolute {
 	@include component_layer_10;
 }
+
+// notifier
+.global-notifications {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column-reverse;
+	height: auto;
+	width: auto;
+	z-index: 100;
+	padding: $spacing-scale-medium;
+	row-gap: $spacing-scale-small;
+}

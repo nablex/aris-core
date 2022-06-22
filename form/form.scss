@@ -20,7 +20,7 @@
 	}
 	:is-form-component {
 		&.is-required {
-			:is-label {
+			> .is-label-wrapper > :is-label {
 				&:after {
 					content: "*";
 					margin-left: $spacing-scale-small;

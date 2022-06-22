@@ -61,3 +61,9 @@ $form-checkbox-check-character: "\2713";
 		}
 	}
 }
+
+@mixin form-checkbox-list_variant_default {
+	.is-form-checkbox {
+		display: block;
+	}
+}

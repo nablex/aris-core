@@ -105,6 +105,9 @@ $button-link-color: $color-primary-darker;
 	@include button_color_light;
 	@include component_border_full;
 
+	&:disabled {
+		opacity: 0.5;
+	}
 }
 
 @mixin button_variant_link {

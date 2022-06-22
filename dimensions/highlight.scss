@@ -1,96 +1,96 @@
 @mixin component_highlight_primary {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-primary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-primary-dark;
 	}
 }
 @mixin component_highlight_primary-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-primary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-primary-base;
 	}
 }
 @mixin component_highlight_secondary {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-secondary-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-secondary-dark;
 	}
 }
 @mixin component_highlight_secondary-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-secondary-base;
 		color: $color-neutral-lightest;
 		border-color: $color-secondary-base;
 	}
 }
 @mixin component_highlight_transparent {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: transparent;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-dark;
 	}
 }
 @mixin component_highlight_transparent-light {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: transparent;
 		color: $color-neutral-lightest;
 		border-color: $color-neutral-light;
 	}
 }
 @mixin component_highlight_danger {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-danger-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-danger-dark;
 	}
 }
 @mixin component_highlight_danger-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-danger-base;
 		color: $color-neutral-lightest;
 		border-color: $color-danger-base;
 	}
 }
 @mixin component_highlight_warning {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-warning-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-warning-dark;
 	}
 }
 @mixin component_highlight_warning-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-warning-base;
 		color: $color-neutral-lightest;
 		border-color: $color-warning-base;
 	}
 }
 @mixin component_highlight_info {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-info-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-info-dark;
 	}
 }
 @mixin component_highlight_info-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-info-base;
 		color: $color-neutral-lightest;
 		border-color: $color-info-base;
 	}
 }
 @mixin component_highlight_success {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-success-dark;
 		color: $color-neutral-lighter;
 		border-color: $color-success-dark;
 	}
 }
 @mixin component_highlight_success-outline {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-success-base;
 		color: $color-neutral-lightest;
 		border-color: $color-success-base;
@@ -98,14 +98,14 @@
 }
 
 @mixin component_highlight_dark {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-neutral-darker;
 		color: $color-neutral-lightest;
 		border-color: $color-neutral-darker;
 	}
 }
 @mixin component_highlight_light {
-	&:hover, &.is-active {
+	&:not([disabled]):hover, &.is-active {
 		background-color: $color-neutral-lighter;
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-base;
