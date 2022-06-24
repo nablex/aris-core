@@ -1,0 +1,28 @@
+// this is currently not a component because it is always wrapped in a list which _is_ a component
+
+$form-radio-check-character: "\25C9";
+.is-form-radio {
+	display: flex;
+	padding: $spacing-scale-small;
+	input {
+		appearance: none;
+		width: $font-size-medium;
+		height: $font-size-medium;
+		border-radius: $font-size-medium;
+		border: solid 1px $color-neutral-light;
+		margin: 0;
+	}
+	input + label {
+		margin-left: $spacing-scale-medium;
+	}
+	input[checked] {
+		&:before {
+			font-size: $font-size-medium;
+			line-height: $font-size-medium;
+			color: $color-primary-base;
+			content: $form-radio-check-character;
+			position: relative;
+			bottom: 2px;
+		}
+	}
+}

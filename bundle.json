@@ -128,6 +128,9 @@
 			"switch.scss": {
 				"url": "form/switch.scss"
 			},
+			"radio.scss": {
+				"url": "form/radio.scss"
+			},
 			"text.scss": {
 				"url": "form/text.scss"
 			},

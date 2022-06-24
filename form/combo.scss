@@ -68,6 +68,12 @@
 		font-size: $font-size-small;
 		text-align: right;
 	}
+	.n-input-combo-label-container {
+		.n-input-combo-dropdown-labels {
+			max-height: calc(#{$font-size-large} * 15);
+			overflow-y: auto;
+		}
+	}
 	.n-input-combo-input-container {
 		flex-grow: 1;
 		position: relative;
