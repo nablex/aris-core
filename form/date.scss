@@ -1,0 +1,57 @@
+// @component form-date form-component
+@mixin form-date_variant_default {
+	position: relative;
+	.is-suffix.is-open {
+		background-color: $color-danger-base;
+		color: $color-danger-lightest;
+	}
+	.n-input-date {
+		@include component_shadow_xsmall;
+		@include component_border_radius-xlarge;
+		
+		padding: $spacing-scale-large;
+		
+		position: absolute;
+		top: 100%;
+		background-color: $color-neutral-lightest;
+		.year-selection {
+			th {
+				padding-top: $spacing-scale-medium;
+			}
+		}
+		.days {
+			th {
+				padding: $spacing-scale-medium;	
+				padding-top: $spacing-scale-large;
+				height: 3rem;
+				width: 3rem;
+				font-size: $font-size-small;
+			}
+		}
+		
+		tbody {
+			td {
+				border: solid 1px transparent;
+				@include component_border_radius-large;
+				.is-button {
+					text-align: center;
+					height: 3rem;
+					width: 3rem;
+				}
+				&.is-active {
+					border-color: $color-primary-dark;
+					background-color: $color-primary-base;
+					.is-button {
+						color: $color-primary-lightest;
+					}
+				}
+				&.is-today:not(.is-active) {
+					border-color: $color-neutral-base;
+				}
+				.is-button {
+					font-size: $font-size-small;
+				}
+			}
+		}
+	}
+}

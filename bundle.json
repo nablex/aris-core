@@ -139,6 +139,9 @@
 			},
 			"combo.scss": {
 				"url": "form/combo.scss"
+			},
+			"date.scss": {
+				"url": "form/date.scss"
 			}
 		},
 		"patterns": {
