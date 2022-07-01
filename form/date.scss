@@ -6,6 +6,7 @@
 		color: $color-danger-lightest;
 	}
 	.n-input-date {
+		z-index: 10;
 		@include component_shadow_xsmall;
 		@include component_border_radius-xlarge;
 		
@@ -34,9 +35,9 @@
 				border: solid 1px transparent;
 				@include component_border_radius-large;
 				.is-button {
-					text-align: center;
 					height: 3rem;
 					width: 3rem;
+					justify-content: center;
 				}
 				&.is-active {
 					border-color: $color-primary-dark;

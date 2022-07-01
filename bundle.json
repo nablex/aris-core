@@ -142,6 +142,9 @@
 			},
 			"date.scss": {
 				"url": "form/date.scss"
+			},
+			"file.scss": {
+				"url": "form/file.scss"
 			}
 		},
 		"patterns": {
