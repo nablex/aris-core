@@ -173,6 +173,9 @@
 			},
 			"three-cell-row.npt": {
 				"url": "templates/three-cell-row.npt"
+			},
+			"nabu-templates.npt": {
+				"url": "templates/nabu-templates.npt"
 			}
 		}
 	}
