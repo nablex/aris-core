@@ -46,7 +46,24 @@
 	border-color: $color-secondary-lighter;
 	color: $color-secondary-darker;
 }
-	
+@mixin alert_color_primary-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_secondary-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_success-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_danger-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_info-outline {
+	background-color: $color-neutral-lightest;
+}
+@mixin alert_color_warning-outline {
+	background-color: $color-neutral-lightest;
+}
 
 @mixin alert_variant_default {
 	display: flex;

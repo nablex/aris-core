@@ -15,6 +15,7 @@
 	:is-modal-content {
 		min-width: 30%;
 		max-width: 90%;
+		max-height: 90%;
 		// don't force this
 		//@include component_color_background;
 		position: relative;

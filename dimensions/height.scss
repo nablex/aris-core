@@ -23,9 +23,9 @@
 	max-height: calc(3 * #{$font-size-medium});
 }
 @mixin layout_height_min-4 {
-	height: calc(5 * #{$font-size-medium});
-	min-height: calc(5 * #{$font-size-medium});
-	max-height: calc(5 * #{$font-size-medium});
+	height: calc(4 * #{$font-size-medium});
+	min-height: calc(4 * #{$font-size-medium});
+	max-height: calc(4 * #{$font-size-medium});
 }
 @mixin layout_height_min-5 {
 	height: calc(5 * #{$font-size-medium});
