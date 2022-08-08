@@ -324,3 +324,9 @@
 	padding: $spacing-scale-medium;
 	row-gap: $spacing-scale-small;
 }
+
+@mixin button_variant_page-button-sort {
+	@include content_variant_ghost;
+	@include button_variant_ghost;
+	@include component_direction_horizontal-reverse;
+}
