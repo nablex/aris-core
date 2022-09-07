@@ -108,6 +108,27 @@ Additionally you can still apply dimensions to this variant if needed, the overr
 <button class="is-button is-variant-form-ok is-size-large">OK!</button>
 ```
 
+## Aspects
+
+You can override mixins alltogether which allows you to redefine for example a default button variant completely.
+However, in some cases the mixins are largely OK and you just want to add something. For this aspects can be nice, for example the core ships with default button styling mixin:
+
+```
+@mixin button_variant_default {
+	...
+}
+```
+
+You want to reuse that variant entirely, but want to add something very specific to it, you can do this:
+
+```
+@mixin button_variant_default--special {
+	...
+}
+```
+
+The --<name> syntax is an aspect that is added to the original mixin, the actual name can be anything you want, allowing for multiple aspects to be added.
+
 ## Inheritance
 
 Because there is a lot of overlap between components, they can extend one another. When one component extends another component, it automatically inherits the available variants and the available dimensions.

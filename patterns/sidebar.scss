@@ -80,7 +80,7 @@ body[has-sidebar-left=true] {
 	max-width: 100vw;
 	min-width: calc(25 * #{$font-size-medium});
 	z-index: 500;
-	background-color: $color-neutral-lightest;
+	background-color: $color-background;
 	@include sidebar_header-size_small;
 	@include sidebar_position_left;
 	main {

@@ -1,4 +1,4 @@
-// @component collapsible
+// @component collapsible component
 @mixin collapsible_variant_default {
 	> .is-title {
 		cursor: pointer;
@@ -26,7 +26,10 @@
 			margin-left: auto;
 		}
 	}
-	@include component_color_light;
+	// default transparent
+	// in retrospect its not entirely sure if the border_underline should have been in the default variant
+	// in the beginning it was not an extension of component
+	@include component_color_transparent;
 	@include component_border_underline;
 }
 

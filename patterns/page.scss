@@ -330,3 +330,8 @@
 	@include button_variant_ghost;
 	@include component_direction_horizontal-reverse;
 }
+
+// needed for fancier things like rotate
+.is-typography.is-span {
+	display: inline-block;
+}
