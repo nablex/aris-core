@@ -14,7 +14,7 @@
 	left: 90%;
 }
 
-// @extension badge padded-content
+// @component badge padded-content
 @mixin badge_variant_default {
 	display: inline-flex;
 	@include content-fix-icon;
@@ -23,6 +23,7 @@
 	@include padded-content_size_xsmall;
 	@include component_border_full;
 	@include component_color_light;
+	align-items: center;
 }
 
 // if a parent has a badge, it might need positioning to position the badge

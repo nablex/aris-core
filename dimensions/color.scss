@@ -23,6 +23,11 @@
 	color: $color-primary-base;
 	border-color: $color-primary-base;
 }
+@mixin component_color_primary-dark-outline {
+	background-color: transparent;
+	color: $color-primary-dark;
+	border-color: $color-primary-dark;
+}
 @mixin component_color_secondary {
 	background-color: $color-secondary-base;
 	color: $color-neutral-lightest;

@@ -62,6 +62,9 @@
 @mixin content_variant_primary-outline {
 	@include component_color_primary-outline;
 }
+@mixin content_variant_primary-dark-outline {
+	@include component_color_primary-dark-outline;
+}
 @mixin content_variant_secondary-outline {
 	@include component_color_secondary-outline;
 }

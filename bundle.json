@@ -99,6 +99,9 @@
 			"badge.scss": {
 				"url": "components/badge.scss"
 			},
+			"tag.scss": {
+				"url": "components/tag.scss"
+			},
 			"tooltip.scss": {
 				"url": "components/tooltip.scss"
 			},
