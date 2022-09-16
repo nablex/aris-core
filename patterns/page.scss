@@ -62,8 +62,8 @@
 		background-color: $color-neutral-lighter;
 	}
 }
-// // empty effect for row
-:where(.is-page-row).is-empty {
+// empty effect for row
+:where(.page-row).is-empty {
 	position: relative;
 	min-height: 15rem;
 	background-color: $color-primary-lightest;
@@ -91,7 +91,7 @@
 	}
 }
 // the menu that floats inside a row
-.is-page-row .is-row-menu {
+.page-row .is-row-menu {
 	display: none;
 	position: absolute;
 	width: auto !important;
@@ -114,7 +114,7 @@
 	}
 }
 // hover effect for row
-.is-page-row.is-hovering {
+.page-row.is-hovering {
 	position: relative;
 	border-style: solid;
 	border-width: 2px;
@@ -123,11 +123,9 @@
 		display: flex;
 	}
 }
-.is-page-column, .is-page-row {
-	position: relative;
-}
+
 // the menu that floats inside a column
-.is-page-column .is-column-menu {
+.page-column .is-column-menu {
 	display: none;
 	position: absolute;
 	//background-color: rgba($color-secondary-base, 0.2);
@@ -150,7 +148,7 @@
 }
 
 // empty effect for column
-:where(.is-page-column).is-empty {
+:where(.page-column).is-empty {
 	min-width: 20rem;
 	position: relative;
 	// these two combine to make sure it shrinks if the row is explicitly shorter
@@ -181,7 +179,7 @@
 	}
 }
 // hover effect for column
-.is-page-column.is-hovering {
+.page-column.is-hovering {
 	border-style: solid;
 	border-width: 2px;
 	border-color: $color-secondary-light;
@@ -192,7 +190,7 @@
 
 
 
-.is-page-row.is-hover-top {
+.page-row.is-hover-top {
 	border: solid 2px $color-success-base;
 	border-style: solid none none none;
 	&:after {
@@ -205,7 +203,7 @@
 		left: 0;
 	}
 }
-.is-page-row.is-hover-bottom {
+.page-row.is-hover-bottom {
 	border: solid 2px $color-success-base;
 	border-style: none none solid none;
 	&:after {
@@ -218,7 +216,7 @@
 		left: 0;
 	}
 }
-.is-page-row.is-hover-left {
+.page-row.is-hover-left {
 	border: solid 2px $color-success-base;
 	border-style: solid none none none;
 	&:after {
@@ -231,7 +229,7 @@
 		left: 0;
 	}
 }
-.is-page-row.is-hover-right {
+.page-row.is-hover-right {
 	border: solid 2px $color-success-base;
 	border-style: solid none none none;
 	&:after {
@@ -267,7 +265,7 @@
 	}
 
 	// any actually empty though configured cell should have a minimum height
-	.is-page-column[placeholder]:not(.is-empty):empty {
+	.page-column[placeholder]:not(.is-empty):empty {
 		min-height: 1.2rem;
 		&:before {
 			content: attr(placeholder);
@@ -334,4 +332,8 @@
 // needed for fancier things like rotate
 .is-typography.is-span {
 	display: inline-block;
+}
+
+.is-page-column, .is-page-row {
+	position: relative;
 }
