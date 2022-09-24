@@ -85,10 +85,10 @@
 			max-height: calc(#{$font-size-large} * 15);
 			z-index: 15;
 			overflow-y: auto;
-			width: calc(100% - #{$font-size-large});
 			margin: 0;
 			padding: 0;
 			position: absolute;
+			min-width: calc(100% - #{$font-size-large});
 			top: 100%;
 			background-color: $color-neutral-lightest;
 			border-width: 1px;
@@ -112,6 +112,13 @@
 					color: $color-secondary-darker;
 				}
 			}
+		}
+	}
+}
+@mixin form-combo-default_modifier_limit-dropdown-width {
+	.n-input-combo-input-container {
+		.n-input-combo-dropdown-values {
+			max-width: calc(100% - #{$font-size-large});
 		}
 	}
 }

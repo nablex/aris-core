@@ -16,7 +16,7 @@
 }
 
 @mixin component_border_radius-none {
-	border-radius: none;
+	border-radius: 0px;
 }
 @mixin component_border_radius-xxsmall {
 	border-radius: calc(#{$border-radius} / 6);
