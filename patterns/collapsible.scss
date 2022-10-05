@@ -1,6 +1,7 @@
 // @component collapsible component
 @mixin collapsible_variant_default {
-	> .is-title {
+	// we want a 0-selector for easy overriding of the default values
+	> :where(.is-title) {
 		cursor: pointer;
 		@include h6_variant_default;
 		padding: $spacing-scale-small;

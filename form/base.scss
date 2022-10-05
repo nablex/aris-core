@@ -99,7 +99,7 @@
 
 // ----------------------------------------- COLORS
 @mixin form-component_color_default {
-	input {
+	input, textarea {
 		color: $color-neutral-darkest;
 		border-color: $color-neutral-light;
 		&::placeholder {
@@ -112,7 +112,7 @@
 	}
 }
 @mixin form-component_color_transparent {
-	input {
+	input, textarea {
 		color: $color-neutral-darkest;
 		border-color: transparent;
 		background-color: transparent;
@@ -129,13 +129,13 @@
 $form-component-border-radius: $border-radius;
 // ----------------------------------------- BORDERS
 @mixin form-component_border_none {
-	input {
+	input, textarea {
 		border-width: 0px;
 	}
 }
 
 @mixin form-component_border_default {
-	input {
+	input, textarea {
 		border-width: 1px;
 		border-style: solid;
 		border-radius: $form-component-border-radius;
@@ -143,7 +143,7 @@ $form-component-border-radius: $border-radius;
 }
 
 @mixin form-component_border_underline {
-	input {
+	input, textarea {
 		border-width: 1px;
 		border-style: none none solid none;
 		border-radius: 0;

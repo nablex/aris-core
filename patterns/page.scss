@@ -327,6 +327,8 @@
 	@include content_variant_ghost;
 	@include button_variant_ghost;
 	@include component_direction_horizontal-reverse;
+	// counteract the reverse direction whitespace on the wrong side in a column situation
+	@include component_position_start;
 }
 
 // needed for fancier things like rotate

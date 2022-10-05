@@ -265,56 +265,88 @@
 	}
 }
 
+@mixin component_width_max-xlarge {
+	max-width: 72rem;
+}
+@mixin component_width_max-large {
+	max-width: 60rem;
+}
+@mixin component_width_max-medium {
+	max-width: 48rem;
+}
+@mixin component_width_max-small {
+	max-width: 36rem;
+}
+@mixin component_width_max-xsmall {
+	max-width: 24rem;
+}
+@mixin component_width_min-xlarge {
+	min-width: 72rem;
+}
+@mixin component_width_min-large {
+	min-width: 60rem;
+}
+@mixin component_width_min-medium {
+	min-width: 48rem;
+}
+@mixin component_width_min-small {
+	min-width: 36rem;
+}
+@mixin component_width_min-xsmall {
+	min-width: 24rem;
+}
 
-@mixin component_width_min-1 {
+@mixin component_width_fixed-1 {
 	width: 1rem;
 }
-@mixin component_width_min-2 {
+@mixin component_width_fixed-2 {
 	width: 2rem;
 }
-@mixin component_width_min-3 {
+@mixin component_width_fixed-3 {
 	width: 3rem;
 }
-@mixin component_width_min-4 {
+@mixin component_width_fixed-4 {
 	width: 4rem;
 }
-@mixin component_width_min-5 {
+@mixin component_width_fixed-5 {
 	width: 5rem;
 }
-@mixin component_width_min-6 {
+@mixin component_width_fixed-6 {
 	width: 6rem;
 }
-@mixin component_width_min-12 {
+@mixin component_width_fixed-12 {
 	width: 12rem;
 }
-@mixin component_width_min-24 {
+@mixin component_width_fixed-24 {
 	width: 24rem;
 }
-
-@mixin component_width_max {
+@mixin component_width_fixed-48 {
+	width: 48rem;
+}
+@mixin component_width_fixed-max {
 	width: 100%;
 }
-@mixin component_width_max-1 {
+@mixin component_width_remainder-1 {
 	width: calc(100% - 1rem);
 }
-@mixin component_width_max-2 {
+@mixin component_width_remainder-2 {
 	width: calc(100% - 2rem);
 }
-@mixin component_width_max-3 {
+@mixin component_width_remainder-3 {
 	width: calc(100% - 3rem);
 }
-@mixin component_width_max-4 {
+@mixin component_width_remainder-4 {
 	width: calc(100% - 4rem);
 }
-@mixin component_width_max-5 {
+@mixin component_width_remainder-5 {
 	width: calc(100% - 5rem);
 }
-@mixin component_width_max-6 {
+@mixin component_width_remainder-6 {
 	width: calc(100% - 6rem);
 }
-@mixin component_width_max-12 {
+@mixin component_width_remainder-12 {
 	width: calc(100% - 12rem);
 }
-@mixin component_width_max-24 {
-	width: calc(100% - 24rem);
+@mixin component_width_remainder-48 {
+	width: calc(100% - 48rem);
 }
