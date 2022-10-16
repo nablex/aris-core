@@ -339,3 +339,14 @@
 .is-page-column, .is-page-row {
 	position: relative;
 }
+
+html[data-useragent*="JavaFX"] {
+	:where(.page-column).is-empty {
+		// the inline browser sadly does not support aspect-ratio squishing the empty cells together
+		min-height: 5rem;
+	}
+	// buttons have default margins?!
+	button {
+		margin: 0;
+	}
+}

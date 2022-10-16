@@ -26,6 +26,14 @@
 	font-size: $font-size-xxlarge;
 	line-height: calc(#{$font-size-xxlarge} * 1.15);
 }
+@mixin content_size_xxxlarge {
+	font-size: calc(#{$font-size-xxlarge} * 1.5);
+	line-height: calc(#{$font-size-xxlarge} * 1.65);
+}
+@mixin content_size_xxxxlarge {
+	font-size: calc(#{$font-size-xxlarge} * 2);
+	line-height: calc(#{$font-size-xxlarge} * 2.15);
+}
 
 @mixin padded-content_size_xxsmall {
 	@include component_spacing_horizontal-xxsmall;
