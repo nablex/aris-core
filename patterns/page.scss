@@ -63,7 +63,7 @@
 	}
 }
 // empty effect for row
-:where(.page-row).is-empty {
+:where(.page-row).empty {
 	position: relative;
 	min-height: 15rem;
 	background-color: $color-primary-lightest;
@@ -148,7 +148,7 @@
 }
 
 // empty effect for column
-:where(.page-column).is-empty {
+:where(.page-column).empty {
 	min-width: 20rem;
 	position: relative;
 	// these two combine to make sure it shrinks if the row is explicitly shorter
@@ -265,7 +265,7 @@
 	}
 
 	// any actually empty though configured cell should have a minimum height
-	.page-column[placeholder]:not(.is-empty):empty {
+	.page-column[placeholder]:not(.empty):empty {
 		min-height: 1.2rem;
 		&:before {
 			content: attr(placeholder);
@@ -341,7 +341,7 @@
 }
 
 html[data-useragent*="JavaFX"] {
-	:where(.page-column).is-empty {
+	:where(.page-column).empty {
 		// the inline browser sadly does not support aspect-ratio squishing the empty cells together
 		min-height: 5rem;
 	}
