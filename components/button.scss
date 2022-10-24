@@ -186,6 +186,18 @@ $button-link-color: $color-primary-darker;
 	@include button_color_success-outline;
 }
 
+@mixin button_variant_tab {
+	border-style: none none solid none;
+	border-radius: 0;
+	border-bottom-color: $color-secondary-base;
+	border-bottom-width: 2px;
+	background-color: transparent;
+	&.is-active {
+		border-bottom-color: $color-primary-base;
+		background-color: transparent;
+	}
+}
+
 @mixin button_variant_close {
 	@include component_color_transparent;
 	@include button_color_transparent;

@@ -43,6 +43,13 @@ $form-checkbox-check-character: "\2713";
 			text-align: center;
 			border: solid 1px $color-neutral-darker;
 			background-color: $color-neutral-lightest;
+			color: $color-neutral-darkest;
+		}
+	}
+	input:disabled + label {
+		&:before {
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-dark;
 		}
 	}
 }
