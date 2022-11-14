@@ -163,6 +163,9 @@
 			"sidebar.scss": {
 				"url": "patterns/sidebar.scss"
 			},
+			"pane.scss": {
+				"url": "patterns/pane.scss"
+			},
 			"collapsible.scss": {
 				"url": "patterns/collapsible.scss"
 			},

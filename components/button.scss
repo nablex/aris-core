@@ -205,6 +205,8 @@ $button-link-color: $color-primary-darker;
 	// by default a small button
 	@include content_size_small;
 	@include padded-content_size_small;
+	// need to layer it above the standard content
+	z-index: 1;
 	position: absolute;
 	top: $spacing-scale-small;
 	right: $spacing-scale-small;
