@@ -11,6 +11,10 @@
 	.n-input-combo {
 		display: flex;
 		.n-input-combo-label-container {
+			// we don't want the icon to be floating to the next row
+			.n-input-combo-label {
+				white-space: nowrap;
+			}
 			cursor: pointer;
 			padding: $spacing-scale-small $spacing-scale-medium;
 			background-color: $color-neutral-lighter;
@@ -125,6 +129,9 @@
 @mixin form-combo_size_small {
 	.n-input-combo {
 		.is-icon {
+			font-size: $font-size-xxsmall;
+		}
+		.n-input-combo-input-container .n-input-combo-dropdown-values li {
 			font-size: $font-size-xsmall;
 		}
 	}

@@ -100,6 +100,9 @@
 @mixin content_variant_success-outline {
 	@include component_color_success-outline;
 }
-
+@mixin content_variant_subscript {
+	font-size: $font-size-xsmall;
+	color: $color-neutral-base;
+}
 
 // @component padded-content content
