@@ -68,6 +68,8 @@
 	:is-form-section:not(.is-form-group) {
 		display: flex;
 		@include component_spacing_vertical-gap-large;
+	}
+	:is-form-section:not(.is-form-group):not(.is-form-main-content) {
 		@include component_direction_vertical;
 	}
 }

@@ -29,19 +29,22 @@
 	position: relative;
 	// without this, we can get some really weird sizing...
 	@include column_variant_default;
-
-	// if we have a nested row inside a column, we do not want the max-width requirement
-	> .is-grid > .is-page-row {
-		max-width: unset;
-	}
+}
+// to make sure the wrapping occurs rather than scrolling
+// we don't want to enforce the max-width:100% when nested however
+// we use this setup (actual css rather than mixin) to guarantee the order in which these two statements are generated
+// we want to allow you to easily set a max-width that will win from this one (hence the where) so we do it with minimal targetting
+.is-page-row {
+	max-width: 100%;
+}
+:where(.is-page-column > .is-grid) .is-page-row {
+	max-width: unset;
 }
 @mixin page-row_variant_default {
 	position: relative;
 	@include row_variant_default;
 	// default wrap so we can easily do responsive
 	flex-wrap: wrap;
-	// to make sure the wrapping occurs rather than scrolling
-	max-width: 100%;
 	// when we have multiple rows, we want to cancel out any spacing you might have set so it doesn't double up
 //	+ .is-page-row {
 //		padding-top: 0;

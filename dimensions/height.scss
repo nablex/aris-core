@@ -74,3 +74,33 @@
 	max-height: calc(100vh - (6 * #{$font-size-medium}));
 }
 
+@mixin component_height_max-xlarge {
+	max-height: 72rem;
+}
+@mixin component_height_max-large {
+	max-height: 60rem;
+}
+@mixin component_height_max-medium {
+	max-height: 48rem;
+}
+@mixin component_height_max-small {
+	max-height: 36rem;
+}
+@mixin component_height_max-xsmall {
+	max-height: 24rem;
+}
+@mixin component_height_min-xlarge {
+	min-height: 72rem;
+}
+@mixin component_height_min-large {
+	min-height: 60rem;
+}
+@mixin component_height_min-medium {
+	min-height: 48rem;
+}
+@mixin component_height_min-small {
+	min-height: 36rem;
+}
+@mixin component_height_min-xsmall {
+	min-height: 24rem;
+}
