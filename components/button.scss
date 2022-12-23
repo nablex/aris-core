@@ -93,6 +93,9 @@ $button-link-color: $color-primary-darker;
 	// additionally it makes it easy to reverse the order
 	display: inline-flex;
 	align-items: center;
+
+	// some default browser styling resets the inherited font-family
+	font-family: $font-family;
 	
 	@include content_size_medium;
 	@include padded-content_size_medium;
