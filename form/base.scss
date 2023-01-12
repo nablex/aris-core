@@ -171,6 +171,11 @@ $form-component-border-radius: $border-radius;
 }
 
 :is-form-labelled-component {
+	&.has-suffix {
+		input {
+			padding-right: calc(4 * #{$font-size-medium});
+		}
+	}
 	&.has-prefix {
 		input {
 			padding-left: calc(4 * #{$font-size-medium});
