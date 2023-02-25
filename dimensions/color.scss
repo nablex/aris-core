@@ -18,6 +18,21 @@
 	color: $color-neutral-lightest;
 	border-color: $color-primary-base;	
 }
+@mixin component_color_primary-light {
+	background-color: $color-primary-light;
+	color: $color-neutral-darker;
+	border-color: $color-primary-light;	
+}
+@mixin component_color_primary-lighter {
+	background-color: $color-primary-lighter;
+	color: $color-neutral-darker;
+	border-color: $color-primary-lighter;	
+}
+@mixin component_color_primary-lightest {
+	background-color: $color-primary-lightest;
+	color: $color-neutral-darker;
+	border-color: $color-primary-lightest;
+}
 @mixin component_color_primary-outline {
 	background-color: transparent;
 	color: $color-primary-base;
@@ -102,4 +117,9 @@
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-dark;
 	border-color: $color-neutral-base;
+}
+@mixin component_color_light-outline {
+	background-color: transparent;
+	color: $color-neutral-dark;
+	border-color: $color-neutral-dark;
 }

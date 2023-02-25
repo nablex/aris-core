@@ -73,6 +73,7 @@
 }
 @mixin collapsible_color_primary-light {
 	border-color: $color-primary-lighter;
+	background-color: transparent;
 	> .is-title {
 		background-color: $color-primary-lightest;
 		color: $color-primary-darker;

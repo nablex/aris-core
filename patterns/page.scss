@@ -321,7 +321,8 @@
 	flex-direction: column-reverse;
 	height: auto;
 	width: auto;
-	z-index: 100;
+	// the sidebar is set at 500, this should layer over the sidebar...
+	z-index: 600;
 	padding: $spacing-scale-medium;
 	row-gap: $spacing-scale-small;
 }

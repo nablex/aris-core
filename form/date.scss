@@ -10,7 +10,7 @@
 		@include component_shadow_xsmall;
 		@include component_border_radius-xlarge;
 		
-		padding: $spacing-scale-large;
+		padding: $spacing-scale-medium;
 		
 		position: absolute;
 		top: 100%;
@@ -32,11 +32,12 @@
 		
 		tbody {
 			td {
+				text-align: center;
 				border: solid 1px transparent;
 				@include component_border_radius-large;
 				.is-button {
-					height: 3rem;
-					width: 3rem;
+					min-height: $font-size-medium;
+					min-width: $font-size-medium;
 					justify-content: center;
 				}
 				&.is-active {
