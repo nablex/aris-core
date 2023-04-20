@@ -3,7 +3,8 @@
 	position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;	
+    // sidebar is 500
+    z-index: 600;
     display: flex;
 	align-items: center;
     justify-content: center;

@@ -30,6 +30,9 @@
 @mixin content_wrap_wrap {
 	white-space: wrap;
 }
+@mixin content_wrap_pre-wrap {
+	white-space: pre-wrap;
+}
 
 // some tiny corrections
 @mixin content-fix-icon {

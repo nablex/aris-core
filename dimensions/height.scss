@@ -104,3 +104,6 @@
 @mixin component_height_min-xsmall {
 	min-height: 24rem;
 }
+@mixin component_height_fixed-max {
+	height: 100%;
+}
