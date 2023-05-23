@@ -107,5 +107,9 @@
 	font-size: $font-size-xsmall;
 	color: $color-neutral-base;
 }
+@mixin content_variant_placeholder {
+	color: $color-neutral-base;
+	font-style: italic;
+}
 
 // @component padded-content content
