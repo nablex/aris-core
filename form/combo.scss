@@ -137,6 +137,11 @@
 		}
 	}
 }
+@mixin form-combo-default_modifier_pattern-alternating {
+	.n-input-combo-dropdown-values {
+		@include layout_pattern_basic-alternating;
+	}
+}
 @mixin form-combo_size_xsmall {
 	.n-input-combo {
 		.is-icon {
