@@ -191,7 +191,10 @@
 	}
 }
 
-
+// highlight all menus when we want
+.is-page.is-editing.is-active-view .page-column > .is-column-menu {
+	display: flex;
+}
 
 .page-row.is-hover-top {
 	border: solid 2px $color-success-base;
