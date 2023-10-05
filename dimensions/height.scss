@@ -43,6 +43,10 @@
 	max-height: 100vh;
 }
 
+@mixin layout_height_max {
+	height: 100%;
+}
+
 @mixin layout_height_remainder-1 {
 	height: calc(100vh - #{$font-size-medium});
 	min-height: calc(100vh - #{$font-size-medium});
