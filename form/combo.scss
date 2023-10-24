@@ -8,7 +8,7 @@
 			border-radius: $border-radius $border-radius 0 0;
 		}
 	}
-	.n-input-combo {
+	.n-input-combo, .n-input-combo2 {
 		display: flex;
 		.n-input-combo-label-container {
 			// we don't want the icon to be floating to the next row
@@ -85,38 +85,80 @@
 			// we want to keep some room on the right to show the dropdown icon
 			width: calc(100% - #{$font-size-large});
 		}
+	}
+	.n-input-combo-dropdown-values {
+		max-height: calc(#{$font-size-large} * 15);
+		z-index: 15;
+		overflow-y: auto;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		min-width: calc(100% - #{$font-size-large});
+		top: 100%;
+		background-color: $color-neutral-lightest;
+		border-width: 1px;
+		border-style: none solid solid solid;
+		border-radius: 0 0 $border-radius $border-radius;
+		border-color: $color-neutral-light;
+		text-align: left;
+		li {
+			cursor: pointer;
+			list-style: none;
+			padding: $spacing-scale-small $spacing-scale-medium;
+			font-size: $font-size-small;
+			&:hover {
+				background-color: $color-neutral-lighter;
+			}
+			&.is-active {
+				background-color: $color-primary-lightest;
+				color: $color-primary-darker;
+			}
+			&.is-pondering:not(.is-active) {
+				background-color: $color-secondary-lightest;
+				color: $color-secondary-darker;
+			}
+		}
+	}
+	.n-input-combo2 {
 		.n-input-combo-dropdown-values {
-			max-height: calc(#{$font-size-large} * 15);
-			z-index: 15;
-			overflow-y: auto;
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			min-width: calc(100% - #{$font-size-large});
-			top: 100%;
-			background-color: $color-neutral-lightest;
-			border-width: 1px;
-			border-style: none solid solid solid;
-			border-radius: 0 0 $border-radius $border-radius;
-			border-color: $color-neutral-light;
-			text-align: left;
 			li {
-				cursor: pointer;
-				list-style: none;
-				padding: $spacing-scale-small $spacing-scale-medium;
-				font-size: $font-size-small;
-				&:hover {
-					background-color: $color-neutral-lighter;
-				}
-				&.is-active {
-					background-color: $color-primary-lightest;
-					color: $color-primary-darker;
-				}
-				&.is-pondering:not(.is-active) {
-					background-color: $color-secondary-lightest;
-					color: $color-secondary-darker;
+				display: flex;
+    			align-items: center;
+    			overflow: hidden;
+			}
+		}
+	}
+	// might have tags and counters etc
+	.n-input-combo2-input-container {
+		flex-grow: 1;
+		display: flex;
+		column-gap: $spacing-scale-xsmall;
+		align-items: center;
+		background-color: white;
+		// keep in sync with definition of input components in base
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $form-component-border-radius;
+		color: $color-neutral-darkest;
+		border-color: $color-neutral-light;
+		&:focus, &:focus-visible, &:active {
+			border-color: $color-neutral-base;
+			outline-width: 0;
+		}
+		input {
+			border: none;
+			flex-grow: 1;
+			&:disabled {
+				background-color: white;
+				&::placeholder {
+					color: $font-color;
 				}
 			}
+		}
+		.n-input-combo-tag-container {
+			display: flex;
+			column-gap: $spacing-scale-xsmall;
+			padding: $spacing-scale-xsmall;
 		}
 	}
 }

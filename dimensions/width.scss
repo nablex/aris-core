@@ -323,8 +323,11 @@
 @mixin component_width_fixed-48 {
 	width: 48rem;
 }
-@mixin component_width_fixed-max {
+@mixin component_width_relative-max {
 	width: 100%;
+}
+@mixin component_width_fixed-max {
+	width: 100vw;
 }
 @mixin component_width_remainder-1 {
 	width: calc(100% - 1rem);

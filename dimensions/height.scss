@@ -43,7 +43,12 @@
 	max-height: 100vh;
 }
 
-@mixin component_height_max {
+@mixin component_height_relative-max {
+	height: 100%;
+}
+
+// deprecated!
+.is-height-max {
 	height: 100%;
 }
 
@@ -78,6 +83,9 @@
 	max-height: calc(100vh - (6 * #{$font-size-medium}));
 }
 
+@mixin component_height_max {
+	height: 100%;
+}
 @mixin component_height_max-xlarge {
 	max-height: 72rem;
 }
@@ -109,5 +117,7 @@
 	min-height: 24rem;
 }
 @mixin component_height_fixed-max {
-	height: 100%;
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
 }
