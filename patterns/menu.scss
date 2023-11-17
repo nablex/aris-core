@@ -284,7 +284,7 @@ $menu-top-background-color: $color-uses-body;
 	background-color: $color-neutral-darkest; 
 }
 @mixin menu-toolbar_modifier_light {
-	background-color: $color-body; 
+	background-color: $color-uses-body; 
 	border-bottom: solid 1px $color-neutral-darker;
 }
 @mixin menu-toolbar_modifier_transparent {
