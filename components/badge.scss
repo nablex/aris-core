@@ -14,7 +14,6 @@
 	left: 90%;
 }
 
-// @component badge padded-content
 @mixin badge_variant_default {
 	display: inline-flex;
 	@include content-fix-icon;

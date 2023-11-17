@@ -1,20 +1,23 @@
 {
 	"name": "aris-core", 
 	"resources": {
-		"base": {
+		"variables": {
 			"color.scss": {
-				"url": "base/color.scss"
+				"url": "variables/color.scss"
 			}, 
-			"basic.scss": {
-				"url": "base/basic.scss"
-			},
 			"spacing.scss": {
-				"url": "base/spacing.scss"
+				"url": "variables/spacing.scss"
+			},
+			"font.scss": {
+				"url": "variables/font.scss"
+			},
+			"border.scss": {
+				"url": "variables/border.scss"
 			}
 		}, 
 		"dimensions": {
-			"spacing.scss": {
-				"url": "dimensions/spacing.scss"
+			"active.scss": {
+				"url": "dimensions/active.scss"
 			},
 			"border.scss": {
 				"url": "dimensions/border.scss"
@@ -22,8 +25,8 @@
 			"color.scss": {
 				"url": "dimensions/color.scss"
 			},
-			"highlight.scss": {
-				"url": "dimensions/highlight.scss"
+			"content-width.scss": {
+				"url": "dimensions/content-width.scss"
 			},
 			"decoration.scss": {
 				"url": "dimensions/decoration.scss"
@@ -31,26 +34,32 @@
 			"direction.scss": {
 				"url": "dimensions/direction.scss"
 			},
+			"disabled.scss": {
+				"url": "dimensions/disabled.scss"
+			},
+			"fill.scss": {
+				"url": "dimensions/fill.scss"
+			},
+			"fit.scss": {
+				"url": "dimensions/fit.scss"
+			},
+			"height.scss": {
+				"url": "dimensions/height.scss"
+			},
+			"hover.scss": {
+				"url": "dimensions/hover.scss"
+			},
+			"spacing.scss": {
+				"url": "dimensions/spacing.scss"
+			},
 			"position.scss": {
 				"url": "dimensions/position.scss"
 			},
 			"size.scss": {
 				"url": "dimensions/size.scss"
 			},
-			"fit.scss": {
-				"url": "dimensions/fit.scss"
-			},
-			"fill.scss": {
-				"url": "dimensions/fill.scss"
-			},
 			"width.scss": {
 				"url": "dimensions/width.scss"
-			},
-			"content-width.scss": {
-				"url": "dimensions/content-width.scss"
-			},
-			"height.scss": {
-				"url": "dimensions/height.scss"
 			},
 			"overflow.scss": {
 				"url": "dimensions/overflow.scss"
@@ -69,6 +78,9 @@
 			}
 		},
 		"components": {
+			"hierarchy.scss": {
+				"url": "components/hierarchy.scss"
+			},
 			"component.scss": {
 				"url": "components/component.scss"
 			},
@@ -186,6 +198,9 @@
 			"nabu-templates.npt": {
 				"url": "templates/nabu-templates.npt"
 			}
+		},
+		"initialize.scss": {
+			"url": "base/initialize.scss"
 		}
 	}
 }

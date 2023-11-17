@@ -1,6 +1,5 @@
 // we define different layers to make sure content correctly layers over each other
 // we leave gaps in between the layers to allow for customization
-
 // the base layer
 @mixin component_layer_0 {
 	z-index: unset;

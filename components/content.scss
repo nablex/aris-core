@@ -6,8 +6,6 @@
 // <div class='is-content'><span class="is-icon"></span><span class="is-text"></span></div>
 // Note that we assume the icon is on the _left_ side of the text if both are present though we try to hard to not be aware of this fact
 
-// @component content component
-
 @mixin content_align_left {
 	text-align: left;
 	justify-content: start;
@@ -59,14 +57,11 @@
 @mixin content_variant_primary {
 	@include component_color_primary;
 }
-@mixin content_variant_secondary {
-	@include component_color_secondary;
-}
 @mixin content_variant_primary-outline {
 	@include component_color_primary-outline;
 }
-@mixin content_variant_primary-dark-outline {
-	@include component_color_primary-dark-outline;
+@mixin content_variant_secondary {
+	@include component_color_secondary;
 }
 @mixin content_variant_secondary-outline {
 	@include component_color_secondary-outline;
@@ -74,10 +69,6 @@
 @mixin content_variant_ghost {
 	@include component_border_none;
 	@include component_color_transparent;
-}
-@mixin content_variant_ghost-light {
-	@include component_border_none;
-	@include component_color_transparent-light;
 }
 @mixin content_variant_info {
 	@include component_color_info;
@@ -112,4 +103,3 @@
 	font-style: italic;
 }
 
-// @component padded-content content

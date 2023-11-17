@@ -53,7 +53,7 @@
 // the edit menu that floats at the top...
 .is-page-edit-menu {
 	position: absolute;
-	padding: $spacing-scale-small $spacing-scale-medium;
+	padding: $spacing-small $spacing-medium;
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-darker;
 	border: dashed 1px $color-neutral-darker;
@@ -326,8 +326,8 @@
 	width: auto;
 	// the sidebar is set at 500, this should layer over the sidebar...
 	z-index: 600;
-	padding: $spacing-scale-medium;
-	row-gap: $spacing-scale-small;
+	padding: $spacing-medium;
+	row-gap: $spacing-small;
 }
 
 @mixin button_variant_page-button-sort {

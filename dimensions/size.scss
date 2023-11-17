@@ -1,5 +1,5 @@
-@mixin content_size_xxsmall {
-	font-size: $font-size-xxsmall;
+@mixin content_size_2xsmall {
+	font-size: $font-size-2xsmall;
 	line-height: $font-size-xsmall;
 }
 @mixin content_size_xsmall {
@@ -20,28 +20,28 @@
 }
 @mixin content_size_xlarge {
 	font-size: $font-size-xlarge;
-	line-height: $font-size-xxlarge;
+	line-height: $font-size-2xlarge;
 }
-@mixin content_size_xxlarge {
-	font-size: $font-size-xxlarge;
-	line-height: calc(#{$font-size-xxlarge} * 1.15);
+@mixin content_size_2xlarge {
+	font-size: $font-size-2xlarge;
+	line-height: calc(#{$font-size-2xlarge} * 1.15);
 }
-@mixin content_size_xxxlarge {
-	font-size: calc(#{$font-size-xxlarge} * 1.5);
-	line-height: calc(#{$font-size-xxlarge} * 1.65);
+@mixin content_size_3xlarge {
+	font-size: calc(#{$font-size-2xlarge} * 1.5);
+	line-height: calc(#{$font-size-2xlarge} * 1.65);
 }
-@mixin content_size_xxxxlarge {
-	font-size: calc(#{$font-size-xxlarge} * 2);
-	line-height: calc(#{$font-size-xxlarge} * 2.15);
+@mixin content_size_4xlarge {
+	font-size: calc(#{$font-size-2xlarge} * 2);
+	line-height: calc(#{$font-size-2xlarge} * 2.15);
 }
 
-@mixin padded-content_size_xxsmall {
-	@include component_spacing_horizontal-xxsmall;
+@mixin padded-content_size_2xsmall {
+	@include component_spacing_horizontal-2xsmall;
 	@include component_spacing_vertical-none;
 }
 @mixin padded-content_size_xsmall {
 	@include component_spacing_horizontal-xsmall;
-	@include component_spacing_vertical-xxsmall;
+	@include component_spacing_vertical-2xsmall;
 }
 @mixin padded-content_size_small {
 	@include component_spacing_horizontal-small;

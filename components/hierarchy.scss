@@ -1,0 +1,23 @@
+// @component component: the root of all components
+	// @component content component: contains all "visualized" content that requires colors, fonts,...
+		// @component h1 content
+		// @component h2 content
+		// @component h3 content
+		// @component h4 content
+		// @component h5 content
+		// @component h6 content
+		// @component p content
+		// @component icon content
+		// @component padded-content content: contains all content that is by default padded
+			// @component button padded-content
+			// @component alert padded-content
+			// @component badge padded-content
+				// @component tag badge
+			// @component info padded-content
+			// @component tooltip padded-content
+		// @component external-content content: things like images etc
+			// @component image external-content
+	// @component layout component: primarily aimed at positioning content in the correct location
+		// @component row layout: the row inside a grid
+		// @component column layout: the column inside a grid
+// @component line: meant to target <hr>, probably does not work well with other elements atm

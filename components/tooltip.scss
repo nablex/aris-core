@@ -1,8 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- TOOLTIP
 // ---------------------------------------------------------------------------------------------------------------------------
-// @component tooltip padded-content
-
 // make sure we can offset to the given element
 .has-tooltip {
 	position: relative;
@@ -16,17 +14,17 @@
 }
 
 @mixin template_tooltip_width {
-	width: calc(#{$spacing-scale-medium} * 6);
+	width: calc(#{$spacing-medium} * 6);
 }
 
 @mixin tooltip_width_small {
 	@include template_tooltip_width;
 }
 @mixin tooltip_width_medium {
-	width: calc(#{$spacing-scale-medium} * 12);
+	width: calc(#{$spacing-medium} * 12);
 }
 @mixin tooltip_width_large {
-	width: calc(#{$spacing-scale-medium} * 18);
+	width: calc(#{$spacing-medium} * 18);
 }
 
 // ----------------------------------------- SIZES -> include spacing

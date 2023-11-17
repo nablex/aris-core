@@ -12,7 +12,7 @@
 	}
 }
 // ----------------------------------------- VARIANTS
-$menu-top-background-color: $color-body;
+$menu-top-background-color: $color-uses-body;
 
 // same as row
 @mixin menu_variant_default {

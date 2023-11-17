@@ -6,59 +6,10 @@
 
 // Note that we assume the icon is on the _left_ side of the label if both are present though we try to hard to not be aware of this fact
 
-// @component button padded-content
 // ----------------------------------------- COLORS
 
-@mixin button_color_primary {
-	@include component_highlight_primary;
-}
-@mixin button_color_primary-outline {
-	@include component_highlight_primary-outline;
-}
-@mixin button_color_secondary {
-	@include component_highlight_secondary;
-}
-@mixin button_color_secondary-outline {
-	@include component_highlight_secondary-outline;
-}
-@mixin button_color_transparent {
-	@include component_highlight_transparent;
-}
-@mixin button_color_transparent-light {
-	@include component_highlight_transparent-light;
-}
-@mixin button_color_danger {
-	@include component_highlight_danger;
-}
-@mixin button_color_danger-outline {
-	@include component_highlight_danger-outline;
-}
-@mixin button_color_warning {
-	@include component_highlight_warning;
-}
-@mixin button_color_warning-outline {
-	@include component_highlight_warning-outline;
-}
-@mixin button_color_info {
-	@include component_highlight_info;
-}
-@mixin button_color_info-outline {
-	@include component_highlight_info-outline;
-}
-@mixin button_color_success {
-	@include component_highlight_success;
-}
-@mixin button_color_success-outline {
-	@include component_highlight_success-outline;
-}
-@mixin button_color_dark {
-	@include component_highlight_dark;
-}
-@mixin button_color_light {
-	@include component_highlight_light;
-}
-
 $button-link-color: $color-primary-darker;
+
 @mixin button_color_link {
 	background-color: transparent;
 	color: $button-link-color;
@@ -75,13 +26,6 @@ $button-link-color: $color-primary-darker;
 	border-width: 2px;
 }
 
-// some tiny corrections
-@mixin button-fix-icon {
-	// > .is-text {
-	// 	white-space: nowrap;
-	// }
-}
-
 // ----------------------------------------- VARIANTS
 
 @mixin button_variant_default {
@@ -95,7 +39,7 @@ $button-link-color: $color-primary-darker;
 	align-items: center;
 
 	// some default browser styling resets the inherited font-family
-	font-family: $font-family;
+	font-family: $font-family-default;
 	
 	@include content_size_medium;
 	@include padded-content_size_medium;
@@ -103,9 +47,7 @@ $button-link-color: $color-primary-darker;
 	@include content_decoration_normal;
 	
 	@include content-fix-icon;
-	@include button-fix-icon;
-	@include component_color_light;
-	@include button_color_light;
+	@include component_color_neutral;
 	@include component_border_full;
 
 	&:disabled {
@@ -117,6 +59,10 @@ $button-link-color: $color-primary-darker;
 	.is-icon, .is-text {
 		text-align: center;
 	}
+
+	@include component_disabled_default;
+	@include component_hover_neutral;
+	@include component_active_neutral;
 }
 
 @mixin button_variant_link {
@@ -126,73 +72,255 @@ $button-link-color: $color-primary-darker;
 	@include content_decoration_link;
 }
 
-
 // if we put a badge in a button, we need to counter the padding we add at the top otherwise we slightly stretch the button making it a tiny bit bigger than other buttons
 // TODO: this is not full proof, for example if we absolutely position it etc
 // also, we need to counter the exact padding, so it depends on the chosen size... that's requires some very specific queries
 .is-button {
 	> .is-badge {
-		margin-top: calc(0px - #{$spacing-scale-xxsmall});
+		margin-top: calc(0px - #{$spacing-2xsmall});
 	}
 	> .is-badge.is-size-small {
-		margin-top: calc(0px - #{$spacing-scale-xsmall});
+		margin-top: calc(0px - #{$spacing-xsmall});
 	}
 	> .is-badge.is-size-medium {
-		margin-top: calc(0px - #{$spacing-scale-small});
+		margin-top: calc(0px - #{$spacing-small});
 	}
 	> .is-badge.is-size-large {
-		margin-top: calc(0px - #{$spacing-scale-medium});
+		margin-top: calc(0px - #{$spacing-medium});
 	}
 	> .is-badge.is-size-xlarge {
-		margin-top: calc(0px - #{$spacing-scale-large});
+		margin-top: calc(0px - #{$spacing-large});
 	}
 }
 
-
-@mixin button_variant_neutral {
-	@include button_color_light;
-}
 @mixin button_variant_primary {
-	@include button_color_primary;
+	@include content_color_primary;
+	@include content_hover_primary;
+	@include content_active_primary;
 }
-@mixin button_variant_secondary {
-	@include button_color_secondary;
+@mixin button_variant_primary-lighter {
+	@include content_color_primary-lighter;
+	@include content_hover_primary-lighter;
+	@include content_active_primary-lighter;
+}
+@mixin button_variant_primary-darker {
+	@include content_color_primary-darker;
+	@include content_hover_primary-darker;
+	@include content_active_primary-darker;
 }
 @mixin button_variant_primary-outline {
-	@include button_color_primary-outline;
+	@include content_color_primary-outline;
+	@include content_hover_primary-outline;
+	@include content_active_primary-outline;
+}
+@mixin button_variant_primary-outline-darker {
+	@include content_color_primary-outline-darker;
+	@include content_hover_primary-outline-darker;
+	@include content_active_primary-outline-darker;
+}
+@mixin button_variant_primary-outline-lighter {
+	@include content_color_primary-outline-lighter;
+	@include content_hover_primary-outline-lighter;
+	@include content_active_primary-outline-lighter;
+}
+
+@mixin button_variant_secondary {
+	@include content_color_secondary;
+	@include content_hover_secondary;
+	@include content_active_secondary;
+}
+@mixin button_variant_secondary-lighter {
+	@include content_color_secondary-lighter;
+	@include content_hover_secondary-lighter;
+	@include content_active_secondary-lighter;
+}
+@mixin button_variant_secondary-darker {
+	@include content_color_secondary-darker;
+	@include content_hover_secondary-darker;
+	@include content_active_secondary-darker;
 }
 @mixin button_variant_secondary-outline {
-	@include button_color_secondary-outline;
+	@include content_color_secondary-outline;
+	@include content_hover_secondary-outline;
+	@include content_active_secondary-outline;
 }
-@mixin button_variant_ghost {
-	@include button_color_transparent;
+@mixin button_variant_secondary-outline-darker {
+	@include content_color_secondary-outline-darker;
+	@include content_hover_secondary-outline-darker;
+	@include content_active_secondary-outline-darker;
 }
-@mixin button_variant_ghost-light {
-	@include button_color_transparent-light;
+@mixin button_variant_secondary-outline-lighter {
+	@include content_color_secondary-outline-lighter;
+	@include content_hover_secondary-outline-lighter;
+	@include content_active_secondary-outline-lighter;
 }
+
+@mixin button_variant_neutral {
+	@include content_color_neutral;
+	@include content_hover_neutral;
+	@include content_active_neutral;
+}
+@mixin button_variant_neutral-lighter {
+	@include content_color_neutral-lighter;
+	@include content_hover_neutral-lighter;
+	@include content_active_neutral-lighter;
+}
+@mixin button_variant_neutral-darker {
+	@include content_color_neutral-darker;
+	@include content_hover_neutral-darker;
+	@include content_active_neutral-darker;
+}
+@mixin button_variant_neutral-outline {
+	@include content_color_neutral-outline;
+	@include content_hover_neutral-outline;
+	@include content_active_neutral-outline;
+}
+@mixin button_variant_neutral-outline-darker {
+	@include content_color_neutral-outline-darker;
+	@include content_hover_neutral-outline-darker;
+	@include content_active_neutral-outline-darker;
+}
+@mixin button_variant_neutral-outline-lighter {
+	@include content_color_neutral-outline-lighter;
+	@include content_hover_neutral-outline-lighter;
+	@include content_active_neutral-outline-lighter;
+}
+
 @mixin button_variant_info {
-	@include button_color_info;
+	@include content_color_info;
+	@include content_hover_info;
+	@include content_active_info;
+}
+@mixin button_variant_info-lighter {
+	@include content_color_info-lighter;
+	@include content_hover_info-lighter;
+	@include content_active_info-lighter;
+}
+@mixin button_variant_info-darker {
+	@include content_color_info-darker;
+	@include content_hover_info-darker;
+	@include content_active_info-darker;
 }
 @mixin button_variant_info-outline {
-	@include button_color_info-outline;
+	@include content_color_info-outline;
+	@include content_hover_info-outline;
+	@include content_active_info-outline;
 }
+@mixin button_variant_info-outline-darker {
+	@include content_color_info-outline-darker;
+	@include content_hover_info-outline-darker;
+	@include content_active_info-outline-darker;
+}
+@mixin button_variant_info-outline-lighter {
+	@include content_color_info-outline-lighter;
+	@include content_hover_info-outline-lighter;
+	@include content_active_info-outline-lighter;
+}
+
 @mixin button_variant_warning {
-	@include button_color_warning;
+	@include content_color_warning;
+	@include content_hover_warning;
+	@include content_active_warning;
+}
+@mixin button_variant_warning-lighter {
+	@include content_color_warning-lighter;
+	@include content_hover_warning-lighter;
+	@include content_active_warning-lighter;
+}
+@mixin button_variant_warning-darker {
+	@include content_color_warning-darker;
+	@include content_hover_warning-darker;
+	@include content_active_warning-darker;
 }
 @mixin button_variant_warning-outline {
-	@include button_color_warning-outline;
+	@include content_color_warning-outline;
+	@include content_hover_warning-outline;
+	@include content_active_warning-outline;
 }
+@mixin button_variant_warning-outline-darker {
+	@include content_color_warning-outline-darker;
+	@include content_hover_warning-outline-darker;
+	@include content_active_warning-outline-darker;
+}
+@mixin button_variant_warning-outline-lighter {
+	@include content_color_warning-outline-lighter;
+	@include content_hover_warning-outline-lighter;
+	@include content_active_warning-outline-lighter;
+}
+
 @mixin button_variant_danger {
-	@include button_color_danger;
+	@include content_color_danger;
+	@include content_hover_danger;
+	@include content_active_danger;
+}
+@mixin button_variant_danger-lighter {
+	@include content_color_danger-lighter;
+	@include content_hover_danger-lighter;
+	@include content_active_danger-lighter;
+}
+@mixin button_variant_danger-darker {
+	@include content_color_danger-darker;
+	@include content_hover_danger-darker;
+	@include content_active_danger-darker;
 }
 @mixin button_variant_danger-outline {
-	@include button_color_danger-outline;
+	@include content_color_danger-outline;
+	@include content_hover_danger-outline;
+	@include content_active_danger-outline;
 }
+@mixin button_variant_danger-outline-darker {
+	@include content_color_danger-outline-darker;
+	@include content_hover_danger-outline-darker;
+	@include content_active_danger-outline-darker;
+}
+@mixin button_variant_danger-outline-lighter {
+	@include content_color_danger-outline-lighter;
+	@include content_hover_danger-outline-lighter;
+	@include content_active_danger-outline-lighter;
+}
+
 @mixin button_variant_success {
-	@include button_color_success;
+	@include content_color_success;
+	@include content_hover_success;
+	@include content_active_success;
+}
+@mixin button_variant_success-lighter {
+	@include content_color_success-lighter;
+	@include content_hover_success-lighter;
+	@include content_active_success-lighter;
+}
+@mixin button_variant_success-darker {
+	@include content_color_success-darker;
+	@include content_hover_success-darker;
+	@include content_active_success-darker;
 }
 @mixin button_variant_success-outline {
-	@include button_color_success-outline;
+	@include content_color_success-outline;
+	@include content_hover_success-outline;
+	@include content_active_success-outline;
+}
+@mixin button_variant_success-outline-darker {
+	@include content_color_success-outline-darker;
+	@include content_hover_success-outline-darker;
+	@include content_active_success-outline-darker;
+}
+@mixin button_variant_success-outline-lighter {
+	@include content_color_success-outline-lighter;
+	@include content_hover_success-outline-lighter;
+	@include content_active_success-outline-lighter;
+}
+
+@mixin button_variant_ghost {
+	@include button_variant_neutral-outline;
+	@include component_border_none;
+}
+@mixin button_variant_ghost-lighter {
+	@include button_variant_neutral-outline-lighter;
+	@include component_border_none;
+}
+@mixin button_variant_ghost-darker {
+	@include button_variant_neutral-outline-darker;
+	@include component_border_none;
 }
 
 @mixin button_variant_tab {
@@ -208,17 +336,15 @@ $button-link-color: $color-primary-darker;
 }
 
 @mixin button_variant_close {
-	@include component_color_transparent;
-	@include button_color_transparent;
-	@include component_border_none;
+	@include button_variant_ghost-darker;
 	// by default a small button
 	@include content_size_small;
 	@include padded-content_size_small;
 	// need to layer it above the standard content
 	z-index: 1;
 	position: absolute;
-	top: $spacing-scale-small;
-	right: $spacing-scale-small;
+	top: $spacing-small;
+	right: $spacing-small;
 }
 
 .has-button-close {

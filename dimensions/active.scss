@@ -1,0 +1,223 @@
+// Primary
+@mixin component_active_primary {
+	&.is-active {
+		@include component_color_primary-dark;
+	}
+}
+@mixin component_active_primary-lighter {
+	&.is-active {
+		@include component_color_primary-light;
+	}
+}
+@mixin component_active_primary-darker {
+	&.is-active {
+		@include component_color_primary-darkest;
+	}
+}
+@mixin component_active_primary-outline {
+	&.is-active {
+		@include component_color_primary-outline-dark;
+	}
+}
+@mixin component_active_primary-outline-lighter {
+	&.is-active {
+		@include component_color_primary-outline-light;
+	}
+}
+@mixin component_active_primary-outline-darker {
+	&.is-active {
+		@include component_color_primary-outline-darkest;
+	}
+}
+
+// Secondary
+@mixin component_active_secondary {
+	&.is-active {
+		@include component_color_secondary-dark;
+	}
+}
+@mixin component_active_secondary-lighter {
+	&.is-active {
+		@include component_color_secondary-light;
+	}
+}
+@mixin component_active_secondary-darker {
+	&.is-active {
+		@include component_color_secondary-darkest;
+	}
+}
+@mixin component_active_secondary-outline {
+	&.is-active {
+		@include component_color_secondary-outline-dark;
+	}
+}
+@mixin component_active_secondary-outline-lighter {
+	&.is-active {
+		@include component_color_secondary-outline-light;
+	}
+}
+@mixin component_active_secondary-outline-darker {
+	&.is-active {
+		@include component_color_secondary-outline-darkest;
+	}
+}
+
+// Neutral
+@mixin component_active_neutral {
+	&.is-active {
+		@include component_color_neutral-dark;
+	}
+}
+@mixin component_active_neutral-lighter {
+	&.is-active {
+		@include component_color_neutral-light;
+	}
+}
+@mixin component_active_neutral-darker {
+	&.is-active {
+		@include component_color_neutral-darkest;
+	}
+}
+@mixin component_active_neutral-outline {
+	&.is-active {
+		@include component_color_neutral-outline-dark;
+	}
+}
+@mixin component_active_neutral-outline-lighter {
+	&.is-active {
+		@include component_color_neutral-outline-light;
+	}
+}
+@mixin component_active_neutral-outline-darker {
+	&.is-active {
+		@include component_color_neutral-outline-darkest;
+	}
+}
+
+// Danger
+@mixin component_active_danger {
+	&.is-active {
+		@include component_color_danger-dark;
+	}
+}
+@mixin component_active_danger-lighter {
+	&.is-active {
+		@include component_color_danger-light;
+	}
+}
+@mixin component_active_danger-darker {
+	&.is-active {
+		@include component_color_danger-darkest;
+	}
+}
+@mixin component_active_danger-outline {
+	&.is-active {
+		@include component_color_danger-outline-dark;
+	}
+}
+@mixin component_active_danger-outline-lighter {
+	&.is-active {
+		@include component_color_danger-outline-light;
+	}
+}
+@mixin component_active_danger-outline-darker {
+	&.is-active {
+		@include component_color_danger-outline-darkest;
+	}
+}
+
+// Warning
+@mixin component_active_warning {
+	&.is-active {
+		@include component_color_warning-dark;
+	}
+}
+@mixin component_active_warning-lighter {
+	&.is-active {
+		@include component_color_warning-light;
+	}
+}
+@mixin component_active_warning-darker {
+	&.is-active {
+		@include component_color_warning-darkest;
+	}
+}
+@mixin component_active_warning-outline {
+	&.is-active {
+		@include component_color_warning-outline-dark;
+	}
+}
+@mixin component_active_warning-outline-lighter {
+	&.is-active {
+		@include component_color_warning-outline-light;
+	}
+}
+@mixin component_active_warning-outline-darker {
+	&.is-active {
+		@include component_color_warning-outline-darkest;
+	}
+}
+
+// Info
+@mixin component_active_info {
+	&.is-active {
+		@include component_color_info-dark;
+	}
+}
+@mixin component_active_info-lighter {
+	&.is-active {
+		@include component_color_info-light;
+	}
+}
+@mixin component_active_info-darker {
+	&.is-active {
+		@include component_color_info-darkest;
+	}
+}
+@mixin component_active_info-outline {
+	&.is-active {
+		@include component_color_info-outline-dark;
+	}
+}
+@mixin component_active_info-outline-lighter {
+	&.is-active {
+		@include component_color_info-outline-light;
+	}
+}
+@mixin component_active_info-outline-darker {
+	&.is-active {
+		@include component_color_info-outline-darkest;
+	}
+}
+
+// Success
+@mixin component_active_success {
+	&.is-active {
+		@include component_color_success-dark;
+	}
+}
+@mixin component_active_success-lighter {
+	&.is-active {
+		@include component_color_success-light;
+	}
+}
+@mixin component_active_success-darker {
+	&.is-active {
+		@include component_color_success-darkest;
+	}
+}
+@mixin component_active_success-outline {
+	&.is-active {
+		@include component_color_success-outline-dark;
+	}
+}
+@mixin component_active_success-outline-lighter {
+	&.is-active {
+		@include component_color_success-outline-light;
+	}
+}
+@mixin component_active_success-outline-darker {
+	&.is-active {
+		@include component_color_success-outline-darkest;
+	}
+}

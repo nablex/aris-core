@@ -21,7 +21,6 @@ $color-warning-base: #E0A800 !default;
 // @description The informational color of your application
 $color-info-base: #0dcaf0 !default;
 
-
 // --------------- Variant colors
 
 // -------- Primary
@@ -136,3 +135,13 @@ $color-info-darker: darken($color-info-dark, 14%) !default;
 // @description A darker variant of the info color of your application
 $color-info-darkest: darken($color-info-darker, 14%) !default;
 
+
+
+// default shades
+$color-shades-white: #ffffff !default;
+$color-shades-black: #000000 !default;
+
+// @description The default body color of the application
+$color-uses-body: $color-neutral-lighter !default;
+// @description The default color used as a background in components where relevant
+$color-uses-background: $color-neutral-lightest !default;

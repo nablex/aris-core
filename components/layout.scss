@@ -1,13 +1,10 @@
-// A layout is any element that you can use to position content
-// @component layout component
-
 // ----------------------------------------- PATTERN
 @mixin layout_pattern_basic-alternating {
 	> :nth-child(even) {
-		background-color: $color-body;
+		background-color: $color-uses-body;
 	}
 	> :nth-child(odd) {
-		background-color: $color-background;
+		background-color: $color-uses-background;
 	}
 	> .is-selected {
 		background-color: $color-primary-lightest;

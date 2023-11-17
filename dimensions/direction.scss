@@ -11,7 +11,9 @@
 	flex-direction: column-reverse;
 }
 
-// most comopnents interested in "only" a reverse (without specifying horizontal or vertical) are horizontal because they are content
-@mixin component_direction_reverse {
+@mixin row_direction_reverse {
 	flex-direction: row-reverse;
+}
+@mixin column_direction_reverse {
+	flex-direction: column-reverse;
 }

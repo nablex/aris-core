@@ -9,10 +9,7 @@
 // we want the widths to stay stable as long as possible which is why we don't use the "normal" breakpoints but instead break at exact the moment the settings would start to break
 // after that we don't want an equivalent "small" content width, we just should take up as much space as possible
 
-@mixin template_row_content-width {
-	width: unset;
-}
-@mixin row_content-width_small {
+@mixin layout_content-width_small {
 	// 512 / 1024
 	padding-left: calc(50% - 512px);
 	padding-right: calc(50% - 512px);
@@ -21,7 +18,7 @@
 		padding-right: 0px;
 	}
 }
-@mixin row_content-width_medium {
+@mixin layout_content-width_medium {
 	// 640 / 1280
 	padding-left: calc(50% - 640px);
 	padding-right: calc(50% - 640px);
@@ -30,7 +27,7 @@
 		padding-right: 0px;
 	}
 }
-@mixin row_content-width_large {
+@mixin layout_content-width_large {
 	// 768 / 1536
 	padding-left: calc(50% - 768px);
 	padding-right: calc(50% - 768px);

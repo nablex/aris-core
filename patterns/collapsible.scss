@@ -4,21 +4,21 @@
 	> :where(.is-title) {
 		cursor: pointer;
 		@include h6_variant_default;
-		padding: $spacing-scale-small;
+		padding: $spacing-small;
 		padding-right: 0;
 		> .is-icon {
-			margin-right: $spacing-scale-small;
-			margin-left: $spacing-scale-small;
+			margin-right: $spacing-small;
+			margin-left: $spacing-small;
 			font-size: $font-size-xxsmall;
 		}
 		.is-text-after {
-			margin-left: $spacing-scale-small;
+			margin-left: $spacing-small;
 			@include content_size_xsmall;
 		}
 		// we rarely want the buttons to be flat against the side?
 		// actually, when combined with other elements, we might!
 		//.is-title-buttons {
-		//	padding-right: $spacing-scale-small;
+		//	padding-right: $spacing-small;
 		//}
 		.is-text-after, .is-text-before {
 			color: $color-neutral-base;

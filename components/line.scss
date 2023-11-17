@@ -1,8 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------- LINE
 // ---------------------------------------------------------------------------------------------------------------------------
-// @component line
-// meant to target <hr>, probably does not work well with other elements atm
 
 // ----------------------------------------- COLOR
 @mixin template_line_color {
@@ -34,10 +32,6 @@
 	background-color: $color-primary-darker;
 	color: $color-primary-darker;
 }
-@mixin line_color_primary-light {
-	background-color: $color-primary-lightest;
-	color: $color-primary-lightest;
-}
 @mixin line_color_secondary {
 	background-color: $color-secondary-darker;
 	color: $color-secondary-darker;
@@ -50,19 +44,19 @@
 	@include template_line_size;
 }
 @mixin line_size_xsmall {
-	height: $spacing-scale-xsmall;
+	height: $spacing-xsmall;
 }
 @mixin line_size_small {
-	height: $spacing-scale-small;
+	height: $spacing-small;
 }
 @mixin line_size_medium {
-	height: $spacing-scale-medium;
+	height: $spacing-medium;
 }
 @mixin line_size_large {
-	height: $spacing-scale-large;
+	height: $spacing-large;
 }
 @mixin line_size_xlarge {
-	height: $spacing-scale-xlarge;
+	height: $spacing-xlarge;
 }
 
 // ----------------------------------------- VARIANT
