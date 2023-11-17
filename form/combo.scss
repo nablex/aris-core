@@ -120,6 +120,11 @@
 		}
 	}
 	.n-input-combo2 {
+		// if an input is disabled, it will not propagate mouse clicks
+		// however, we have a mouse listener on the parent div
+		input:disabled {
+			pointer-events: none;
+		}
 		.n-input-combo-dropdown-values {
 			li {
 				display: flex;
