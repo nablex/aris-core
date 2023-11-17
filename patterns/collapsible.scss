@@ -1,4 +1,3 @@
-// @component collapsible component
 @mixin collapsible_variant_default {
 	// we want a 0-selector for easy overriding of the default values
 	> :where(.is-title) {
@@ -9,7 +8,7 @@
 		> .is-icon {
 			margin-right: $spacing-small;
 			margin-left: $spacing-small;
-			font-size: $font-size-xxsmall;
+			font-size: $font-size-2xsmall;
 		}
 		.is-text-after {
 			margin-left: $spacing-small;
@@ -28,67 +27,76 @@
 		}
 	}
 	// default transparent
-	// in retrospect its not entirely sure if the border_underline should have been in the default variant
-	// in the beginning it was not an extension of component
-	@include component_color_transparent;
-	@include component_border_underline;
-}
-
-@mixin collapsible_color_primary {
-	> .is-title {
-		background-color: $color-primary-darkest;
-		color: $color-primary-lightest;
-		.is-text-after, .is-text-before {
-			color: $color-primary-light;
-		}
-	}
-}
-
-@mixin collapsible_color_neutral-dark {
-	> .is-title {
-		background-color: $color-neutral-darkest;
-		color: $color-neutral-lightest;
-		.is-text-after, .is-text-before {
-			color: $color-neutral-light;
-		}
-	}
-}
-@mixin collapsible_color_neutral {
-	> .is-title {
-		background-color: $color-neutral-light;
-		color: $color-neutral-darkest;
-		.is-text-after, .is-text-before {
-			color: $color-neutral-base;
-		}
-	}
-}
-@mixin collapsible_color_neutral-light {
-	> .is-title {
-		background-color: $color-neutral-lighter;
-		color: $color-neutral-darkest;
-		.is-text-after, .is-text-before {
-			color: $color-neutral-base;
-		}
-	}
-}
-@mixin collapsible_color_primary-light {
-	border-color: $color-primary-lighter;
 	background-color: transparent;
-	> .is-title {
-		background-color: $color-primary-lightest;
-		color: $color-primary-darker;
-		.is-text-after, .is-text-before {
-			color: $color-primary-base;
+}
+
+@mixin component_color_primary--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-primary-darkest;
+			color: $color-primary-lightest;
+			.is-text-after, .is-text-before {
+				color: $color-primary-light;
+			}
 		}
 	}
 }
-@mixin collapsible_color_secondary-light {
-	border-color: $color-secondary-lighter;
-	> .is-title {
-		background-color: $color-secondary-lightest;
-		color: $color-secondary-darker;
-		.is-text-after, .is-text-before {
-			color: $color-secondary-base;
+
+@mixin component_color_neutral-darker--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-darkest;
+			color: $color-neutral-lightest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-light;
+			}
+		}
+	}
+}
+@mixin component_color_neutral--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-light;
+			color: $color-neutral-darkest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-base;
+			}
+		}
+	}
+}
+@mixin component_color_neutral-lighter--collapsible {
+	&.is-collapsible {
+		> .is-title {
+			background-color: $color-neutral-lighter;
+			color: $color-neutral-darkest;
+			.is-text-after, .is-text-before {
+				color: $color-neutral-base;
+			}
+		}
+	}
+}
+@mixin component_color_primary-lighter--collapsible {
+	&.is-collapsible {
+		border-color: $color-primary-lighter;
+		background-color: transparent;
+		> .is-title {
+			background-color: $color-primary-lightest;
+			color: $color-primary-darker;
+			.is-text-after, .is-text-before {
+				color: $color-primary-base;
+			}
+		}
+	}
+}
+@mixin component_color_secondary-lighter--collapsible {
+	&.is-collapsible {
+		border-color: $color-secondary-lighter;
+		> .is-title {
+			background-color: $color-secondary-lightest;
+			color: $color-secondary-darker;
+			.is-text-after, .is-text-before {
+				color: $color-secondary-base;
+			}
 		}
 	}
 }

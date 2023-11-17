@@ -270,7 +270,7 @@
 	@include content_size-small;
 	@include padded-content_size-small;
 	@include tooltip_size_small;
-	@include component_color_dark;
+	@include component_color_neutral-darker;
 	@include tooltip_width_small;
 	&:after {
 		content: ' ';

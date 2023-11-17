@@ -21,7 +21,7 @@
 @mixin component_color_primary-lighter {
 	background-color: $color-primary-lighter;
 	color: $color-neutral-darker;
-	border-color: $color-primary-lighter;	
+	border-color: $color-primary-lighter;
 }
 @mixin component_color_primary-darker {
 	background-color: $color-primary-darker;

@@ -1,6 +1,3 @@
-// @component form layout
-// @component form-section layout
-// @component form-group layout
 // label is positioned above the field
 
 @mixin form-section_variant_default {
@@ -13,7 +10,7 @@
 	flex-direction: column;
 	:is-label {
 		font-size: $font-size-small;
-		@include component_color_dark-outline;
+		@include component_color_neutral-darker-outline;
 	}
 	:is-info {
 		margin-left: $spacing-small;
@@ -87,7 +84,7 @@
 			top: calc(0px - (#{$font-size-small} * 1.3) + #{$spacing-medium});
 			background-color: $color-primary-lightest;
 			border: solid 1px $color-primary-light;
-			padding: $spacing-xxsmall $spacing-small;
+			padding: $spacing-2xsmall $spacing-small;
 			border-radius: $border-radius;
 			.is-label {
 				font-size: $font-size-xsmall;
@@ -112,11 +109,11 @@
 		.is-label-wrapper {
 			position: absolute;
 			top: calc(0px - #{$font-size-small} + #{$spacing-medium});
-			padding: $spacing-xxsmall 0;
+			padding: $spacing-2xsmall 0;
 			border-radius: $border-radius;
 			.is-label {
 				text-transform: uppercase;
-				font-size: $font-size-xxsmall;
+				font-size: $font-size-2xsmall;
 				color: $color-neutral-base;
 			}
 		}
@@ -151,5 +148,3 @@
 	}
 }
 
-// @component form-label
-// @extension form-text-label form-label

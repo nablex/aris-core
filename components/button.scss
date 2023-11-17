@@ -94,220 +94,220 @@ $button-link-color: $color-primary-darker;
 }
 
 @mixin button_variant_primary {
-	@include content_color_primary;
-	@include content_highlight_primary;
-	@include content_active_primary;
+	@include component_color_primary;
+	@include component_highlight_primary;
+	@include component_active_primary;
 }
 @mixin button_variant_primary-lighter {
-	@include content_color_primary-lighter;
-	@include content_highlight_primary-lighter;
-	@include content_active_primary-lighter;
+	@include component_color_primary-lighter;
+	@include component_highlight_primary-lighter;
+	@include component_active_primary-lighter;
 }
 @mixin button_variant_primary-darker {
-	@include content_color_primary-darker;
-	@include content_highlight_primary-darker;
-	@include content_active_primary-darker;
+	@include component_color_primary-darker;
+	@include component_highlight_primary-darker;
+	@include component_active_primary-darker;
 }
 @mixin button_variant_primary-outline {
-	@include content_color_primary-outline;
-	@include content_highlight_primary-outline;
-	@include content_active_primary-outline;
+	@include component_color_primary-outline;
+	@include component_highlight_primary-outline;
+	@include component_active_primary-outline;
 }
-@mixin button_variant_primary-outline-darker {
-	@include content_color_primary-outline-darker;
-	@include content_highlight_primary-outline-darker;
-	@include content_active_primary-outline-darker;
+@mixin button_variant_primary-darker-outline {
+	@include component_color_primary-darker-outline;
+	@include component_highlight_primary-darker-outline;
+	@include component_active_primary-darker-outline;
 }
-@mixin button_variant_primary-outline-lighter {
-	@include content_color_primary-outline-lighter;
-	@include content_highlight_primary-outline-lighter;
-	@include content_active_primary-outline-lighter;
+@mixin button_variant_primary-lighter-outline {
+	@include component_color_primary-lighter-outline;
+	@include component_highlight_primary-lighter-outline;
+	@include component_active_primary-lighter-outline;
 }
 
 @mixin button_variant_secondary {
-	@include content_color_secondary;
-	@include content_highlight_secondary;
-	@include content_active_secondary;
+	@include component_color_secondary;
+	@include component_highlight_secondary;
+	@include component_active_secondary;
 }
 @mixin button_variant_secondary-lighter {
-	@include content_color_secondary-lighter;
-	@include content_highlight_secondary-lighter;
-	@include content_active_secondary-lighter;
+	@include component_color_secondary-lighter;
+	@include component_highlight_secondary-lighter;
+	@include component_active_secondary-lighter;
 }
 @mixin button_variant_secondary-darker {
-	@include content_color_secondary-darker;
-	@include content_highlight_secondary-darker;
-	@include content_active_secondary-darker;
+	@include component_color_secondary-darker;
+	@include component_highlight_secondary-darker;
+	@include component_active_secondary-darker;
 }
 @mixin button_variant_secondary-outline {
-	@include content_color_secondary-outline;
-	@include content_highlight_secondary-outline;
-	@include content_active_secondary-outline;
+	@include component_color_secondary-outline;
+	@include component_highlight_secondary-outline;
+	@include component_active_secondary-outline;
 }
-@mixin button_variant_secondary-outline-darker {
-	@include content_color_secondary-outline-darker;
-	@include content_highlight_secondary-outline-darker;
-	@include content_active_secondary-outline-darker;
+@mixin button_variant_secondary-darker-outline {
+	@include component_color_secondary-darker-outline;
+	@include component_highlight_secondary-darker-outline;
+	@include component_active_secondary-darker-outline;
 }
-@mixin button_variant_secondary-outline-lighter {
-	@include content_color_secondary-outline-lighter;
-	@include content_highlight_secondary-outline-lighter;
-	@include content_active_secondary-outline-lighter;
+@mixin button_variant_secondary-lighter-outline {
+	@include component_color_secondary-lighter-outline;
+	@include component_highlight_secondary-lighter-outline;
+	@include component_active_secondary-lighter-outline;
 }
 
 @mixin button_variant_neutral {
-	@include content_color_neutral;
-	@include content_highlight_neutral;
-	@include content_active_neutral;
+	@include component_color_neutral;
+	@include component_highlight_neutral;
+	@include component_active_neutral;
 }
 @mixin button_variant_neutral-lighter {
-	@include content_color_neutral-lighter;
-	@include content_highlight_neutral-lighter;
-	@include content_active_neutral-lighter;
+	@include component_color_neutral-lighter;
+	@include component_highlight_neutral-lighter;
+	@include component_active_neutral-lighter;
 }
 @mixin button_variant_neutral-darker {
-	@include content_color_neutral-darker;
-	@include content_highlight_neutral-darker;
-	@include content_active_neutral-darker;
+	@include component_color_neutral-darker;
+	@include component_highlight_neutral-darker;
+	@include component_active_neutral-darker;
 }
 @mixin button_variant_neutral-outline {
-	@include content_color_neutral-outline;
-	@include content_highlight_neutral-outline;
-	@include content_active_neutral-outline;
+	@include component_color_neutral-outline;
+	@include component_highlight_neutral-outline;
+	@include component_active_neutral-outline;
 }
-@mixin button_variant_neutral-outline-darker {
-	@include content_color_neutral-outline-darker;
-	@include content_highlight_neutral-outline-darker;
-	@include content_active_neutral-outline-darker;
+@mixin button_variant_neutral-darker-outline {
+	@include component_color_neutral-darker-outline;
+	@include component_highlight_neutral-darker-outline;
+	@include component_active_neutral-darker-outline;
 }
-@mixin button_variant_neutral-outline-lighter {
-	@include content_color_neutral-outline-lighter;
-	@include content_highlight_neutral-outline-lighter;
-	@include content_active_neutral-outline-lighter;
+@mixin button_variant_neutral-lighter-outline {
+	@include component_color_neutral-lighter-outline;
+	@include component_highlight_neutral-lighter-outline;
+	@include component_active_neutral-lighter-outline;
 }
 
 @mixin button_variant_info {
-	@include content_color_info;
-	@include content_highlight_info;
-	@include content_active_info;
+	@include component_color_info;
+	@include component_highlight_info;
+	@include component_active_info;
 }
 @mixin button_variant_info-lighter {
-	@include content_color_info-lighter;
-	@include content_highlight_info-lighter;
-	@include content_active_info-lighter;
+	@include component_color_info-lighter;
+	@include component_highlight_info-lighter;
+	@include component_active_info-lighter;
 }
 @mixin button_variant_info-darker {
-	@include content_color_info-darker;
-	@include content_highlight_info-darker;
-	@include content_active_info-darker;
+	@include component_color_info-darker;
+	@include component_highlight_info-darker;
+	@include component_active_info-darker;
 }
 @mixin button_variant_info-outline {
-	@include content_color_info-outline;
-	@include content_highlight_info-outline;
-	@include content_active_info-outline;
+	@include component_color_info-outline;
+	@include component_highlight_info-outline;
+	@include component_active_info-outline;
 }
-@mixin button_variant_info-outline-darker {
-	@include content_color_info-outline-darker;
-	@include content_highlight_info-outline-darker;
-	@include content_active_info-outline-darker;
+@mixin button_variant_info-darker-outline {
+	@include component_color_info-darker-outline;
+	@include component_highlight_info-darker-outline;
+	@include component_active_info-darker-outline;
 }
-@mixin button_variant_info-outline-lighter {
-	@include content_color_info-outline-lighter;
-	@include content_highlight_info-outline-lighter;
-	@include content_active_info-outline-lighter;
+@mixin button_variant_info-lighter-outline {
+	@include component_color_info-lighter-outline;
+	@include component_highlight_info-lighter-outline;
+	@include component_active_info-lighter-outline;
 }
 
 @mixin button_variant_warning {
-	@include content_color_warning;
-	@include content_highlight_warning;
-	@include content_active_warning;
+	@include component_color_warning;
+	@include component_highlight_warning;
+	@include component_active_warning;
 }
 @mixin button_variant_warning-lighter {
-	@include content_color_warning-lighter;
-	@include content_highlight_warning-lighter;
-	@include content_active_warning-lighter;
+	@include component_color_warning-lighter;
+	@include component_highlight_warning-lighter;
+	@include component_active_warning-lighter;
 }
 @mixin button_variant_warning-darker {
-	@include content_color_warning-darker;
-	@include content_highlight_warning-darker;
-	@include content_active_warning-darker;
+	@include component_color_warning-darker;
+	@include component_highlight_warning-darker;
+	@include component_active_warning-darker;
 }
 @mixin button_variant_warning-outline {
-	@include content_color_warning-outline;
-	@include content_highlight_warning-outline;
-	@include content_active_warning-outline;
+	@include component_color_warning-outline;
+	@include component_highlight_warning-outline;
+	@include component_active_warning-outline;
 }
-@mixin button_variant_warning-outline-darker {
-	@include content_color_warning-outline-darker;
-	@include content_highlight_warning-outline-darker;
-	@include content_active_warning-outline-darker;
+@mixin button_variant_warning-darker-outline {
+	@include component_color_warning-darker-outline;
+	@include component_highlight_warning-darker-outline;
+	@include component_active_warning-darker-outline;
 }
-@mixin button_variant_warning-outline-lighter {
-	@include content_color_warning-outline-lighter;
-	@include content_highlight_warning-outline-lighter;
-	@include content_active_warning-outline-lighter;
+@mixin button_variant_warning-lighter-outline {
+	@include component_color_warning-lighter-outline;
+	@include component_highlight_warning-lighter-outline;
+	@include component_active_warning-lighter-outline;
 }
 
 @mixin button_variant_danger {
-	@include content_color_danger;
-	@include content_highlight_danger;
-	@include content_active_danger;
+	@include component_color_danger;
+	@include component_highlight_danger;
+	@include component_active_danger;
 }
 @mixin button_variant_danger-lighter {
-	@include content_color_danger-lighter;
-	@include content_highlight_danger-lighter;
-	@include content_active_danger-lighter;
+	@include component_color_danger-lighter;
+	@include component_highlight_danger-lighter;
+	@include component_active_danger-lighter;
 }
 @mixin button_variant_danger-darker {
-	@include content_color_danger-darker;
-	@include content_highlight_danger-darker;
-	@include content_active_danger-darker;
+	@include component_color_danger-darker;
+	@include component_highlight_danger-darker;
+	@include component_active_danger-darker;
 }
 @mixin button_variant_danger-outline {
-	@include content_color_danger-outline;
-	@include content_highlight_danger-outline;
-	@include content_active_danger-outline;
+	@include component_color_danger-outline;
+	@include component_highlight_danger-outline;
+	@include component_active_danger-outline;
 }
-@mixin button_variant_danger-outline-darker {
-	@include content_color_danger-outline-darker;
-	@include content_highlight_danger-outline-darker;
-	@include content_active_danger-outline-darker;
+@mixin button_variant_danger-darker-outline {
+	@include component_color_danger-darker-outline;
+	@include component_highlight_danger-darker-outline;
+	@include component_active_danger-darker-outline;
 }
-@mixin button_variant_danger-outline-lighter {
-	@include content_color_danger-outline-lighter;
-	@include content_highlight_danger-outline-lighter;
-	@include content_active_danger-outline-lighter;
+@mixin button_variant_danger-lighter-outline {
+	@include component_color_danger-lighter-outline;
+	@include component_highlight_danger-lighter-outline;
+	@include component_active_danger-lighter-outline;
 }
 
 @mixin button_variant_success {
-	@include content_color_success;
-	@include content_highlight_success;
-	@include content_active_success;
+	@include component_color_success;
+	@include component_highlight_success;
+	@include component_active_success;
 }
 @mixin button_variant_success-lighter {
-	@include content_color_success-lighter;
-	@include content_highlight_success-lighter;
-	@include content_active_success-lighter;
+	@include component_color_success-lighter;
+	@include component_highlight_success-lighter;
+	@include component_active_success-lighter;
 }
 @mixin button_variant_success-darker {
-	@include content_color_success-darker;
-	@include content_highlight_success-darker;
-	@include content_active_success-darker;
+	@include component_color_success-darker;
+	@include component_highlight_success-darker;
+	@include component_active_success-darker;
 }
 @mixin button_variant_success-outline {
-	@include content_color_success-outline;
-	@include content_highlight_success-outline;
-	@include content_active_success-outline;
+	@include component_color_success-outline;
+	@include component_highlight_success-outline;
+	@include component_active_success-outline;
 }
-@mixin button_variant_success-outline-darker {
-	@include content_color_success-outline-darker;
-	@include content_highlight_success-outline-darker;
-	@include content_active_success-outline-darker;
+@mixin button_variant_success-darker-outline {
+	@include component_color_success-darker-outline;
+	@include component_highlight_success-darker-outline;
+	@include component_active_success-darker-outline;
 }
-@mixin button_variant_success-outline-lighter {
-	@include content_color_success-outline-lighter;
-	@include content_highlight_success-outline-lighter;
-	@include content_active_success-outline-lighter;
+@mixin button_variant_success-lighter-outline {
+	@include component_color_success-lighter-outline;
+	@include component_highlight_success-lighter-outline;
+	@include component_active_success-lighter-outline;
 }
 
 @mixin button_variant_ghost {
@@ -315,11 +315,11 @@ $button-link-color: $color-primary-darker;
 	@include component_border_none;
 }
 @mixin button_variant_ghost-lighter {
-	@include button_variant_neutral-outline-lighter;
+	@include button_variant_neutral-lighter-outline;
 	@include component_border_none;
 }
 @mixin button_variant_ghost-darker {
-	@include button_variant_neutral-outline-darker;
+	@include button_variant_neutral-darker-outline;
 	@include component_border_none;
 }
 

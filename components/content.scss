@@ -53,6 +53,10 @@
 }
 @mixin content_variant_neutral {
 	@include content_variant_default;
+	@include component_color_neutral;
+}
+@mixin content_variant_neutral-outline {
+	@include component_color_neutral-outline;
 }
 @mixin content_variant_primary {
 	@include component_color_primary;
@@ -67,8 +71,8 @@
 	@include component_color_secondary-outline;
 }
 @mixin content_variant_ghost {
+	@include content_variant_neutral-outline;
 	@include component_border_none;
-	@include component_color_transparent;
 }
 @mixin content_variant_info {
 	@include component_color_info;

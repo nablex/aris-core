@@ -23,6 +23,9 @@
 @mixin component_border_radius-none {
 	border-radius: 0px;
 }
+@mixin component_border_radius-xsmall {
+	border-radius: $border-radius-xsmall;
+}
 @mixin component_border_radius-small {
 	border-radius: $border-radius-small;
 }
@@ -31,6 +34,9 @@
 }
 @mixin component_border_radius-large {
 	border-radius: $border-radius-large;
+}
+@mixin component_border_radius-xlarge {
+	border-radius: $border-radius-xlarge;
 }
 @mixin component_border_radius-full {
 	border-radius: 9999px;

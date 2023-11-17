@@ -44,12 +44,12 @@
 		line-height: $font-size-xsmall;
 		height: $font-size-small;
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-xxsmall;
+		padding: 0 $spacing-2xsmall;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-xsmall;
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-xxsmall;
+		padding: 0 $spacing-2xsmall;
 	}
 }
 
@@ -147,7 +147,7 @@ $form-component-border-radius: $border-radius;
 		border-width: 1px;
 		border-style: none none solid none;
 		border-radius: 0;
-		padding: 0 $spacing-xxsmall;
+		padding: 0 $spacing-2xsmall;
 	}
 }
 
