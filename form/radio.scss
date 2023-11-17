@@ -3,7 +3,7 @@
 $form-radio-check-character: "o";
 .is-form-radio {
 	display: flex;
-	padding: $spacing-scale-small;
+	padding: $spacing-small;
 	position: relative;
 	input {
 		appearance: none;
@@ -14,7 +14,7 @@ $form-radio-check-character: "o";
 		margin: 0;
 	}
 	input + label {
-		margin-left: $spacing-scale-medium;
+		margin-left: $spacing-medium;
 	}
 	input[checked] {
 		border-color: $color-primary-base;
@@ -31,8 +31,8 @@ $form-radio-check-character: "o";
 			height: 0.6rem;
 			border-radius: 10px;
 			// the padding on the left + an additional tiny offset
-			left: calc(#{$spacing-scale-small} + 3px);
-			top: calc(#{$spacing-scale-small} + 3px);
+			left: calc(#{$spacing-small} + 3px);
+			top: calc(#{$spacing-small} + 3px);
 			text-align: center;
 			//bottom: 2px;
 		}

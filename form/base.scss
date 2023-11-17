@@ -30,12 +30,12 @@
 		line-height: $font-size-medium;
 		height: calc(#{$font-size-medium} * 2.5);
 		font-size: $font-size-medium;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-medium;
 		font-size: $font-size-medium;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 }
 
@@ -44,12 +44,12 @@
 		line-height: $font-size-xsmall;
 		height: $font-size-small;
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-scale-xxsmall;
+		padding: 0 $spacing-xxsmall;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-xsmall;
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-scale-xxsmall;
+		padding: 0 $spacing-xxsmall;
 	}
 }
 
@@ -61,12 +61,12 @@
 		line-height: $font-size-xsmall;
 		height: calc(#{$font-size-small} * 2);
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-xsmall;
 		font-size: $font-size-xsmall;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 }
 
@@ -75,12 +75,12 @@
 		line-height: $font-size-medium;
 		height: calc(#{$font-size-medium} * 2.5);
 		font-size: $font-size-small;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-medium;
 		font-size: $font-size-small;
-		padding: 0 $spacing-scale-medium;
+		padding: 0 $spacing-medium;
 	}
 }
 @mixin form-component_size_large {
@@ -88,12 +88,12 @@
 		line-height: $font-size-large;
 		height: calc(#{$font-size-large} * 2.5);
 		font-size: $font-size-small;
-		padding: 0 $spacing-scale-large;
+		padding: 0 $spacing-large;
 	}
 	.is-prefix, .is-suffix {
 		line-height: $font-size-large;
 		font-size: $font-size-small;
-		padding: 0 $spacing-scale-large;
+		padding: 0 $spacing-large;
 	}
 }
 
@@ -147,7 +147,7 @@ $form-component-border-radius: $border-radius;
 		border-width: 1px;
 		border-style: none none solid none;
 		border-radius: 0;
-		padding: 0 $spacing-scale-xxsmall;
+		padding: 0 $spacing-xxsmall;
 	}
 }
 

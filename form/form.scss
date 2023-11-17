@@ -16,14 +16,14 @@
 		@include component_color_dark-outline;
 	}
 	:is-info {
-		margin-left: $spacing-scale-small;
+		margin-left: $spacing-small;
 	}
 	:is-form-component {
 		&.is-required {
 			> .is-label-wrapper > :is-label {
 				&:after {
 					content: "*";
-					margin-left: $spacing-scale-small;
+					margin-left: $spacing-small;
 					color: $color-danger-base;
 				}
 			}
@@ -84,10 +84,10 @@
 		.is-label-wrapper {
 			position: absolute;
 			// we add the margin of the content-wrapper to the top offset, otherwise it is floating way above the field
-			top: calc(0px - (#{$font-size-small} * 1.3) + #{$spacing-scale-medium});
+			top: calc(0px - (#{$font-size-small} * 1.3) + #{$spacing-medium});
 			background-color: $color-primary-lightest;
 			border: solid 1px $color-primary-light;
-			padding: $spacing-scale-xxsmall $spacing-scale-small;
+			padding: $spacing-xxsmall $spacing-small;
 			border-radius: $border-radius;
 			.is-label {
 				font-size: $font-size-xsmall;
@@ -97,7 +97,7 @@
 		// we want to offset the content IF we have a label because the label is absolutely positioned
 		// however, if we don't have a label, we don't want to offset the content (e.g. placeholder only fields)
 		.is-content-wrapper:not(:first-child) {
-			margin-top: $spacing-scale-medium;
+			margin-top: $spacing-medium;
 		}
 	}
 	
@@ -111,8 +111,8 @@
 		position: relative;
 		.is-label-wrapper {
 			position: absolute;
-			top: calc(0px - #{$font-size-small} + #{$spacing-scale-medium});
-			padding: $spacing-scale-xxsmall 0;
+			top: calc(0px - #{$font-size-small} + #{$spacing-medium});
+			padding: $spacing-xxsmall 0;
 			border-radius: $border-radius;
 			.is-label {
 				text-transform: uppercase;
@@ -121,7 +121,7 @@
 			}
 		}
 		.is-content-wrapper:not(:first-child) {
-			margin-top: $spacing-scale-medium;
+			margin-top: $spacing-medium;
 		}
 		@include form-component_color_default;
 		@include form-component_border_underline;
@@ -133,7 +133,7 @@
 	:is-form-component {
 		display: flex;
 		.is-label-wrapper {
-			padding: 0 $spacing-scale-medium;
+			padding: 0 $spacing-medium;
 			align-items: center;
 			border: solid 1px $color-neutral-light;
 			border-right: none;

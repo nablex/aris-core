@@ -10,20 +10,20 @@
 		@include component_shadow_xsmall;
 		@include component_border_radius-xlarge;
 		
-		padding: $spacing-scale-medium;
+		padding: $spacing-medium;
 		
 		position: absolute;
 		top: 100%;
 		background-color: $color-neutral-lightest;
 		.year-selection {
 			th {
-				padding-top: $spacing-scale-medium;
+				padding-top: $spacing-medium;
 			}
 		}
 		.days {
 			th {
-				padding: $spacing-scale-medium;	
-				padding-top: $spacing-scale-large;
+				padding: $spacing-medium;	
+				padding-top: $spacing-large;
 				height: 3rem;
 				width: 3rem;
 				font-size: $font-size-small;

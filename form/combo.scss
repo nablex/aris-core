@@ -16,7 +16,7 @@
 				white-space: nowrap;
 			}
 			cursor: pointer;
-			padding: $spacing-scale-small $spacing-scale-medium;
+			padding: $spacing-small $spacing-medium;
 			background-color: $color-neutral-lighter;
 			color: $color-neutral-darker;
 			position: relative;
@@ -39,12 +39,12 @@
 				border-color: $color-neutral-base;
 				white-space: nowrap;
 				.is-icon {
-					margin-left: $spacing-scale-small;
+					margin-left: $spacing-small;
 				}
 				li {
 					cursor: pointer;
 					list-style: none;
-					padding: $spacing-scale-small $spacing-scale-medium;
+					padding: $spacing-small $spacing-medium;
 					font-size: $font-size-small;
 					&:hover {
 						background-color: $color-neutral-light;
@@ -104,7 +104,7 @@
 		li {
 			cursor: pointer;
 			list-style: none;
-			padding: $spacing-scale-small $spacing-scale-medium;
+			padding: $spacing-small $spacing-medium;
 			font-size: $font-size-small;
 			&:hover {
 				background-color: $color-neutral-lighter;
@@ -137,7 +137,7 @@
 	.n-input-combo2-input-container {
 		flex-grow: 1;
 		display: flex;
-		column-gap: $spacing-scale-xsmall;
+		column-gap: $spacing-xsmall;
 		align-items: center;
 		background-color: white;
 		// keep in sync with definition of input components in base
@@ -162,8 +162,8 @@
 		}
 		.n-input-combo-tag-container {
 			display: flex;
-			column-gap: $spacing-scale-xsmall;
-			padding: $spacing-scale-xsmall;
+			column-gap: $spacing-xsmall;
+			padding: $spacing-xsmall;
 		}
 	}
 }
