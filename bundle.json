@@ -200,7 +200,7 @@
 			}
 		},
 		"initialize.scss": {
-			"url": "base/initialize.scss"
+			"url": "initialize.scss"
 		}
 	}
 }
