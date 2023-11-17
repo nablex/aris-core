@@ -46,8 +46,8 @@
 			"height.scss": {
 				"url": "dimensions/height.scss"
 			},
-			"hover.scss": {
-				"url": "dimensions/hover.scss"
+			"highlight.scss": {
+				"url": "dimensions/highlight.scss"
 			},
 			"spacing.scss": {
 				"url": "dimensions/spacing.scss"

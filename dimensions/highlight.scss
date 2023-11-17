@@ -1,0 +1,223 @@
+// Primary
+@mixin component_highlight_primary {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-light;
+	}
+}
+@mixin component_highlight_primary-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-lightest;
+	}
+}
+@mixin component_highlight_primary-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-dark;
+	}
+}
+@mixin component_highlight_primary-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-outline-light;
+	}
+}
+@mixin component_highlight_primary-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-outline-lightest;
+	}
+}
+@mixin component_highlight_primary-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_primary-outline-dark;
+	}
+}
+
+// Secondary
+@mixin component_highlight_secondary {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-light;
+	}
+}
+@mixin component_highlight_secondary-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-lightest;
+	}
+}
+@mixin component_highlight_secondary-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-dark;
+	}
+}
+@mixin component_highlight_secondary-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-outline-light;
+	}
+}
+@mixin component_highlight_secondary-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-outline-lightest;
+	}
+}
+@mixin component_highlight_secondary-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_secondary-outline-dark;
+	}
+}
+
+// Neutral
+@mixin component_highlight_neutral {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-light;
+	}
+}
+@mixin component_highlight_neutral-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-lightest;
+	}
+}
+@mixin component_highlight_neutral-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-dark;
+	}
+}
+@mixin component_highlight_neutral-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-outline-light;
+	}
+}
+@mixin component_highlight_neutral-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-outline-lightest;
+	}
+}
+@mixin component_highlight_neutral-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_neutral-outline-dark;
+	}
+}
+
+// Danger
+@mixin component_highlight_danger {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-light;
+	}
+}
+@mixin component_highlight_danger-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-lightest;
+	}
+}
+@mixin component_highlight_danger-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-dark;
+	}
+}
+@mixin component_highlight_danger-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-outline-light;
+	}
+}
+@mixin component_highlight_danger-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-outline-lightest;
+	}
+}
+@mixin component_highlight_danger-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_danger-outline-dark;
+	}
+}
+
+// Warning
+@mixin component_highlight_warning {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-light;
+	}
+}
+@mixin component_highlight_warning-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-lightest;
+	}
+}
+@mixin component_highlight_warning-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-dark;
+	}
+}
+@mixin component_highlight_warning-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-outline-light;
+	}
+}
+@mixin component_highlight_warning-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-outline-lightest;
+	}
+}
+@mixin component_highlight_warning-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_warning-outline-dark;
+	}
+}
+
+// Info
+@mixin component_highlight_info {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-light;
+	}
+}
+@mixin component_highlight_info-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-lightest;
+	}
+}
+@mixin component_highlight_info-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-dark;
+	}
+}
+@mixin component_highlight_info-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-outline-light;
+	}
+}
+@mixin component_highlight_info-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-outline-lightest;
+	}
+}
+@mixin component_highlight_info-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_info-outline-dark;
+	}
+}
+
+// Success
+@mixin component_highlight_success {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-light;
+	}
+}
+@mixin component_highlight_success-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-lightest;
+	}
+}
+@mixin component_highlight_success-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-dark;
+	}
+}
+@mixin component_highlight_success-outline {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-outline-light;
+	}
+}
+@mixin component_highlight_success-outline-lighter {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-outline-lightest;
+	}
+}
+@mixin component_highlight_success-outline-darker {
+	&:not([disabled]):not(.is-disabled):hover, .is-highlighted {
+		@include component_color_success-outline-dark;
+	}
+}
