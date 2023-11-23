@@ -85,7 +85,7 @@
 			background-color: $color-primary-lightest;
 			border: solid 1px $color-primary-light;
 			padding: $spacing-2xsmall $spacing-small;
-			border-radius: $border-radius;
+			border-radius: $border-radius-default;
 			.is-label {
 				font-size: $font-size-xsmall;
 				color: $color-primary-dark;
@@ -110,7 +110,7 @@
 			position: absolute;
 			top: calc(0px - #{$font-size-small} + #{$spacing-medium});
 			padding: $spacing-2xsmall 0;
-			border-radius: $border-radius;
+			border-radius: $border-radius-default;
 			.is-label {
 				text-transform: uppercase;
 				font-size: $font-size-2xsmall;
@@ -135,8 +135,8 @@
 			border: solid 1px $color-neutral-light;
 			border-right: none;
 			background-color: $color-neutral-lighter;
-			border-top-left-radius: $border-radius;
-			border-bottom-left-radius: $border-radius;
+			border-top-left-radius: $border-radius-default;
+			border-bottom-left-radius: $border-radius-default;
 		}
 		.is-content-wrapper {
 			flex-grow: 1;

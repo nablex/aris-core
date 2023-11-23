@@ -11,7 +11,7 @@
 		padding: $spacing-small $spacing-medium;
 		width: max-content;
 		max-width: calc(#{$font-size-medium} * 20);
-		border-radius: $border-radius;
+		border-radius: $border-radius-default;
 		font-size: $font-size-xsmall;
 		line-height: $font-size-medium;
 	}

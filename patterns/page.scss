@@ -57,7 +57,7 @@
 	background-color: $color-neutral-lightest;
 	color: $color-neutral-darker;
 	border: dashed 1px $color-neutral-darker;
-	border-radius: $border-radius;
+	border-radius: $border-radius-default;
 	font-size: $font-size-small;
 	z-index: 1000;
 	&.is-bookmarkable {

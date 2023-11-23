@@ -56,7 +56,7 @@ $button-link-color: $color-primary-darker;
 
 	// buttons have default centering logic in (most?) user agent stylesheets whereas links do not.
 	// when we dynamically switch the button to a link, we need the center again
-	.is-icon, .is-text {
+	.is-icon { // , .is-text
 		text-align: center;
 	}
 

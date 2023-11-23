@@ -5,7 +5,7 @@
 
 	.is-show-values {
 		input {
-			border-radius: $border-radius $border-radius 0 0;
+			border-radius: $border-radius-default $border-radius-default 0 0;
 		}
 	}
 	.n-input-combo, .n-input-combo2 {
@@ -23,8 +23,8 @@
 			font-size: $font-size-small;
 			border: solid 1px $color-neutral-light;
 			border-right: 0;
-			border-top-left-radius: $border-radius;
-			border-bottom-left-radius: $border-radius;
+			border-top-left-radius: $border-radius-default;
+			border-bottom-left-radius: $border-radius-default;
 			.n-input-combo-dropdown-labels {
 				position: absolute;
 				margin: 0;
@@ -35,7 +35,7 @@
 				background-color: $color-neutral-lightest;
 				border-width: 1px;
 				border-style: solid solid solid solid;
-				border-radius: 0 0 $border-radius $border-radius;
+				border-radius: 0 0 $border-radius-default $border-radius-default;
 				border-color: $color-neutral-base;
 				white-space: nowrap;
 				.is-icon {
@@ -98,7 +98,7 @@
 		background-color: $color-neutral-lightest;
 		border-width: 1px;
 		border-style: none solid solid solid;
-		border-radius: 0 0 $border-radius $border-radius;
+		border-radius: 0 0 $border-radius-default $border-radius-default;
 		border-color: $color-neutral-light;
 		text-align: left;
 		li {
@@ -165,6 +165,11 @@
 			column-gap: $spacing-xsmall;
 			padding: $spacing-xsmall;
 		}
+	}
+}
+@mixin form-combo-default_modified_full-width {
+	li {
+		white-space: nowrap;
 	}
 }
 @mixin form-combo-default_modifier_limit-dropdown-width {

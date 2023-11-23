@@ -126,7 +126,7 @@
 	}
 }
 
-$form-component-border-radius: $border-radius;
+$form-component-border-radius: $border-radius-default;
 // ----------------------------------------- BORDERS
 @mixin form-component_border_none {
 	input, textarea {

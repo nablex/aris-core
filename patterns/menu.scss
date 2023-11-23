@@ -166,7 +166,7 @@ $menu-top-background-color: $color-uses-body;
 				// the problem is, this is a pretty heavy selector specificity-wise
 				// you should set a background on the container itself (in the case of a ghost button)
 				//background-color: $menu-top-background-color;
-				border-radius: $border-radius;
+				border-radius: $border-radius-default;
 				&:last-child {
 					> .is-button, > .is-column-content .is-button {
 						border-top-left-radius: 0;

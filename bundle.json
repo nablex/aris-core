@@ -5,11 +5,11 @@
 			"color.scss": {
 				"url": "variables/color.scss"
 			}, 
-			"spacing.scss": {
-				"url": "variables/spacing.scss"
-			},
 			"font.scss": {
 				"url": "variables/font.scss"
+			},
+			"spacing.scss": {
+				"url": "variables/spacing.scss"
 			},
 			"border.scss": {
 				"url": "variables/border.scss"
