@@ -19,8 +19,8 @@ $form-checkbox-check-character: "\2713";
 		line-height: 1.5rem;
 		margin-left: calc(#{$font-size-large} * 1.7);
 		display: inline-block;
-		// make sure the label is always high enough to stretch the surrounding content, the before is absolutely positioned so won't stretch
-		height: $font-size-large;
+		// incorporate both the height and the top
+		min-height: calc(#{$font-size-large} * 1.12);
 		// the check itself is positioned "too low", but can't seem to make it move higher
 		// a solution is to also use the :after (which was done initially) but this conflicts with inserting a mandatory * which also uses the after
 		&:before {

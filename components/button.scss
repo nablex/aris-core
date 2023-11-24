@@ -14,7 +14,7 @@ $button-link-color: $color-primary-darker;
 	background-color: transparent;
 	color: $button-link-color;
 	border-color: transparent;
-	&:not([disabled]):hover, &.is-active {
+	&:not([disabled]):not(.is-disabled):hover, &.is-active {
 		background-color: transparent;
 		color: darken($button-link-color, 30%);
 		border-color: transparent;
