@@ -34,13 +34,13 @@
 			left: 0;
 			top: calc(#{$font-size-large} * 0.17);
 			background-color: $color-neutral-lightest;
-			border-radius: calc(#{$border-radius} * 3);
+			border-radius: $border-radius-large;
 		}
 		&:after {
 			top: calc(#{$font-size-large} * 0.275);
 			content: "";
 			background-color: $color-neutral-base;
-			border-radius: calc(#{$border-radius} * 3);
+			border-radius: $border-radius-large;
 			position: absolute;
 			left: calc(#{$font-size-large} * 0.15);
 			width: calc(#{$font-size-large} * 0.73);

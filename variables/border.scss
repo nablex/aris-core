@@ -1,5 +1,6 @@
 // Border radius
 $border-radius-base: $font-size-medium !default;
+$border-radius-full: 9999px !default;
 
 $border-radius-4xsmall: calc(#{$border-radius-base} / 16) !default;
 $border-radius-3xsmall: calc(#{$border-radius-base} / 8) !default;
@@ -15,6 +16,7 @@ $border-radius-4xlarge: calc(#{$border-radius-base} * 6) !default;
 $border-radius-5xlarge: calc(#{$spacing-base} * 8) !default;
 
 $border-radius-default: $border-radius-2xsmall !default;
+
 
 // Border width
 $border-width-small: 1px !default;
