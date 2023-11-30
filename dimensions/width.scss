@@ -359,3 +359,7 @@
 @mixin component_width_max {
 	width: 100%;
 }
+
+@mixin component_width_fit-content {
+	width: fit-content;
+}
