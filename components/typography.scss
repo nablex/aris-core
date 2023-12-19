@@ -1,7 +1,7 @@
 @mixin typography_variant_default {
 	display: inline-flex;
 	align-items: center;
-	column-gap: $spacing-2;
+	column-gap: $spacing-small;
 }
 
 @mixin h1_variant_default {
