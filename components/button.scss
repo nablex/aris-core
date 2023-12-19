@@ -323,6 +323,11 @@ $button-link-color: $color-primary-darker;
 	@include component_border_none;
 }
 
+// only update the text color!
+@mixin button-ghost_modifier_danger {
+	color: $color-danger-base;
+}
+
 @mixin button_variant_tab {
 	border-style: none none solid none;
 	border-radius: 0;
@@ -349,4 +354,66 @@ $button-link-color: $color-primary-darker;
 
 .has-button-close {
 	position: relative;
+}
+
+
+@mixin button_variant_default--collapsed {
+	// make the buttons small (if they aren't already)
+	@include content_size_small;
+	padding: 4px;
+	line-height: unset;
+	justify-content: center;
+	&:not(.has-icon).has-text {
+		.is-text {
+			font-size: 0;
+			display: inline-block;
+			&:first-letter {
+				font-size: $font-size-medium;
+				text-transform: uppercase;
+			}
+			background-color: $color-secondary-base;
+			color: $color-secondary-lightest;
+			border-radius: $font-size-small;
+			padding: $spacing-xsmall $spacing-small;
+			height: calc(#{$font-size-large} + #{$spacing-small});
+			width: calc(#{$font-size-large} + #{$spacing-small});
+			line-height: $font-size-large;
+			text-align: center;
+		}
+	}
+	&.has-icon.has-text {
+		.is-text {
+			display: none;
+		}
+	}
+	&.is-active:after {
+		top: calc((#{$font-size-large} + #{$spacing-small}) / 2 - 2px);
+		border-width: 6px;
+	}
+	// if it is also a label, give it a different color
+	&.is-label {
+		&:after {
+			display: none;
+		}
+		.is-text {
+			background-color: $color-primary-base;
+			color: $color-primary-lightest;
+			border-radius: $font-size-small;
+		}
+	}
+	// hide any badges
+	.is-badge {
+		display: none;
+	}
+	.is-icon {
+		background-color: $color-secondary-base;
+		color: $color-secondary-lightest;
+		border-radius: $font-size-small;
+		padding: $spacing-xsmall $spacing-small;
+		font-size: $font-size-xsmall;
+		height: calc(#{$font-size-large} + #{$spacing-small});
+		width: calc(#{$font-size-large} + #{$spacing-small});
+		line-height: $font-size-large;
+		text-align: center;
+	}
 }

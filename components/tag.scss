@@ -1,4 +1,6 @@
 @mixin tag_variant_default {
+	display: inline-flex;
+	align-items: center;
 	@include badge_variant_default;
 	@include content_size_small;
 	@include padded-content_size_small;

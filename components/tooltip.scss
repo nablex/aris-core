@@ -101,6 +101,16 @@
 	}
 }
 
+@mixin tooltip_position_top-reverse {
+	@include tooltip_position_top;
+	left: unset;
+	right: 0;
+	&:after {
+		right: 7px;
+		left: unset;
+	}
+}
+
 @mixin tooltip_position_bottom {
 	bottom: unset;
 	right: unset;

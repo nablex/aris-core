@@ -25,6 +25,11 @@
 	@include column_variant_default;
 }
 
+// a basic content page
+@mixin grid_variant_basic-content {
+	@include component_spacing_xlarge;
+}
+
 @mixin page-column_variant_default {
 	position: relative;
 	// without this, we can get some really weird sizing...
@@ -338,8 +343,8 @@
 }
 
 // needed for fancier things like rotate
-.is-typography.is-span {
-	display: inline-block;
+.is-typography:where(.is-span) {
+	display: inline-flex;
 }
 
 .is-page-column, .is-page-row {

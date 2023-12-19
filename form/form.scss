@@ -21,7 +21,7 @@
 				&:after {
 					content: "*";
 					margin-left: $spacing-small;
-					color: $color-danger-base;
+					color: $form-component-color-mandatory;
 				}
 			}
 		}

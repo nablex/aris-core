@@ -5,7 +5,7 @@
 
 	.is-show-values {
 		input {
-			border-radius: $border-radius-default $border-radius-default 0 0;
+			border-radius: $form-component-border-radius $form-component-border-radius 0 0;
 		}
 	}
 	.n-input-combo, .n-input-combo2 {
@@ -23,8 +23,8 @@
 			font-size: $font-size-small;
 			border: solid 1px $color-neutral-light;
 			border-right: 0;
-			border-top-left-radius: $border-radius-default;
-			border-bottom-left-radius: $border-radius-default;
+			border-top-left-radius: $form-component-border-radius;
+			border-bottom-left-radius: $form-component-border-radius;
 			.n-input-combo-dropdown-labels {
 				position: absolute;
 				margin: 0;
@@ -35,8 +35,8 @@
 				background-color: $color-neutral-lightest;
 				border-width: 1px;
 				border-style: solid solid solid solid;
-				border-radius: 0 0 $border-radius-default $border-radius-default;
-				border-color: $color-neutral-base;
+				border-radius: 0 0 $form-component-border-radius $form-component-border-radius;
+				border-color: $form-component-border-color;
 				white-space: nowrap;
 				.is-icon {
 					margin-left: $spacing-small;
@@ -98,8 +98,8 @@
 		background-color: $color-neutral-lightest;
 		border-width: 1px;
 		border-style: none solid solid solid;
-		border-radius: 0 0 $border-radius-default $border-radius-default;
-		border-color: $color-neutral-light;
+		border-radius: 0 0 $form-component-border-radius $form-component-border-radius;
+		border-color: $form-component-border-color;
 		text-align: left;
 		li {
 			cursor: pointer;
@@ -145,9 +145,9 @@
 		border-style: solid;
 		border-radius: $form-component-border-radius;
 		color: $color-neutral-darkest;
-		border-color: $color-neutral-light;
+		border-color: $form-component-border-color;
 		&:focus, &:focus-visible, &:active {
-			border-color: $color-neutral-base;
+			border-color: $form-component-border-color-focused;
 			outline-width: 0;
 		}
 		input {
@@ -201,3 +201,15 @@
 		}
 	}
 }
+
+/*
+.n-input-combo2-input-container {
+	&:not(.has-suffix):after {
+		content: '▾';
+		position: absolute;
+		right: 1rem;
+		top: 25%;
+		color: $color-neutral-base;
+	}
+}
+*/

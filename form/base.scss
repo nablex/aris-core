@@ -25,6 +25,11 @@
 
 // ----------------------------------------- SIZE
 
+$form-component-border-color: $color-neutral-base !default;
+$form-component-border-color-focused: $color-neutral-dark !default;
+$form-component-border-radius: $border-radius-default !default;
+$form-component-color-mandatory: $color-danger-base !default;
+
 @mixin template_form-component_size {
 	input {
 		line-height: $font-size-medium;
@@ -126,7 +131,6 @@
 	}
 }
 
-$form-component-border-radius: $border-radius-default;
 // ----------------------------------------- BORDERS
 @mixin form-component_border_none {
 	input, textarea {
