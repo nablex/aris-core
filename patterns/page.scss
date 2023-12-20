@@ -28,7 +28,12 @@
 // a basic content page
 @mixin grid_variant_basic-content {
 	@include component_spacing_xlarge;
+	// any nested basic content does not need the padding
+	:where(.is-variant-basic-content) {
+		padding: 0;
+	}
 }
+
 
 @mixin page-column_variant_default {
 	position: relative;

@@ -56,4 +56,15 @@
 			}
 		}
 	}
+	.time {
+	    display: flex;
+	    column-gap: $spacing-small;
+	    margin-top: 1rem;
+	    input {
+	    	height: 2rem;
+	    	font-size: 0.7rem;
+	    	flex-grow: 1;
+	    	flex-basis: 0;
+	    }
+	}
 }

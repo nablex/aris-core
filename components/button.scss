@@ -70,6 +70,7 @@ $button-link-color: $color-primary-darker;
 	@include component_spacing_horizontal-right-none;
 	@include button_color_link;
 	@include content_decoration_link;
+	column-gap: $spacing-small;
 }
 
 // if we put a badge in a button, we need to counter the padding we add at the top otherwise we slightly stretch the button making it a tiny bit bigger than other buttons
