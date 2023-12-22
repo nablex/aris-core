@@ -133,3 +133,27 @@
 	vertical-align: bottom;
 }
 
+@mixin layout_variant_inline-detail {
+	border: 1px solid $color-neutral-base;
+	border-radius: $border-radius-default; 
+	background-color: $color-neutral-lighter;
+}
+
+@mixin layout_variant_key-value {
+	flex-direction: column;
+	row-gap: $spacing-small;
+}
+
+@mixin layout_variant_key-value-list {
+	flex-direction: column;
+	row-gap: $spacing-large;
+	padding: $spacing-large;
+}
+
+@mixin layout_variant_code-container {
+	background-color: $color-neutral-lightest;
+	padding: $spacing-medium;
+	:where(code) {
+		background-color: $color-neutral-lightest;
+	}
+}

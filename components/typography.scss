@@ -69,3 +69,14 @@
 	color: $color-neutral-base;
 	font-style: italic;
 }
+
+@mixin typography_variant_key {
+	font-weight: bold;
+	font-size: 0.875rem;
+	padding: 0;
+}
+@mixin typography_variant_value {
+	font-weight: normal;
+	font-size: 1rem;
+	padding: 0;
+}
