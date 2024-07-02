@@ -330,6 +330,7 @@ $button-link-color: $color-primary-darker;
 }
 
 @mixin button_variant_tab {
+	color: $color-neutral-darker;
 	border-style: none none solid none;
 	border-radius: 0;
 	border-bottom-color: $color-secondary-base;
@@ -338,6 +339,7 @@ $button-link-color: $color-primary-darker;
 	&.is-active {
 		border-bottom-color: $color-primary-base;
 		background-color: transparent;
+		color: $color-neutral-darkest;
 	}
 }
 

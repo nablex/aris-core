@@ -25,3 +25,6 @@
 @mixin content_decoration_link {
 	text-decoration: underline;
 }
+@mixin content_decoration_strike {
+	text-decoration: line-through;
+}
