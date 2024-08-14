@@ -13,6 +13,9 @@
 			},
 			"border.scss": {
 				"url": "variables/border.scss"
+			},
+			"layer.scss": {
+				"url": "variables/layer.scss"
 			}
 		}, 
 		"dimensions": {
