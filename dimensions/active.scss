@@ -8,12 +8,26 @@
 }
 @mixin component_active_primary-lighter {
 	&.is-active {
+		background-color: $color-primary-lighter;
+		color: $color-neutral-darker;
+		border-color: $color-primary-lighter;
+	}
+}
+@mixin component_active_primary-light {
+	&.is-active {
 		background-color: $color-primary-light;
 		color: $color-neutral-darker;
 		border-color: $color-primary-light;
 	}
 }
 @mixin component_active_primary-darker {
+	&.is-active {
+		background-color: $color-primary-darker;
+		color: $color-neutral-lightest;
+		border-color: $color-primary-darker;
+	}
+}
+@mixin component_active_primary-darkest {
 	&.is-active {
 		background-color: $color-primary-darkest;
 		color: $color-neutral-lightest;
@@ -30,11 +44,25 @@
 @mixin component_active_primary-lighter-outline {
 	&.is-active {
 		background-color: transparent;
+		color: $color-primary-lighter;
+		border-color: $color-primary-lighter;
+	}
+}
+@mixin component_active_primary-light-outline {
+	&.is-active {
+		background-color: transparent;
 		color: $color-primary-light;
 		border-color: $color-primary-light;
 	}
 }
 @mixin component_active_primary-darker-outline {
+	&.is-active {
+		background-color: transparent;
+		color: $color-primary-darker;
+		border-color: $color-primary-darker;
+	}
+}
+@mixin component_active_primary-darkest-outline {
 	&.is-active {
 		background-color: transparent;
 		color: $color-primary-darkest;
