@@ -161,6 +161,16 @@
 	}
 }
 
+@mixin tooltip_position_bottom-reverse {
+	@include tooltip_position_bottom;
+	left: unset;
+	right: 0;
+	&:after {
+		right: 7px;
+		left: unset;
+	}
+}
+
 // Note: left and right positioning has a problem
 // You generally choose a width for your tooltip, which makes it predictable allowing us to position it at the center in the top and bottom case
 // however you don't generally choose the height, so we don't know how high the tooltip is
