@@ -52,6 +52,7 @@ $button-link-color: $color-primary-darker;
 
 	&:disabled {
 		opacity: 0.5;
+		pointer-events: none;
 	}
 
 	// buttons have default centering logic in (most?) user agent stylesheets whereas links do not.

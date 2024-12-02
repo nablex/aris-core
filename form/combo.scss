@@ -146,6 +146,7 @@
 		border-radius: $form-component-border-radius;
 		color: $color-neutral-darkest;
 		border-color: $form-component-border-color;
+		width: 100%;
 		&:focus, &:focus-visible, &:active {
 			border-color: $form-component-border-color-focused;
 			outline-width: 0;
@@ -164,6 +165,15 @@
 			display: flex;
 			column-gap: $spacing-xsmall;
 			padding: $spacing-xsmall;
+		}
+		.is-pretty-value {
+			width: 100%;
+			line-height: $font-size-medium;
+			font-size: $font-size-small;
+			padding: 0 $spacing-medium;
+			height: calc(#{$font-size-medium} * 2.5);
+			display: flex;
+			align-items: center;
 		}
 	}
 }
