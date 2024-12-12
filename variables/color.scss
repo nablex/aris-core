@@ -28,112 +28,112 @@ $color-info-base: #0dcaf0 !default;
 // @description A lighter variant of the primary color of your application
 $color-primary-light: lighten($color-primary-base, 15%) !default;
 // @description A lighter variant of the primary color of your application
-$color-primary-lighter: lighten($color-primary-base, 35%) !default;
+$color-primary-lighter: lighten($color-primary-light, 15%) !default;
 // @description A lighter variant of the primary color of your application
-$color-primary-lightest: lighten($color-primary-base, 45%) !default;
+$color-primary-lightest: lighten($color-primary-lighter, 15%) !default;
 
 // @description A darker variant of the primary color of your application
 $color-primary-dark: darken($color-primary-base, 10%) !default;
 // @description A darker variant of the primary color of your application
-$color-primary-darker: darken($color-primary-base, 20%) !default;
+$color-primary-darker: darken($color-primary-dark, 10%) !default;
 // @description A darker variant of the primary color of your application
-$color-primary-darkest: darken($color-primary-base, 30%) !default;
+$color-primary-darkest: darken($color-primary-darker, 10%) !default;
 
 // -------- Secondary
 
 // @description A lighter variant of the secondary color of your application
 $color-secondary-light: lighten($color-secondary-base, 15%) !default;
 // @description A lighter variant of the secondary color of your application
-$color-secondary-lighter: lighten($color-secondary-base, 35%) !default;
+$color-secondary-lighter: lighten($color-secondary-light, 15%) !default;
 // @description A lighter variant of the secondary color of your application
-$color-secondary-lightest: lighten($color-secondary-base, 50%) !default;
+$color-secondary-lightest: lighten($color-secondary-lighter, 15%) !default;
 
 // @description A darker variant of the secondary color of your application
 $color-secondary-dark: darken($color-secondary-base, 10%) !default;
 // @description A darker variant of the secondary color of your application
-$color-secondary-darker: darken($color-secondary-base, 20%) !default;
+$color-secondary-darker: darken($color-secondary-dark, 10%) !default;
 // @description A darker variant of the secondary color of your application
-$color-secondary-darkest: darken($color-secondary-base, 30%) !default;
+$color-secondary-darkest: darken($color-secondary-darker, 10%) !default;
 
 // -------- Neutral
 
 // @description A lighter variant of the neutral color of your application
 $color-neutral-light: lighten($color-neutral-base, 15%) !default;
 // @description A lighter variant of the neutral color of your application
-$color-neutral-lighter: lighten($color-neutral-base, 30%) !default;
+$color-neutral-lighter: lighten($color-neutral-light, 15%) !default;
 // @description A lighter variant of the neutral color of your application
-$color-neutral-lightest: lighten($color-neutral-base, 40%) !default;
+$color-neutral-lightest: lighten($color-neutral-lighter, 15%) !default;
 
 // @description A darker variant of the neutral color of your application
 $color-neutral-dark: darken($color-neutral-base, 15%) !default;
 // @description A darker variant of the neutral color of your application
-$color-neutral-darker: darken($color-neutral-base, 30%) !default;
+$color-neutral-darker: darken($color-neutral-dark, 15%) !default;
 // @description A darker variant of the neutral color of your application
-$color-neutral-darkest: darken($color-neutral-base, 50%) !default;
+$color-neutral-darkest: darken($color-neutral-darker, 15%) !default;
 
 // -------- Success
 
 // @description A lighter variant of the success color of your application
 $color-success-light: lighten($color-success-base, 20%) !default;
 // @description A lighter variant of the success color of your application
-$color-success-lighter: lighten($color-success-base, 40%) !default;
+$color-success-lighter: lighten($color-success-light, 20%) !default;
 // @description A lighter variant of the success color of your application
-$color-success-lightest: lighten($color-success-base, 60%) !default;
+$color-success-lightest: lighten($color-success-lighter, 20%) !default;
 
 // @description A darker variant of the success color of your application
 $color-success-dark: darken($color-success-base, 10%) !default;
 // @description A darker variant of the success color of your application
-$color-success-darker: darken($color-success-base, 20%) !default;
+$color-success-darker: darken($color-success-dark, 10%) !default;
 // @description A darker variant of the success color of your application
-$color-success-darkest: darken($color-success-base, 30%) !default;
+$color-success-darkest: darken($color-success-darker, 10%) !default;
 
 // -------- Warning
 
 // @description A lighter variant of the warning color of your application
 $color-warning-light: lighten($color-warning-base, 15%) !default;
 // @description A lighter variant of the warning color of your application
-$color-warning-lighter: lighten($color-warning-base, 35%) !default;
+$color-warning-lighter: lighten($color-warning-light, 15%) !default;
 // @description A lighter variant of the warning color of your application
-$color-warning-lightest: lighten($color-warning-base, 50%) !default;
+$color-warning-lightest: lighten($color-warning-lighter, 15%) !default;
 
 // @description A darker variant of the warning color of your application
 $color-warning-dark: darken($color-warning-base, 10%) !default;
 // @description A darker variant of the warning color of your application
-$color-warning-darker: darken($color-warning-base, 20%) !default;
+$color-warning-darker: darken($color-warning-dark, 10%) !default;
 // @description A darker variant of the warning color of your application
-$color-warning-darkest: darken($color-warning-base, 30%) !default;
+$color-warning-darkest: darken($color-warning-darker, 10%) !default;
 
 // -------- Danger
 
 // @description A lighter variant of the danger color of your application
 $color-danger-light: lighten($color-danger-base, 15%) !default;
 // @description A lighter variant of the danger color of your application
-$color-danger-lighter: lighten($color-danger-base, 32%) !default;
+$color-danger-lighter: lighten($color-danger-light, 15%) !default;
 // @description A lighter variant of the danger color of your application
-$color-danger-lightest: lighten($color-danger-base, 42%) !default;
+$color-danger-lightest: lighten($color-danger-lighter, 15%) !default;
 
 // @description A darker variant of the danger color of your application
 $color-danger-dark: darken($color-danger-base, 10%) !default;
 // @description A darker variant of the danger color of your application
-$color-danger-darker: darken($color-danger-base, 20%) !default;
+$color-danger-darker: darken($color-danger-dark, 10%) !default;
 // @description A darker variant of the danger color of your application
-$color-danger-darkest: darken($color-danger-base, 30%) !default;
+$color-danger-darkest: darken($color-danger-darker, 10%) !default;
 
 // -------- Info
 
 // @description A lighter variant of the info color of your application
-$color-info-light: lighten($color-info-base, 14%) !default;
+$color-info-light: lighten($color-info-base, 15%) !default;
 // @description A lighter variant of the info color of your application
-$color-info-lighter: lighten($color-info-light, 14%) !default;
+$color-info-lighter: lighten($color-info-light, 15%) !default;
 // @description A lighter variant of the info color of your application
-$color-info-lightest: lighten($color-info-lighter, 14%) !default;
+$color-info-lightest: lighten($color-info-lighter, 15%) !default;
 
 // @description A darker variant of the info color of your application
-$color-info-dark: darken($color-info-base, 14%) !default;
+$color-info-dark: darken($color-info-base, 15%) !default;
 // @description A darker variant of the info color of your application
-$color-info-darker: darken($color-info-dark, 14%) !default;
+$color-info-darker: darken($color-info-dark, 15%) !default;
 // @description A darker variant of the info color of your application
-$color-info-darkest: darken($color-info-darker, 14%) !default;
+$color-info-darkest: darken($color-info-darker, 15%) !default;
 
 
 
