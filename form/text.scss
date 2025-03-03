@@ -7,4 +7,11 @@
 		width: 100%;
 		min-height: 10rem;
 	}
+	// in read-only we want it to work mostly like a normal label
+	&.is-read-only {
+		input, textarea {
+			background-color: $color-neutral-lightest;
+			border: none;
+		}
+	}
 }

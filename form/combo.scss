@@ -119,6 +119,22 @@
 			}
 		}
 	}
+	// in read-only we want it to work mostly like a normal label
+	&.is-read-only {
+		.n-input-combo2-input-container {
+			border: none;
+			input:disabled {
+				color: $color-neutral-darkest;
+				background-color: $color-neutral-lightest;
+				&::placeholder {
+					color: $color-neutral-base;
+				}
+			}
+			&:after {
+				display: none;
+			}
+		}
+	}
 	.n-input-combo2 {
 		// if an input is disabled, it will not propagate mouse clicks
 		// however, we have a mouse listener on the parent div
